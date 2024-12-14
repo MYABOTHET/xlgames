@@ -2,4 +2,4 @@
 
 </script>
 
-dedicated
+privacy-policy

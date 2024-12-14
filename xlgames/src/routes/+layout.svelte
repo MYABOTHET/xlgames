@@ -32,11 +32,11 @@
 <main class="flex-1 flex flex-col items-center">
   <div class="h-12"></div>
   
-  <div class="max-w-screen-xlgames-1 px-4 w-full relative">
+  <div class="max-w-screen-xlgames-1 px-4 w-full h-full relative">
     {@render children()}
   </div>
   
-  <div class="h-28"></div>
+  <div class="h-12"></div>
 </main>
 
 <Footer/>

@@ -2,4 +2,4 @@
 
 </script>
 
-games
+gpu-dedicated-servers

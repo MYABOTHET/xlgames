@@ -15,7 +15,8 @@ export default {
         'inter': 'Inter'
       },
       screens: {
-        'xlgames-1': '1200px'
+        'xlgames-1': '1200px',
+        'xlgames-2': '600px'
       }
     }
   },

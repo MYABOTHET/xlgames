@@ -2,4 +2,4 @@
 
 </script>
 
-gpu-servers
+about
