@@ -2,7 +2,8 @@
   let {...props} = $props();
 </script>
 
-<svg {...props} class="{props.class}" id="uuid-e6c22854-9d42-4323-9c29-59469e86130d" viewBox="0 0 13 17"
+<svg {...props} class="{props.class}" id="uuid-e6c22854-9d42-4323-9c29-59469e86130d"
+     viewBox="0 0 13 17"
      xmlns="http://www.w3.org/2000/svg">
   <defs>
     <style>.uuid-5c8a878e-2ee3-4b4e-a2c0-bcb5022637ab {

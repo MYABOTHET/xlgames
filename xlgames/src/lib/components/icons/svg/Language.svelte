@@ -2,14 +2,15 @@
   let {...props} = $props();
 </script>
 
-<svg {...props} class="{props.class}" id="uuid-d74006da-2b1d-45f6-8813-1cfdbbe6f14b" viewBox="0 0 225.33 214.67"
+<svg {...props} class="{props.class}" id="uuid-d74006da-2b1d-45f6-8813-1cfdbbe6f14b"
+     viewBox="0 0 225.33 214.67"
      xmlns="http://www.w3.org/2000/svg">
   <defs>
     <style>.uuid-2ffd9df7-8caf-4695-ab0c-7269485dcf7d {
       fill: none;
       stroke-linecap: round;
       stroke-linejoin: round;
-      stroke-width: 14px;
+      stroke-width: 13px;
     }
     </style>
   </defs>

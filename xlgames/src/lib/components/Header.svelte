@@ -1,17 +1,127 @@
 <script>
-  let {start, center, end, ...props} = $props();
+  import ProjectLogo from "$lib/components/icons/components/ProjectLogo.svelte";
+  import Profile from "$lib/components/icons/svg/Profile.svelte";
+  import Language from "$lib/components/icons/svg/Language.svelte";
+  import Link1 from "$lib/components/links/Link1.svelte";
+  import Icon1 from "$lib/components/icons/Icon1.svelte";
+  import DropDownMenu1 from "$lib/components/drop-down-menus/DropDownMenu1.svelte";
+  import Block1 from "$lib/components/blocks/Block1.svelte";
+  import Block2 from "$lib/components/blocks/Block2.svelte";
+  import {
+    fade,
+    fly,
+  } from 'svelte/transition';
+  import Block3 from "$lib/components/blocks/Block3.svelte";
+  import Menu from "$lib/components/icons/svg/Menu.svelte";
+  import DropDownMenu2 from "$lib/components/drop-down-menus/DropDownMenu2.svelte";
+  import {onMount} from "svelte";
+  
+  let {mobile, ...props} = $props();
+  let header_color = $state(true);
+  let doc = null;
+  
+  function toggle(menu_visible) {
+    if (doc) {
+      if (!menu_visible) {
+        document.body.classList.remove("fixed");
+      } else {
+        document.body.classList.add("fixed");
+      }
+      header_color = !menu_visible;
+    }
+  }
+  
+  onMount(() => {
+    doc = document;
+  })
+  
 </script>
 
-<header {...props} class="{props.class} h-20 bg-xlgames-2 flex justify-center items-center">
-  <div class="mx-4 max-w-screen-xlgames-1 w-full flex items-center flex-nowrap">
-    <div class="flex-1 flex justify-start flex-nowrap">
-      {@render start?.()}
+<header {...props} class="{props.class} {header_color ? 'bg-xlgames-2 border-b-transparent' :
+'bg-xlgames-1 border-b-xlgames-2'} transition-colors border-b min-h-20 flex justify-center items-center z-30 w-full">
+  <div class="flex w-full justify-center items-center max-w-screen-xlgames-1 px-4">
+    <div class="flex-1 flex justify-start items-center">
+      <a href="/">
+        <ProjectLogo mini_title="XL" title="XLGAMES.GG"/>
+      </a>
     </div>
-    <div class="flex justify-center flex-nowrap">
-      {@render center?.()}
-    </div>
-    <div class="flex-1 flex justify-end flex-nowrap">
-      {@render end?.()}
+    {#if !mobile}
+      <div class="flex justify-center items-center lg:gap-x-7 gap-x-4">
+        <Link1 href="/games">Игровые серверы</Link1>
+        <DropDownMenu1 class="relative">
+          {#snippet button(menu_visible)}
+          <div class="{menu_visible ? 'text-xlgames-3' : 'hover:text-xlgames-3'} transition-colors">Выделенные серверы</div>
+          {/snippet}
+          {#snippet menu()}
+          <div transition:fade={{duration: 75}} class="absolute top-full my-2">
+            <Block1>
+              <Link1 href="/dedicated"><Block3>Сервера</Block3></Link1>
+              <Link1 href="/gpu-servers"><Block3>Сервера для ИИ</Block3></Link1>
+            </Block1>
+          </div>
+          {/snippet}
+        </DropDownMenu1>
+        <Link1 href="/vps">VPS</Link1>
+        <Link1 href="/web-hosting">Веб хостинг</Link1>
+        <Link1 href="/vpn">VPN</Link1>
+      </div>
+    {/if}
+    <div class="flex-1 flex justify-end items-center">
+      <div class="flex gap-x-6 justify-center items-center">
+        <DropDownMenu1 class="relative">
+          {#snippet button(menu_visible)}
+            <Icon1 active={menu_visible}>
+              <Language class="h-[22px]"/>
+            </Icon1>
+          {/snippet}
+          {#snippet menu()}
+          <div transition:fade={{duration: 75}} class="absolute top-full my-2 -right-3">
+            <Block1 position="right">
+              <button><Block2>Русский</Block2></button>
+              <button><Block2>English</Block2></button>
+            </Block1>
+          </div>
+          {/snippet}
+        </DropDownMenu1>
+        {#if !mobile}
+          <DropDownMenu1 class="relative">
+            {#snippet button(menu_visible)}
+            <Icon1 active={menu_visible}>
+              <Profile class="h-[22px]"/>
+            </Icon1>
+            {/snippet}
+            {#snippet menu()}
+            <div transition:fade={{duration: 75}} class="absolute top-full my-2 -right-4">
+              <Block1 position="right">
+                <a href="/"><Block2>Русский</Block2></a>
+                <a href="/"><Block2>English</Block2></a>
+              </Block1>
+            </div>
+            {/snippet}
+          </DropDownMenu1>
+        {:else}
+          <DropDownMenu2 visible={toggle}>
+            {#snippet button(menu_visible)}
+              <Icon1 active={menu_visible}><Menu class="h-[22px]"/></Icon1>
+            {/snippet}
+            {#snippet menu(close)}
+            <div in:fly={{x: "-100vw", duration: 125, delay: 0, opacity: 1}}
+                 out:fly={{x: "-100vw", duration: 300, delay: 0, opacity: 1}}
+                 class="bg-xlgames-1 z-30 absolute top-0 left-0 mt-20 w-full overflow-y-auto
+                  custom-scroll" style="height: calc(100vh - 80px);">
+              <div class="flex flex-col gap-y-6 px-4 py-8 w-full">
+                <Link1 onclick={close} class="w-fit" href="/games">Игровые серверы</Link1>
+                <Link1 onclick={close} class="w-fit" href="/dedicated">Сервера</Link1>
+                <Link1 onclick={close} class="w-fit" href="/gpu-servers">Сервера для ИИ</Link1>
+                <Link1 onclick={close} class="w-fit" href="/vps">VPS</Link1>
+                <Link1 onclick={close} class="w-fit" href="/web-hosting">Веб хостинг</Link1>
+                <Link1 onclick={close} class="w-fit" href="/vpn">VPN</Link1>
+              </div>
+            </div>
+            {/snippet}
+          </DropDownMenu2>
+        {/if}
+      </div>
     </div>
   </div>
 </header>
