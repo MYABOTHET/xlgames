@@ -1,10 +1,10 @@
 <script>
   import Header from "$lib/components/Header.svelte";
-  import {onMount} from "svelte";
   import Footer from "$lib/components/Footer.svelte";
+  import {onMount} from "svelte";
   
   let {children, data} = $props();
-  let {navigation_links, mobile} = data;
+  let {navigation_links, project_titles, languages, language, mobile} = data;
   
   let is_mobile = $state(mobile);
   
@@ -19,7 +19,7 @@
   });
 </script>
 
-<Header mobile={is_mobile}/>
+<Header {navigation_links} {project_titles} {languages} language={language.navigation_links} mobile={is_mobile}/>
 
 <main class="flex-1 flex flex-col items-center">
   <div class="h-12"></div>
@@ -31,4 +31,4 @@
   <div class="h-12"></div>
 </main>
 
-<Footer/>
+<Footer {navigation_links} {project_titles}/>

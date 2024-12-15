@@ -16,7 +16,7 @@ export default {
       },
       screens: {
         'xlgames-1': '1200px',
-        'xlgames-2': '600px'
+        'xlgames-2': '700px'
       }
     }
   },

@@ -10,13 +10,13 @@
     visible(menu_visible);
   }
   
-  function close() {
+  function close_menu() {
     menu_visible = false;
     visible(false);
   }
   
   onDestroy(() => {
-    close();
+    close_menu();
   })
   
 </script>
@@ -26,6 +26,6 @@
     {@render button?.(menu_visible)}
   </button>
   {#if menu_visible}
-    {@render menu?.(close)}
+    {@render menu?.(close_menu)}
   {/if}
 </div>
