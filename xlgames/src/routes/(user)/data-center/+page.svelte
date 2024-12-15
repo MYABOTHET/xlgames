@@ -1,5 +1,12 @@
 <script>
-
+  import {global_state} from "$lib/state.svelte.js";
+  import Title1 from "$lib/components/titles/Title1.svelte";
+  
+  const {data} = $props();
 </script>
 
-data-center
+<Title1>{global_state.language.pages.data_center.title}</Title1>
+
+<div class="min-h-12"></div>
+
+<p>{global_state.language.pages.data_center.description}</p>

@@ -11,9 +11,9 @@ const detector = new DeviceDetector({
 });
 
 export function load({request}) {
-  const mobile = DeviceHelper.isMobile(detector.detect(request.headers.get('user-agent')));
+  const is_mobile = DeviceHelper.isMobile(detector.detect(request.headers.get('user-agent')));
 
   return {
-    mobile
+    is_mobile
   }
 }
