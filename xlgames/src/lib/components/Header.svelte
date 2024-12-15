@@ -47,8 +47,8 @@
     </div>
     {#if !mobile}
       <div class="flex justify-center items-center lg:gap-x-7 gap-x-4">
-        <Link1 href="/games">Игровые серверы</Link1>
-        <DropDownMenu1 class="relative">
+        <Link1 class="order-1" href="/games">Игровые серверы</Link1>
+        <DropDownMenu1 class="relative order-2">
           {#snippet button(menu_visible)}
           <div class="{menu_visible ? 'text-xlgames-3' : 'hover:text-xlgames-3'} transition-colors">Выделенные серверы</div>
           {/snippet}
@@ -61,9 +61,9 @@
           </div>
           {/snippet}
         </DropDownMenu1>
-        <Link1 href="/vps">VPS</Link1>
-        <Link1 href="/web-hosting">Веб хостинг</Link1>
-        <Link1 href="/vpn">VPN</Link1>
+        <Link1 class="order-3" href="/vps">VPS</Link1>
+        <Link1 class="order-4" href="/web-hosting">Веб хостинг</Link1>
+        <Link1 class="order-5" href="/vpn">VPN</Link1>
       </div>
     {/if}
     <div class="flex-1 flex justify-end items-center">
