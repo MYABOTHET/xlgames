@@ -1,5 +1,3 @@
-import {resolveAcceptLanguage} from "resolve-accept-language";
-
 export function load({request, cookies}) {
   const languages = [
     {
@@ -15,19 +13,19 @@ export function load({request, cookies}) {
       title: 'Deutsch'
     },
   ];
-  let locale = cookies.get('saved-locale');
-  if (!locale) {
-    const locales = [];
-    languages.forEach(language => {
-      locales.push(language.locale)
-    });
-    const accept_language = request.headers.get('accept-language');
-    try {
-      locale = resolveAcceptLanguage(accept_language, locales, locale);
-    } catch {
-      locale = 'en-US';
-    }
-  }
+  // let locale = cookies.get('saved-locale');
+  // if (!locale) {
+  //   const locales = [];
+  //   languages.forEach(language => {
+  //     locales.push(language.locale)
+  //   });
+  //   const accept_language = request.headers.get('accept-language');
+  //   try {
+  //     locale = resolveAcceptLanguage(accept_language, locales, locale);
+  //   } catch {
+  //     locale = 'en-US';
+  //   }
+  // }
   const language = {
     locale: 'ru-RU',
     name: 'Русский',
