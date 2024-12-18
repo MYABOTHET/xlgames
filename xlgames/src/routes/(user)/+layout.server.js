@@ -13,19 +13,19 @@ export function load({request, cookies}) {
       title: 'Deutsch'
     },
   ];
-  // let locale = cookies.get('saved-locale');
-  // if (!locale) {
-  //   const locales = [];
-  //   languages.forEach(language => {
-  //     locales.push(language.locale)
-  //   });
-  //   const accept_language = request.headers.get('accept-language');
-  //   try {
-  //     locale = resolveAcceptLanguage(accept_language, locales, locale);
-  //   } catch {
-  //     locale = 'en-US';
-  //   }
-  // }
+  let locale = cookies.get('saved-locale');
+  if (!locale) {
+    const locales = [];
+    languages.forEach(language => {
+      locales.push(language.locale)
+    });
+    const accept_language = request.headers.get('accept-language');
+    try {
+      locale = resolveAcceptLanguage(accept_language, locales, locale);
+    } catch {
+      locale = 'en-US';
+    }
+  }
   const language = {
     locale: 'ru-RU',
     name: 'Русский',
@@ -33,7 +33,7 @@ export function load({request, cookies}) {
       game_servers: 'Игровые серверы',
       dedicated_servers: 'Выделенные серверы',
       servers: 'Серверы',
-      gpu_dedicated_servers: 'Серверы для ИИ',
+      servers_ai: 'Серверы для ИИ',
       vps: 'VPS',
       web_hosting: 'Веб хостинг',
       vpn: 'VPN',
