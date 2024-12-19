@@ -30,7 +30,7 @@ min-h-64">
           ...navigation_links.profile, ...navigation_links.other]
             as navigation_link}
           <Link1 href={navigation_link.href}
-                 class="w-fit">{global_state.language.navigation_links[navigation_link.title]}</Link1>
+                 class="w-fit">{global_state.shared_page[navigation_link.title]}</Link1>
         {/each}
       </nav>
     </div>
@@ -38,7 +38,7 @@ min-h-64">
       <h1>© {project_titles.year} {project_titles.title}</h1>
       {#each navigation_links.footer as navigation_link}
         <a href={navigation_link.href}
-           class="hover:text-xlgames-3 transition-colors">{global_state.language.navigation_links[navigation_link.title]}</a>
+           class="hover:text-xlgames-3 transition-colors">{global_state.shared_page[navigation_link.title]}</a>
       {/each}
     </div>
   </div>

@@ -1,7 +1,4 @@
-﻿using System.Reflection.Emit;
-using System.Reflection.Metadata;
-using Microsoft.EntityFrameworkCore;
-using xlgames_backend.DTOs.Languages;
+﻿using Microsoft.EntityFrameworkCore;
 using xlgames_backend.Models;
 using xlgames_backend.Models.Items;
 using xlgames_backend.Models.Translations;
@@ -45,6 +42,44 @@ namespace xlgames_backend.ApplicationContext
             {
                 Database.EnsureDeleted();
                 Database.EnsureCreated();
+                string title = "XLGAMES.GG";
+                bool exists = Languages
+                    .Where(l => l.Locale == "en-US"
+                    || l.Name == "Английский"
+                    || l.OriginalName == "English"
+                    || l.WHMCSName == "english")
+                    .Any();
+                if (!exists)
+                {
+                    Language language = new Language
+                    {
+                        Locale = "en-US",
+                        Name = "Английский",
+                        OriginalName = "English",
+                        WHMCSName = "english",
+                        ContactsPage = new() { Title = title },
+                        DataCenterPage = new() { Title = title },
+                        GameServersPage = new() { Title = title },
+                        MainPage = new() { Title = title },
+                        NewsPage = new() { Title = title },
+                        PrivacyPolicyPage = new() { Title = title },
+                        ServersAIPage = new() { Title = title },
+                        ServersPage = new() { Title = title },
+                        SharedPage = new() { Title = title },
+                        TermsServicePage = new() { Title = title },
+                        VPNPage = new() { Title = title },
+                        VPSPage = new() { Title = title },
+                        WebHostingPage = new() { Title = title },
+                        AboutPage = new() { Title = title }
+                    };
+                    language.MainPage.Posts.Add(new MainBlock { Title = "Server", Name = "ServerBlock" });
+                    language.MainPage.Posts.Add(new MainBlock { Title = "VPS", Name = "VPSBlock" });
+                    language.MainPage.Posts.Add(new MainBlock { Title = "Web hosting", Name = "WebHostingBlock" });
+                    language.MainPage.Posts.Add(new MainBlock { Title = "VPN", Name = "VPNBlock" });
+                    language.MainPage.Posts.Add(new MainBlock { Title = "GPU Server", Name = "ServerAIBlock" });
+                    Languages.Add(language);
+                    SaveChanges();
+                }
             }
             _init = true;
         }

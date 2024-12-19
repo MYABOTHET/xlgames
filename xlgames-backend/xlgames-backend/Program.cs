@@ -3,6 +3,8 @@ using Microsoft.EntityFrameworkCore;
 using Newtonsoft.Json.Serialization;
 using Newtonsoft.Json;
 using xlgames_backend.ApplicationContext;
+using Microsoft.AspNetCore.HttpOverrides;
+using xlgames_backend.MySqlApplicationContext;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -20,11 +22,21 @@ builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationSc
 builder.Services.AddAuthorization();
 
 string connection = builder.Configuration.GetConnectionString("DefaultConnection")!;
+string mysqlconnection = builder.Configuration.GetConnectionString("MySqlConnection")!;
 
 builder.Services.AddDbContext<ApplicationDbContext>(
     options => options.UseNpgsql(connection));
 
+builder.Services.AddDbContext<MySqlApplicationDbContext>(
+    options => options.UseMySql(mysqlconnection, new MySqlServerVersion(new Version(8, 0, 40)))
+    .UseQueryTrackingBehavior(QueryTrackingBehavior.NoTracking));
+
 var app = builder.Build();
+
+app.UseForwardedHeaders(new ForwardedHeadersOptions
+{
+    ForwardedHeaders = ForwardedHeaders.XForwardedFor | ForwardedHeaders.XForwardedProto
+});
 
 app.UseAuthentication();
 app.UseAuthorization();

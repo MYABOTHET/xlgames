@@ -396,7 +396,8 @@ namespace xlgames_backend.Controllers
             bool exists = await _context.Languages
                 .Where(l => l.Locale == createLanguageDTO.Locale
                 || l.Name == createLanguageDTO.Name
-                || l.OriginalName == createLanguageDTO.OriginalName)
+                || l.OriginalName == createLanguageDTO.OriginalName
+                || l.WHMCSName == createLanguageDTO.WHMCSName)
                 .AnyAsync();
             if (exists) {
                 ModelState.AddModelError("All", "Все поля должны быть уникальными");
@@ -407,6 +408,7 @@ namespace xlgames_backend.Controllers
                 Locale = createLanguageDTO.Locale!,
                 Name = createLanguageDTO.Name!,
                 OriginalName = createLanguageDTO.OriginalName!,
+                WHMCSName = createLanguageDTO.WHMCSName!,
                 ContactsPage = new() { Title = title },
                 DataCenterPage = new() { Title = title },
                 GameServersPage = new() { Title = title },
@@ -430,7 +432,7 @@ namespace xlgames_backend.Controllers
             await _context.Languages.AddAsync(language);
             await _context.SaveChangesAsync();
 
-            return Ok();
+            return Ok(language);
         }
 
         [HttpDelete("{id:guid}")]
@@ -458,21 +460,21 @@ namespace xlgames_backend.Controllers
             var language = await _context.Languages
                 .Where(l => l.Id == id)
                 .Include(l => l.SharedPage)
-                .Include(l => l.MainPage)
+                //.Include(l => l.MainPage)
                 .Include(l => l.MainPage!.Posts)
                 .Include(l => l.MainPage!.DataCenterPoints)
                 .Include(l => l.GameServersPage)
                 .Include(l => l.AboutPage)
-                .Include(l => l.ContactsPage)
+                //.Include(l => l.ContactsPage)
                 .Include(l => l.ContactsPage!.Contacts)
-                .Include(l => l.DataCenterPage)
+                //.Include(l => l.DataCenterPage)
                 .Include(l => l.DataCenterPage!.Items)
                 .Include(l => l.NewsPage)
-                .Include(l => l.PrivacyPolicyPage)
+                //.Include(l => l.PrivacyPolicyPage)
                 .Include(l => l.PrivacyPolicyPage!.Items)
                 .Include(l => l.ServersAIPage)
                 .Include(l => l.ServersPage)
-                .Include(l => l.TermsServicePage)
+                //.Include(l => l.TermsServicePage)
                 .Include(l => l.TermsServicePage!.Items)
                 .Include(l => l.VPNPage)
                 .Include(l => l.VPSPage)
@@ -488,7 +490,8 @@ namespace xlgames_backend.Controllers
             var languageDb = await _context.Languages.Where(l =>
                 l.Locale == update_language.Locale ||
                 l.Name == update_language.Name ||
-                l.OriginalName == update_language.OriginalName).FirstOrDefaultAsync();
+                l.OriginalName == update_language.OriginalName ||
+                l.WHMCSName == update_language.WHMCSName).FirstOrDefaultAsync();
 
             if (!(languageDb is null))
             {
@@ -502,6 +505,7 @@ namespace xlgames_backend.Controllers
             language.Locale = update_language.Locale;
             language.Name = update_language.Name;
             language.OriginalName = update_language.OriginalName;
+            language.WHMCSName = update_language.WHMCSName;
 
             language.AboutPage!.Title = update_language.AboutPage!.Title;
             language.AboutPage!.Name = update_language.AboutPage!.Name;

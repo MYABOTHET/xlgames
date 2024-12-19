@@ -13,7 +13,7 @@
   import DropDownMenu2 from "$lib/components/drop-down-menus/DropDownMenu2.svelte";
   import {global_state} from "$lib/state.svelte.js";
   
-  let {navigation_links, project_titles, languages, is_mobile, ...props} = $props();
+  let {navigation_links, project_titles, languages, is_mobile, change_language, locale, ...props} = $props();
   let header_color = $state(true);
   
   function toggle(menu_visible) {
@@ -40,18 +40,18 @@
     {#if !is_mobile}
       <nav class="flex justify-center items-center lg:gap-x-7 gap-x-4 text-nowrap">
         {#each navigation_links.header.other as navigation_link}
-          <Link1 href={navigation_link.href} style="order: {navigation_link.order}">{global_state.language.navigation_links[navigation_link.title]}</Link1>
+          <Link1 href={navigation_link.href} style="order: {navigation_link.order}">{global_state.shared_page[navigation_link.title]}</Link1>
         {/each}
         <DropDownMenu1 class="relative" style="order: {navigation_links.header.menu.order}">
           {#snippet button(menu_visible)}
             <div class="{menu_visible ? 'text-xlgames-3' : 'hover:text-xlgames-3'}
-             transition-colors">{global_state.language.navigation_links[navigation_links.header.menu.title]}</div>
+             transition-colors">{global_state.shared_page[navigation_links.header.menu.title]}</div>
           {/snippet}
           {#snippet menu()}
           <div transition:fade={{duration: 75}} class="absolute top-full mt-2">
             <Block1>
               {#each navigation_links.header.menu.links as navigation_link}
-                <Link1 href={navigation_link.href}><Block3>{global_state.language.navigation_links[navigation_link.title]}</Block3></Link1>
+                <Link1 href={navigation_link.href}><Block3>{global_state.shared_page[navigation_link.title]}</Block3></Link1>
               {/each}
             </Block1>
           </div>
@@ -71,7 +71,9 @@
           <div transition:fade={{duration: 75}} class="absolute top-full mt-2 -right-4">
             <Block1 position="right">
               {#each languages as language}
-                <button><Block2>{language.title}</Block2></button>
+                <button class="{locale === language.locale ? 'text-xlgames-3' : ''}" onclick={() => {change_language(language.locale)}}>
+                  <Block2>{language.originalName}</Block2>
+                </button>
               {/each}
             </Block1>
           </div>
@@ -88,7 +90,7 @@
             <div transition:fade={{duration: 75}} class="absolute top-full mt-2 -right-4">
               <Block1 position="right">
                 {#each navigation_links.profile as navigation_link}
-                  <Link1 href={navigation_link.href}><Block3>{global_state.language.navigation_links[navigation_link.title]}</Block3></Link1>
+                  <Link1 href={navigation_link.href}><Block3>{global_state.shared_page[navigation_link.title]}</Block3></Link1>
                 {/each}
               </Block1>
             </div>
@@ -109,7 +111,7 @@
                   ...navigation_links.profile, ...navigation_links.other, ...navigation_links.footer]
                     as navigation_link}
                   <Link1 onclick={close_menu} href={navigation_link.href}
-                         class="w-fit">{global_state.language.navigation_links[navigation_link.title]}</Link1>
+                         class="w-fit">{global_state.shared_page[navigation_link.title]}</Link1>
                 {/each}
               </div>
             </div>

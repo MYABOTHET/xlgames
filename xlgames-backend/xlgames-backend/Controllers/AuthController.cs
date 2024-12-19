@@ -6,6 +6,8 @@ using xlgames_backend.DTOs;
 using xlgames_backend.Models;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Authentication;
+using xlgames_backend.MySqlApplicationContext;
+using System.Runtime.CompilerServices;
 
 namespace xlgames_backend.Controllers
 {
@@ -14,11 +16,13 @@ namespace xlgames_backend.Controllers
     public class AuthController : ControllerBase
     {
         private readonly ApplicationDbContext _context;
+        private readonly MySqlApplicationDbContext _mysqlcontext;
 
-        public AuthController(ApplicationDbContext context)
+        public AuthController(ApplicationDbContext context, MySqlApplicationDbContext mysqlcontext)
         {
             _context = context;
-        } 
+            _mysqlcontext = mysqlcontext;
+        }
 
         [HttpPost("Login")]
         public async Task<IActionResult> Login([FromBody] LoginDTO loginDTO)
