@@ -18,6 +18,10 @@
     overflow-x: hidden;
   }
   
+  :global(p) {
+    @apply whitespace-pre-wrap;
+  }
+  
   :global(.custom-scroll::-webkit-scrollbar) {
     width: 0;
   }

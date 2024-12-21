@@ -2,4 +2,6 @@
   console.log("blyat");
 </script>
 
-admin
+<svelte:head>
+  <title>Панель управления</title>
+</svelte:head>

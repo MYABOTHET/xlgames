@@ -360,21 +360,22 @@ namespace xlgames_backend.Controllers
                 .Where(l => l.Locale == locale)
                 .Include(l => l.SharedPage)
                 .Include(l => l.MainPage)
-                .Include(l => l.MainPage!.Posts)
-                .Include(l => l.MainPage!.DataCenterPoints)
+                .ThenInclude(m => m!.Posts)
+                .Include(l => l.MainPage)
+                .ThenInclude(m => m!.DataCenterPoints)
                 .Include(l => l.GameServersPage)
                 .Include(l => l.AboutPage)
                 .Include(l => l.ContactsPage)
-                .Include(l => l.ContactsPage!.Contacts)
+                .ThenInclude(c => c!.Contacts)
                 .Include(l => l.DataCenterPage)
-                .Include(l => l.DataCenterPage!.Items)
+                .ThenInclude(d => d!.Items)
                 .Include(l => l.NewsPage)
                 .Include(l => l.PrivacyPolicyPage)
-                .Include(l => l.PrivacyPolicyPage!.Items)
+                .ThenInclude(p => p!.Items)
                 .Include(l => l.ServersAIPage)
                 .Include(l => l.ServersPage)
                 .Include(l => l.TermsServicePage)
-                .Include(l => l.TermsServicePage!.Items)
+                .ThenInclude(t => t!.Items)
                 .Include(l => l.VPNPage)
                 .Include(l => l.VPSPage)
                 .Include(l => l.WebHostingPage)
@@ -435,11 +436,13 @@ namespace xlgames_backend.Controllers
             return Ok(language);
         }
 
-        [HttpDelete("{id:guid}")]
+        [HttpDelete("{locale}")]
         [Authorize]
-        public async Task<IActionResult> DeleteLanguage(Guid id)
+        public async Task<IActionResult> DeleteLanguage(string locale)
         {
-            var language = await _context.Languages.FindAsync(id);
+            var language = await _context.Languages
+                .Where(l => l.Locale == locale)
+                .FirstOrDefaultAsync();
 
             if (language == null)
             {
@@ -453,29 +456,23 @@ namespace xlgames_backend.Controllers
             return Ok();
         }
 
-        [HttpPut("{id:guid}")]
+        [HttpPut("{locale}")]
         [Authorize]
-        public async Task<IActionResult> PutLanguage(Guid id, [FromBody] Language update_language)
+        public async Task<IActionResult> PutLanguage(string locale, [FromBody] Language update_language)
         {
             var language = await _context.Languages
-                .Where(l => l.Id == id)
+                .Where(l => l.Locale == locale)
                 .Include(l => l.SharedPage)
-                //.Include(l => l.MainPage)
-                .Include(l => l.MainPage!.Posts)
-                .Include(l => l.MainPage!.DataCenterPoints)
+                .Include(l => l.MainPage)
                 .Include(l => l.GameServersPage)
                 .Include(l => l.AboutPage)
-                //.Include(l => l.ContactsPage)
-                .Include(l => l.ContactsPage!.Contacts)
-                //.Include(l => l.DataCenterPage)
-                .Include(l => l.DataCenterPage!.Items)
+                .Include(l => l.ContactsPage)
+                .Include(l => l.DataCenterPage)
                 .Include(l => l.NewsPage)
-                //.Include(l => l.PrivacyPolicyPage)
-                .Include(l => l.PrivacyPolicyPage!.Items)
+                .Include(l => l.PrivacyPolicyPage)
                 .Include(l => l.ServersAIPage)
                 .Include(l => l.ServersPage)
-                //.Include(l => l.TermsServicePage)
-                .Include(l => l.TermsServicePage!.Items)
+                .Include(l => l.TermsServicePage)
                 .Include(l => l.VPNPage)
                 .Include(l => l.VPSPage)
                 .Include(l => l.WebHostingPage)
@@ -514,8 +511,10 @@ namespace xlgames_backend.Controllers
             language.ContactsPage!.Title = update_language.ContactsPage!.Title;
             language.ContactsPage!.Name = update_language.ContactsPage!.Name;
             language.ContactsPage!.Description = update_language.ContactsPage!.Description;
-            language.ContactsPage!.Contacts.Clear();
-            foreach (ContactItem item in update_language.ContactsPage!.Contacts) 
+
+            await _context.ContactItems.Where(c => c.ContactsPage == language.ContactsPage)
+                .ExecuteDeleteAsync();
+            foreach (ContactItem item in update_language.ContactsPage!.Contacts)
             {
                 ContactItem newItem = new();
                 newItem.Title = item.Title;
@@ -526,7 +525,9 @@ namespace xlgames_backend.Controllers
             language.DataCenterPage!.Title = update_language.DataCenterPage!.Title;
             language.DataCenterPage!.Name = update_language.DataCenterPage!.Name;
             language.DataCenterPage!.Description = update_language.DataCenterPage!.Description;
-            language.DataCenterPage!.Items.Clear();
+
+            await _context.DataCenterItems.Where(d => d.DataCenterPage == language.DataCenterPage)
+                .ExecuteDeleteAsync();
             foreach (DataCenterItem item in update_language.DataCenterPage!.Items)
             {
                 DataCenterItem newItem = new();
@@ -547,7 +548,8 @@ namespace xlgames_backend.Controllers
             language.MainPage!.DataCenters = update_language.MainPage!.DataCenters;
             language.MainPage!.DataCentersDescription = update_language.MainPage!.DataCentersDescription;
             language.MainPage!.News = update_language.MainPage!.News;
-            language.MainPage!.Posts.Clear();
+
+            await _context.MainBlocks.Where(m => m.MainPage == language.MainPage).ExecuteDeleteAsync();
             foreach (MainBlock item in update_language.MainPage!.Posts)
             {
                 MainBlock newItem = new() { Name = item.Name };
@@ -555,7 +557,9 @@ namespace xlgames_backend.Controllers
                 newItem.Description = item.Description;
                 language.MainPage!.Posts.Add(newItem);
             }
-            language.MainPage!.DataCenterPoints.Clear();
+
+            await _context.MainDataCenterPoints.Where(m => m.MainPage == language.MainPage)
+                .ExecuteDeleteAsync();
             foreach (MainDataCenterPoint item in update_language.MainPage!.DataCenterPoints)
             {
                 MainDataCenterPoint newItem = new();
@@ -570,7 +574,9 @@ namespace xlgames_backend.Controllers
             language.PrivacyPolicyPage!.Title = update_language.PrivacyPolicyPage!.Title;
             language.PrivacyPolicyPage!.Name = update_language.PrivacyPolicyPage!.Name;
             language.PrivacyPolicyPage!.Description = update_language.PrivacyPolicyPage!.Description;
-            language.PrivacyPolicyPage!.Items.Clear();
+
+            await _context.PrivacyPolicyItems.Where(p => p.PrivacyPolicyPage == language.PrivacyPolicyPage)
+                .ExecuteDeleteAsync();
             foreach (PrivacyPolicyItem item in update_language.PrivacyPolicyPage!.Items)
             {
                 PrivacyPolicyItem newItem = new();
@@ -643,7 +649,9 @@ namespace xlgames_backend.Controllers
             language.TermsServicePage!.Title = update_language.TermsServicePage!.Title;
             language.TermsServicePage!.Name = update_language.TermsServicePage!.Name;
             language.TermsServicePage!.Description = update_language.TermsServicePage!.Description;
-            language.TermsServicePage!.Items.Clear();
+
+            await _context.TermsServiceItems.Where(t => t.TermsServicePage == language.TermsServicePage)
+                .ExecuteDeleteAsync();
             foreach (TermsServiceItem item in update_language.TermsServicePage!.Items)
             {
                 TermsServiceItem newItem = new();
@@ -653,15 +661,8 @@ namespace xlgames_backend.Controllers
             }
 
             await _context.SaveChangesAsync();
-            await _context.ContactItems.Where(c => c.ContactsPage == null).ExecuteDeleteAsync();
-            await _context.DataCenterItems.Where(d => d.DataCenterPage == null).ExecuteDeleteAsync();
-            await _context.MainBlocks.Where(m => m.MainPage == null).ExecuteDeleteAsync();
-            await _context.MainDataCenterPoints.Where(m => m.MainPage == null).ExecuteDeleteAsync();
-            await _context.PrivacyPolicyItems.Where(p => p.PrivacyPolicyPage == null).ExecuteDeleteAsync();
-            await _context.TermsServiceItems.Where(t => t.TermsServicePage == null).ExecuteDeleteAsync();
-            await _context.SaveChangesAsync();
 
-            return Ok(update_language);
+            return Ok();
         }
     }
 }

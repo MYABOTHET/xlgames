@@ -7,3 +7,7 @@ export const global_state = $state({
 export const store = writable({
   shared_page: {},
 })
+
+export const locale_store = $state({
+  locale: "en-US"
+});

@@ -11,11 +11,11 @@ export async function load({request, cookies}) {
         links: [
           {
             title: 'servers',
-            href: '/dedicated-servers'
+            href: '/servers'
           },
           {
             title: 'serversAI',
-            href: '/gpu-dedicated-servers'
+            href: '/servers-ai'
           }
         ]
       },

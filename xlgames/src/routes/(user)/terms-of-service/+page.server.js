@@ -7,7 +7,6 @@ export async function load({cookies, parent}) {
     locale = data.locale;
   }
   return {
-    main_page: await (await fetch(`${api}/Languages/MainPage/${locale}`)).json(),
-    news: await (await fetch(`${api}/News/${locale}?max=3&require=false`)).json()
+    terms_of_service: await (await fetch(`${api}/Languages/TermsServicePage/${locale}`)).json()
   }
 }

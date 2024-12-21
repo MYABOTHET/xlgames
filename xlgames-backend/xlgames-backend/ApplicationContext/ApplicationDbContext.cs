@@ -40,8 +40,8 @@ namespace xlgames_backend.ApplicationContext
             Configuration = configuration;
             if (!_init)
             {
-                Database.EnsureDeleted();
-                Database.EnsureCreated();
+                //Database.EnsureDeleted();
+                //Database.EnsureCreated();
                 string title = "XLGAMES.GG";
                 bool exists = Languages
                     .Where(l => l.Locale == "en-US"

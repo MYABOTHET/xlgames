@@ -1,14 +1,14 @@
 <script>
   import Header from "$lib/components/Header.svelte";
   import Footer from "$lib/components/Footer.svelte";
-  import {global_state, store} from "$lib/state.svelte.js";
+  import {global_state, locale_store, store} from "$lib/state.svelte.js";
   import {onMount} from "svelte";
   
   let {children, data} = $props();
   let {navigation_links, project_titles, languages} = data;
   
   global_state.shared_page = data.shared_page;
-  let locale = $state(data.locale);
+  locale_store.locale = data.locale;
   
   const max_width = 950;
   let is_mobile = $state(data.is_mobile);
@@ -37,10 +37,10 @@
     if (this_locale === new_locale) {
       return 0;
     }
-    document.cookie = `saved-locale=${new_locale};max-age=${60 * 60 * 24 * 360}`;
-    locale = new_locale;
-    global_state.shared_page = await (await fetch('?page_id=0')).json();
+    document.cookie = `saved-locale=${new_locale};max-age=${60 * 60 * 24 * 360};path=/`;
+    locale_store.locale = new_locale;
     store.set({});
+    global_state.shared_page = await (await fetch('/?page_id=0')).json();
   }
   
   onMount(() => {
@@ -49,7 +49,7 @@
   });
 </script>
 
-<Header {navigation_links} {project_titles} {languages} {is_mobile} {locale} {change_language}/>
+<Header {navigation_links} {project_titles} {languages} {is_mobile} locale={locale_store.locale} {change_language}/>
 
 <main class="flex-1 flex flex-col items-center">
   <div class="min-h-12"></div>
@@ -59,6 +59,7 @@
   </div>
   
   <div class="min-h-12"></div>
+  
 </main>
 
 <Footer {navigation_links} {project_titles}/>

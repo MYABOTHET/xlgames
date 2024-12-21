@@ -5,7 +5,7 @@
   
   const {data} = $props();
   
-  let privacy_policy = $state(data.privacy_policy);
+  let servers = $state(data.servers);
   let init = $state(false);
   onMount(async () => {
     let unsubscribe = store.subscribe(async () => {
@@ -13,7 +13,7 @@
         init = true;
         return 0;
       }
-      privacy_policy = await (await fetch('/privacy-policy')).json();
+      servers = await (await fetch('/servers')).json();
     });
     return () => {
       unsubscribe();
@@ -22,7 +22,13 @@
 </script>
 
 <svelte:head>
-  <title>{privacy_policy.title}</title>
+  <title>{servers.title}</title>
 </svelte:head>
 
-<Title1>{privacy_policy.name}</Title1>
+<Title1>{servers.name}</Title1>
+
+<div class="min-h-12"></div>
+
+<p>{servers.description}</p>
+
+<div class="min-h-8"></div>

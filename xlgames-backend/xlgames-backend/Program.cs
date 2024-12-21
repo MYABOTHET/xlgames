@@ -25,7 +25,7 @@ string connection = builder.Configuration.GetConnectionString("DefaultConnection
 string mysqlconnection = builder.Configuration.GetConnectionString("MySqlConnection")!;
 
 builder.Services.AddDbContext<ApplicationDbContext>(
-    options => options.UseNpgsql(connection));
+    options => options.UseNpgsql(connection, o => o.UseQuerySplittingBehavior(QuerySplittingBehavior.SplitQuery)));
 
 builder.Services.AddDbContext<MySqlApplicationDbContext>(
     options => options.UseMySql(mysqlconnection, new MySqlServerVersion(new Version(8, 0, 40)))

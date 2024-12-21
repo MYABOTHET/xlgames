@@ -12,15 +12,7 @@
   let {data} = $props();
   
   let main_page = $state(data.main_page);
-  let data_center_points = $derived.by(() => {
-    let sort_array = main_page.dataCenterPoints.slice();
-    sort_array.sort((f, t) => {
-      if (f.title > t.title) return 1;
-      if (f.title == t.title) return 0;
-      if (f.title < t.title) return -1;
-    });
-    return sort_array;
-  });
+  let news = $state(data.news);
   let server_block = $derived(main_page.posts.find(post => post.name === "ServerBlock"));
   let server_ai_block = $derived(main_page.posts.find(post => post.name === "ServerAIBlock"));
   let vps_block = $derived(main_page.posts.find(post => post.name === "VPSBlock"));
@@ -34,7 +26,8 @@
         init = true;
         return 0;
       }
-      main_page = await (await fetch('/?page_id=1')).json();
+      fetch('/?page_id=1').then((r) => r.json().then(t => main_page = t));
+      fetch('/news?method=news&max_items=3&require=false').then((r) => r.json().then(t => news = t));
     });
     return () => {
       unsubscribe();
@@ -42,6 +35,10 @@
   })
 
 </script>
+
+<svelte:head>
+  <title>{main_page.title}</title>
+</svelte:head>
 
 <Section1 href="/game-servers" more={global_state.shared_page.more}
           title={main_page.gameServers}>
@@ -57,15 +54,15 @@
 
 <div class="flex flex-wrap gap-8">
   <Block4 class="flex-[1_1_100%] md:flex-[1_1_35%] xlgames-1:flex-[1_1_25%]" description={server_block.description}
-          title={server_block.title}/>
+          href="/servers" title={server_block.title}/>
   <Block4 class="flex-[1_1_100%] md:flex-[1_1_35%] xlgames-1:flex-[1_1_25%]" description={vps_block.description}
-          title={vps_block.title}/>
+          href="/vps" title={vps_block.title}/>
   <Block4 class="flex-[1_1_100%] md:flex-[1_1_35%] xlgames-1:flex-[1_1_25%]" description={web_hosting_block.description}
-          title={web_hosting_block.title}/>
+          href="/web-hosting" title={web_hosting_block.title}/>
   <Block4 class="flex-[1_1_100%] md:flex-[1_1_35%] xlgames-1:flex-[1_1_25%]" description={vpn_block.description}
-          title={vpn_block.title}/>
+          href="/vpn" title={vpn_block.title}/>
   <Block4 class="flex-[1_1_100%] md:flex-[1_1_35%] xlgames-1:flex-[1_1_25%]" description={server_ai_block.description}
-          title={server_ai_block.title}/>
+          href="/servers-ai" title={server_ai_block.title}/>
 </div>
 
 <div class="min-h-28"></div>
@@ -74,22 +71,25 @@
   <div class="flex-[1_1_25%] flex flex-col gap-y-8">
     <Title1>{main_page.dataCenters}</Title1>
     <p>{main_page.dataCentersDescription}</p>
-    <Link4 class="w-fit" href="/">{global_state.shared_page.readMore}</Link4>
+    <Link4 class="w-fit" href="/data-center">{global_state.shared_page.readMore}</Link4>
   </div>
-  <div class="border-2 border-xlgames-4 rounded-2xl px-8 py-4 flex flex-col gap-y-4 flex-[1_1_25%]">
-    {#each data_center_points as point, index}
-      <Block5 title={point.title} description={point.description}
-              border={index !== data_center_points.length - 1}/>
-    {/each}
-  </div>
+  {#if main_page.dataCenterPoints.length > 0}
+    <div class="border-2 border-xlgames-4 rounded-2xl px-8 py-6 flex flex-col gap-y-4 flex-[1_1_25%]">
+      {#each main_page.dataCenterPoints as point, index}
+        <Block5 title={point.title} description={point.description}
+                border={index !== main_page.dataCenterPoints.length - 1}/>
+      {/each}
+    </div>
+  {/if}
 </div>
 
 <div class="min-h-28"></div>
 
 <Section1 href="/news" more={global_state.shared_page.more} title={main_page.news}>
   <div class="flex flex-nowrap gap-x-7 justify-between overflow-x-scroll custom-scroll2 pb-1">
-    <Card2 href="/"></Card2>
-    <Card2 href="/"></Card2>
-    <Card2 href="/"></Card2>
+    {#each news as news_item}
+      <Card2 href="/news/{news_item.parentId}" title={news_item.name} data={news_item.date}
+             img_src={news_item.src}/>
+    {/each}
   </div>
 </Section1>
