@@ -5,9 +5,9 @@
 </script>
 
 <script>
-  let { value = $bindable(), color, ...props } = $props();
+  let { value = $bindable(), color, light, ...props } = $props();
 </script>
 
 <input bind:value {...props} class="{props.class}
 {color ? colors.has(color) ? colors.get(color) : colors.get('black') : props.class ? '' : colors.get('black')}
- outline-none py-1 px-2 border rounded">
+ outline-none py-1 px-2 border rounded {light ? 'bg-xlgames-dark-400' : 'bg-white'}">

@@ -6,6 +6,7 @@
   colors.set("green", `${general} border-green-500 text-green-500 hover:bg-green-500`);
   colors.set("yellow", `${general} border-yellow-400 text-yellow-400 hover:bg-yellow-400`);
   colors.set("sky", `${general} border-sky-500 text-sky-500 hover:bg-sky-500`);
+  colors.set("white", `hover:text-black border-gray-300 text-gray-300 hover:bg-gray-300`);
 </script>
 
 <script>

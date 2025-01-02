@@ -23,8 +23,8 @@
       Filler
   );
   
-  let {network_statistics, language} = $props();
-  Chart.defaults.color = '#334155';
+  let {network_statistics, language, light} = $props();
+  Chart.defaults.color = light ? '#d1d5db' : '#334155';
   let canvas;
   let chart;
   let datasetsOptions = {
@@ -194,14 +194,14 @@
             datasets: [
               {
                 label: language.in,
-                backgroundColor: 'rgba(22,163,74,0.3)',
+                backgroundColor: light ? 'rgba(34,197,94,0.3)' : 'rgba(22,163,74,0.3)',
                 borderColor: '#16a34a',
                 data: incoming,
                 ...datasetsOptions,
               },
               {
                 label: language.out,
-                backgroundColor: 'rgba(2,132,199,0.3)',
+                backgroundColor: light ? 'rgba(59,130,246,0.3)' : 'rgba(2,132,199,0.3)',
                 borderColor: '#0284c7',
                 data: outgoing,
                 ...datasetsOptions

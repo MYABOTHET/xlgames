@@ -13,6 +13,9 @@ export default {
       },
       maxWidth: {
         425: '425px'
+      },
+      colors: {
+        'xlgames-dark-400': '#1b1f28'
       }
     },
   },

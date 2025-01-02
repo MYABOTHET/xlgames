@@ -111,6 +111,7 @@
     ]
   });
   let have_confirm = $state(false);
+  let props = $props();
   
   let current_os = $state('-');
   let current_arch = $state('-');
@@ -339,5 +340,5 @@
                    {on} {off} {reboot} {network_statistics} current_date={parse_date()} {date_next} {date_back}
                    {can_back} {can_next} {current_os} {current_arch} {current_version} {reinstall} {list_os}
                    {list_arch} {list_version} {select_os} {select_arch} {select_version} {have_confirm} {close}
-                   {open}
+                   {open} {...props}
 />

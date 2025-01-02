@@ -50,7 +50,7 @@ namespace xlgames_backend.Controllers
         }
 
         [HttpGet("ContactsPage/{locale}")]
-        public async Task<ActionResult<ContactsPage>> GetContactsPage(string locale)
+        public async Task<ActionResult> GetContactsPage(string locale)
         {
             var translate = await _context.ContactsPages
                 .Include(p => p.Contacts)

@@ -6,6 +6,7 @@
     value,
     items,
     method,
+    light,
     ...props
   } = $props();
   
@@ -32,9 +33,10 @@
   </Button>
   {#if !hidden}
     <div class="flex flex-col rounded border border-sky-500 text-sky-500 overflow-hidden top-full my-2 w-full
-   absolute bg-white z-10">
+   absolute {light ? 'bg-xlgames-dark-400' : 'bg-white'} z-10">
       {#each items as item}
-        <button onclick={() => {method(item); hidden = true}} class="hover:text-white hover:bg-sky-500 py-1 bg-white">{item}</button>
+        <button onclick={() => {method(item); hidden = true}} class="hover:text-white hover:bg-sky-500 py-1
+{light ? 'bg-xlgames-dark-400' : 'bg-white'}">{item}</button>
       {/each}
     </div>
   {/if}

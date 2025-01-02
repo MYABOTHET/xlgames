@@ -1,12 +1,12 @@
 <script>
   import Section from "../components/Section.svelte";
-  import Network from "./components/Network.svelte";
-  import System from "./components/System.svelte";
   import Button from "../components/Button.svelte";
   import Select from "../components/Select.svelte";
   import FreezeScreen from "../components/FreezeScreen.svelte";
   import Load from "./components/Load.svelte";
   import Confirm from "./components/Confirm.svelte";
+  import SystemSurvival from "./SurvivalHost/SystemSurvival.svelte";
+  import NetworkStatistics from "../components/NetworkStatistics.svelte";
   
   let {
     language,
@@ -26,14 +26,8 @@
     can_next,
     can_back,
     current_os,
-    current_arch,
-    current_version,
     list_os,
-    list_arch,
-    list_version,
     select_os,
-    select_arch,
-    select_version,
     reinstall,
     have_confirm,
     close,
@@ -44,16 +38,29 @@
 
 <FreezeScreen freeze={have_confirm || have_error || loading}>
   <div class="flex flex-col gap-5">
-    <System {language} system={info.system} {off} {on} {reboot}/>
+    <SystemSurvival {language} system={info} {off} {on} {reboot}/>
     <Section title={language.reinstall_os_title}>
       <div class="flex flex-col gap-2">
         <Select {light} method={select_os} value={current_os} items={list_os}/>
-        <Select {light} method={select_arch} value={current_arch} items={list_arch}/>
-        <Select {light} method={select_version} value={current_version} items={list_version}/>
         <Button onclick={open} class="w-full" color="sky">{language.reinstall}</Button>
       </div>
     </Section>
-    <Network {light} {network_statistics} {language} {can_next} {can_back} {date_next} {date_back} {current_date}/>
+    <Section title={language.network_statistics_title}>
+      <div class="flex flex-col gap-1">
+        <div class="flex justify-end items-center gap-2 max-sm:flex-col">
+          <div>{current_date}</div>
+          <Button onclick={date_back} color={light ? 'white' : 'black'}
+                  class="w-24 max-sm:w-full select-none {can_back ? '' : 'opacity-30 pointer-events-none'}"
+          >{language.back}</Button>
+          <Button onclick={date_next} color={light ? 'white' : 'black'}
+                  class="w-24 max-sm:w-full select-none {can_next ? '' : 'opacity-30 pointer-events-none'}"
+          >{language.next}</Button>
+        </div>
+        <div class="relative overflow-auto {light ? 'network' : ''}">
+          {@html network_statistics}
+        </div>
+      </div>
+    </Section>
   </div>
   {#snippet modal()}
   {#if have_confirm}
@@ -67,3 +74,11 @@
   {/if}
   {/snippet}
 </FreezeScreen>
+
+<style lang="postcss">
+  .network :global {
+    use {
+      fill: theme(colors.gray.300);
+    }
+  }
+</style>
