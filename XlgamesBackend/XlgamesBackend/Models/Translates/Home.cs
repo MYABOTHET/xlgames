@@ -11,5 +11,6 @@ namespace XlgamesBackend.Models.Translates
         public Block VPS { get; set; } = new();
         public Block VPN { get; set; } = new();
         public Block WebHosting { get; set; } = new();
+        public ICollection<Block> DataCenters { get; set; } = new List<Block>();
     }
 }

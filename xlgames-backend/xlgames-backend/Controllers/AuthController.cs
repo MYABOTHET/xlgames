@@ -27,7 +27,9 @@ namespace xlgames_backend.Controllers
         [HttpPost("Login")]
         public async Task<IActionResult> Login([FromBody] LoginDTO loginDTO)
         {
-            User? user = await _context.Users.Where(u => u.Name == loginDTO.Name).FirstOrDefaultAsync();
+            User? user = await _context.Users
+                .AsNoTracking()
+                .Where(u => u.Name == loginDTO.Name).FirstOrDefaultAsync();
             if (user is null)
             {
                 return BadRequest("Аккаунт не найден");

@@ -33,7 +33,7 @@ namespace xlgames_backend.Controllers
                 .FirstOrDefaultAsync();
             string whmcsname = language?.WHMCSName ?? "";
             whmcsname = whmcsname == "english" ? "" : whmcsname;
-            if (whmcsname != "")
+            if (whmcsname != "")    
             {
                 var news_translated = _mysqlcontext.NewsItems
                     .AsEnumerable()

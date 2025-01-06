@@ -1,5 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using XlgamesBackend.Dtoes.Language;
+using XlgamesBackend.Dtoes;
 using XlgamesBackend.Models.Translates;
 
 namespace XlgamesBackend.Models
@@ -14,7 +14,7 @@ namespace XlgamesBackend.Models
         public GameServers GameServers { get; set; } = new();
         public WebHosting WebHosting { get; set; } = new();
         public DataCenters DataCenters { get; set; } = new();
-        public News News { get; set; } = new();
+        public Translates.News News { get; set; } = new();
         public AboutUs AboutUs { get; set; } = new();
         public TermsService TermsService { get; set; } = new();
         public PrivacyPolicy PrivacyPolicy { get; set; } = new();

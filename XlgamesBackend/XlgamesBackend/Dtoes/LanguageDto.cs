@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace XlgamesBackend.Dtoes.Language
+namespace XlgamesBackend.Dtoes
 {
     // Данные языка
     public class LanguageDto

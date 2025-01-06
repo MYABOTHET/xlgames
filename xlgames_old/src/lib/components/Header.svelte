@@ -102,8 +102,8 @@
               <Icon1 active={menu_visible}><Menu class="h-[22px]"/></Icon1>
             {/snippet}
             {#snippet menu(close_menu)}
-            <div in:fly={{x: "-100vw", duration: 125, delay: 0, opacity: 1}}
-                 out:fly={{x: "-100vw", duration: 125, delay: 75, opacity: 1}}
+            <div in:fly={{x: "-100vw", duration: 100, delay: 0, opacity: 1}}
+                 out:fly={{x: "-100vw", duration: 100, delay: 0, opacity: 1}}
                  class="bg-xlgames-1 z-30 absolute top-0 left-0 mt-20 w-full overflow-y-auto
                   custom-scroll" style="height: calc(100vh - 80px);">
               <div class="flex flex-col gap-y-6 px-4 py-8 w-full">

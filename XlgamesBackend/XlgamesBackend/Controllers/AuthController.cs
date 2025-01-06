@@ -29,6 +29,7 @@ namespace XlgamesBackend.Controllers
         {
             // Получаем пользователя
             User? user = await _postgreSQLContext.Users
+                .AsNoTracking()
                 .Where(user => Equals(user.Name, userDto.Name))
                 .FirstOrDefaultAsync();
             // Если пользователь не найден, то возвращаем ошибку

@@ -17,13 +17,14 @@ namespace XlgamesBackend.PostgreSQL
         #endregion
 
         #region Конструктор
-        public PostgreSQLContext(DbContextOptions<PostgreSQLContext> options, IConfiguration configuration) : base(options)
+        public PostgreSQLContext(DbContextOptions<PostgreSQLContext> options, IConfiguration configuration)
+            : base(options)
         {
             Configuration = configuration;
             if (!s_initialized)
             {
-                Database.EnsureDeleted();
-                Database.EnsureCreated();
+                //Database.EnsureDeleted();
+                //Database.EnsureCreated();
             }
             s_initialized = true;
         }
