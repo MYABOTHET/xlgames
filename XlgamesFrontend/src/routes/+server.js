@@ -1,6 +1,7 @@
-import {api} from "$lib/server/secrets.js";
+import configuration from "$lib";
+import {json} from "@sveltejs/kit";
 
 export async function GET({ url, fetch }) {
-  const locale = url.searchParams.get('locale') ?? 'en-US';
-  return await fetch(`${api}/Languages/${locale}`);
+  const locale = url.searchParams.get("locale");
+  return json(await (await fetch(`${configuration.api}/Languages/${locale}`)).json());
 }

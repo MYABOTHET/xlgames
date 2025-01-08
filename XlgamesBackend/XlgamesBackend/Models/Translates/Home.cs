@@ -5,7 +5,7 @@ namespace XlgamesBackend.Models.Translates
     // Перевод для главной страницы
     public class Home : PrimaryBase
     {
-        public string DataCentersDescription { get; set; } = string.Empty;
+        public string DataCentersDescription { get; set; } = "...";
         public Block ServersWithoutGPU { get; set; } = new();
         public Block ServersWithGPU { get; set; } = new();
         public Block VPS { get; set; } = new();

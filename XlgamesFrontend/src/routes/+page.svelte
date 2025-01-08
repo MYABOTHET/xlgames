@@ -1,98 +1,88 @@
 <script>
-  import {getContext, tick} from "svelte";
-  import PrimarySection from "$lib/components/Sections/PrimarySection.svelte";
-  import PrimaryCard from "$lib/components/Cards/PrimaryCard.svelte";
-  import SecondaryCard from "$lib/components/Cards/SecondaryCard.svelte";
-  import PrimaryTitle from "$lib/components/Titles/PrimaryTitle.svelte";
-  import TernaryBlock from "$lib/components/Blocks/TernaryBlock.svelte";
-  import PrimaryBlock from "$lib/components/Blocks/PrimaryBlock.svelte";
-  import SecondarySection from "$lib/components/Sections/SecondarySection.svelte";
+  import {getContext} from "svelte";
+  import {createDateFormatter} from "$lib/tools.js";
+  import PrimarySection from "$lib/components/sections/PrimarySection.svelte";
+  import PrimaryCard from "$lib/components/cards/PrimaryCard.svelte";
+  import SecondaryCard from "$lib/components/cards/SecondaryCard.svelte";
+  import SecondarySection from "$lib/components/sections/SecondarySection.svelte";
   
   const {data} = $props();
-  const {project} = data;
+  const {projectData} = data;
+  const {name} = projectData;
   
-  const language = $derived(getContext('language')());
+  let language = $derived(getContext("language")());
+  let locale = $derived(getContext("locale")());
   let news = $state(data.news);
-  let locale = $state(language["Locale"]);
+  let dateFormatter = $derived(createDateFormatter(locale));
   
   $effect(async () => {
-    if (language["Locale"] !== locale) {
-      locale = language["Locale"];
-      const url = new URL(`${location.origin}/news`);
-      url.searchParams.set('require', String(false));
-      url.searchParams.set('max', String(3));
-      url.searchParams.set('locale', locale);
-      news = await (await fetch(url)).json();
+    if (language.Locale !== locale) {
+      news = await (await fetch(`/news?require=false&max=3&locale=${locale}`)).json();
     }
   });
-  
-  let formatter = $derived(new Intl.DateTimeFormat(language["Locale"], {
-    hour: "numeric",
-    minute: "numeric",
-    weekday: "long",
-    year: "numeric",
-    month: "long",
-    day: "numeric",
-  }));
 </script>
 
 <svelte:head>
-  <title>{language["Home"]["Title"]} - {project.name}</title>
+  <title>{language.Home.Title} - {name}</title>
 </svelte:head>
 
-<section class="flex flex-col gap-y-28">
-  <PrimarySection title={language["GameServers"]["Name"]} href="/game-servers">
-    <div class="primary-section">
-      <PrimaryCard fetchpriority="high" class="primary-card-size" href="/" src="minecraft.png" alt="Minecraft" name="Minecraft"
-                   title='{language["Shared"]["PriceFrom"]} {language["Shared"]["CurrencySign"]}12'/>
-      <PrimaryCard fetchpriority="high" class="primary-card-size" href="/" src="rust.png" alt="RUST" name="RUST"
-                   title='{language["Shared"]["PriceFrom"]} {language["Shared"]["CurrencySign"]}8'/>
-      <PrimaryCard fetchpriority="high" class="primary-card-size" href="/" src="Battlefield 2042.png" alt="Battlefield 2042"
-                   name="Battlefield 2042"
-                   title='{language["Shared"]["PriceFrom"]} {language["Shared"]["CurrencySign"]}34'/>
-      <PrimaryCard fetchpriority="high" class="primary-card-size" href="/" src="7 Days to Die.png" alt="7 Days to Die" name="7 Days to Die"
-                   title='{language["Shared"]["PriceFrom"]} {language["Shared"]["CurrencySign"]}15'/>
-    </div>
-  </PrimarySection>
+<div class="flex flex-col gap-y-28">
+  {#if true}
+    <PrimarySection title={language.GameServers.Name} href="/game-servers">
+      <nav class="primary-section">
+        <PrimaryCard name="Minecraft" description="{language.Shared.PriceFrom} {language.Shared.CurrencySign}24"
+                     src="minecraft.png" class="secondary-size" href="/"/>
+        <PrimaryCard name="RUST" description="{language.Shared.PriceFrom} {language.Shared.CurrencySign}32"
+                     src="rust.png" class="secondary-size" href="/"/>
+        <PrimaryCard name="Battlefield 2042" description="{language.Shared.PriceFrom} {language.Shared.CurrencySign}12"
+                     src="Battlefield 2042.png" class="secondary-size" href="/"/>
+        <PrimaryCard name="7 Days to Die" description="{language.Shared.PriceFrom} {language.Shared.CurrencySign}16"
+                     src="7 Days to Die.png" class="secondary-size" href="/"/>
+      </nav>
+    </PrimarySection>
+  {/if}
   
   <section class="flex flex-wrap primary-gap">
-    <SecondaryCard href="/servers" name={language["Home"]["ServersWithoutGPU"]["Name"]}
-                   description={language["Home"]["ServersWithoutGPU"]["Description"]}/>
-    <SecondaryCard href="/vps" name={language["Home"]["VPS"]["Name"]}
-                   description={language["Home"]["VPS"]["Description"]}/>
-    <SecondaryCard href="/web-hosting" name={language["Home"]["WebHosting"]["Name"]}
-                   description={language["Home"]["WebHosting"]["Description"]}/>
-    <SecondaryCard href="/vpn" name={language["Home"]["VPN"]["Name"]}
-                   description={language["Home"]["VPN"]["Description"]}/>
-    <SecondaryCard href="/servers-gpu" name={language["Home"]["ServersWithGPU"]["Name"]}
-                   description={language["Home"]["ServersWithGPU"]["Description"]}/>
+    <SecondaryCard name={language.Home.ServersWithoutGPU.Name} href="/servers"
+                   description={language.Home.ServersWithoutGPU.Description}
+                   class="quaternary-size"/>
+    <SecondaryCard name={language.Home.VPS.Name} href="/vps"
+                   description={language.Home.VPS.Description}
+                   class="quaternary-size"/>
+    <SecondaryCard name={language.Home.WebHosting.Name} href="/web-hosting"
+                   description={language.Home.WebHosting.Description}
+                   class="quaternary-size"/>
+    <SecondaryCard name={language.Home.VPN.Name} href="/vpn"
+                   description={language.Home.VPN.Description}
+                   class="quaternary-size"/>
+    <SecondaryCard name={language.Home.ServersWithGPU.Name} href="/servers-gpu"
+                   description={language.Home.ServersWithGPU.Description}
+                   class="quaternary-size"/>
   </section>
   
-  <section class="flex primary-gap-x flex-col xlgames-secondary:flex-row xlgames-secondary:gap-y-0 primary-gap-y">
-    <article class="w-full xlgames-secondary:w-1/2 flex flex-col gap-y-7">
-      <PrimaryTitle>{language["DataCenters"]["Name"]}</PrimaryTitle>
-      <p>{language["Home"]["DataCentersDescription"]}</p>
-      <TernaryBlock class="text-xlgames-primary hover:text-white w-fit">
-        <a href="/data-centers" class="px-6 py-2 block">{language["Shared"]["ReadMore"]}</a>
-      </TernaryBlock>
+  <section class="{language.Home.DataCenters.length ? 'grid grid-cols-2 primary-gap-x max-ternary:grid-cols-1 max-ternary:gap-y-10' : ''}">
+    <article class="flex flex-col primary-gap-y max-ternary:w-full">
+      <h1 class="primary-title">{language.DataCenters.Name}</h1>
+      <p>{language.Home.DataCentersDescription}</p>
+      <a class="quinary-block w-fit px-6 py-2.5"
+         href="/data-centers">{language.Shared.ReadMore}</a>
     </article>
-    <PrimaryBlock preset="secondary" class="w-full xlgames-secondary:w-1/2 px-7 py-[1.25rem] gap-y-5 flex flex-col">
-      {#each language["Home"]["DataCenters"] as dataCenter, index}
-        <SecondarySection name={dataCenter["Name"]} description={dataCenter["Description"]}/>
-        {#if language["Home"]["DataCenters"].length - 1 !== index}
-          <div class="primary-line"></div>
-        {/if}
-      {/each}
-    </PrimaryBlock>
+    {#if language.Home.DataCenters.length}
+      <SecondarySection items={language.Home.DataCenters} class="h-fit primary-block border-quaternary secondary-p
+max-ternary:w-full"/>
+    {/if}
   </section>
   
-  <PrimarySection title={language["News"]["Name"]} href="/news">
-    <div class="primary-section">
-      {#each news as newsItem}
-        <PrimaryCard class="secondary-card-size" href="/news/{newsItem['ParentId']}"
-                     src={newsItem["Src"]} alt={newsItem['Name']}
-                     name={newsItem["Name"]} title={formatter.format(new Date(newsItem["Date"]))}/>
-      {/each}
-    </div>
-  </PrimarySection>
-</section>
+  {#if news.length}
+    <PrimarySection title={language.News.Name} href="/news">
+      <nav class="primary-section">
+        {#each news as newsItem}
+          <PrimaryCard name={newsItem.Name} description={dateFormatter.format(new Date(newsItem.Date))}
+                       src={newsItem.Src} href="/news/{newsItem.ParentId}"
+                       class="quinary-size"/>
+        {/each}
+      </nav>
+    </PrimarySection>
+  {/if}
+</div>
+

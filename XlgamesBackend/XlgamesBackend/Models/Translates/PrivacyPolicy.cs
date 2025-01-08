@@ -5,6 +5,6 @@ namespace XlgamesBackend.Models.Translates
     // Перевод для страницы политики конфиденциальности
     public class PrivacyPolicy : TernaryBase
     {
-        public ICollection<Block> CollectionPrivacyPolicy { get; set; } = new List<Block>();
+        public ICollection<Block> PrivacyPolicyCollection { get; set; } = new List<Block>();
     }
 }

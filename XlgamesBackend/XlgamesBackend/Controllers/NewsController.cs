@@ -86,23 +86,14 @@ namespace XlgamesBackend.Controllers
             {
                 var document = new HtmlDocument();
                 document.LoadHtml(item.Description);
-                item.Src = document.DocumentNode.SelectSingleNode("//img").Attributes["src"].Value;
+                item.Src = document.DocumentNode.SelectSingleNode("//img")?.Attributes["src"]?.Value ?? string.Empty;
                 if (require)
                 {
-                    document.DocumentNode.SelectSingleNode("//p").Remove();
-                    document.DocumentNode.InnerHtml = document.DocumentNode.InnerHtml.Replace("\r\n", "<br>");
-                    document.DocumentNode.InnerHtml = document.DocumentNode.InnerHtml.Replace("\n", "<br>");
-                    if (document.DocumentNode.ChildNodes.Any())
-                        document.DocumentNode.ChildNodes.First().Remove();
-                    var ul = document.DocumentNode.SelectNodes("//ul");
-                    if (ul is not null)
-                        foreach (var itemUl in ul)
-                        {
-                            itemUl.ChildNodes.First().Remove();
-                            itemUl.ChildNodes.Last().Remove();
-                        }
+                    document.DocumentNode.SelectSingleNode("//p")?.Remove();
                     item.Description = document.DocumentNode.OuterHtml;
                 }
+                else
+                    item.Description = string.Empty;
             }
             // Навсякий случай повторно сортирую по дате
             news = news.OrderByDescending(news => news.Date).ToList();
@@ -165,20 +156,10 @@ namespace XlgamesBackend.Controllers
                 news.ParentId = news.Id;
             var document = new HtmlDocument();
             document.LoadHtml(news.Description);
-            news.Src = document.DocumentNode.SelectSingleNode("//img").Attributes["src"].Value;
+            news.Src = document.DocumentNode.SelectSingleNode("//img")?.Attributes["src"]?.Value ?? string.Empty;
             if (require)
             {
-                document.DocumentNode.SelectSingleNode("//p").Remove();
-                document.DocumentNode.InnerHtml = document.DocumentNode.InnerHtml.Replace("\r\n", "<br>");
-                document.DocumentNode.InnerHtml = document.DocumentNode.InnerHtml.Replace("\n", "<br>");
-                document.DocumentNode.ChildNodes.First().Remove();
-                var ul = document.DocumentNode.SelectNodes("//ul");
-                if (ul is not null)
-                    foreach (var item in ul)
-                    {
-                        item.ChildNodes.First().Remove();
-                        item.ChildNodes.Last().Remove();
-                    }
+                document.DocumentNode.SelectSingleNode("//p")?.Remove();
                 news.Description = document.DocumentNode.OuterHtml;
             }
             else

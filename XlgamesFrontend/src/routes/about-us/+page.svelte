@@ -1,28 +1,27 @@
 <script>
   import {getContext} from "svelte";
-  import PrimaryTitle from "$lib/components/Titles/PrimaryTitle.svelte";
-  import SecondaryScreen from "$lib/components/Screens/SecondaryScreen.svelte";
   
   const {data} = $props();
-  const {project} = data;
+  const {projectData} = data;
+  const {name} = projectData;
   
-  const language = $derived(getContext('language')());
+  let language = $derived(getContext("language")());
 </script>
 
 <svelte:head>
-  <title>{language["AboutUs"]["Title"]} - {project.name}</title>
+  <title>{language.AboutUs.Title} - {name}</title>
 </svelte:head>
 
-<div class="flex-center">
-  <SecondaryScreen class="secondary-gap-y flex flex-col">
-    <PrimaryTitle>{language["AboutUs"]["Name"]}</PrimaryTitle>
-    <img class="primary-img rounded-2xl min-h-[16.5rem] max-h-[16.5rem]" src={language["AboutUs"]["Src"]}
-         alt={language["AboutUs"]["Name"]}>
-    <div class="news-description whitespace-pre">
-      {@html language["AboutUs"]["Description"]}
-    </div>
-    <div class="news-description">{language["Shared"]["AnySuggestionsStart"]}
-      <a href="/contacts">{language["Shared"]["AnySuggestionsCenter"]}</a>
-      {language["Shared"]["AnySuggestionsEnd"]}</div>
-  </SecondaryScreen>
+<div class="max-w-screen-hexadecimal w-full mx-auto">
+  <article class="w-full flex flex-col ternary-gap-y">
+    <h1 class="primary-title">{language.AboutUs.Name}</h1>
+    <img src={language.AboutUs.Src} alt={language.AboutUs.Name} class="rounded-2xl ternary-size quaternary-height">
+    <p class="text-sm leading-[1.375rem] whitespace-pre-line">
+      {language.AboutUs.Description}
+      
+      {language.Shared.AnySuggestionsStart}
+      <a href="/contacts" class="primary-link">{language.Shared.AnySuggestionsCenter}</a>
+      {language.Shared.AnySuggestionsEnd}
+    </p>
+  </article>
 </div>

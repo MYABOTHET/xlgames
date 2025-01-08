@@ -1,49 +1,77 @@
 <script>
   import {getContext} from "svelte";
-  import PrimaryTitle from "$lib/components/Titles/PrimaryTitle.svelte";
-  import PrimaryCard from "$lib/components/Cards/PrimaryCard.svelte";
-  import SecondaryScreen from "$lib/components/Screens/SecondaryScreen.svelte";
-  import TernaryLink from "$lib/components/Links/TernaryLink.svelte";
+  import {createDateFormatter} from "$lib/tools.js";
+  import PrimaryArrow from "$lib/components/svg/PrimaryArrow.svelte";
   
   const {data} = $props();
-  const {project} = data;
+  const {projectData} = data;
+  const {name} = projectData;
   
-  const language = $derived(getContext('language')());
+  let language = $derived(getContext("language")());
+  let locale = $derived(getContext("locale")());
   let news = $state(data.news);
-  let locale = $state(language["Locale"]);
+  let dateFormatter = $derived(createDateFormatter(locale));
+  const newsParentId = news.ParentId;
   
   $effect(async () => {
-    if (language["Locale"] !== locale) {
-      locale = language["Locale"];
-      const url = new URL(`${location.origin}/news/${news["ParentId"]}`);
-      url.searchParams.set('locale', locale);
-      news = await (await fetch(url)).json();
+    if (language.Locale !== locale) {
+      news = await (await fetch(`${newsParentId}?locale=${locale}`)).json();
     }
   });
-  
-  let formatter = $derived(new Intl.DateTimeFormat(language["Locale"], {
-    hour: "numeric",
-    minute: "numeric",
-    weekday: "long",
-    year: "numeric",
-    month: "long",
-    day: "numeric",
-  }));
 </script>
 
 <svelte:head>
-  <title>{language["News"]["Title"]} - {news["Name"]} - {project.name}</title>
+  <title>{language.News.Title} - {news.Name} - {name}</title>
 </svelte:head>
 
-<div class="flex-center">
-  <SecondaryScreen class="secondary-gap-y flex flex-col">
-    <TernaryLink class="w-fit" href="/news">{news["Name"]}</TernaryLink>
-    <div class="flex flex-col gap-y-4 items-center">
-      <img class="primary-img rounded-2xl min-h-[16.5rem] max-h-[16.5rem]" src={news["Src"]} alt={news["Name"]}>
-      <h1 class="text-xs text-xlgames-quaternary font-normal">{formatter.format(new Date(news["Date"]))}</h1>
+<div class="max-w-screen-hexadecimal w-full mx-auto">
+  <article class="w-full flex flex-col ternary-gap-y">
+    <a href="/news" class="flex-center transition-colors gap-x-6 text-white fill-white
+hover:text-ternary hover:fill-ternary w-fit">
+      <h1 class="order-2 primary-title">{news.Name}</h1>
+      <PrimaryArrow class="ternary-width -rotate-90 order-1"/>
+    </a>
+    <div class="flex flex-col gap-y-6">
+      <img src={news.Src} alt={news.Name} class="rounded-2xl ternary-size quaternary-height">
+      <p class="text-quaternary text-xs mx-auto font-normal">{dateFormatter.format(new Date(news.Date))}</p>
     </div>
-    <div class="news-description whitespace-pre">
-      {@html news["Description"]}
-    </div>
-  </SecondaryScreen>
+    {#if news.Description}
+      <div class="description">
+        {@html news.Description}
+      </div>
+    {/if}
+  </article>
 </div>
+
+<style lang="postcss">
+  .description :global {
+    @apply text-sm leading-[1.375rem] flex flex-col gap-y-4 text-wrap;
+    
+    ul, ol {
+      @apply flex flex-col gap-y-4;
+    }
+    
+    ul {
+      @apply list-disc pl-3.5;
+    }
+    
+    ol {
+      @apply list-decimal pl-4;
+    }
+    
+    h1, h2, h3, h4, h5, h6, strong {
+      @apply font-medium-up;
+    }
+    
+    h1 { @apply text-2xl; }
+    h2 { @apply text-xl; }
+    h3 { @apply text-lg; }
+    h4 { @apply text-sm; }
+    h5 { @apply text-xs; }
+    h6 { @apply text-[0.625rem] leading-[0.75rem]; }
+    
+    a {
+      @apply primary-link;
+    }
+  }
+</style>

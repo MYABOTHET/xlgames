@@ -3,8 +3,8 @@
 namespace XlgamesBackend.Models.Translates
 {
     // Перевод для страницы игрового сервера
-    public class GameServer : TernaryBase
+    public class GameServer : PrimaryBase
     {
-        public string[] GameServerPoints { get; set; } = [];
+
     }
 }

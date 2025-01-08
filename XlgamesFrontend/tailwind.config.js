@@ -4,21 +4,31 @@ export default {
   theme: {
     extend: {
       colors: {
-        'xlgames-primary': '#15181F',
-        'xlgames-secondary': '#212329',
-        'xlgames-ternary': '#FFB400',
-        'xlgames-quaternary': '#62687A',
+        'primary': '#15181F',
+        'secondary': '#212329',
+        'ternary': '#FFB400',
+        'quaternary': '#62687A',
       },
       fontFamily: {
         'inter': 'Inter'
       },
-      screens: {
-        'xlgames-primary': '1152px',
-        'xlgames-secondary': '1080px',
-        'xlgames-ternary': '924px',
-        'xlgames-quaternary': '694px',
-        'xlgames-quinary': '580px',
+      fontWeight: {
+        'light-up': '350',
+        'base-up': '450',
+        'medium-up': '550',
+        'semibold-up': '650',
+      },
+      fontSize: {
+        'sm-up': '0.9375rem'
       }
+    },
+    screens: {
+      'primary': '72rem',
+      'secondary': '68.75rem',
+      'ternary': '56.25rem',
+      'quaternary': '42.5rem',
+      'quinary': '48rem',
+      'hexadecimal': '36.5rem'
     },
   },
   plugins: [],

@@ -1,12 +1,12 @@
-import {api} from "$lib/server/secrets.js";
+import configuration from "$lib";
 
 export async function load({cookies, parent, fetch, params}) {
-  let locale = cookies.get('saved-user-locale') ?? cookies.get('user-temporary-locale');
-  if (!locale) {
-    let data = await parent();
-    locale = data.language["Locale"];
+  let userLocale = cookies.get(configuration.savedUserLocale) ?? cookies.get(configuration.userTemporaryLocale);
+  if (!userLocale) {
+    const data = await parent();
+    userLocale = data.language.Locale;
   }
   return {
-    news: await (await fetch(`${api}/News/${locale}/${params["id"]}`)).json()
+    news: await (await fetch(`${configuration.api}/News/${userLocale}/${params["id"]}`)).json()
   }
 }

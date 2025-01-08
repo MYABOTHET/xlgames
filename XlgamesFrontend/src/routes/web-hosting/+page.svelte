@@ -1,15 +1,18 @@
 <script>
   import {getContext} from "svelte";
-  import PrimaryTitle from "$lib/components/Titles/PrimaryTitle.svelte";
   
   const {data} = $props();
-  const {project} = data;
+  const {projectData} = data;
+  const {name} = projectData;
   
-  const language = $derived(getContext('language')());
+  let language = $derived(getContext("language")());
 </script>
 
 <svelte:head>
-  <title>{language["WebHosting"]["Title"]} - {project.name}</title>
+  <title>{language.WebHosting.Title} - {name}</title>
 </svelte:head>
 
-<PrimaryTitle>{language["WebHosting"]["Name"]}</PrimaryTitle>
+<article class="flex flex-col gap-y-14">
+  <h1 class="primary-title">{language.WebHosting.Title}</h1>
+  <p class="whitespace-pre-line">{language.WebHosting.Description}</p>
+</article>

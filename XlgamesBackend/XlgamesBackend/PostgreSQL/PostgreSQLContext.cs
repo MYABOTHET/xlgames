@@ -23,8 +23,8 @@ namespace XlgamesBackend.PostgreSQL
             Configuration = configuration;
             if (!s_initialized)
             {
-                //Database.EnsureDeleted();
-                //Database.EnsureCreated();
+                Database.EnsureDeleted();
+                Database.EnsureCreated();
             }
             s_initialized = true;
         }

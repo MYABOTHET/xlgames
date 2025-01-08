@@ -2,63 +2,211 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer base {
+  html {
+    @apply overflow-y-scroll overflow-x-hidden;
+  }
+
+  html, body {
+    @apply h-dvh w-full;
+  }
+
+  body {
+    @apply bg-primary text-white font-inter font-light-up tracking-wide flex flex-col justify-between;
+  }
+}
+
 @layer components {
-  .flex-center {
-    @apply flex justify-center items-center;
-  }
-  .primary-padding {
-    @apply px-6 py-3;
-  }
-  .primary-x-padding {
-    @apply px-5;
-  }
-  .primary-gap-y {
-    @apply gap-y-8;
-  }
-  .secondary-gap-y {
-    @apply gap-y-12;
-  }
-  .primary-gap-x {
-    @apply gap-x-7;
-  }
-  .primary-gap {
-    @apply gap-7;
-  }
-  .primary-img {
-    @apply object-cover h-full w-full;
-  }
-  .primary-filter {
-    @apply saturate-[.65] brightness-[.70];
-  }
+  /* scrolls */
   .primary-scroll {
     scrollbar-width: none;
   }
+
   .primary-scroll::-webkit-scrollbar {
-    width: 0;
+    @apply w-0;
   }
+
   .secondary-scroll::-webkit-scrollbar {
-    height: 6px;
+    @apply h-1.5;
   }
+
   .secondary-scroll::-webkit-scrollbar-track {
-    background-color: transparent;
+    @apply bg-transparent;
   }
+
   .secondary-scroll::-webkit-scrollbar-thumb {
-    background-color: theme(colors.xlgames-secondary);
-    border-radius: 256px;
+    @apply bg-secondary rounded-full;
   }
-  .primary-text-shadow {
-    text-shadow: 1px 1px rgba(0, 0, 0, 0.9);
+
+  /* blocks */
+  .primary-block-default {
+    @apply border-2 overflow-hidden;
   }
-  .primary-line {
-    @apply border-b border-b-xlgames-secondary;
+
+  .primary-block {
+    @apply primary-block-default rounded-2xl;
   }
-  .primary-card-size {
-    @apply min-h-[16.5rem] min-w-[16.5rem] max-h-[16.5rem] max-w-[16.5rem];
+
+  .secondary-block {
+    @apply primary-block-default rounded-lg;
   }
-  .secondary-card-size {
-    @apply min-h-[16.5rem] min-w-[22.5rem] max-h-[16.5rem] max-w-[22.5rem];
+
+  .ternary-block {
+    @apply primary-block border-transparent hover:border-ternary transition-[border-color];
   }
+
+  .quaternary-block {
+    @apply primary-block-default rounded-full border-ternary bg-ternary hover:bg-transparent transition-colors;
+  }
+
+  .quinary-block {
+    @apply quaternary-block text-primary hover:text-white;
+  }
+
+  /* titles */
+  .primary-title {
+    @apply text-3xl font-medium;
+  }
+
   .primary-section {
-    @apply flex gap-x-[26px] justify-between overflow-x-scroll secondary-scroll pb-1;
+    @apply flex primary-gap overflow-x-scroll secondary-scroll pb-1;
   }
+
+  .primary-line {
+    @apply border-b border-b-secondary;
+  }
+
+  .primary-link {
+    @apply transition-colors text-ternary hover:text-quaternary;
+  }
+}
+
+@layer utilities {
+  .flex-center {
+    @apply flex justify-center items-center;
+  }
+
+  .primary-bg {
+    @apply hover:bg-secondary transition-colors;
+  }
+
+  .primary-triangle-start {
+    @apply mr-auto ml-4;
+  }
+
+  .primary-triangle-center {
+    @apply mx-auto;
+  }
+
+  .primary-triangle-end {
+    @apply ml-auto mr-4;
+  }
+
+  .primary-top {
+    @apply top-16;
+  }
+
+  /* gap */
+  .primary-gap-y {
+    @apply gap-y-8;
+  }
+
+  .primary-gap-x {
+    @apply gap-x-8;
+  }
+
+  .secondary-gap-y {
+    @apply gap-y-7;
+  }
+
+  .ternary-gap-y {
+    @apply gap-y-14;
+  }
+
+  .primary-gap {
+    @apply gap-8;
+  }
+
+  /* paddings */
+  .primary-p {
+    @apply px-6 py-3;
+  }
+
+  .primary-px {
+    @apply px-5;
+  }
+
+  .secondary-p {
+    @apply py-5 px-7;
+  }
+
+  .ternary-p {
+    @apply py-7 px-8;
+  }
+
+  /* sizes */
+  .primary-width {
+    @apply min-w-8 max-w-8;
+  }
+
+  .primary-height {
+    @apply min-h-8 max-h-8;
+  }
+
+  .secondary-width {
+    @apply min-w-2 max-w-2;
+  }
+
+  .secondary-height {
+    @apply min-h-6 max-h-6;
+  }
+
+  .ternary-width {
+    @apply min-w-3 max-w-3;
+  }
+
+  .ternary-height {
+    @apply min-h-5 max-h-5;
+  }
+
+  .quaternary-height {
+    @apply min-h-[16.5rem] max-h-[16.5rem];
+  }
+
+  .quaternary-width {
+    @apply min-w-[16.5rem] max-w-[16.5rem];
+  }
+
+  .quinary-width {
+    @apply min-w-[22.65rem] max-w-[22.65rem];
+  }
+
+  .primary-size {
+    @apply primary-width primary-height;
+  }
+
+  .secondary-size {
+    @apply quaternary-width quaternary-height;
+  }
+
+  .ternary-size {
+    @apply object-cover size-full;
+  }
+
+  .quaternary-size {
+    @apply flex-[1_1_25%] max-ternary:flex-[1_1_35%] max-quaternary:flex-[1_1_100%];
+  }
+
+  .quinary-size {
+    @apply quinary-width quaternary-height;
+  }
+
+  .primary-filter {
+    @apply saturate-[.60] brightness-[.65];
+  }
+
+  .primary-text-shadow {
+    text-shadow: 1px 1px rgba(0, 0, 0, 1);
+  }
+
 }

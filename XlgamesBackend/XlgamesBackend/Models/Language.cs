@@ -24,6 +24,7 @@ namespace XlgamesBackend.Models
         public ServersWithGPU ServersWithGPU { get; set; } = new();
         public ServersWithoutGPU ServersWithoutGPU { get; set; } = new();
         public Contacts Contacts { get; set; } = new();
+        public CookiePolicy CookiePolicy { get; set; } = new();
 
         public Language() { }
 
@@ -49,6 +50,7 @@ namespace XlgamesBackend.Models
             ServersWithGPU = languageDto.ServersWithGPU;
             ServersWithoutGPU = languageDto.ServersWithoutGPU;
             Contacts = languageDto.Contacts;
+            CookiePolicy = languageDto.CookiePolicy;
         }
 
         public void Initialize(LanguageDto languageDto)
