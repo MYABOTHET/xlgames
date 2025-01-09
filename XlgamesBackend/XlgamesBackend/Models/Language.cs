@@ -59,6 +59,7 @@ namespace XlgamesBackend.Models
             WHMCSName = languageDto.WHMCSName;
             OriginalName = languageDto.OriginalName;
             Locale = languageDto.Locale;
+            Lang = languageDto.Lang;
         }
     }
 }

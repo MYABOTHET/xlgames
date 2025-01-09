@@ -1,11 +1,9 @@
-﻿using System.Runtime.ConstrainedExecution;
-using Microsoft.EntityFrameworkCore;
+﻿using XlgamesBackend.Models.TranslateBases;
 
 namespace XlgamesBackend.Models.Translates
 {
     // Общий перевод для всех страниц
-    [Owned]
-    public class Shared
+    public class Shared : Base
     {
         // Ссылки
         public string GameServers { get; set; } = "...";
@@ -24,11 +22,19 @@ namespace XlgamesBackend.Models.Translates
         public string CookiePolicy { get; set; } = "...";
         public string PersonalAccount { get; set; } = "...";
         public string GameHosting { get; set; } = "...";
-        // Остальное
+
+        // Мессенджеры
+        public bool Discord { get; set; } = false;
+        public bool Facebook { get; set; } = false;
+        public bool Instagram { get; set; } = false;
+        public bool Snapchat { get; set; } = false;
+        public bool Telegram { get; set; } = false;
+        public bool Twitter { get; set; } = false;
+        public bool Vk { get; set; } = false;
+        public bool Whatsapp { get; set; } = false;
+
+        // Для продуктов
         public string Month { get; set; } = "...";
-        public string Error { get; set; } = "...";
-        public string More { get; set; } = "...";
-        public string ReadMore { get; set; } = "...";
         public string PriceFrom { get; set; } = "...";
         public string CurrencySign { get; set; } = "...";
         public bool CurrencySignPosition { get; set; } = true; // true - $1, false - 1$
@@ -50,12 +56,18 @@ namespace XlgamesBackend.Models.Translates
         public string Cores { get; set; } = "...";
         public string Slots { get; set; } = "...";
         public string Control { get; set; } = "...";
+
+        // Предложения
         public string AnySuggestionsStart { get; set; } = "...";
         public string AnySuggestionsCenter { get; set; } = "...";
         public string AnySuggestionsEnd { get; set; } = "...";
         public string AnyQuestionsStart { get; set; } = "...";
         public string AnyQuestionsCenter { get; set; } = "...";
         public string AnyQuestionsEnd { get; set; } = "...";
-        public Block CookiePolicyBanner { get; set; } = new();
+
+        // Остальное
+        public string Error { get; set; } = "...";
+        public string More { get; set; } = "...";
+        public string ReadMore { get; set; } = "...";
     }
 }

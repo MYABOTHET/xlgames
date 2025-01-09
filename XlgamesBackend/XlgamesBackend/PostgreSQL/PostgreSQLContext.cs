@@ -9,6 +9,7 @@ namespace XlgamesBackend.PostgreSQL
         #region Таблицы
         public DbSet<User> Users { get; set; } = default!;
         public DbSet<Language> Languages { get; set; } = default!;
+        public DbSet<ProjectData> ProjectDatas { get; set; } = default!;
         #endregion
 
         #region Переменные
@@ -23,8 +24,8 @@ namespace XlgamesBackend.PostgreSQL
             Configuration = configuration;
             if (!s_initialized)
             {
-                Database.EnsureDeleted();
-                Database.EnsureCreated();
+                //Database.EnsureDeleted();
+                //Database.EnsureCreated();
             }
             s_initialized = true;
         }
@@ -41,6 +42,12 @@ namespace XlgamesBackend.PostgreSQL
                 Id = 1,
                 Name = Configuration["User"]!,
                 Password = BC.HashPassword(Configuration["Password"]!)
+            });
+
+            // Создаём данные проекта по умолчанию
+            builder.Entity<ProjectData>().HasData(new ProjectData
+            {
+                Id = 1
             });
         }
         #endregion

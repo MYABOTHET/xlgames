@@ -1,9 +1,6 @@
-﻿using Microsoft.EntityFrameworkCore;
-
-namespace XlgamesBackend.Models.TranslateBases
+﻿namespace XlgamesBackend.Models.TranslateBases
 {
-    [Owned]
-    public class PrimaryBase
+    public class PrimaryBase : Base
     {
         public string Title { get; set; } = "...";
     }

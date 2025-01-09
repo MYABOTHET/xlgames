@@ -13,5 +13,7 @@ namespace XlgamesBackend.Dtoes
         public string OriginalName { get; set; } = "..."; // Название языка на этом же языке: English
         [Required(ErrorMessage = "Укажите локаль языка")]
         public string Locale { get; set; } = "..."; // Локаль языка: en-US
+        [Required(ErrorMessage = "Укажите локаль HTML")]
+        public string Lang { get; set; } = "..."; // Локаль HTML: en
     }
 }

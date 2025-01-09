@@ -1,5 +1,4 @@
-﻿using Microsoft.EntityFrameworkCore;
-using XlgamesBackend.Models.TranslateBases;
+﻿using XlgamesBackend.Models.TranslateBases;
 
 namespace XlgamesBackend.Models.Translates
 {
