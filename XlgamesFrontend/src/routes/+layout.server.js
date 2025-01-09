@@ -65,6 +65,10 @@ export async function load({request, fetch, cookies}) {
         name: "PrivacyPolicy",
         href: "/privacy-policy"
       },
+      {
+        name: "CookiePolicy",
+        href: "/cookie-policy"
+      },
     ],
     other: [
       {
@@ -84,11 +88,6 @@ export async function load({request, fetch, cookies}) {
         href: "/contacts"
       },
     ]
-  };
-  const projectData = {
-    logo: "XL",
-    name: "XLGAMES.GG",
-    year: 2024
   };
   const userAgent = request.headers.get("user-agent");
   const detector = new DeviceDetector();
@@ -113,8 +112,8 @@ export async function load({request, fetch, cookies}) {
     headerHeight,
     author,
     navigationLinks,
-    projectData,
     userOnMobile,
+    projectData: await (await fetch(`${configuration.api}/ProjectDatas`)).json(),
     languages: languages ? languages : await (await fetch(`${configuration.api}/Languages`)).json(),
     language: await (await fetch(`${configuration.api}/Languages/${userLocale}`)).json(),
   }

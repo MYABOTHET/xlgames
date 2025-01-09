@@ -31,13 +31,13 @@
     <PrimarySection title={language.GameServers.Name} href="/game-servers">
       <nav class="primary-section">
         <PrimaryCard name="Minecraft" description="{language.Shared.PriceFrom} {language.Shared.CurrencySign}24"
-                     src="minecraft.png" class="secondary-size" href="/"/>
+                     src="minecraft.webp" class="secondary-size" href="/"/>
         <PrimaryCard name="RUST" description="{language.Shared.PriceFrom} {language.Shared.CurrencySign}32"
-                     src="rust.png" class="secondary-size" href="/"/>
+                     src="rust.webp" class="secondary-size" href="/"/>
         <PrimaryCard name="Battlefield 2042" description="{language.Shared.PriceFrom} {language.Shared.CurrencySign}12"
-                     src="Battlefield 2042.png" class="secondary-size" href="/"/>
+                     src="battlefield-2042.webp" class="secondary-size" href="/"/>
         <PrimaryCard name="7 Days to Die" description="{language.Shared.PriceFrom} {language.Shared.CurrencySign}16"
-                     src="7 Days to Die.png" class="secondary-size" href="/"/>
+                     src="7-days-to-die.webp" class="secondary-size" href="/"/>
       </nav>
     </PrimarySection>
   {/if}

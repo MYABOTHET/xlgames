@@ -24,6 +24,7 @@
     setUserLocale(value.Locale);
     locale = value.Locale;
     language = await (await fetch(`/?locale=${value.Locale}`)).json();
+    document.documentElement.lang = language.Lang;
   }
   
   function setUserLocale(locale) {
