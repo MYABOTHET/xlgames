@@ -14,7 +14,7 @@ namespace XlgamesBackend.PostgreSQL
 
         #region Переменные
         private readonly IConfiguration Configuration;
-        private static bool s_initialized;
+        // private static bool s_initialized;
         #endregion
 
         #region Конструктор
@@ -22,12 +22,12 @@ namespace XlgamesBackend.PostgreSQL
             : base(options)
         {
             Configuration = configuration;
-            if (!s_initialized)
-            {
-                //Database.EnsureDeleted();
-                //Database.EnsureCreated();
-            }
-            s_initialized = true;
+            // if (!s_initialized)
+            // {
+            //     Database.EnsureDeleted();
+            //     Database.EnsureCreated();
+            // }
+            // s_initialized = true;
         }
         #endregion
 

@@ -28,7 +28,8 @@ export default {
       'ternary': '56.25rem',
       'quaternary': '42.5rem',
       'quinary': '48rem',
-      'hexadecimal': '36.5rem'
+      'hexadecimal': '36.5rem',
+      'septenary': '31.25rem'
     },
   },
   plugins: [],

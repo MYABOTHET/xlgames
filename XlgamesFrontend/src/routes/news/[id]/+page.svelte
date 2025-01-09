@@ -4,8 +4,6 @@
   import PrimaryArrow from "$lib/components/svg/PrimaryArrow.svelte";
   
   const {data} = $props();
-  const {projectData} = data;
-  const {name} = projectData;
   
   let language = $derived(getContext("language")());
   let locale = $derived(getContext("locale")());
@@ -21,7 +19,7 @@
 </script>
 
 <svelte:head>
-  <title>{language.News.Title} - {news.Name} - {name}</title>
+  <title>{language.News.Title} - {news.Name} - {data.projectData.Name}</title>
 </svelte:head>
 
 <div class="max-w-screen-hexadecimal w-full mx-auto">
@@ -70,8 +68,6 @@ hover:text-ternary hover:fill-ternary w-fit">
     h5 { @apply text-xs; }
     h6 { @apply text-[0.625rem] leading-[0.75rem]; }
     
-    a {
-      @apply primary-link;
-    }
+    a { @apply transition-colors text-ternary hover:text-quaternary; }
   }
 </style>

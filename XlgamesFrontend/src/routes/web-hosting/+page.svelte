@@ -2,17 +2,16 @@
   import {getContext} from "svelte";
   
   const {data} = $props();
-  const {projectData} = data;
-  const {name} = projectData;
   
   let language = $derived(getContext("language")());
 </script>
 
 <svelte:head>
-  <title>{language.WebHosting.Title} - {name}</title>
+  <title>{language.WebHosting.Title} - {data.projectData.Name}</title>
+  {@html language.WebHosting.Head}
 </svelte:head>
 
-<article class="flex flex-col gap-y-14">
+<article class="flex flex-col ternary-gap-y">
   <h1 class="primary-title">{language.WebHosting.Title}</h1>
-  <p class="whitespace-pre-line">{language.WebHosting.Description}</p>
+  <p>{language.WebHosting.Description}</p>
 </article>

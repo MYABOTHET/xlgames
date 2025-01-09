@@ -4,8 +4,6 @@
   import PrimaryCard from "$lib/components/cards/PrimaryCard.svelte";
   
   const {data} = $props();
-  const {projectData} = data;
-  const {name} = projectData;
   
   let language = $derived(getContext("language")());
   let locale = $derived(getContext("locale")());
@@ -20,10 +18,11 @@
 </script>
 
 <svelte:head>
-  <title>{language.News.Title} - {name}</title>
+  <title>{language.News.Title} - {data.projectData.Name}</title>
+  {@html language.News.Head}
 </svelte:head>
 
-<article class="flex flex-col gap-y-14">
+<article class="flex flex-col ternary-gap-y">
   <h1 class="primary-title">{language.News.Title}</h1>
   {#if news.length}
     <nav class="grid grid-cols-2 max-quinary:grid-cols-1 primary-gap">

@@ -1,7 +1,18 @@
 <script>
   import { page } from '$app/state';
+  import {getContext} from "svelte";
+  
+  const {data} = $props();
+  
+  let language = $derived(getContext("language")());
 </script>
 
+<svelte:head>
+  <title>{language.Shared.Error} - {data.projectData.Name}</title>
+</svelte:head>
+
 <article class="flex-center h-full">
-  <h1 class="primary-title">{page.status}: {page.error.message}</h1>
+  <h1 class="text-quaternary text-4xl font-medium">
+    {language.Shared.Error} | {page.status}
+  </h1>
 </article>

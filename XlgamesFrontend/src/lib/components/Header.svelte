@@ -14,7 +14,7 @@
   import {quartInOut} from "svelte/easing";
   
   const {headerHeight, navigationLinks, projectData, languages, userOnMobile, setLanguage, ...props} = $props();
-  const {name, logo} = projectData;
+  const {Name, Logo} = projectData;
   
   let language = $derived(getContext("language")());
   let menuIsVisible = $state(false);
@@ -41,7 +41,7 @@
 {#snippet project()}
 <nav class="flex-1 flex items-center">
   <a href="/" class="inline-block">
-    <ProjectData {name} {logo}/>
+    <ProjectData name={Name} logo={Logo}/>
   </a>
 </nav>
 {/snippet}

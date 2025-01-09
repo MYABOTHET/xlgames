@@ -7,8 +7,6 @@
   import SecondarySection from "$lib/components/sections/SecondarySection.svelte";
   
   const {data} = $props();
-  const {projectData} = data;
-  const {name} = projectData;
   
   let language = $derived(getContext("language")());
   let locale = $derived(getContext("locale")());
@@ -23,20 +21,25 @@
 </script>
 
 <svelte:head>
-  <title>{language.Home.Title} - {name}</title>
+  <title>{language.Home.Title} - {data.projectData.Name}</title>
+  {@html language.Home.Head}
 </svelte:head>
 
 <div class="flex flex-col gap-y-28">
   {#if true}
     <PrimarySection title={language.GameServers.Name} href="/game-servers">
       <nav class="primary-section">
-        <PrimaryCard name="Minecraft" description="{language.Shared.PriceFrom} {language.Shared.CurrencySign}24"
+        <PrimaryCard name="Minecraft" description="{language.Shared.PriceFrom}
+{language.Shared.CurrencySignPosition ? language.Shared.CurrencySign + '1200' : '1200' + language.Shared.CurrencySign}"
                      src="minecraft.webp" class="secondary-size" href="/"/>
-        <PrimaryCard name="RUST" description="{language.Shared.PriceFrom} {language.Shared.CurrencySign}32"
+        <PrimaryCard name="RUST" description="{language.Shared.PriceFrom}
+{language.Shared.CurrencySignPosition ? language.Shared.CurrencySign + '3600' : '3600' + language.Shared.CurrencySign}"
                      src="rust.webp" class="secondary-size" href="/"/>
-        <PrimaryCard name="Battlefield 2042" description="{language.Shared.PriceFrom} {language.Shared.CurrencySign}12"
+        <PrimaryCard name="Battlefield 2042" description="{language.Shared.PriceFrom}
+{language.Shared.CurrencySignPosition ? language.Shared.CurrencySign + '2400' : '2400' + language.Shared.CurrencySign}"
                      src="battlefield-2042.webp" class="secondary-size" href="/"/>
-        <PrimaryCard name="7 Days to Die" description="{language.Shared.PriceFrom} {language.Shared.CurrencySign}16"
+        <PrimaryCard name="7 Days to Die" description="{language.Shared.PriceFrom}
+{language.Shared.CurrencySignPosition ? language.Shared.CurrencySign + '840' : '840' + language.Shared.CurrencySign}"
                      src="7-days-to-die.webp" class="secondary-size" href="/"/>
       </nav>
     </PrimarySection>
@@ -61,15 +64,14 @@
   </section>
   
   <section class="{language.Home.DataCenters.length ? 'grid grid-cols-2 primary-gap-x max-ternary:grid-cols-1 max-ternary:gap-y-10' : ''}">
-    <article class="flex flex-col primary-gap-y max-ternary:w-full">
+    <article class="flex flex-col primary-gap-y">
       <h1 class="primary-title">{language.DataCenters.Name}</h1>
       <p>{language.Home.DataCentersDescription}</p>
       <a class="quinary-block w-fit px-6 py-2.5"
          href="/data-centers">{language.Shared.ReadMore}</a>
     </article>
     {#if language.Home.DataCenters.length}
-      <SecondarySection items={language.Home.DataCenters} class="h-fit primary-block border-quaternary secondary-p
-max-ternary:w-full"/>
+      <SecondarySection items={language.Home.DataCenters} class="h-fit primary-block border-quaternary secondary-p"/>
     {/if}
   </section>
   

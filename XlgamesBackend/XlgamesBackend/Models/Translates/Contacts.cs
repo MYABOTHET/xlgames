@@ -5,6 +5,7 @@ namespace XlgamesBackend.Models.Translates
     // Перевод для страницы контактов
     public class Contacts : TernaryBase
     {
+        public string FullName { get; set; } = "...";
         public string PhoneNumber { get; set; } = "...";
         public string Email { get; set; } = "...";
         public string OGRNIP { get; set; } = "...";

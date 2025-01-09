@@ -11,7 +11,7 @@
   const {headerHeight, author, navigationLinks, projectData, languages} = data;
   
   let language = $state(data.language);
-  let locale = $state(language.Locale);
+  let locale = $state(data.language.Locale);
   let userOnMobile = $state(data.userOnMobile);
   let agreeCookie = $state(true);
   
@@ -21,9 +21,10 @@
   async function setLanguage(value) {
     const userLocale = getCookie()[configuration.savedUserLocale];
     if (value.Locale === userLocale) return;
-    setUserLocale(value.Locale);
     locale = value.Locale;
+    setUserLocale(value.Locale);
     language = await (await fetch(`/?locale=${value.Locale}`)).json();
+    document.cookie = `${configuration.savedUserLang}=${language.Lang};max-age=${maxAgeCookie};path=/`;
     document.documentElement.lang = language.Lang;
   }
   
@@ -80,6 +81,7 @@
       href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
       rel="stylesheet">
   <meta name="author" content={author}>
+  {@html language.Shared.Head}
 </svelte:head>
 
 <Header {headerHeight} {navigationLinks} {projectData} {languages} {userOnMobile} {setLanguage}/>
@@ -91,14 +93,14 @@
 <Footer {navigationLinks} {projectData}/>
 
 {#if !agreeCookie}
-  <div transition:fly={{x: "-100vw", duration: 425, delay: 0, opacity: 1, easing: quartInOut}}
+  <div transition:fly={{x: "-100vw", duration: 375, delay: 0, opacity: 1, easing: quartInOut}}
        class="fixed w-full h-dvh bottom-0 pointer-events-none flex items-end primary-px py-5 z-[5]">
     <article class="pointer-events-auto bg-primary primary-block-default border-ternary py-5 px-6 flex flex-col
   gap-y-4 w-96 text-sm leading-[1.375rem] max-hexadecimal:w-full">
-      <p>Мы используем файлы «Cookie» для улучшения вашего пользовательского опыта. Продолжая пользоваться нашим сайтом вы
-        автоматически соглашаетесь на использование нами файлов «Cookie».
-        <a href="/cookie-policy" class="primary-link">{language.Shared.ReadMore}...</a></p>
-      <button onclick={closeCookieMenu} class="quinary-block rounded-none py-2 px-3">Принять и закрыть</button>
+      <p>{language.CookiePolicy.CookiePolicyBanner.Description} <a href="/cookie-policy" class="primary-link">{language.Shared.ReadMore}...</a></p>
+      <button onclick={closeCookieMenu} class="quinary-block rounded-none py-2 px-3">
+        {language.CookiePolicy.CookiePolicyBanner.Name}
+      </button>
     </article>
   </div>
 {/if}
