@@ -4,11 +4,12 @@
     <TargetFramework>net9.0</TargetFramework>
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
+    <UserSecretsId>c98d4b3c-e95f-4e76-ad40-0a593d0fb4ac</UserSecretsId>
   </PropertyGroup>
 
   <ItemGroup>
     <PackageReference Include="BCrypt.Net-Next" Version="4.0.3" />
-    <PackageReference Include="HtmlAgilityPack" Version="1.11.71" />
+    <PackageReference Include="HtmlAgilityPack" Version="1.11.72" />
     <PackageReference Include="Microsoft.AspNetCore.Mvc.NewtonsoftJson" Version="9.0.0" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="9.0.0">
       <PrivateAssets>all</PrivateAssets>

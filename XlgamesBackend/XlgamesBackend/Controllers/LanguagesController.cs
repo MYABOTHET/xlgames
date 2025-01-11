@@ -31,6 +31,7 @@ namespace XlgamesBackend.Controllers
                 .AsNoTracking()
                 .Select(language => new LanguageDto()
                 {
+                    Id = language.Id,
                     Name = language.Name,
                     Locale = language.Locale,
                     OriginalName = language.OriginalName,
@@ -157,6 +158,12 @@ namespace XlgamesBackend.Controllers
             Language language = new(languageDto);
             // Сохраняем язык в базе данных
             await _postgreSQLContext.Languages.AddAsync(language);
+
+            // Добавляем в каждый игровой сервер добавленный перевод
+            var gameServerItems = await _postgreSQLContext.GameServerItems.ToListAsync();
+            foreach (var gameServerItem in gameServerItems)
+                gameServerItem.GameServerDatas.Add(new() { Language = language });
+
             await _postgreSQLContext.SaveChangesAsync();
             // Возвращаем ответ
             return language;
@@ -177,6 +184,11 @@ namespace XlgamesBackend.Controllers
             if (!exists)
             {
                 ModelState.AddModelError("Language", "Язык не найден");
+                return ValidationProblem();
+            }
+            if (id.Equals(1))
+            {
+                ModelState.AddModelError("Language", "Вы не можете удалить язык с ID '1'");
                 return ValidationProblem();
             }
             // Удаляем язык из базы данных

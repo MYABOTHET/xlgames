@@ -1,4 +1,7 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using System.Reflection.Emit;
+using System.Reflection.Metadata;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Diagnostics;
 using XlgamesBackend.Models;
 
 namespace XlgamesBackend.PostgreSQL
@@ -10,6 +13,8 @@ namespace XlgamesBackend.PostgreSQL
         public DbSet<User> Users { get; set; } = default!;
         public DbSet<Language> Languages { get; set; } = default!;
         public DbSet<ProjectData> ProjectDatas { get; set; } = default!;
+        public DbSet<GameServerItem> GameServerItems { get; set; } = default!;
+        public DbSet<GameServerData> GameServerDatas { get; set; } = default!;
         #endregion
 
         #region Переменные
@@ -49,7 +54,23 @@ namespace XlgamesBackend.PostgreSQL
             {
                 Id = 1
             });
+
+            builder.Entity<GameServerItem>()
+                .HasMany(gameServerItem => gameServerItem.GameServerDatas)
+                .WithOne(gameServerData => gameServerData.GameServerItem)
+                .HasForeignKey("GameServerItemId")
+                .IsRequired();
+            builder.Entity<Language>()
+                .HasMany(language => language.GameServerDatas)
+                .WithOne(gameServerData => gameServerData.Language)
+                .HasForeignKey(gameServerData => gameServerData.LanguageId)
+                .IsRequired();
         }
+        #endregion
+
+        #region OnConfiguring
+        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        => optionsBuilder.ConfigureWarnings(warnings => warnings.Ignore(RelationalEventId.PendingModelChangesWarning));
         #endregion
     }
 }

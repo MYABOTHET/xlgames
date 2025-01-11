@@ -6,6 +6,11 @@ export async function load({request, fetch, cookies}) {
   const mobileWidth = 64;
   const headerHeight = 5;
   const author = "Лёвин Валерий Дмитриевич";
+  const userAgent = request.headers.get("user-agent");
+  const detector = new DeviceDetector();
+  const userData = detector.detect(userAgent);
+  const userOnMobile = DeviceHelper.isMobile(userData);
+  const projectData = await (await fetch(`${configuration.api}/ProjectDatas`)).json()
   const navigationLinks = {
     header: {
       menu: {
@@ -24,9 +29,9 @@ export async function load({request, fetch, cookies}) {
         position: 5, name: "VPN", href: "/vpn"
       }]
     }, menu: [{
-      name: "PersonalAccount", href: "https://xlgames.gg/store/login"
+      name: "PersonalAccount", href: projectData.PersonalAccount
     }, {
-      name: "GameHosting", href: "https://clients.xlgames.pro/main/index?last=main/index"
+      name: "GameHosting", href: projectData.GameHosting
     },], footer: [{
       name: "TermsService", href: "/terms-of-service"
     }, {
@@ -43,17 +48,13 @@ export async function load({request, fetch, cookies}) {
       name: "Contacts", href: "/contacts"
     },]
   };
-  const userAgent = request.headers.get("user-agent");
-  const detector = new DeviceDetector();
-  const userData = detector.detect(userAgent);
-  const userOnMobile = DeviceHelper.isMobile(userData);
   return {
     mobileWidth,
     headerHeight,
     author,
     navigationLinks,
     userOnMobile,
-    projectData: await (await fetch(`${configuration.api}/ProjectDatas`)).json(),
+    projectData,
     languages: request.myLanguages ? request.myLanguages : await (await fetch(`${configuration.api}/Languages`)).json(),
     language: await (await fetch(`${configuration.api}/Languages/${cookies.get(configuration.savedUserLocale)}`)).json(),
   }

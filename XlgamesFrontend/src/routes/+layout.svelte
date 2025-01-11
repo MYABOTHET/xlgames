@@ -24,12 +24,16 @@
     locale = value.Locale;
     setUserLocale(value.Locale);
     language = await (await fetch(`/?locale=${value.Locale}`)).json();
-    document.cookie = `${configuration.savedUserLang}=${language.Lang};max-age=${maxAgeCookie};path=/`;
-    document.documentElement.lang = language.Lang;
+    setUserLang(language.Lang);
   }
   
   function setUserLocale(locale) {
     document.cookie = `${configuration.savedUserLocale}=${locale};max-age=${maxAgeCookie};path=/`;
+  }
+  
+  function setUserLang(lang) {
+    document.cookie = `${configuration.savedUserLang}=${lang};max-age=${maxAgeCookie};path=/`;
+    document.documentElement.lang = lang;
   }
   
   function getCookie() {
@@ -53,6 +57,10 @@
   
   function closeCookieMenu() {
     agreeCookie = true;
+    setCookieAgreement();
+  }
+  
+  function setCookieAgreement() {
     document.cookie = `${configuration.cookieAgreement}=true;max-age=${maxAgeCookie};path=/`;
   }
   
@@ -64,6 +72,8 @@
       const cookieAgreement = getCookie()[configuration.cookieAgreement];
       if (!cookieAgreement) agreeCookie = false;
     }, 5000);
+    setUserLocale(locale);
+    setUserLang(language.Lang);
     return () => {
       mql.removeEventListener("change", setUserOnMobile);
       clearTimeout(cookieTimeout);

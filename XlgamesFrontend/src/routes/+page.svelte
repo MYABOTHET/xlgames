@@ -26,21 +26,27 @@
 </svelte:head>
 
 <div class="flex flex-col gap-y-28">
-  {#if true}
+  {#if data.gameServers.length}
     <PrimarySection title={language.GameServers.Name} href="/game-servers">
       <nav class="primary-section">
-        <PrimaryCard name="Minecraft" description="{language.Shared.PriceFrom}
-{language.Shared.CurrencySignPosition ? language.Shared.CurrencySign + '1200' : '1200' + language.Shared.CurrencySign}"
-                     src="minecraft.webp" class="secondary-size" href="/"/>
-        <PrimaryCard name="RUST" description="{language.Shared.PriceFrom}
-{language.Shared.CurrencySignPosition ? language.Shared.CurrencySign + '3600' : '3600' + language.Shared.CurrencySign}"
-                     src="rust.webp" class="secondary-size" href="/"/>
-        <PrimaryCard name="Battlefield 2042" description="{language.Shared.PriceFrom}
-{language.Shared.CurrencySignPosition ? language.Shared.CurrencySign + '2400' : '2400' + language.Shared.CurrencySign}"
-                     src="battlefield-2042.webp" class="secondary-size" href="/"/>
-        <PrimaryCard name="7 Days to Die" description="{language.Shared.PriceFrom}
-{language.Shared.CurrencySignPosition ? language.Shared.CurrencySign + '840' : '840' + language.Shared.CurrencySign}"
-                     src="7-days-to-die.webp" class="secondary-size" href="/"/>
+        {#each data.gameServers as gameServer}
+          {@const translate = gameServer.Presets.find(item => item.Locale === language.Locale)}
+          {@const sign = language.Shared.CurrencySign}
+          {@const position = language.Shared.CurrencySignPosition}
+          {@const price = translate.Price}
+          <PrimaryCard name={gameServer.Name} description="{language.Shared.PriceFrom}
+{position ? sign + price : price + sign}"
+                       src={gameServer.Src} class="secondary-size" href="/game-servers/{gameServer.Link}"/>
+        {/each}
+        {#if data.max - data.gameServers.length >= 0}
+          {#each {length: data.max - data.gameServers.length}}
+            <div class="secondary-size primary-block border-transparent">
+              <div class="primary-block border-quaternary text-quaternary size-full flex-center font-medium text-lg">
+                ≽^•⩊•^≼
+              </div>
+            </div>
+          {/each}
+        {/if}
       </nav>
     </PrimarySection>
   {/if}
@@ -63,7 +69,8 @@
                    class="quaternary-size"/>
   </section>
   
-  <section class="{language.Home.DataCenters.length ? 'grid grid-cols-2 primary-gap-x max-ternary:grid-cols-1 max-ternary:gap-y-10' : ''}">
+  <section
+      class="{language.Home.DataCenters.length ? 'grid grid-cols-2 primary-gap-x max-ternary:grid-cols-1 max-ternary:gap-y-10' : ''}">
     <article class="flex flex-col primary-gap-y">
       <h1 class="primary-title">{language.DataCenters.Name}</h1>
       <p>{language.Home.DataCentersDescription}</p>
@@ -83,8 +90,16 @@
                        src={newsItem.Src} href="/news/{newsItem.ParentId}"
                        class="quinary-size"/>
         {/each}
+        {#if data.maxNews - data.news.length >= 0}
+          {#each {length: data.maxNews - data.news.length}}
+            <div class="quinary-size primary-block border-transparent">
+              <div class="primary-block border-quaternary text-quaternary size-full flex-center font-medium text-lg">
+                ≽^•⩊•^≼
+              </div>
+            </div>
+          {/each}
+        {/if}
       </nav>
     </PrimarySection>
   {/if}
 </div>
-

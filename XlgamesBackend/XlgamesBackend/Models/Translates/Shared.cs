@@ -33,6 +33,13 @@ namespace XlgamesBackend.Models.Translates
         public bool Vk { get; set; } = false;
         public bool Whatsapp { get; set; } = false;
 
+        // Контакты
+        public bool PhoneNumber { get; set; } = false;
+        public bool Email { get; set; } = false;
+        public bool OGRNIP { get; set; } = false;
+        public bool INN { get; set; } = false;
+        public bool IP { get; set; } = false;
+
         // Для продуктов
         public string Month { get; set; } = "...";
         public string PriceFrom { get; set; } = "...";
@@ -58,10 +65,10 @@ namespace XlgamesBackend.Models.Translates
         public string Control { get; set; } = "...";
 
         // Предложения
-        public string AnySuggestionsStart { get; set; } = "...";
+        public string AnySuggestionsStart { get; set; } = "..."; // Предложения
         public string AnySuggestionsCenter { get; set; } = "...";
         public string AnySuggestionsEnd { get; set; } = "...";
-        public string AnyQuestionsStart { get; set; } = "...";
+        public string AnyQuestionsStart { get; set; } = "..."; // Вопросы
         public string AnyQuestionsCenter { get; set; } = "...";
         public string AnyQuestionsEnd { get; set; } = "...";
 

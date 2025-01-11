@@ -29,7 +29,9 @@ export default {
       'quaternary': '42.5rem',
       'quinary': '48rem',
       'hexadecimal': '36.5rem',
-      'septenary': '31.25rem'
+      'septenary': '31.25rem',
+      'octal': '75rem',
+      'nine': '37.5rem'
     },
   },
   plugins: [],

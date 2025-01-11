@@ -16,8 +16,8 @@
 {#snippet contact(title, description)}
 <article class="flex">
   <h1 class="text-nowrap h-fit mt-auto">{title}:</h1>
-  <div class="min-w-4 relative -top-1 ml-1.5 mr-2 border-b border-b-quaternary border-dotted flex-1"></div>
-  <p class="break-all">{description}</p>
+  <div class="min-w-4 relative -top-1 ml-1.5 mr-2 border-b border-b-quaternary flex-1"></div>
+  <address class="break-all not-italic">{description}</address>
 </article>
 {/snippet}
 
@@ -25,16 +25,16 @@
   <article class="w-full flex flex-col ternary-gap-y">
     <h1 class="primary-title">{language.Contacts.Name}</h1>
     <p>{language.Contacts.Description}</p>
-    
-    <section class="flex flex-col gap-y-3.5">
-      {@render contact?.("ИП", "Лёвин Валерий Дмитриевич")}
-      {@render contact?.("ИП", "Лёвин Валерий Дмитриевич")}
-      {@render contact?.("ИП", "Лёвин Валерий Дмитриевич")}
-      {@render contact?.("ИП", "Лёвин Валерий Дмитриевич")}
-      {@render contact?.("ИП", "Лёвин Валерий Дмитриевич")}
-    </section>
-    
+    {#if true}
+      <section class="flex flex-col gap-y-0.5">
+        {#if language.Shared.IP}{@render contact?.(language.Contacts.IP, language.Contacts.FullName)}{/if}
+        {#if language.Shared.Email}{@render contact?.(language.Contacts.Email, projectData.Email)}{/if}
+        {#if language.Shared.PhoneNumber}{@render contact?.(language.Contacts.PhoneNumber, projectData.PhoneNumber)}{/if}
+        {#if language.Shared.INN}{@render contact?.(language.Contacts.INN, projectData.INN)}{/if}
+        {#if language.Shared.OGRNIP}{@render contact?.(language.Contacts.OGRNIP, projectData.OGRNIP)}{/if}
+      </section>
+    {/if}
     <TernarySection {projectData} class="flex flex-wrap gap-2.5"/>
-    <p>{language.Shared.AnyQuestionsStart}<a href="/store/contact.php" class="primary-link">{language.Shared.AnyQuestionsCenter}</a>{language.Shared.AnyQuestionsEnd}</p>
+    <p>{language.Shared.AnyQuestionsStart}<a href={projectData.Contacts} class="primary-link">{language.Shared.AnyQuestionsCenter}</a>{language.Shared.AnyQuestionsEnd}</p>
   </article>
 </div>

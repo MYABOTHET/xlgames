@@ -29,7 +29,7 @@ max-quaternary:grid-cols-1 max-quaternary:gap-y-4">
         {/each}
       </nav>
     </div>
-    <nav class="flex j gap-x-6 gap-y-3 font-normal text-xs text-quaternary max-quaternary:flex-col
+    <nav class="flex gap-x-6 gap-y-3 font-normal text-xs text-quaternary max-quaternary:flex-col
 max-quaternary:items-start flex-wrap">
       <h1>© {Year} {new Date().getFullYear() > Year ? "- " + new Date().getFullYear() : ""} {Name}</h1>
       {#each navigationLinks.footer as link}

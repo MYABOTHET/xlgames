@@ -69,5 +69,9 @@ hover:text-ternary hover:fill-ternary w-fit">
     h6 { @apply text-[0.625rem] leading-[0.75rem]; }
     
     a { @apply transition-colors text-ternary hover:text-quaternary; }
+    
+    iframe {
+      @apply w-full;
+    }
   }
 </style>

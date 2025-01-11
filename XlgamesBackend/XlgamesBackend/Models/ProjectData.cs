@@ -24,6 +24,10 @@
         public string INN { get; set; } = "...";
         public string PhoneNumber { get; set; } = "...";
 
+        public string Contacts { get; set; } = "...";
+        public string PersonalAccount { get; set; } = "...";
+        public string GameHosting { get; set; } = "...";
+
         public void Update(ProjectData projectDataDto)
         {
             Logo = projectDataDto.Logo;
@@ -42,6 +46,9 @@
             OGRNIP = projectDataDto.OGRNIP;
             INN = projectDataDto.INN;
             PhoneNumber = projectDataDto.PhoneNumber;
+            Contacts = projectDataDto.Contacts;
+            PersonalAccount = projectDataDto.PersonalAccount;
+            GameHosting = projectDataDto.GameHosting;
         }
     }
 }

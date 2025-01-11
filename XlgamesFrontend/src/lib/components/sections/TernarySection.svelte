@@ -21,13 +21,24 @@
 </a>
 {/snippet}
 
-<nav {...props} class="{props.class}">
-  {#if language.Shared.Vk}{@render icon?.(Vk, projectData.Vk)}{/if}
-  {#if language.Shared.Whatsapp}{@render icon?.(Whatsapp, projectData.Whatsapp)}{/if}
-  {#if language.Shared.Discord}{@render icon?.(Discord, projectData.Discord)}{/if}
-  {#if language.Shared.Instagram}{@render icon?.(Instagram, projectData.Instagram)}{/if}
-  {#if language.Shared.Snapchat}{@render icon?.(Snapchat, projectData.Snapchat)}{/if}
-  {#if language.Shared.Telegram}{@render icon?.(Telegram, projectData.Telegram)}{/if}
-  {#if language.Shared.Twitter}{@render icon?.(Twitter, projectData.Twitter)}{/if}
-  {#if language.Shared.Facebook}{@render icon?.(Facebook, projectData.Facebook)}{/if}
-</nav>
+{#if
+    language.Shared.Vk
+    || language.Shared.Whatsapp
+    || language.Shared.Discord
+    || language.Shared.Instagram
+    || language.Shared.Snapchat
+    || language.Shared.Telegram
+    || language.Shared.Twitter
+    || language.Shared.Facebook
+}
+  <nav {...props} class="{props.class}">
+    {#if language.Shared.Vk}{@render icon?.(Vk, projectData.Vk)}{/if}
+    {#if language.Shared.Whatsapp}{@render icon?.(Whatsapp, projectData.Whatsapp)}{/if}
+    {#if language.Shared.Discord}{@render icon?.(Discord, projectData.Discord)}{/if}
+    {#if language.Shared.Instagram}{@render icon?.(Instagram, projectData.Instagram)}{/if}
+    {#if language.Shared.Snapchat}{@render icon?.(Snapchat, projectData.Snapchat)}{/if}
+    {#if language.Shared.Telegram}{@render icon?.(Telegram, projectData.Telegram)}{/if}
+    {#if language.Shared.Twitter}{@render icon?.(Twitter, projectData.Twitter)}{/if}
+    {#if language.Shared.Facebook}{@render icon?.(Facebook, projectData.Facebook)}{/if}
+  </nav>
+{/if}

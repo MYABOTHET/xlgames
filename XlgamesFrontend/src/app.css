@@ -206,7 +206,7 @@
   }
 
   .primary-filter {
-    @apply saturate-[.60] brightness-[.65];
+    @apply saturate-[.60] brightness-[.60];
   }
 
   .primary-text-shadow {
