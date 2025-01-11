@@ -1,4 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using Newtonsoft.Json;
 using XlgamesBackend.Dtoes;
 using XlgamesBackend.Models.Translates;
 
@@ -8,7 +9,6 @@ namespace XlgamesBackend.Models
     [Index(nameof(Name), nameof(WHMCSName), nameof(OriginalName), nameof(Locale), IsUnique = true)]
     public class Language : LanguageDto
     {
-        public int Id { get; set; }
         public Shared Shared { get; set; } = new();
         public Home Home { get; set; } = new();
         public GameServers GameServers { get; set; } = new();
@@ -25,6 +25,8 @@ namespace XlgamesBackend.Models
         public ServersWithoutGPU ServersWithoutGPU { get; set; } = new();
         public Contacts Contacts { get; set; } = new();
         public CookiePolicy CookiePolicy { get; set; } = new();
+        [JsonIgnore]
+        public ICollection<GameServerData> GameServerDatas { get; } = new List<GameServerData>();
 
         public Language() { }
 

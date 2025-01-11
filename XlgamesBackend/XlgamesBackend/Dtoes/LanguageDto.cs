@@ -5,6 +5,7 @@ namespace XlgamesBackend.Dtoes
     // Данные языка
     public class LanguageDto
     {
+        public int Id { get; set; }
         [Required(ErrorMessage = "Укажите название языка на русском")]
         public string Name { get; set; } = "..."; // Название языка на русском: Английский
         [Required(ErrorMessage = "Укажите название языка в WHMCS")]
