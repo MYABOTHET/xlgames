@@ -11,7 +11,14 @@
   const {headerHeight, author, navigationLinks, projectData, languages} = data;
   
   let language = $state(data.language);
-  let locale = $state(data.language.Locale);
+  let languageDto = $state({
+    Id: data.language.Id,
+    Name: data.language.Name,
+    WHMCSName: data.language.WHMCSName,
+    OriginalName: data.language.OriginalName,
+    Locale: data.language.Locale,
+    Lang: data.language.Lang,
+  });
   let userOnMobile = $state(data.userOnMobile);
   let agreeCookie = $state(true);
   
@@ -21,10 +28,10 @@
   async function setLanguage(value) {
     const userLocale = getCookie()[configuration.savedUserLocale];
     if (value.Locale === userLocale) return;
-    locale = value.Locale;
+    languageDto = value;
     setUserLocale(value.Locale);
+    setUserLang(value.Lang);
     language = await (await fetch(`/?locale=${value.Locale}`)).json();
-    setUserLang(language.Lang);
   }
   
   function setUserLocale(locale) {
@@ -72,8 +79,8 @@
       const cookieAgreement = getCookie()[configuration.cookieAgreement];
       if (!cookieAgreement) agreeCookie = false;
     }, 5000);
-    setUserLocale(locale);
-    setUserLang(language.Lang);
+    setUserLocale(languageDto.Locale);
+    setUserLang(languageDto.Lang);
     return () => {
       mql.removeEventListener("change", setUserOnMobile);
       clearTimeout(cookieTimeout);
@@ -81,7 +88,7 @@
   });
   
   setContext("language", () => language);
-  setContext("locale", () => locale);
+  setContext("languageDto", () => languageDto);
 </script>
 
 <svelte:head>

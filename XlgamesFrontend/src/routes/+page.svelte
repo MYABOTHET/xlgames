@@ -9,13 +9,13 @@
   const {data} = $props();
   
   let language = $derived(getContext("language")());
-  let locale = $derived(getContext("locale")());
+  let languageDto = $derived(getContext("languageDto")());
   let news = $state(data.news);
-  let dateFormatter = $derived(createDateFormatter(locale));
+  let dateFormatter = $derived(createDateFormatter(languageDto.Locale));
   
   $effect(async () => {
-    if (language.Locale !== locale) {
-      news = await (await fetch(`/news?require=false&max=3&locale=${locale}`)).json();
+    if (language.Locale !== languageDto.Locale) {
+      news = await (await fetch(`/news?require=false&max=3&locale=${languageDto.Locale}`)).json();
     }
   });
 </script>

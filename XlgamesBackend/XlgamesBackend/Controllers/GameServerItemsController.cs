@@ -26,9 +26,10 @@ namespace XlgamesBackend.Controllers
 
         #region Получить игровые серверы
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<GameServerItemDto>>> GetGameServerItems(bool require = false)
+        public async Task<ActionResult<IEnumerable<GameServerItemDto>>> GetGameServerItems()
         {
-            var gameServerItemsQuery = _postgreSQLContext.GameServerItems
+            return await _postgreSQLContext.GameServerItems
+                .AsNoTracking()
                 .Select(gameServerItem => new GameServerItemDto()
                 {
                     Id = gameServerItem.Id,
@@ -36,12 +37,12 @@ namespace XlgamesBackend.Controllers
                     LinkName = gameServerItem.LinkName,
                     Name = gameServerItem.Name,
                     Src = gameServerItem.Src,
-                });
-            if (require) { 
-
-            }
-            var gameServerItems = await gameServerItemsQuery.ToListAsync();
-            return gameServerItems;
+                    Presets = gameServerItem.GameServerDatas.Select(gameServerData => new Preset()
+                    {
+                        Price = gameServerData.Price,
+                        LanguageId = gameServerData.LanguageId,
+                    }).ToList()
+                }).ToListAsync();
         }
         #endregion
 
@@ -62,11 +63,12 @@ namespace XlgamesBackend.Controllers
                      $"Это название уже занято");
                 return ValidationProblem();
             }
+            string linkName = name.Replace(" ", "-");
             int[] languageIds = await _postgreSQLContext.Languages
                 .AsNoTracking()
                 .Select(language => language.Id)
                 .ToArrayAsync();
-            var gameServerItem = new GameServerItem() { Name = name };
+            var gameServerItem = new GameServerItem() { Name = name, LinkName = linkName };
             foreach (var languageId in languageIds)
                 gameServerItem.GameServerDatas.Add(new()
                 {
