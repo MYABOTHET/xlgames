@@ -9,11 +9,11 @@
   let languageDto = $derived(getContext("languageDto")());
   let news = $state(data.news);
   let dateFormatter = $derived(createDateFormatter(languageDto.Locale));
-  const newsParentId = news.ParentId;
+  const newsParentId = data.news.ParentId;
   
   $effect(async () => {
     if (language.Locale !== languageDto.Locale) {
-      news = await (await fetch(`${newsParentId}?locale=${languageDto.Locale}`)).json();
+      news = await (await fetch(`/news/${newsParentId}`)).json();
     }
   });
 </script>

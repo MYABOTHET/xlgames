@@ -34,12 +34,12 @@
     gameServers = data.gameServers.filter(item => {
       let queryTrim = searchQuery.trim().toLowerCase();
       if (queryTrim !== "") {
-        const name = item.Name.replace(/ {2,}/g, " ").toLowerCase();
-        let result = name.includes(queryTrim.replace(/ {2,}/g, " "));
+        const name = item.Name.replace(/ {1,}/g, "").toLowerCase();
+        const result = name.includes(queryTrim.replace(/ {1,}/g, ""));
         if (!result) return false;
       }
       if (popularActive) {
-        if (!item.Popular) return false;
+        if (!item.isPopular) return false;
       }
       return true;
     });
@@ -80,14 +80,14 @@ px-6 py-2.5 h-fit primary-block-default rounded-full primary-bg">
   {#if gameServers.length}
     <nav class="grid grid-cols-4 primary-gap max-octal:grid-cols-3 max-ternary:grid-cols-2 max-nine:grid-cols-none
     max-nine:auto-rows-fr">
-      {#each gameServers as gameServer}
-        {@const translate = gameServer.Presets.find(item => item.Locale === language.Locale)}
+      {#each gameServers as gameServer (gameServer.Id)}
+        {@const translate = gameServer.GameServerDataBases.find(item => item.LanguageId === language.Id)}
         {@const sign = language.Shared.CurrencySign}
         {@const position = language.Shared.CurrencySignPosition}
         {@const price = translate.Price}
         <PrimaryCard name={gameServer.Name} description="{language.Shared.PriceFrom}
-{position ? sign + price : price + sign}" class="w-full h-full"
-                     src={gameServer.Src} href="/game-servers/{gameServer.Link}"/>
+{position ? sign + price : price + sign}"
+                     src={gameServer.Src} class="w-full h-full" href="/game-servers/{gameServer.LinkName}"/>
       {/each}
     </nav>
   {/if}

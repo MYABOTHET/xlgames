@@ -1,6 +1,7 @@
 import configuration from "$lib";
 import DeviceDetector from "node-device-detector";
 import DeviceHelper from "node-device-detector/helper";
+import {getUserLanguageFromCookies} from "$lib/tools.js";
 
 export async function load({request, fetch, cookies}) {
   const mobileWidth = 64;
@@ -10,7 +11,7 @@ export async function load({request, fetch, cookies}) {
   const detector = new DeviceDetector();
   const userData = detector.detect(userAgent);
   const userOnMobile = DeviceHelper.isMobile(userData);
-  const projectData = await (await fetch(`${configuration.api}/ProjectDatas`)).json()
+  const projectData = await (await fetch(`${configuration.api}/ProjectDatas`)).json();
   const navigationLinks = {
     header: {
       menu: {
@@ -55,7 +56,7 @@ export async function load({request, fetch, cookies}) {
     navigationLinks,
     userOnMobile,
     projectData,
-    languages: request.myLanguages ? request.myLanguages : await (await fetch(`${configuration.api}/Languages`)).json(),
-    language: await (await fetch(`${configuration.api}/Languages/${cookies.get(configuration.savedUserLocale)}`)).json(),
+    languages: request.languagesCache ? request.languagesCache : await (await fetch(`${configuration.api}/Languages`)).json(),
+    language: await (await fetch(`${configuration.api}/Languages/${getUserLanguageFromCookies(cookies).Id}`)).json(),
   }
 }

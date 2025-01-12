@@ -6,9 +6,10 @@
   import Footer from "$lib/components/Footer.svelte";
   import {quartInOut} from "svelte/easing";
   import {fly} from "svelte/transition";
+  import {getUserLanguageFromCookieClient} from "$lib/tools.js";
   
   const {children, data} = $props();
-  const {headerHeight, author, navigationLinks, projectData, languages} = data;
+  const {headerHeight, author, navigationLinks, projectData, languages, mobileWidth} = data;
   
   let language = $state(data.language);
   let languageDto = $state({
@@ -23,25 +24,6 @@
   let agreeCookie = $state(true);
   
   let maxAgeCookie = 60 * 60 * 24 * 360;
-  const mobileWidth = data.mobileWidth;
-  
-  async function setLanguage(value) {
-    const userLocale = getCookie()[configuration.savedUserLocale];
-    if (value.Locale === userLocale) return;
-    languageDto = value;
-    setUserLocale(value.Locale);
-    setUserLang(value.Lang);
-    language = await (await fetch(`/?locale=${value.Locale}`)).json();
-  }
-  
-  function setUserLocale(locale) {
-    document.cookie = `${configuration.savedUserLocale}=${locale};max-age=${maxAgeCookie};path=/`;
-  }
-  
-  function setUserLang(lang) {
-    document.cookie = `${configuration.savedUserLang}=${lang};max-age=${maxAgeCookie};path=/`;
-    document.documentElement.lang = lang;
-  }
   
   function getCookie() {
     return document.cookie.split("; ").reduce((acc, item) => {
@@ -51,36 +33,39 @@
     }, {});
   }
   
-  function setUserOnMobile(event) {
-    userOnMobile = event.matches;
+  async function setLanguage(languageItem) {
+    const userLanguage = getUserLanguageFromCookieClient(getCookie());
+    if (languageItem.Locale === userLanguage.Locale) return;
+    setUserLanguage(languageItem);
+    languageDto = languageItem;
+    language = await (await fetch('/')).json();
   }
   
-  function createUserOnMobileMQL() {
-    const matchMedia = `(max-width: ${mobileWidth}rem)`;
-    const mql = window.matchMedia(matchMedia);
-    mql.addEventListener("change", setUserOnMobile);
-    return mql;
-  }
-  
-  function closeCookieMenu() {
-    agreeCookie = true;
-    setCookieAgreement();
+  function setUserLanguage(language) {
+    document.cookie = `${configuration.userLanguage}=${encodeURIComponent(JSON.stringify(language))};max-age=${maxAgeCookie};path=/;priority=high`;
+    document.documentElement.lang = language.Lang;
   }
   
   function setCookieAgreement() {
+    agreeCookie = true;
     document.cookie = `${configuration.cookieAgreement}=true;max-age=${maxAgeCookie};path=/`;
+  }
+  
+  function setUserOnMobile(event) {
+    userOnMobile = event.matches;
   }
   
   onMount(() => {
     // 1rem = 16px;
     userOnMobile = (window.innerWidth / 16) <= mobileWidth;
-    const mql = createUserOnMobileMQL();
+    const matchMedia = `(max-width: ${mobileWidth}rem)`;
+    const mql = window.matchMedia(matchMedia);
+    mql.addEventListener("change", setUserOnMobile);
     const cookieTimeout = setTimeout(() => {
-      const cookieAgreement = getCookie()[configuration.cookieAgreement];
-      if (!cookieAgreement) agreeCookie = false;
+      if (!getCookie()[configuration.cookieAgreement]) agreeCookie = false;
     }, 5000);
-    setUserLocale(languageDto.Locale);
-    setUserLang(languageDto.Lang);
+    const userLanguage = getUserLanguageFromCookieClient(getCookie());
+    if (userLanguage.Locale !== languageDto.Locale) setUserLanguage(languageDto);
     return () => {
       mql.removeEventListener("change", setUserOnMobile);
       clearTimeout(cookieTimeout);
@@ -92,11 +77,6 @@
 </script>
 
 <svelte:head>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link
-      href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
-      rel="stylesheet">
   <meta name="author" content={author}>
   {@html language.Shared.Head}
 </svelte:head>
@@ -114,10 +94,11 @@
        class="fixed w-full h-dvh bottom-0 pointer-events-none flex items-end primary-px py-5 z-[5]">
     <article class="pointer-events-auto bg-primary primary-block-default border-ternary py-5 px-6 flex flex-col
   gap-y-4 w-96 text-sm leading-[1.375rem] max-hexadecimal:w-full">
-      <p>{language.CookiePolicy.CookiePolicyBanner.Description} <a href="/cookie-policy" class="primary-link">{language.Shared.ReadMore}...</a></p>
-      <button onclick={closeCookieMenu} class="quinary-block rounded-none py-2 px-3">
-        {language.CookiePolicy.CookiePolicyBanner.Name}
-      </button>
+      <p>{language.CookiePolicy.CookiePolicyBanner.Description} <a href="/cookie-policy"
+                                                                   class="primary-link">{language.Shared.ReadMore}
+        ...</a></p>
+      <button onclick={setCookieAgreement}
+              class="quinary-block rounded-none py-2 px-3">{language.CookiePolicy.CookiePolicyBanner.Name}</button>
     </article>
   </div>
 {/if}

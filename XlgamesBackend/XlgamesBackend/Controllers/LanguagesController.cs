@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using XlgamesBackend.Dtoes;
 using XlgamesBackend.Models;
+using XlgamesBackend.Models.GameServersBases;
 using XlgamesBackend.PostgreSQL;
 
 namespace XlgamesBackend.Controllers
@@ -22,13 +23,32 @@ namespace XlgamesBackend.Controllers
         }
         #endregion
 
+        public Task<Language?> GetLanguageById(int id)
+        {
+            return _postgreSQLContext.Languages
+                .AsNoTracking()
+                .Where(language => language.Id.Equals(id))
+                .FirstOrDefaultAsync();
+        }
+
+        public Task<string?> GetLanguageName(LanguageDto languageDto)
+        {
+            return _postgreSQLContext.Languages
+                .Where(language =>
+                language.Name!.Equals(languageDto.Name)
+                || language.WHMCSName!.Equals(languageDto.WHMCSName)
+                || language.OriginalName!.Equals(languageDto.OriginalName)
+                || language.Locale!.Equals(languageDto.Locale))
+                .Select(language => language.Name)
+                .FirstOrDefaultAsync();
+        }
+
         #region Получить все языки
         [HttpGet]
         public async Task<ActionResult<IEnumerable<LanguageDto>>> GetLanguages()
         {
             // Возвращаем ответ
             return await _postgreSQLContext.Languages
-                .AsNoTracking()
                 .Select(language => new LanguageDto()
                 {
                     Id = language.Id,
@@ -47,45 +67,9 @@ namespace XlgamesBackend.Controllers
         public async Task<ActionResult<Language>> GetLanguage(int id)
         {
             // Получаем язык
-            Language? language = await _postgreSQLContext.Languages
-                .AsNoTracking()
-                .Where(language => language.Id.Equals(id))
-                .FirstOrDefaultAsync();
-            // Если язык не найден, то возвращаем ошибку
-            if (language is null)
-            {
-                ModelState.AddModelError("Language", "Язык с таким ID не найден");
-                return ValidationProblem();
-            }
+            Language? language = await GetLanguageById(id) ?? await GetLanguageById(1);
             // Возвращаем ответ
-            return language;
-        }
-        #endregion
-
-        #region Получить язык по локали
-        [HttpGet("{locale}")]
-        public async Task<ActionResult<Language>> GetLanguage(string locale)
-        {
-            // Получаем язык
-            Language? language = await _postgreSQLContext.Languages
-                .AsNoTracking()
-                .Where(language => language.Locale!.Equals(locale))
-                .FirstOrDefaultAsync();
-            // Если язык не найден, то возвращаем ошибку
-            if (language is null)
-            {
-                language = await _postgreSQLContext.Languages
-                    .AsNoTracking()
-                    .Where(language => language.Locale!.Equals("en-US"))
-                    .FirstOrDefaultAsync();
-                if (language is null)
-                {
-                    ModelState.AddModelError("Language", "Язык с такой локалью не найден");
-                    return ValidationProblem();
-                }
-            }
-            // Возвращаем ответ
-            return language;
+            return language!;
         }
         #endregion
 
@@ -94,11 +78,6 @@ namespace XlgamesBackend.Controllers
         [Authorize]
         public async Task<ActionResult> PutLanguage(int id, Language languageDto)
         {
-            if (!id.Equals(languageDto.Id))
-            {
-                ModelState.AddModelError("Language", "Указанный ID не совпадает с ID выбранного языка");
-                return ValidationProblem();
-            }
             // Получаем язык
             Language? language = await _postgreSQLContext.Languages.FindAsync(id);
             // Если язык не найден, то возвращаем ошибку
@@ -108,15 +87,7 @@ namespace XlgamesBackend.Controllers
                 return ValidationProblem();
             }
             // Проверяем существует ли язык с такими данными
-            string? name = await _postgreSQLContext.Languages
-                .AsNoTracking()
-                .Where(language =>
-                language.Name!.Equals(languageDto.Name)
-                || language.WHMCSName!.Equals(languageDto.WHMCSName)
-                || language.OriginalName!.Equals(languageDto.OriginalName)
-                || language.Locale!.Equals(languageDto.Locale))
-                .Select(language => language.Name)
-                .FirstOrDefaultAsync();
+            string? name = await GetLanguageName(languageDto);
             // Если язык существует, то возвращаем ошибку
             if (name is not null && !name.Equals(language.Name))
             {
@@ -138,15 +109,7 @@ namespace XlgamesBackend.Controllers
         public async Task<ActionResult<Language>> PostLanguage(LanguageDto languageDto)
         {
             // Проверяем существует ли язык с такими данными
-            string? name = await _postgreSQLContext.Languages
-                .AsNoTracking()
-                .Where(language =>
-                Equals(language.Name, languageDto.Name) ||
-                Equals(language.WHMCSName, languageDto.WHMCSName) ||
-                Equals(language.OriginalName, languageDto.OriginalName) ||
-                Equals(language.Locale, languageDto.Locale))
-                .Select(language => language.Name)
-                .FirstOrDefaultAsync();
+            string? name = await GetLanguageName(languageDto);
             // Если язык существует, то возвращаем ошибку
             if (name is not null)
             {
@@ -160,9 +123,9 @@ namespace XlgamesBackend.Controllers
             await _postgreSQLContext.Languages.AddAsync(language);
 
             // Добавляем в каждый игровой сервер добавленный перевод
-            var gameServerItems = await _postgreSQLContext.GameServerItems.ToListAsync();
-            foreach (var gameServerItem in gameServerItems)
-                gameServerItem.GameServerDatas.Add(new() { Language = language });
+            var gameServers = await _postgreSQLContext.GameServers.ToListAsync();
+            foreach (var gameServer in gameServers)
+                gameServer.GameServerDatas.Add(new GameServerData() { Language = language });
 
             await _postgreSQLContext.SaveChangesAsync();
             // Возвращаем ответ
@@ -175,17 +138,6 @@ namespace XlgamesBackend.Controllers
         [Authorize]
         public async Task<ActionResult> DeleteLanguage(int id)
         {
-            // Получаем язык
-            bool exists = await _postgreSQLContext.Languages
-                .AsNoTracking()
-                .Where(language => language.Id.Equals(id))
-                .AnyAsync();
-            // Если язык не найден, то возвращаем ошибку
-            if (!exists)
-            {
-                ModelState.AddModelError("Language", "Язык не найден");
-                return ValidationProblem();
-            }
             if (id.Equals(1))
             {
                 ModelState.AddModelError("Language", "Вы не можете удалить язык с ID '1'");

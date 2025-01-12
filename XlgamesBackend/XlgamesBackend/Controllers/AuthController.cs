@@ -38,10 +38,8 @@ namespace XlgamesBackend.Controllers
                 ModelState.AddModelError("User", "Пользователь не найден");
                 return ValidationProblem();
             }
-            // Сравниваем пароль
-            bool equals = BC.Verify(userDto.Password, user.Password);
             // Если пароль неверный, то возвращаем ошибку
-            if (!equals)
+            if (!BC.Verify(userDto.Password, user.Password))
             {
                 ModelState.AddModelError("Password", "Неверный пароль");
                 return ValidationProblem();

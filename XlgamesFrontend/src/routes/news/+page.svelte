@@ -12,7 +12,7 @@
   
   $effect(async () => {
     if (language.Locale !== languageDto.Locale) {
-      news = await (await fetch(`?require=false&locale=${languageDto.Locale}`)).json();
+      news = await (await fetch('/news')).json();
     }
   });
 </script>

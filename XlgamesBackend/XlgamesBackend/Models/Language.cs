@@ -1,6 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Newtonsoft.Json;
 using XlgamesBackend.Dtoes;
+using XlgamesBackend.Models.GameServersBases;
 using XlgamesBackend.Models.Translates;
 
 namespace XlgamesBackend.Models
@@ -18,7 +19,7 @@ namespace XlgamesBackend.Models
         public AboutUs AboutUs { get; set; } = new();
         public TermsService TermsService { get; set; } = new();
         public PrivacyPolicy PrivacyPolicy { get; set; } = new();
-        public GameServer GameServer { get; set; } = new();
+        public Translates.GameServer GameServer { get; set; } = new();
         public VPS VPS { get; set; } = new();
         public VPN VPN { get; set; } = new();
         public ServersWithGPU ServersWithGPU { get; set; } = new();

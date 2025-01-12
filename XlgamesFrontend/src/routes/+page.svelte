@@ -15,7 +15,7 @@
   
   $effect(async () => {
     if (language.Locale !== languageDto.Locale) {
-      news = await (await fetch(`/news?require=false&max=3&locale=${languageDto.Locale}`)).json();
+      news = await (await fetch(`/news?max=3`)).json();
     }
   });
 </script>
@@ -25,26 +25,30 @@
   {@html language.Home.Head}
 </svelte:head>
 
+{#snippet noCard(cardProps)}
+<div class="{cardProps} primary-block border-transparent">
+  <div class="primary-block border-quaternary text-quaternary size-full flex-center font-medium text-lg">
+    ≽^•⩊•^≼
+  </div>
+</div>
+{/snippet}
+
 <div class="flex flex-col gap-y-28">
   {#if data.gameServers.length}
     <PrimarySection title={language.GameServers.Name} href="/game-servers">
       <nav class="primary-section">
         {#each data.gameServers as gameServer}
-          {@const translate = gameServer.Presets.find(item => item.Locale === language.Locale)}
+          {@const translate = gameServer.GameServerDataBases.find(item => item.LanguageId === language.Id)}
           {@const sign = language.Shared.CurrencySign}
           {@const position = language.Shared.CurrencySignPosition}
           {@const price = translate.Price}
           <PrimaryCard name={gameServer.Name} description="{language.Shared.PriceFrom}
 {position ? sign + price : price + sign}"
-                       src={gameServer.Src} class="secondary-size" href="/game-servers/{gameServer.Link}"/>
+                       src={gameServer.Src} class="secondary-size" href="/game-servers/{gameServer.LinkName}"/>
         {/each}
         {#if data.max - data.gameServers.length >= 0}
           {#each {length: data.max - data.gameServers.length}}
-            <div class="secondary-size primary-block border-transparent">
-              <div class="primary-block border-quaternary text-quaternary size-full flex-center font-medium text-lg">
-                ≽^•⩊•^≼
-              </div>
-            </div>
+            {@render noCard?.("secondary-size")}
           {/each}
         {/if}
       </nav>
@@ -92,11 +96,7 @@
         {/each}
         {#if data.maxNews - data.news.length >= 0}
           {#each {length: data.maxNews - data.news.length}}
-            <div class="quinary-size primary-block border-transparent">
-              <div class="primary-block border-quaternary text-quaternary size-full flex-center font-medium text-lg">
-                ≽^•⩊•^≼
-              </div>
-            </div>
+            {@render noCard?.("quinary-size")}
           {/each}
         {/if}
       </nav>

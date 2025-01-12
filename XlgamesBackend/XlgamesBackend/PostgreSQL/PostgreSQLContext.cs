@@ -1,8 +1,7 @@
-﻿using System.Reflection.Emit;
-using System.Reflection.Metadata;
-using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Diagnostics;
 using XlgamesBackend.Models;
+using XlgamesBackend.Models.GameServersBases;
 
 namespace XlgamesBackend.PostgreSQL
 {
@@ -13,7 +12,7 @@ namespace XlgamesBackend.PostgreSQL
         public DbSet<User> Users { get; set; } = default!;
         public DbSet<Language> Languages { get; set; } = default!;
         public DbSet<ProjectData> ProjectDatas { get; set; } = default!;
-        public DbSet<GameServerItem> GameServerItems { get; set; } = default!;
+        public DbSet<GameServer> GameServers { get; set; } = default!;
         public DbSet<GameServerData> GameServerDatas { get; set; } = default!;
         #endregion
 
@@ -55,10 +54,10 @@ namespace XlgamesBackend.PostgreSQL
                 Id = 1
             });
 
-            builder.Entity<GameServerItem>()
+            builder.Entity<GameServer>()
                 .HasMany(gameServerItem => gameServerItem.GameServerDatas)
-                .WithOne(gameServerData => gameServerData.GameServerItem)
-                .HasForeignKey("GameServerItemId")
+                .WithOne(gameServerData => gameServerData.GameServer)
+                .HasForeignKey("GameServerId")
                 .IsRequired();
             builder.Entity<Language>()
                 .HasMany(language => language.GameServerDatas)

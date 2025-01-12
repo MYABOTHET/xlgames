@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using XlgamesBackend.Dtoes;
+using XlgamesBackend.Models;
 using XlgamesBackend.MySQL;
 using XlgamesBackend.PostgreSQL;
 
@@ -24,14 +25,9 @@ namespace XlgamesBackend.Controllers
         }
         #endregion
 
-        #region Получить новости
-        [HttpGet("{locale}")]
-        public async Task<ActionResult<IEnumerable<NewsDto>>> GetNews(string locale,
-            int max = int.MaxValue, bool require = true)
+        public IQueryable<NewsDto> SelectNewsDto(IQueryable<News> news)
         {
-            var news = await _mySQLContext.News
-                .AsNoTracking()
-                .Where(news => news.language.Equals(""))
+            return news
                 .Select(news => new NewsDto()
                 {
                     Id = news.id,
@@ -39,37 +35,29 @@ namespace XlgamesBackend.Controllers
                     Name = news.title,
                     Description = news.announcement,
                     Date = news.date ?? new DateTime(),
-                    Src = string.Empty,
-                })
+                });
+        }
+
+        #region Получить новости
+        [HttpGet("{whmcsName}")]
+        public async Task<ActionResult<IEnumerable<NewsDto>>> GetNews(string whmcsName,
+            int max = int.MaxValue)
+        {
+            var news = await SelectNewsDto(_mySQLContext.News
+                .Where(news => news.language.Equals("")))
                 .OrderByDescending(news => news.Date)
                 .Take(max)
                 .ToListAsync();
-            string whmcsName = await _postgreSQLContext.Languages
-                .AsNoTracking()
-                .Where(language => language.Locale!.Equals(locale))
-                .Select(language => language.WHMCSName)
-                .FirstOrDefaultAsync() ?? "";
             if (whmcsName.Equals("english")) whmcsName = "";
             if (!whmcsName.Equals(""))
             {
-                var translatedNews = await _mySQLContext.News
-                    .AsNoTracking()
-                    .Where(news => news.language.Equals(whmcsName))
-                    .Select(news => new NewsDto()
-                    {
-                        Id = news.id,
-                        ParentId = news.parentid,
-                        Name = news.title,
-                        Description = news.announcement,
-                        Date = news.date ?? new DateTime(),
-                        Src = string.Empty,
-                    })
+                var translatedNews = await SelectNewsDto(_mySQLContext.News
+                    .Where(news => news.language.Equals(whmcsName)))
                     .ToListAsync();
                 var result = new List<NewsDto>();
                 foreach (var item in news)
                 {
-                    var translatedNewsItem = translatedNews
-                        .Find(translatedNewsItem => translatedNewsItem.ParentId.Equals(item.Id));
+                    var translatedNewsItem = translatedNews.Find(translatedNewsItem => translatedNewsItem.ParentId.Equals(item.Id));
                     if (translatedNewsItem is not null)
                     {
                         translatedNewsItem.Date = item.Date;
@@ -78,72 +66,36 @@ namespace XlgamesBackend.Controllers
                 }
                 news = result;
             }
-            else
-                foreach (var item in news)
-                    item.ParentId = item.Id;
+            else foreach (var item in news) item.ParentId = item.Id;
             foreach (var item in news)
             {
                 var document = new HtmlDocument();
                 document.LoadHtml(item.Description);
-                item.Src = document.DocumentNode.SelectSingleNode("//img")?.Attributes["src"]?.Value ?? string.Empty;
-                if (require)
-                {
-                    document.DocumentNode.SelectSingleNode("//p")?.Remove();
-                    item.Description = document.DocumentNode.OuterHtml;
-                }
-                else
-                    item.Description = string.Empty;
+                item.Src = document.DocumentNode.SelectSingleNode("//img").Attributes["src"].Value;
+                item.Description = string.Empty;
             }
-            // Навсякий случай повторно сортирую по дате
-            news = news.OrderByDescending(news => news.Date).ToList();
             return news;
         }
         #endregion
 
         #region Получить новость
-        [HttpGet("{locale}/{id}")]
-        public async Task<ActionResult<NewsDto>> GetNewsById(string locale, int id, bool require = true)
+        [HttpGet("{whmcsName}/{id:int}")]
+        public async Task<ActionResult<NewsDto>> GetNewsByWHMCSName(string whmcsName, int id)
         {
-            string whmcsName = await _postgreSQLContext.Languages
-                .AsNoTracking()
-                .Where(language => language.Locale!.Equals(locale))
-                .Select(language => language.WHMCSName)
-                .FirstOrDefaultAsync() ?? "";
-            if (whmcsName.Equals("english")) whmcsName = "";
-            var news = await _mySQLContext.News
-                .AsNoTracking()
-                .Where(news => news.language.Equals(""))
-                .Where(news => news.id.Equals(id))
-                .Select(news => new NewsDto()
-                {
-                    Id = news.id,
-                    ParentId = news.parentid,
-                    Name = news.title,
-                    Description = news.announcement,
-                    Date = news.date ?? new DateTime(),
-                    Src = string.Empty,
-                })
+            var news = await SelectNewsDto(_mySQLContext.News
+                .Where(news => news.id.Equals(id)))
                 .FirstOrDefaultAsync();
             if (news is null)
             {
                 ModelState.AddModelError("News", "Новость с таким ID не найдена");
                 return ValidationProblem();
             }
+            if (whmcsName.Equals("english")) whmcsName = "";
             if (!whmcsName.Equals(""))
             {
-                var translatedNews = await _mySQLContext.News
-                    .AsNoTracking()
+                var translatedNews = await SelectNewsDto(_mySQLContext.News
                     .Where(news => news.language.Equals(whmcsName))
-                    .Where(news => news.parentid.Equals(id))
-                    .Select(news => new NewsDto()
-                    {
-                        Id = news.id,
-                        ParentId = news.parentid,
-                        Name = news.title,
-                        Description = news.announcement,
-                        Date = news.date ?? new DateTime(),
-                        Src = string.Empty,
-                    })
+                    .Where(news => news.parentid.Equals(id)))
                     .FirstOrDefaultAsync();
                 if (translatedNews is not null)
                 {
@@ -151,18 +103,12 @@ namespace XlgamesBackend.Controllers
                     news = translatedNews;
                 }
             }
-            else
-                news.ParentId = news.Id;
+            else news.ParentId = news.Id;
             var document = new HtmlDocument();
             document.LoadHtml(news.Description);
-            news.Src = document.DocumentNode.SelectSingleNode("//img")?.Attributes["src"]?.Value ?? string.Empty;
-            if (require)
-            {
-                document.DocumentNode.SelectSingleNode("//p")?.Remove();
-                news.Description = document.DocumentNode.OuterHtml;
-            }
-            else
-                news.Description = string.Empty;
+            news.Src = document.DocumentNode.SelectSingleNode("//img").Attributes["src"].Value;
+            document.DocumentNode.SelectSingleNode("//p")?.Remove();
+            news.Description = document.DocumentNode.OuterHtml;
             return news;
         }
         #endregion

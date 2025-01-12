@@ -1,8 +1,7 @@
 import configuration from "$lib";
 import {json} from "@sveltejs/kit";
+import {getUserLanguageFromCookies} from "$lib/tools.js";
 
-export async function GET({ url, fetch }) {
-  const locale = url.searchParams.get("locale");
-  return json(await (await fetch(`${configuration.api}/News/${locale}?require=${url.searchParams.get("require")}
-  &max=${url.searchParams.get("max") ?? 65536}`)).json());
+export async function GET({ url, fetch, cookies }) {
+  return json(await (await fetch(`${configuration.api}/News/${getUserLanguageFromCookies(cookies).WHMCSName}?max=${url.searchParams.get("max") ?? 65535}`)).json());
 }

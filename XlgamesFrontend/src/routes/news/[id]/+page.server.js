@@ -1,12 +1,8 @@
 import configuration from "$lib";
+import {getUserLanguageFromCookies} from "$lib/tools.js";
 
-export async function load({cookies, parent, fetch, params}) {
-  let userLocale = cookies.get(configuration.savedUserLocale);
-  if (!userLocale) {
-    const data = await parent();
-    userLocale = data.language.Locale;
-  }
+export async function load({cookies, fetch, params}) {
   return {
-    news: await (await fetch(`${configuration.api}/News/${userLocale}/${params["id"]}`)).json()
+    news: await (await fetch(`${configuration.api}/News/${getUserLanguageFromCookies(cookies).WHMCSName}/${params.id}`)).json()
   }
 }
