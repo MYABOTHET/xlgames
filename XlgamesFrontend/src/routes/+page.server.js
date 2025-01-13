@@ -7,7 +7,7 @@ export async function load({cookies, fetch}) {
   return {
     max,
     maxNews,
-    news: await (await fetch(`${configuration.api}/News/${getUserLanguageFromCookies(cookies).WHMCSName}?max=${maxNews}`)).json(),
+    news: await (await fetch(`${configuration.api}/News?whmcsName=${getUserLanguageFromCookies(cookies).WHMCSName}&max=${maxNews}`)).json(),
     gameServers: await (await fetch(`${configuration.api}/GameServers/Cards?max=${max}`)).json()
   }
 }

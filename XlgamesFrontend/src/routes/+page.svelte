@@ -38,7 +38,7 @@
     <PrimarySection title={language.GameServers.Name} href="/game-servers">
       <nav class="primary-section">
         {#each data.gameServers as gameServer}
-          {@const translate = gameServer.GameServerDataBases.find(item => item.LanguageId === language.Id)}
+          {@const translate = gameServer.GameServerDataBases.find(item => item.LanguageId == language.Id)}
           {@const sign = language.Shared.CurrencySign}
           {@const position = language.Shared.CurrencySignPosition}
           {@const price = translate.Price}
@@ -91,7 +91,7 @@
       <nav class="primary-section">
         {#each news as newsItem}
           <PrimaryCard name={newsItem.Name} description={dateFormatter.format(new Date(newsItem.Date))}
-                       src={newsItem.Src} href="/news/{newsItem.ParentId}"
+                       src={newsItem.Src} href="/news/{newsItem.LinkName}"
                        class="quinary-size"/>
         {/each}
         {#if data.maxNews - data.news.length >= 0}

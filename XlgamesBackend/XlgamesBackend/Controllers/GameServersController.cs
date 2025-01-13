@@ -2,7 +2,6 @@
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using XlgamesBackend.Dtoes;
 using XlgamesBackend.Models.GameServersBases;
 using XlgamesBackend.PostgreSQL;
 
@@ -43,17 +42,27 @@ namespace XlgamesBackend.Controllers
                             Price = gameServerData.Price,
                         }).ToList()
                 })
+                .OrderBy(gameServer => gameServer.Id)
                 .Take(max)
                 .ToListAsync();
         }
         #endregion
 
+        //#region Получить игровой сервер
+        //[HttpGet]
+        //public async Task<ActionResult<IEnumerable<GameServerModel>>> GetGameServer()
+        //#endregion
+
         #region Получить игровые серверы
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<GameServer>>> GetGameServer()
+        public async Task<ActionResult<IEnumerable<GameServerModel>>> GetGameServer()
         {
             return await _postgreSQLContext.GameServers
-                .Select(gameServer => gameServer)
+                .Select(gameServer => new GameServerModel()
+                {
+                    Id = gameServer.Id,
+                    Name = gameServer.Name
+                })
                 .ToListAsync();
         }
         #endregion
@@ -72,7 +81,7 @@ namespace XlgamesBackend.Controllers
                 ModelState.AddModelError("GameServer", "Это название уже занято");
                 return ValidationProblem();
             }
-            string linkName = name.Replace(" ", "-");
+            string linkName = name.Replace(" ", "~");
             var languageIds = await _postgreSQLContext.Languages
                 .Select(language => language.Id)
                 .ToListAsync();
@@ -108,7 +117,7 @@ namespace XlgamesBackend.Controllers
                 return ValidationProblem();
             }
             gameServer.Name = gameServerDto.Name;
-            gameServer.LinkName = gameServerDto.Name.Replace(" ", "-");
+            gameServer.LinkName = gameServerDto.Name.Replace(" ", "~");
             gameServer.Src = gameServerDto.Src;
             gameServer.isPopular = gameServerDto.isPopular;
             gameServer.CPU = gameServerDto.CPU;

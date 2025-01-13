@@ -1,7 +1,9 @@
 <script>
-  import {getContext} from "svelte";
+  import {getContext, onMount} from "svelte";
   import {createDateFormatter} from "$lib/tools.js";
   import PrimaryArrow from "$lib/components/svg/PrimaryArrow.svelte";
+  import {replaceState} from "$app/navigation";
+  import {page} from "$app/state";
   
   const {data} = $props();
   
@@ -13,7 +15,20 @@
   
   $effect(async () => {
     if (language.Locale !== languageDto.Locale) {
-      news = await (await fetch(`/news/${newsParentId}`)).json();
+      let result = await (await fetch(`/news/${newsParentId}`)).json();
+      replaceState(`/news/${result.LinkName}`, {
+        result
+      });
+      news = result;
+    }
+  });
+  
+  onMount(() => {
+    const result = page.state.result;
+    if (result) {
+      if (news.Name !== result.Name) {
+        news = result;
+      }
     }
   });
 </script>

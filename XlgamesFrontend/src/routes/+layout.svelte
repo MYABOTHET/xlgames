@@ -94,9 +94,7 @@
        class="fixed w-full h-dvh bottom-0 pointer-events-none flex items-end primary-px py-5 z-[5]">
     <article class="pointer-events-auto bg-primary primary-block-default border-ternary py-5 px-6 flex flex-col
   gap-y-4 w-96 text-sm leading-[1.375rem] max-hexadecimal:w-full">
-      <p>{language.CookiePolicy.CookiePolicyBanner.Description} <a href="/cookie-policy"
-                                                                   class="primary-link">{language.Shared.ReadMore}
-        ...</a></p>
+      <p>{language.CookiePolicy.CookiePolicyBanner.Description} <a href="/cookie-policy" class="primary-link">{language.Shared.ReadMore}...</a></p>
       <button onclick={setCookieAgreement}
               class="quinary-block rounded-none py-2 px-3">{language.CookiePolicy.CookiePolicyBanner.Name}</button>
     </article>

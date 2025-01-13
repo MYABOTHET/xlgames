@@ -28,7 +28,7 @@
     <nav class="grid grid-cols-2 max-quinary:grid-cols-1 primary-gap">
       {#each news as newsItem}
         <PrimaryCard name={newsItem.Name} description={dateFormatter.format(new Date(newsItem.Date))}
-                     src={newsItem.Src} href="/news/{newsItem.ParentId}"
+                     src={newsItem.Src} href="/news/{newsItem.LinkName}"
                      class="quaternary-height"/>
       {/each}
     </nav>

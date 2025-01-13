@@ -4,7 +4,7 @@ import {getUserLanguageFromCookies} from "$lib/tools.js";
 
 /** @type {import('@sveltejs/kit').Handle} */
 export async function handle({event, resolve}) {
-  const {cookies, request} = event;
+  const {cookies, request, locals} = event;
   let userLanguage = getUserLanguageFromCookies(cookies);
   if (!userLanguage) {
     let userLocale = null;
@@ -17,7 +17,7 @@ export async function handle({event, resolve}) {
     }
     userLanguage = languages.find(language => language.Locale === userLocale);
     cookies.set(configuration.userLanguage, JSON.stringify(userLanguage), {path: "/", httpOnly: false, secure: false, priority: "high"});
-    request.languagesCache = languages;
+    locals.languages = languages;
   }
   return resolve(event, {
     transformPageChunk: ({html}) => html.replace('%lang%', userLanguage.Lang)

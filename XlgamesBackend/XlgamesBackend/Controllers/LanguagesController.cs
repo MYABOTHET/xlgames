@@ -47,6 +47,7 @@ namespace XlgamesBackend.Controllers
         [HttpGet]
         public async Task<ActionResult<IEnumerable<LanguageDto>>> GetLanguages()
         {
+            await System.Threading.Tasks.Task.Delay(2000);
             // Возвращаем ответ
             return await _postgreSQLContext.Languages
                 .Select(language => new LanguageDto()
@@ -66,6 +67,7 @@ namespace XlgamesBackend.Controllers
         [HttpGet("{id:int}")]
         public async Task<ActionResult<Language>> GetLanguage(int id)
         {
+            await System.Threading.Tasks.Task.Delay(2000);
             // Получаем язык
             Language? language = await GetLanguageById(id) ?? await GetLanguageById(1);
             // Возвращаем ответ

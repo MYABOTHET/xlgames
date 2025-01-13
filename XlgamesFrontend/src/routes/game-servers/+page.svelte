@@ -34,8 +34,8 @@
     gameServers = data.gameServers.filter(item => {
       let queryTrim = searchQuery.trim().toLowerCase();
       if (queryTrim !== "") {
-        const name = item.Name.replace(/ {1,}/g, "").toLowerCase();
-        const result = name.includes(queryTrim.replace(/ {1,}/g, ""));
+        const name = item.Name.replace(/ +/g, "").toLowerCase();
+        const result = name.includes(queryTrim.replace(/ +/g, ""));
         if (!result) return false;
       }
       if (popularActive) {
