@@ -12,7 +12,7 @@
   {@html language.TermsService.Head}
 </svelte:head>
 
-<article class="flex flex-col ternary-gap-y">
+<article class="secondary-section">
   <h1 class="primary-title">{language.TermsService.Title}</h1>
   <p>{language.TermsService.Description}</p>
   {#if language.TermsService.TermsServiceCollection.length}

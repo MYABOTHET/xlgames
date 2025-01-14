@@ -1,7 +1,8 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Diagnostics;
 using XlgamesBackend.Models;
-using XlgamesBackend.Models.GameServersBases;
+using XlgamesBackend.Models.GameServerDatas;
+using XlgamesBackend.Models.GameServers;
 
 namespace XlgamesBackend.PostgreSQL
 {
@@ -57,7 +58,7 @@ namespace XlgamesBackend.PostgreSQL
             builder.Entity<GameServer>()
                 .HasMany(gameServerItem => gameServerItem.GameServerDatas)
                 .WithOne(gameServerData => gameServerData.GameServer)
-                .HasForeignKey("GameServerId")
+                .HasForeignKey(gameServerData => gameServerData.GameServerId)
                 .IsRequired();
             builder.Entity<Language>()
                 .HasMany(language => language.GameServerDatas)

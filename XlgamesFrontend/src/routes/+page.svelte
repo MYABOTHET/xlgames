@@ -38,7 +38,7 @@
     <PrimarySection title={language.GameServers.Name} href="/game-servers">
       <nav class="primary-section">
         {#each data.gameServers as gameServer}
-          {@const translate = gameServer.GameServerDataBases.find(item => item.LanguageId == language.Id)}
+          {@const translate = gameServer.GameServerDataModels.find(item => item.LanguageId === language.Id)}
           {@const sign = language.Shared.CurrencySign}
           {@const position = language.Shared.CurrencySignPosition}
           {@const price = translate.Price}

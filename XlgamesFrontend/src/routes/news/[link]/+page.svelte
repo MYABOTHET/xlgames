@@ -4,6 +4,7 @@
   import PrimaryArrow from "$lib/components/svg/PrimaryArrow.svelte";
   import {replaceState} from "$app/navigation";
   import {page} from "$app/state";
+  import SecondaryLink from "$lib/components/links/SecondaryLink.svelte";
   
   const {data} = $props();
   
@@ -38,12 +39,8 @@
 </svelte:head>
 
 <div class="max-w-screen-hexadecimal w-full mx-auto">
-  <article class="w-full flex flex-col ternary-gap-y">
-    <a href="/news" class="flex-center transition-colors gap-x-6 text-white fill-white
-hover:text-ternary hover:fill-ternary w-fit">
-      <h1 class="order-2 primary-title">{news.Name}</h1>
-      <PrimaryArrow class="ternary-width -rotate-90 order-1"/>
-    </a>
+  <article class="secondary-section">
+    <SecondaryLink name={news.Name} href="/news"/>
     <div class="flex flex-col gap-y-6">
       <img src={news.Src} alt={news.Name} class="rounded-2xl ternary-size quaternary-height">
       <p class="text-quaternary text-xs mx-auto font-normal">{dateFormatter.format(new Date(news.Date))}</p>

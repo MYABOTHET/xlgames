@@ -9,10 +9,21 @@ const author = "Лёвин Валерий Дмитриевич";
 const detector = new DeviceDetector();
 
 export async function load({request, fetch, cookies, locals}) {
-  const userAgent = request.headers.get("user-agent");
-  const userData = detector.detect(userAgent);
-  const userOnMobile = DeviceHelper.isMobile(userData);
-  const projectData = await (await fetch(`${configuration.api}/ProjectDatas`)).json();
+  const promises = [
+    fetch(`${configuration.api}/Languages/${getUserLanguageFromCookies(cookies).Id}`),
+    fetch(`${configuration.api}/ProjectDatas`),
+  ];
+  let languages = null;
+  if (locals.languages) {
+    languages = locals.languages;
+  } else {
+    promises.push(fetch(`${configuration.api}/Languages`));
+  }
+  const data = await Promise.all(promises);
+  if (!languages) {
+    languages = await data[2].json();
+  }
+  const projectData = await data[1].json();
   const navigationLinks = {
     header: {
       menu: {
@@ -50,6 +61,9 @@ export async function load({request, fetch, cookies, locals}) {
       name: "Contacts", href: "/contacts"
     },]
   };
+  const userAgent = request.headers.get("user-agent");
+  const userData = detector.detect(userAgent);
+  const userOnMobile = DeviceHelper.isMobile(userData);
   return {
     mobileWidth,
     headerHeight,
@@ -57,7 +71,7 @@ export async function load({request, fetch, cookies, locals}) {
     navigationLinks,
     userOnMobile,
     projectData,
-    languages: locals.languages ? locals.languages : await (await fetch(`${configuration.api}/Languages`)).json(),
-    language: await (await fetch(`${configuration.api}/Languages/${getUserLanguageFromCookies(cookies).Id}`)).json(),
+    languages,
+    language: await data[0].json(),
   }
 }

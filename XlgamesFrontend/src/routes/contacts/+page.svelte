@@ -15,14 +15,14 @@
 
 {#snippet contact(title, description)}
 <article class="flex">
-  <h1 class="text-nowrap h-fit mt-auto">{title}:</h1>
-  <div class="min-w-4 relative -top-1 ml-1.5 mr-2 border-b border-b-quaternary flex-1"></div>
+  <h1 class="text-nowrap h-fit">{title}</h1>
+  <div class="min-w-4 flex-1 secondary-line"></div>
   <address class="break-all not-italic">{description}</address>
 </article>
 {/snippet}
 
 <div class="max-w-screen-hexadecimal w-full mx-auto">
-  <article class="w-full flex flex-col ternary-gap-y">
+  <article class="secondary-section">
     <h1 class="primary-title">{language.Contacts.Name}</h1>
     <p>{language.Contacts.Description}</p>
     {#if true}

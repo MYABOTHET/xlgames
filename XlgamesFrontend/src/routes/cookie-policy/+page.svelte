@@ -12,7 +12,7 @@
   {@html language.CookiePolicy.Head}
 </svelte:head>
 
-<article class="flex flex-col ternary-gap-y">
+<article class="secondary-section">
   <h1 class="primary-title">{language.CookiePolicy.Title}</h1>
   <p>{language.CookiePolicy.Description}</p>
   {#if language.CookiePolicy.CookiePolicyCollection.length}

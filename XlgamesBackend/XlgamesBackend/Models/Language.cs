@@ -1,7 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Newtonsoft.Json;
 using XlgamesBackend.Dtoes;
-using XlgamesBackend.Models.GameServersBases;
+using XlgamesBackend.Models.GameServerDatas;
 using XlgamesBackend.Models.Translates;
 
 namespace XlgamesBackend.Models
@@ -12,14 +12,14 @@ namespace XlgamesBackend.Models
     {
         public Shared Shared { get; set; } = new();
         public Home Home { get; set; } = new();
-        public GameServers GameServers { get; set; } = new();
+        public Translates.GameServers GameServers { get; set; } = new();
         public WebHosting WebHosting { get; set; } = new();
         public DataCenters DataCenters { get; set; } = new();
         public Translates.News News { get; set; } = new();
         public AboutUs AboutUs { get; set; } = new();
         public TermsService TermsService { get; set; } = new();
         public PrivacyPolicy PrivacyPolicy { get; set; } = new();
-        public Translates.GameServer GameServer { get; set; } = new();
+        public GameServer GameServer { get; set; } = new();
         public VPS VPS { get; set; } = new();
         public VPN VPN { get; set; } = new();
         public ServersWithGPU ServersWithGPU { get; set; } = new();

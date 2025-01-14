@@ -2,7 +2,8 @@
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using XlgamesBackend.Models.GameServersBases;
+using XlgamesBackend.Models.GameServerDatas;
+using XlgamesBackend.Models.GameServers;
 using XlgamesBackend.PostgreSQL;
 
 namespace XlgamesBackend.Controllers
@@ -35,8 +36,8 @@ namespace XlgamesBackend.Controllers
                     LinkName = gameServer.LinkName,
                     Src = gameServer.Src,
                     isPopular = gameServer.isPopular,
-                    GameServerDataBases = gameServer.GameServerDatas
-                        .Select(gameServerData => new GameServerDataBase()
+                    GameServerDataModels = gameServer.GameServerDatas
+                        .Select(gameServerData => new GameServerDataModel()
                         {
                             LanguageId = gameServerData.LanguageId,
                             Price = gameServerData.Price,
@@ -48,14 +49,40 @@ namespace XlgamesBackend.Controllers
         }
         #endregion
 
-        //#region Получить игровой сервер
-        //[HttpGet]
-        //public async Task<ActionResult<IEnumerable<GameServerModel>>> GetGameServer()
-        //#endregion
+        #region Получить игровой сервер по ссылке
+        [HttpGet("{linkName}")]
+        public async Task<ActionResult<GameServerLink?>> GetGameServer(string linkName)
+        {
+            return await _postgreSQLContext.GameServers
+                .AsNoTracking()
+                .Where(gameServer => gameServer.LinkName.Equals(linkName))
+                .Select(gameServer => new GameServerLink()
+                {
+                    CPU = gameServer.CPU,
+                    Disk = gameServer.Disk,
+                    Id = gameServer.Id,
+                    isPopular = gameServer.isPopular,
+                    Link = gameServer.Link,
+                    LinkName = gameServer.LinkName,
+                    Name = gameServer.Name,
+                    RAM = gameServer.RAM,
+                    Slots = gameServer.Slots,
+                    Src = gameServer.Src,
+                    GameServerDataPrimaryModels = gameServer.GameServerDatas
+                        .Select(gameServerData => new GameServerDataPrimaryModel()
+                        {
+                            Id = gameServerData.Id,
+                            LanguageId = gameServerData.LanguageId,
+                        })
+                        .ToList(),
+                })
+                .FirstOrDefaultAsync();
+        }
+        #endregion
 
         #region Получить игровые серверы
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<GameServerModel>>> GetGameServer()
+        public async Task<ActionResult<IEnumerable<GameServerModel>>> GetGameServers()
         {
             return await _postgreSQLContext.GameServers
                 .Select(gameServer => new GameServerModel()
@@ -100,7 +127,7 @@ namespace XlgamesBackend.Controllers
         #region Обновить игровой сервер
         [HttpPut("{id:int}")]
         [Authorize]
-        public async Task<ActionResult> PutGameServer(int id, UpdateGameServer gameServerDto)
+        public async Task<ActionResult> PutGameServer(int id, GameServer gameServerDto)
         {
             GameServer? gameServer = await _postgreSQLContext.GameServers.FindAsync(id);
             if (gameServer is null)
@@ -124,6 +151,7 @@ namespace XlgamesBackend.Controllers
             gameServer.RAM = gameServerDto.RAM;
             gameServer.Disk = gameServerDto.Disk;
             gameServer.Slots = gameServerDto.Slots;
+            gameServer.Link = gameServerDto.Link;
             await _postgreSQLContext.SaveChangesAsync();
             return Ok();
         }

@@ -1,6 +1,6 @@
-﻿namespace XlgamesBackend.Models.GameServersBases
+﻿namespace XlgamesBackend.Models.GameServers
 {
-    public class Base : GameServerModel
+    public class GameServerBase : GameServerModel
     {
         public string LinkName { get; set; } = "...";
         public string Src { get; set; } = "...";

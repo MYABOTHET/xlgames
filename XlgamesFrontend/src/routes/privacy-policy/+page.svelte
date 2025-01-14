@@ -12,7 +12,7 @@
   {@html language.PrivacyPolicy.Head}
 </svelte:head>
 
-<article class="flex flex-col ternary-gap-y">
+<article class="secondary-section">
   <h1 class="primary-title">{language.PrivacyPolicy.Title}</h1>
   <p>{language.PrivacyPolicy.Description}</p>
   {#if language.PrivacyPolicy.PrivacyPolicyCollection.length}

@@ -111,7 +111,7 @@ namespace XlgamesBackend.Controllers
         #endregion
 
         #region Получить новость по ID
-        [HttpGet("{whmcsName}/{id:int}")]
+        [HttpGet("{id:int}/{whmcsName}")]
         public async Task<ActionResult<NewsDto>> GetNewsByWHMCSName(string whmcsName, int id)
         {
             var news = await SelectNewsDto(_mySQLContext.News

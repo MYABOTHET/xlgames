@@ -1,4 +1,4 @@
-﻿namespace XlgamesBackend.Models.GameServersBases
+﻿namespace XlgamesBackend.Models.GameServers
 {
     public class GameServerModel
     {

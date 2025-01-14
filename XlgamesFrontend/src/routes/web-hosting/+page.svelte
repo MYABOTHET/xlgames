@@ -11,7 +11,7 @@
   {@html language.WebHosting.Head}
 </svelte:head>
 
-<article class="flex flex-col ternary-gap-y">
+<article class="secondary-section">
   <h1 class="primary-title">{language.WebHosting.Title}</h1>
   <p>{language.WebHosting.Description}</p>
 </article>

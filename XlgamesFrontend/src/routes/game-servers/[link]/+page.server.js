@@ -1,21 +1,12 @@
 import configuration from "$lib";
+import {getUserLanguageFromCookies} from "$lib/tools.js";
 
-export async function load({cookies, parent, fetch}) {
+export async function load({fetch, params, cookies}) {
+  const gameServer = await (await fetch(`${configuration.api}/GameServers/${params.link}`)).json();
+  const gameServerData = await (await fetch(`${configuration.api}/GameServerDatas/${gameServer
+      .GameServerDataPrimaryModels.find(gameServerData => gameServerData.LanguageId === getUserLanguageFromCookies(cookies).Id).Id}`)).json();
   return {
-    gameServer: {
-      Name: "Minecraft",
-      Link: "Minecraft",
-      Src: "/minecraft.webp",
-      Slots: 0,
-      CPU: "...",
-      RAM: "...",
-      Disk: "...",
-      Data: {
-        Head: "",
-        Price: 1240,
-        Description: "...",
-        GameServerPoints: ["...", "...", "..."],
-      }
-    },
+    gameServer,
+    gameServerData
   }
 }

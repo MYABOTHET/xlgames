@@ -82,8 +82,16 @@
     @apply flex primary-gap overflow-x-scroll secondary-scroll pb-1;
   }
 
+  .secondary-section {
+    @apply flex flex-col ternary-gap-y;
+  }
+
   .primary-line {
     @apply border-b border-b-secondary;
+  }
+
+  .secondary-line {
+    @apply relative h-fit top-[1.2rem] ml-1.5 mr-2 border-b border-b-quaternary;
   }
 
   .primary-link {

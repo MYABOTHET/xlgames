@@ -12,7 +12,7 @@
 </svelte:head>
 
 <div class="max-w-screen-hexadecimal w-full mx-auto">
-  <article class="w-full flex flex-col ternary-gap-y">
+  <article class="secondary-section">
     <h1 class="primary-title">{language.AboutUs.Name}</h1>
     <img src={data.projectData.AboutUsSrc} alt={language.AboutUs.Name}
          class="rounded-2xl ternary-size quaternary-height">

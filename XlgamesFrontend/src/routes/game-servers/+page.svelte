@@ -58,7 +58,7 @@ px-6 py-2.5 h-fit primary-block-default rounded-full primary-bg">
 </button>
 {/snippet}
 
-<article class="flex flex-col ternary-gap-y">
+<article class="secondary-section">
   <h1 class="primary-title">{language.GameServers.Title}</h1>
   <div class="flex flex-wrap gap-4">
     {@render filter?.(language.GameServers.All, allActive, seeAll)}
@@ -79,9 +79,9 @@ px-6 py-2.5 h-fit primary-block-default rounded-full primary-bg">
   </div>
   {#if gameServers.length}
     <nav class="grid grid-cols-4 primary-gap max-octal:grid-cols-3 max-ternary:grid-cols-2 max-nine:grid-cols-none
-    max-nine:auto-rows-fr">
+    max-nine:auto-cols-fr">
       {#each gameServers as gameServer (gameServer.Id)}
-        {@const translate = gameServer.GameServerDataBases.find(item => item.LanguageId === language.Id)}
+        {@const translate = gameServer.GameServerDataModels.find(item => item.LanguageId === language.Id)}
         {@const sign = language.Shared.CurrencySign}
         {@const position = language.Shared.CurrencySignPosition}
         {@const price = translate.Price}

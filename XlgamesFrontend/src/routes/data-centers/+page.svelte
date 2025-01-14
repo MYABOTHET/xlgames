@@ -13,7 +13,7 @@
   {@html language.DataCenters.Head}
 </svelte:head>
 
-<article class="flex flex-col ternary-gap-y">
+<article class="secondary-section">
   <h1 class="primary-title">{language.DataCenters.Title}</h1>
   <p>{language.DataCenters.Description}</p>
   {#if language.DataCenters.DataCenterCollection.length}

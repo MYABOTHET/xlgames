@@ -12,7 +12,7 @@
   {@html language.VPN.Head}
 </svelte:head>
 
-<article class="flex flex-col ternary-gap-y">
+<article class="secondary-section">
   <h1 class="primary-title">{language.VPN.Title}</h1>
   <p>{language.VPN.Description}</p>
   {#if language.VPN.VPNCollection.length}
