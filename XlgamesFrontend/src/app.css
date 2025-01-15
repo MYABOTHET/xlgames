@@ -14,11 +14,11 @@
   }
 
   html, body {
-    @apply h-dvh w-full font-inter text-white font-light-up tracking-wide;
+    @apply h-dvh w-full;
   }
 
   body {
-    @apply bg-primary flex flex-col justify-between;
+    @apply bg-primary flex flex-col font-inter text-white font-light-up tracking-wide justify-between;
   }
 
   p {
@@ -91,7 +91,7 @@
   }
 
   .secondary-line {
-    @apply relative h-fit top-[1.2rem] ml-1.5 mr-2 border-b border-b-quaternary;
+    @apply relative h-fit top-[1.2rem] ml-2 mr-2 border-b border-b-quaternary;
   }
 
   .primary-link {
@@ -162,6 +162,10 @@
     @apply py-7 px-8;
   }
 
+  .quaternary-p {
+    @apply px-6 py-2.5;
+  }
+
   /* sizes */
   .primary-width {
     @apply min-w-8 max-w-8;
@@ -197,6 +201,14 @@
 
   .quinary-width {
     @apply min-w-[22.65rem] max-w-[22.65rem];
+  }
+
+  .hexadecimal-width {
+    @apply min-w-80 max-w-80;
+  }
+
+  .septenary-width {
+    @apply min-w-52 max-w-52;
   }
 
   .primary-size {

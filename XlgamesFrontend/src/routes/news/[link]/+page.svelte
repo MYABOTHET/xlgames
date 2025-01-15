@@ -1,7 +1,6 @@
 <script>
   import {getContext, onMount} from "svelte";
   import {createDateFormatter} from "$lib/tools.js";
-  import PrimaryArrow from "$lib/components/svg/PrimaryArrow.svelte";
   import {replaceState} from "$app/navigation";
   import {page} from "$app/state";
   import SecondaryLink from "$lib/components/links/SecondaryLink.svelte";
@@ -59,6 +58,10 @@
     
     ul, ol {
       @apply flex flex-col gap-y-4;
+    }
+    
+    li > ul, li > ol {
+      @apply gap-y-2 pt-2;
     }
     
     ul {

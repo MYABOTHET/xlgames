@@ -5,6 +5,11 @@
   import PrimaryCard from "$lib/components/cards/PrimaryCard.svelte";
   import SecondaryCard from "$lib/components/cards/SecondaryCard.svelte";
   import SecondarySection from "$lib/components/sections/SecondarySection.svelte";
+  import Russia from "$lib/components/svg/flags/Russia.svelte";
+  import Finland from "$lib/components/svg/flags/Finland.svelte";
+  import USA from "$lib/components/svg/flags/USA.svelte";
+  import Singapore from "$lib/components/svg/flags/Singapore.svelte";
+  import Germany from "$lib/components/svg/flags/Germany.svelte";
   
   const {data} = $props();
   

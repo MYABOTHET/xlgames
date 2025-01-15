@@ -19,6 +19,7 @@
 <svelte:head>
   <title>{language.GameServer.Title} - {data.gameServer.Name} - {data.projectData.Name}</title>
   {@html language.GameServer.Head}
+  {@html gameServerData.Head}
 </svelte:head>
 
 {#snippet descLine(title, description)}
@@ -49,7 +50,7 @@ max-decimal:aspect-square"/>
         <h1>{language.Shared.PriceFrom} {language.Shared.CurrencySignPosition
             ? language.Shared.CurrencySign + gameServerData.Price
             : gameServerData.Price + language.Shared.CurrencySign} / {language.Shared.Month}</h1>
-        <a href={data.gameServer.Link} class="quinary-block w-fit px-6 py-2.5">{language.Shared.Order}</a>
+        <a href={data.gameServer.Link} class="quinary-block w-fit quaternary-p">{language.Shared.Order}</a>
       </article>
     </div>
   </article>

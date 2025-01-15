@@ -2,6 +2,7 @@
   import {getContext} from "svelte";
   import PrimaryLoupe from "$lib/components/svg/PrimaryLoupe.svelte";
   import PrimaryCard from "$lib/components/cards/PrimaryCard.svelte";
+  import PrimaryButton from "$lib/componentsOld/buttons/PrimaryButton.svelte";
   
   const {data} = $props();
   
@@ -51,18 +52,12 @@
   {@html language.GameServers.Head}
 </svelte:head>
 
-{#snippet filter(title, isActive, method)}
-<button onclick={method} class="{isActive ? 'border-ternary text-ternary' : 'border-quaternary text-quaternary'}
-px-6 py-2.5 h-fit primary-block-default rounded-full primary-bg">
-  {title}
-</button>
-{/snippet}
-
 <article class="secondary-section">
   <h1 class="primary-title">{language.GameServers.Title}</h1>
   <div class="flex flex-wrap gap-4">
-    {@render filter?.(language.GameServers.All, allActive, seeAll)}
-    {@render filter?.(language.GameServers.Popular, popularActive, seePopular)}
+    <button onclick={seeAll}>{language.GameServers.All}</button>
+    <button onclick={seeAll}><PrimaryButton isActive={allActive}>{language.GameServers.All}</PrimaryButton></button>
+    <button onclick={seePopular}><PrimaryButton isActive={popularActive}>{language.GameServers.Popular}</PrimaryButton></button>
     <div class="pl-6 flex-center primary-block-default text-white rounded-full primary-bg
     max-w-72 max-septenary:max-w-full w-full {searchQuery
     ? 'border-ternary fill-ternary'

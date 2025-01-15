@@ -64,6 +64,28 @@ namespace XlgamesBackend.Models.Translates
         public string Slots { get; set; } = "...";
         public string Control { get; set; } = "...";
 
+        // Страны и регионы
+        public string Russia { get; set; } = "...";
+        public string Moscow { get; set; } = "...";
+        public string SaintPetersburg { get; set; } = "...";
+
+        public string USA { get; set; } = "...";
+        public string NewYork { get; set; } = "...";
+        public string Miami { get; set; } = "...";
+        public string LosAngeles { get; set; } = "...";
+        public string Hillsboro { get; set; } = "...";
+        public string Ashburn { get; set; } = "...";
+
+        public string Singapore { get; set; } = "...";
+
+        public string Finland { get; set; } = "...";
+        public string Helsinki { get; set; } = "...";
+
+        public string Germany { get; set; } = "...";
+        public string Falkenstein { get; set; } = "...";
+        public string Frankfurt { get; set; } = "...";
+        public string Nuremberg { get; set; } = "...";
+        
         // Предложения
         public string AnySuggestionsStart { get; set; } = "..."; // Предложения
         public string AnySuggestionsCenter { get; set; } = "...";
