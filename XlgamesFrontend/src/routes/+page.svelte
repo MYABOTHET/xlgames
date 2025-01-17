@@ -5,18 +5,13 @@
   import PrimaryCard from "$lib/components/cards/PrimaryCard.svelte";
   import SecondaryCard from "$lib/components/cards/SecondaryCard.svelte";
   import SecondarySection from "$lib/components/sections/SecondarySection.svelte";
-  import Russia from "$lib/components/svg/flags/Russia.svelte";
-  import Finland from "$lib/components/svg/flags/Finland.svelte";
-  import USA from "$lib/components/svg/flags/USA.svelte";
-  import Singapore from "$lib/components/svg/flags/Singapore.svelte";
-  import Germany from "$lib/components/svg/flags/Germany.svelte";
   
   const {data} = $props();
   
   let language = $derived(getContext("language")());
   let languageDto = $derived(getContext("languageDto")());
   let news = $state(data.news);
-  let dateFormatter = $derived(createDateFormatter(languageDto.Locale));
+  let dateFormatter = $derived(createDateFormatter(language.Locale));
   
   $effect(async () => {
     if (language.Locale !== languageDto.Locale) {
@@ -41,7 +36,7 @@
 <div class="flex flex-col gap-y-28">
   {#if data.gameServers.length}
     <PrimarySection title={language.GameServers.Name} href="/game-servers">
-      <nav class="primary-section">
+      <nav class="section">
         {#each data.gameServers as gameServer}
           {@const translate = gameServer.GameServerDataModels.find(item => item.LanguageId === language.Id)}
           {@const sign = language.Shared.CurrencySign}
@@ -93,7 +88,7 @@
   
   {#if news.length}
     <PrimarySection title={language.News.Name} href="/news">
-      <nav class="primary-section">
+      <nav class="section">
         {#each news as newsItem}
           <PrimaryCard name={newsItem.Name} description={dateFormatter.format(new Date(newsItem.Date))}
                        src={newsItem.Src} href="/news/{newsItem.LinkName}"
@@ -108,3 +103,20 @@
     </PrimarySection>
   {/if}
 </div>
+
+<style lang="postcss">
+  .section {
+    @apply flex gap-8 overflow-x-scroll pb-1;
+  }
+  .section::-webkit-scrollbar {
+    @apply h-1.5;
+  }
+  
+  .section::-webkit-scrollbar-track {
+    @apply bg-transparent;
+  }
+  
+  .section::-webkit-scrollbar-thumb {
+    @apply bg-secondary rounded-full;
+  }
+</style>

@@ -18,7 +18,7 @@ builder.Services.AddControllers().AddNewtonsoftJson(options =>
 #region Добавить аутентификацию и авторизацию
 builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme).AddCookie(options =>
 {
-    options.ExpireTimeSpan = TimeSpan.FromDays(3);
+    options.ExpireTimeSpan = TimeSpan.FromDays(1);
     options.SlidingExpiration = true;
     options.Events = new CookieAuthenticationEvents
     {

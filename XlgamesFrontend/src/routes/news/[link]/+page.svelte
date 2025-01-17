@@ -10,7 +10,7 @@
   let language = $derived(getContext("language")());
   let languageDto = $derived(getContext("languageDto")());
   let news = $state(data.news);
-  let dateFormatter = $derived(createDateFormatter(languageDto.Locale));
+  let dateFormatter = $derived(createDateFormatter(language.Locale));
   const newsParentId = data.news.ParentId;
   
   $effect(async () => {

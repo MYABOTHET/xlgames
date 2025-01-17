@@ -2,7 +2,6 @@
   import {getContext} from "svelte";
   import PrimaryLoupe from "$lib/components/svg/PrimaryLoupe.svelte";
   import PrimaryCard from "$lib/components/cards/PrimaryCard.svelte";
-  import PrimaryButton from "$lib/componentsOld/buttons/PrimaryButton.svelte";
   
   const {data} = $props();
   
@@ -52,14 +51,19 @@
   {@html language.GameServers.Head}
 </svelte:head>
 
+{#snippet buttonFilter(click, isActive, content)}
+<button onclick={click} class="{isActive ? 'border-ternary text-ternary' : 'border-quaternary text-quaternary'}
+    border-2 px-6 py-2.5 rounded-full text-nowrap transition-colors hover:bg-secondary
+max-nine:flex-[1_1_25%]">{content}</button>
+{/snippet}
+
 <article class="secondary-section">
   <h1 class="primary-title">{language.GameServers.Title}</h1>
   <div class="flex flex-wrap gap-4">
-    <button onclick={seeAll}>{language.GameServers.All}</button>
-    <button onclick={seeAll}><PrimaryButton isActive={allActive}>{language.GameServers.All}</PrimaryButton></button>
-    <button onclick={seePopular}><PrimaryButton isActive={popularActive}>{language.GameServers.Popular}</PrimaryButton></button>
+    {@render buttonFilter?.(seeAll, allActive, language.GameServers.All)}
+    {@render buttonFilter?.(seePopular, popularActive, language.GameServers.Popular)}
     <div class="pl-6 flex-center primary-block-default text-white rounded-full primary-bg
-    max-w-72 max-septenary:max-w-full w-full {searchQuery
+    max-w-72 max-nine:max-w-full max-nine:flex-[1_1_100%] w-full {searchQuery
     ? 'border-ternary fill-ternary'
     : 'border-quaternary fill-quaternary'}">
       <PrimaryLoupe class="min-w-3.5 min-h-3.5 max-w-3.5 max-h-3.5"/>

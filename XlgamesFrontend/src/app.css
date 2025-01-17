@@ -27,27 +27,6 @@
 }
 
 @layer components {
-  /* scrolls */
-  .primary-scroll {
-    scrollbar-width: none;
-  }
-
-  .primary-scroll::-webkit-scrollbar {
-    @apply w-0;
-  }
-
-  .secondary-scroll::-webkit-scrollbar {
-    @apply h-1.5;
-  }
-
-  .secondary-scroll::-webkit-scrollbar-track {
-    @apply bg-transparent;
-  }
-
-  .secondary-scroll::-webkit-scrollbar-thumb {
-    @apply bg-secondary rounded-full;
-  }
-
   /* blocks */
   .primary-block-default {
     @apply border-2 overflow-hidden;
@@ -76,10 +55,6 @@
   /* titles */
   .primary-title {
     @apply text-3xl font-medium;
-  }
-
-  .primary-section {
-    @apply flex primary-gap overflow-x-scroll secondary-scroll pb-1;
   }
 
   .secondary-section {
@@ -229,14 +204,6 @@
 
   .quinary-size {
     @apply quinary-width quaternary-height;
-  }
-
-  .primary-filter {
-    @apply saturate-[.60] brightness-[.60];
-  }
-
-  .primary-text-shadow {
-    text-shadow: 1px 1px rgba(0, 0, 0, 1);
   }
 
 }

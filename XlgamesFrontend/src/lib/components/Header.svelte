@@ -105,7 +105,7 @@
         <div transition:fly={{x: "-100vw", duration: 175, delay: 0, opacity: 1, easing: quartInOut}}
              style="min-height: calc(100dvh - {headerHeight}rem);
              max-height: calc(100dvh - {headerHeight}rem); margin-top: {headerHeight}rem;"
-             class="absolute top-0 left-0 overflow-y-auto w-full bg-primary primary-px py-6 primary-scroll z-10">
+             class="absolute top-0 left-0 overflow-y-auto w-full bg-primary primary-px py-6 scroll z-10">
           <nav class="flex flex-col w-full gap-y-6">
             {#each [...navigationLinks.header.menu.links, ...navigationLinks.header.other,
               ...navigationLinks.other, ...navigationLinks.menu, ...navigationLinks.footer] as link}
@@ -128,3 +128,12 @@ flex-center border-b border-b-secondary primary-px {menuIsVisible ? 'bg-primary'
     {@render menus?.()}
   </div>
 </header>
+
+<style lang="postcss">
+  .scroll {
+    scrollbar-width: none;
+  }
+  .scroll::-webkit-scrollbar {
+    @apply w-0;
+  }
+</style>

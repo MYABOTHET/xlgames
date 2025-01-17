@@ -20,7 +20,7 @@ export default {
       },
       fontSize: {
         'sm-up': '0.9375rem'
-      }
+      },
     },
     screens: {
       'primary': '72rem',

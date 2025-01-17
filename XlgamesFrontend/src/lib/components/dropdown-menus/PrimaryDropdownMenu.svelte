@@ -36,7 +36,7 @@
 <svelte:window onclick={click}/>
 
 <div {...props} class={props.class}>
-  <button style="width: inherit; height: inherit" onmouseout={blur} onmouseover={focus} onblur={blur} onfocus={focus} onclick={toggle}>
+  <button onmouseout={blur} onmouseover={focus} onblur={blur} onfocus={focus} onclick={toggle}>
     {@render button?.(isMenuVisible)}
   </button>
   {#if isMenuVisible}

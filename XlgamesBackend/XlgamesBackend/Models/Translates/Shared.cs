@@ -63,6 +63,7 @@ namespace XlgamesBackend.Models.Translates
         public string Cores { get; set; } = "...";
         public string Slots { get; set; } = "...";
         public string Control { get; set; } = "...";
+        public string GB { get; set; } = "...";
 
         // Страны и регионы
         public string Russia { get; set; } = "...";
