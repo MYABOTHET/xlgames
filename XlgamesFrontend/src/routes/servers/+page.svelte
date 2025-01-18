@@ -15,9 +15,9 @@
       id: 1,
       price: 5974.43,
       info: {
-        CPU: "Intel Core i5 13500",
+        CPU: "AMD Ryzen 7 PRO 8700GE",
         GHz: 4.8,
-        RAM: "64...128",
+        RAM: "64-128",
         RAMType: "DDR4",
         Disk: "2x512",
         DiskType: "SSD",
@@ -184,7 +184,8 @@
                            defaultItem={language.Shared.AnyRegion} select={selectRegion}/>
   </div>
   <div class="border-2 border-ternary rounded-2xl overflow-hidden">
-    <table class="w-full border-separate border-spacing-4 px-2 text-[0.9375rem] leading-[1.375rem] text-center">
+    <table class="w-full border-separate border-spacing-4 px-2 text-center
+text-sm">
       <thead>
       <tr>
         <th>{language.Shared.CPU}</th>
@@ -193,8 +194,8 @@
         <th>{language.Shared.RAMType}</th>
         <th>{language.Shared.Disk} ({language.Shared.GB})</th>
         <th>{language.Shared.DiskType}</th>
-        <th>{language.Shared.Country}</th>
-        <th>{language.Shared.Region}</th>
+        <th class="min-w-[60px]">{language.Shared.Country}</th>
+        <th class="w-full">{language.Shared.Region}</th>
         <th>{language.Shared.PricePerMonth}</th>
         <th></th>
       </tr>
@@ -224,8 +225,8 @@
           <td>{server.info.RAMType}</td>
           <td>{server.info.Disk}</td>
           <td>{server.info.DiskType}</td>
-          <td>
-            <div class="grid grid-cols-2 gap-1.5 py-0.5">
+          <td class="min-w-[60px]">
+            <div class="grid grid-cols-2 gap-2 py-0.5">
               {#if server.info.Germany}<Germany class="min-h-4 max-h-4"/>{/if}
               {#if server.info.Finland}<Finland class="min-h-4 max-h-4"/>{/if}
               {#if server.info.Russia}<Russia class="min-h-4 max-h-4"/>{/if}
@@ -233,7 +234,7 @@
               {#if server.info.Singapore}<Singapore class="min-h-4 max-h-4"/>{/if}
             </div>
           </td>
-          <td class="w-full !text-wrap">{regions}</td>
+          <td class="!text-wrap w-full">{regions}</td>
           <td>{position ? sign + price : price + sign}</td>
           <td><a class="primary-link" href="/">{language.Shared.Order}</a></td>
         </tr>

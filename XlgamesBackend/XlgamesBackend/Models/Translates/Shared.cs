@@ -73,7 +73,7 @@ namespace XlgamesBackend.Models.Translates
         public string USA { get; set; } = "...";
         public string NewYork { get; set; } = "...";
         public string Miami { get; set; } = "...";
-        public string LosAngeles { get; set; } = "...";
+        public string LosAngeles { get; set; } = "..."; 
         public string Hillsboro { get; set; } = "...";
         public string Ashburn { get; set; } = "...";
 
