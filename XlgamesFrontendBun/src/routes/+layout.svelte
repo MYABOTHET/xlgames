@@ -12,13 +12,14 @@
   const {headerHeight, author, navigationLinks, projectData, languages, mobileWidth} = data;
   
   let language = $state.raw(data.language);
-  let languageDto = $state({
+  let languageDto = $state.raw({
     Id: data.language.Id,
     Name: data.language.Name,
     WHMCSName: data.language.WHMCSName,
     OriginalName: data.language.OriginalName,
     Locale: data.language.Locale,
     Lang: data.language.Lang,
+    CurrencyId: data.language.CurrencyId
   });
   let userOnMobile = $state(data.userOnMobile);
   let agreeCookie = $state(true);

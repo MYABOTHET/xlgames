@@ -7,7 +7,7 @@
   
   let language = $derived(getContext("language")());
   let languageDto = $derived(getContext("languageDto")());
-  let gameServerData = $state(data.gameServerData);
+  let gameServerData = $state.raw(data.gameServerData);
   
   $effect(async () => {
     if (language.Locale !== languageDto.Locale) {

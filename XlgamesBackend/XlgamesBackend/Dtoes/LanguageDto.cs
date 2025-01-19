@@ -16,5 +16,7 @@ namespace XlgamesBackend.Dtoes
         public string Locale { get; set; } = "..."; // Локаль языка: en-US
         [Required(ErrorMessage = "Укажите локаль HTML")]
         public string Lang { get; set; } = "..."; // Локаль HTML: en
+        [Required(ErrorMessage = "Укажите ID валюты в WHMCS")]
+        public int CurrencyId { get; set; } // ID валюты в WHMCS: 1
     }
 }

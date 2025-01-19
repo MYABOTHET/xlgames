@@ -13,14 +13,12 @@ namespace XlgamesBackend.Controllers
     public class NewsController : ControllerBase
     {
         #region Переменные
-        private readonly PostgreSQLContext _postgreSQLContext;
         private readonly MySQLContext _mySQLContext;
         #endregion
 
         #region Конструктор
-        public NewsController(PostgreSQLContext postgreSQLContext, MySQLContext mySQLContext)
+        public NewsController(MySQLContext mySQLContext)
         {
-            _postgreSQLContext = postgreSQLContext;
             _mySQLContext = mySQLContext;
         }
         #endregion

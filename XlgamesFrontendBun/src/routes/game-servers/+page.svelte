@@ -10,7 +10,7 @@
   let allActive = $state(true);
   let popularActive = $state(false);
   let searchQuery = $state("");
-  let gameServers = $state(data.gameServers);
+  let gameServers = $state.raw(data.gameServers);
   
   function seeAll() {
     if (!allActive) {

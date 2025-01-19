@@ -56,7 +56,8 @@ namespace XlgamesBackend.Controllers
                     Locale = language.Locale,
                     OriginalName = language.OriginalName,
                     WHMCSName = language.WHMCSName,
-                    Lang = language.Lang
+                    Lang = language.Lang,
+                    CurrencyId = language.CurrencyId,
                 })
                 .ToListAsync();
         }

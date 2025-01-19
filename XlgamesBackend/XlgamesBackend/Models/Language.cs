@@ -63,6 +63,7 @@ namespace XlgamesBackend.Models
             OriginalName = languageDto.OriginalName;
             Locale = languageDto.Locale;
             Lang = languageDto.Lang;
+            CurrencyId = languageDto.CurrencyId;
         }
     }
 }

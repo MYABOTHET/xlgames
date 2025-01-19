@@ -1,34 +1,19 @@
 <script>
-  import {getContext, onMount} from "svelte";
+  import {getContext} from "svelte";
   import {createDateFormatter} from "$lib/tools.js";
-  import {replaceState} from "$app/navigation";
-  import {page} from "$app/state";
   import SecondaryLink from "$lib/components/links/SecondaryLink.svelte";
   
   const {data} = $props();
   
   let language = $derived(getContext("language")());
   let languageDto = $derived(getContext("languageDto")());
-  let news = $state(data.news);
+  let news = $state.raw(data.news);
   let dateFormatter = $derived(createDateFormatter(language.Locale));
   const newsParentId = data.news.ParentId;
   
   $effect(async () => {
     if (language.Locale !== languageDto.Locale) {
-      let result = await (await fetch(`/news/${newsParentId}`)).json();
-      replaceState(`/news/${result.LinkName}`, {
-        result
-      });
-      news = result;
-    }
-  });
-  
-  onMount(() => {
-    const result = page.state.result;
-    if (result) {
-      if (news.Name !== result.Name) {
-        news = result;
-      }
+      news = await (await fetch(`/news/${newsParentId}`)).json();
     }
   });
 </script>
