@@ -11,7 +11,7 @@
   const {children, data} = $props();
   const {headerHeight, author, navigationLinks, projectData, languages, mobileWidth} = data;
   
-  let language = $state(data.language);
+  let language = $state.raw(data.language);
   let languageDto = $state({
     Id: data.language.Id,
     Name: data.language.Name,

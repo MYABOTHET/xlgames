@@ -1,0 +1,25 @@
+{
+	"name": "xlgamesfrontendbun",
+	"private": true,
+	"version": "0.0.1",
+	"type": "module",
+	"scripts": {
+		"dev": "bun --bun run vite dev --host 0.0.0.0 --port 80",
+		"build": "bun --bun run vite build",
+		"preview": "bun --bun run vite preview"
+	},
+	"devDependencies": {
+		"@sveltejs/kit": "^2.16.0",
+		"@sveltejs/vite-plugin-svelte": "^5.0.3",
+		"autoprefixer": "^10.4.20",
+		"postcss": "^8.5.1",
+		"svelte": "^5.19.0",
+		"svelte-adapter-bun": "^0.5.2",
+		"tailwindcss": "^3.4.17",
+		"vite": "^6.0.7"
+	},
+	"dependencies": {
+		"node-device-detector": "^2.1.6",
+		"resolve-accept-language": "^3.1.10"
+	}
+}
