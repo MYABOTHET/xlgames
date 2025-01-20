@@ -48,15 +48,18 @@
   </button>
   {#if isActive}
     <div transition:fade={{duration: 75}} class="absolute mt-2.5 w-full z-10">
-      <PrimaryTriangle class="primary-triangle-center secondary-width fill-ternary relative top-px"/>
-      <div
-          class="overflow-y-scroll border-2 w-full border-ternary bg-primary overflow-hidden max-h-44 scroll rounded-2xl">
-        <button onclick={() => {select(null)}} class="transition-colors hover:bg-secondary w-full text-left px-6 py-3
+      <PrimaryTriangle class="z-[5] primary-triangle-center secondary-width fill-ternary relative top-px"/>
+      <div class="relative flex justify-center items-center">
+        <div
+            class="relative z-[5] overflow-y-scroll border-2 w-full border-ternary bg-primary overflow-hidden max-h-44 scroll rounded-2xl">
+          <button onclick={() => {select(null)}} class="transition-colors hover:bg-secondary w-full text-left px-6 py-3
 hover:text-ternary {currentItem ? '' : 'text-ternary'}">{defaultItem}</button>
-        {#each items as item}
-          <button onclick={() => {select(item)}} class="transition-colors hover:bg-secondary w-full text-left
+          {#each items as item}
+            <button onclick={() => {select(item)}} class="transition-colors hover:bg-secondary w-full text-left
                px-6 py-3 hover:text-ternary {currentItem === item ? 'text-ternary' : ''}">{item}</button>
-        {/each}
+          {/each}
+        </div>
+        <div class="z-[3] absolute w-full h-full box-content rounded-[19px] border-[3px] border-primary"></div>
       </div>
     </div>
   {/if}

@@ -10,6 +10,7 @@
   const {serversProp, userOnMobile, preset, ...props} = $props();
   
   let language = $derived(getContext("language")());
+  let oldLanguage = $state.raw(getContext("language")());
   
   let result = $state.raw(serversProp);
   let resultSorted = $derived(result.sort(compareNumeric));
@@ -108,12 +109,6 @@
   
   function clearFilters() {
     if (currentCPU || currentCountry || currentRegion || currentGPU) {
-      reinit();
-    }
-  }
-  
-  function reinit() {
-    if (init.init) {
       result = serversProp;
       CPUs = initCPUs(serversProp);
       currentCPU = null;
@@ -127,6 +122,34 @@
         GPUs = initGPUs(serversProp);
         currentGPU = null;
       }
+    }
+  }
+  
+  function reinit() {
+    if (init.init) {
+      
+      if (oldLanguage.Id === language.Id) return;
+      
+      if (currentCountry) {
+        currentCountry = language.Shared[countryKey];
+      }
+      if (currentRegion) {
+        currentRegion = language.Shared[regionKey];
+      }
+      
+      let translateCountries = new Set();
+      countries.forEach(country => {
+        translateCountries.add(language.Shared[getKeyByValue(oldLanguage.Shared, country)]);
+      });
+      countries = translateCountries;
+      
+      let translateRegions = new Set();
+      regions.forEach(region => {
+        translateRegions.add(language.Shared[getKeyByValue(oldLanguage.Shared, region)]);
+      });
+      regions = translateRegions;
+      
+      oldLanguage = language;
     } else {
       init.init = true;
     }
