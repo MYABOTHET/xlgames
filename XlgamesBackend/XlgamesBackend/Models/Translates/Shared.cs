@@ -64,6 +64,7 @@ namespace XlgamesBackend.Models.Translates
         public string Slots { get; set; } = "...";
         public string Control { get; set; } = "...";
         public string GB { get; set; } = "...";
+        public string ResetFilters { get; set; } = "...";
 
         // Страны и регионы
         public string Russia { get; set; } = "...";
@@ -73,7 +74,7 @@ namespace XlgamesBackend.Models.Translates
         public string USA { get; set; } = "...";
         public string NewYork { get; set; } = "...";
         public string Miami { get; set; } = "...";
-        public string LosAngeles { get; set; } = "..."; 
+        public string LosAngeles { get; set; } = "...";
         public string Hillsboro { get; set; } = "...";
         public string Ashburn { get; set; } = "...";
 
@@ -86,7 +87,7 @@ namespace XlgamesBackend.Models.Translates
         public string Falkenstein { get; set; } = "...";
         public string Frankfurt { get; set; } = "...";
         public string Nuremberg { get; set; } = "...";
-        
+
         // Предложения
         public string AnySuggestionsStart { get; set; } = "..."; // Предложения
         public string AnySuggestionsCenter { get; set; } = "...";

@@ -12,6 +12,7 @@
   let languageDto = $derived(getContext("languageDto")());
   let news = $state.raw(data.news);
   let dateFormatter = $derived(createDateFormatter(language.Locale));
+  let priceFormatter = $derived(new Intl.NumberFormat(language.Locale));
   
   $effect(async () => {
     if (language.Locale !== languageDto.Locale) {
@@ -41,7 +42,7 @@
           {@const translate = gameServer.GameServerDataModels.find(item => item.LanguageId === language.Id)}
           {@const sign = language.Shared.CurrencySign}
           {@const position = language.Shared.CurrencySignPosition}
-          {@const price = translate.Price}
+          {@const price = priceFormatter.format(translate.Price)}
           <PrimaryCard name={gameServer.Name} description="{language.Shared.PriceFrom}
 {position ? sign + price : price + sign}"
                        src={gameServer.Src} class="secondary-size" href="/game-servers/{gameServer.LinkName}"/>

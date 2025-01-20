@@ -2,7 +2,7 @@ import configuration from "$lib";
 
 export async function load({fetch}) {
   return {
-    servers: (await (await fetch(`${configuration.api}/Products/Servers`)).json()).map(server => {
+    servers: (await (await fetch(`${configuration.api}/Products/VPS`)).json()).map(server => {
       try {
         server.Data = JSON.parse(server.Data);
       } catch {

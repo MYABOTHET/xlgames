@@ -8,7 +8,7 @@ namespace XlgamesBackend.MySQL
     {
         #region Таблицы
         public DbSet<News> News { get; set; } = default!;
-        public DbSet<Server> Servers { get; set; } = default!;
+        public DbSet<Product> Products { get; set; } = default!;
         public DbSet<Slug> Slugs { get; set; } = default!;
         public DbSet<Pricing> Pricings { get; set; } = default!;
         #endregion

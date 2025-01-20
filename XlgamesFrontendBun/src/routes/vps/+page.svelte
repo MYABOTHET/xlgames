@@ -25,12 +25,12 @@
 </script>
 
 <svelte:head>
-  <title>{language.ServersWithoutGPU.Title} - {data.projectData.Name}</title>
-  {@html language.ServersWithoutGPU.Head}
+  <title>{language.VPS.Title} - {data.projectData.Name}</title>
+  {@html language.VPS.Head}
 </svelte:head>
 
 <article class="flex flex-col gap-y-14">
-  <h1 class="primary-title">{language.ServersWithoutGPU.Title}</h1>
-  <p>{language.ServersWithoutGPU.Description}</p>
-  <PrimaryPreset serversProp={data.servers} {userOnMobile}/>
+  <h1 class="primary-title">{language.VPS.Title}</h1>
+  <p>{language.VPS.Description}</p>
+  <PrimaryPreset serversProp={data.servers} {userOnMobile} preset="secondary"/>
 </article>

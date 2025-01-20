@@ -32,7 +32,7 @@ export default {
       'septenary': '31.25rem',
       'octal': '75rem',
       'nine': '37.5rem',
-      'decimal': '45rem'
+      'decimal': '45rem',
     },
   },
   plugins: [],

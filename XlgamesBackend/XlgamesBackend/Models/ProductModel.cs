@@ -1,6 +1,6 @@
 ﻿namespace XlgamesBackend.Models
 {
-    public class ServerModel
+    public class ProductModel
     {
         public int Id { get; set; }
         public string Data { get; set; } = string.Empty;

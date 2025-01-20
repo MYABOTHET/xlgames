@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using XlgamesBackend.Dtoes;
 using XlgamesBackend.Models;
 using XlgamesBackend.MySQL;
 
@@ -7,26 +8,24 @@ namespace XlgamesBackend.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class ServersController : ControllerBase
+    public class ProductsController : ControllerBase
     {
         #region Переменные
         private readonly MySQLContext _mySQLContext;
         #endregion
 
         #region Конструктор
-        public ServersController(MySQLContext mySQLContext)
+        public ProductsController(MySQLContext mySQLContext)
         {
             _mySQLContext = mySQLContext;
         }
         #endregion
 
-        [HttpGet]
-        public async Task<ActionResult> GetServers()
+        public IQueryable<ProductModel> SelectProductModel(IQueryable<Product> products)
         {
-            var list = await _mySQLContext.Servers
+            return products
                 .Where(server => server.hidden.Equals(false))
-                .Where(server => server.gid.Equals(1) || server.gid.Equals(3) || server.gid.Equals(4))
-                .Select(server => new ServerModel()
+                .Select(server => new ProductModel()
                 {
                     Id = server.id,
                     Data = server.short_description,
@@ -43,9 +42,32 @@ namespace XlgamesBackend.Controllers
                             Price = (int)pricing.monthly,
                         })
                         .ToList()
-                })
-                .OrderBy(server => server.Id)
-                .Take(4)
+                });
+        }
+
+        [HttpGet("Servers")]
+        public async Task<ActionResult> GetServers()
+        {
+            var list = await SelectProductModel(_mySQLContext.Products
+                .Where(server => server.gid.Equals(1) || server.gid.Equals(3) || server.gid.Equals(4)))
+                .ToListAsync();
+            return Ok(list);
+        }
+
+        [HttpGet("Servers-GPU")]
+        public async Task<ActionResult> GetServersGPU()
+        {
+            var list = await SelectProductModel(_mySQLContext.Products
+                .Where(server => server.gid.Equals(9)))
+                .ToListAsync();
+            return Ok(list);
+        }
+
+        [HttpGet("VPS")]
+        public async Task<ActionResult> GetVPS()
+        {
+            var list = await SelectProductModel(_mySQLContext.Products
+                .Where(server => server.gid.Equals(6)))
                 .ToListAsync();
             return Ok(list);
         }

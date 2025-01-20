@@ -8,6 +8,7 @@
   let language = $derived(getContext("language")());
   let languageDto = $derived(getContext("languageDto")());
   let gameServerData = $state.raw(data.gameServerData);
+  let priceFormatter = $derived(new Intl.NumberFormat(language.Locale));
   
   $effect(async () => {
     if (language.Locale !== languageDto.Locale) {
@@ -38,18 +39,18 @@
     <img src={data.gameServer.Src} alt={data.gameServer.Name} class="decimal:secondary-size ternary-size rounded-2xl
 max-decimal:aspect-square"/>
     <div class="flex flex-col gap-y-6">
-      <section class="h-full flex flex-col gap-y-0.5 justify-between max-decimal:gap-y-0.5">
+      <section class="h-full flex flex-col gap-y-1 justify-between">
         {@render descLine?.(language.Shared.CPU, data.gameServer.CPU)}
         {@render descLine?.(language.Shared.RAMType, data.gameServer.RAM)}
         {@render descLine?.(language.Shared.DiskType, data.gameServer.Disk)}
         {@render descLine?.(language.Shared.Slots, data.gameServer.Slots === "-" ? language.GameServer.Unlimited : data.gameServer.Slots)}
         {@render descLine?.(language.Shared.Control, "Control panel, FTP")}
-        {@render descLine?.(language.Shared.Region, "Europe")}
+        {@render descLine?.(language.Shared.Country, "Europe")}
       </section>
       <article class="flex items-center max-decimal:gap-x-4 gap-x-8 max-decimal:justify-between">
         <h1>{language.Shared.PriceFrom} {language.Shared.CurrencySignPosition
-            ? language.Shared.CurrencySign + gameServerData.Price
-            : gameServerData.Price + language.Shared.CurrencySign} / {language.Shared.Month}</h1>
+            ? language.Shared.CurrencySign + priceFormatter.format(gameServerData.Price)
+            : priceFormatter.format(gameServerData.Price) + language.Shared.CurrencySign} / {language.Shared.Month}</h1>
         <a href={data.gameServer.Link} class="quinary-block w-fit quaternary-p">{language.Shared.Order}</a>
       </article>
     </div>
