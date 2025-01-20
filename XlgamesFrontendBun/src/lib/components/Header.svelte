@@ -12,6 +12,7 @@
   import PrimaryMenu from "$lib/components/svg/PrimaryMenu.svelte";
   import SecondaryIcon from "$lib/components/icons/SecondaryIcon.svelte";
   import {quartInOut} from "svelte/easing";
+  import {afterNavigate} from "$app/navigation";
   
   const {headerHeight, navigationLinks, projectData, languages, userOnMobile, setLanguage, ...props} = $props();
   const {Name, Logo} = projectData;
@@ -30,6 +31,12 @@
     menuIsVisible = false;
     document.body.classList.remove("fixed");
   }
+  
+  function toggle() {
+    !menuIsVisible ? openMenu() : closeMenu();
+  }
+  
+  afterNavigate(() => {closeMenu()});
 </script>
 
 {#snippet linkBlock(link)}
@@ -98,22 +105,24 @@
         </div>
       </PrimaryDropdownMenu>
     {:else}
-      <PrimaryDropdownMenu class="flex" open={openMenu} close={closeMenu}>
-        {#snippet button(isMenuVisible)}
-        <SecondaryIcon Icon={PrimaryMenu} isActive={isMenuVisible} class="ternary-height fill-white"/>
-        {/snippet}
-        <div transition:fly={{x: "-100vw", duration: 175, delay: 0, opacity: 1, easing: quartInOut}}
-             style="min-height: calc(100dvh - {headerHeight}rem);
+      
+      <div class="flex">
+        <button onclick={toggle}><SecondaryIcon Icon={PrimaryMenu} isActive={menuIsVisible} class="ternary-height fill-white"/></button>
+        {#if menuIsVisible}
+          <div transition:fly={{x: "-100vw", duration: 175, delay: 0, opacity: 1, easing: quartInOut}}
+               style="min-height: calc(100dvh - {headerHeight}rem);
              max-height: calc(100dvh - {headerHeight}rem); margin-top: {headerHeight}rem;"
-             class="absolute top-0 left-0 overflow-y-auto w-full bg-primary primary-px py-6 scroll z-10">
-          <nav class="flex flex-col w-full gap-y-6">
-            {#each [...navigationLinks.header.menu.links, ...navigationLinks.header.other,
-              ...navigationLinks.other, ...navigationLinks.menu, ...navigationLinks.footer] as link}
-              <PrimaryLink style="width: fit-content" href={link.href}>{language.Shared[link.name]}</PrimaryLink>
-            {/each}
-          </nav>
-        </div>
-      </PrimaryDropdownMenu>
+               class="absolute top-0 left-0 overflow-y-auto w-full bg-primary primary-px py-6 scroll z-10">
+            <nav class="flex flex-col w-full gap-y-6">
+              {#each [...navigationLinks.header.menu.links, ...navigationLinks.header.other,
+                ...navigationLinks.other, ...navigationLinks.menu, ...navigationLinks.footer] as link}
+                <PrimaryLink style="width: fit-content" href={link.href}>{language.Shared[link.name]}</PrimaryLink>
+              {/each}
+            </nav>
+          </div>
+        {/if}
+      </div>
+      
     {/if}
   </div>
 </div>

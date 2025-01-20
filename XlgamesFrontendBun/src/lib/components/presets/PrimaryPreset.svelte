@@ -10,7 +10,10 @@
   const {serversProp, userOnMobile, preset, ...props} = $props();
   
   let language = $derived(getContext("language")());
-  let oldLanguage = $state.raw(getContext("language")());
+  let oldLanguage = $state.raw({
+    Id: language.Id,
+    Shared: language.Shared,
+  });
   
   let result = $state.raw(serversProp);
   let resultSorted = $derived(result.sort(compareNumeric));
@@ -139,17 +142,35 @@
       
       let translateCountries = new Set();
       countries.forEach(country => {
-        translateCountries.add(language.Shared[getKeyByValue(oldLanguage.Shared, country)]);
+        if (country === oldLanguage.Shared.Germany) translateCountries.add(language.Shared.Germany);
+        if (country === oldLanguage.Shared.Finland) translateCountries.add(language.Shared.Finland);
+        if (country === oldLanguage.Shared.Russia) translateCountries.add(language.Shared.Russia);
+        if (country === oldLanguage.Shared.USA) translateCountries.add(language.Shared.USA);
+        if (country === oldLanguage.Shared.Singapore) translateCountries.add(language.Shared.Singapore);
       });
       countries = translateCountries;
       
       let translateRegions = new Set();
       regions.forEach(region => {
-        translateRegions.add(language.Shared[getKeyByValue(oldLanguage.Shared, region)]);
+        if (region === oldLanguage.Shared.Falkenstein) translateRegions.add(language.Shared.Falkenstein);
+        if (region === oldLanguage.Shared.Frankfurt) translateRegions.add(language.Shared.Frankfurt);
+        if (region === oldLanguage.Shared.Nuremberg) translateRegions.add(language.Shared.Nuremberg);
+        if (region === oldLanguage.Shared.Helsinki) translateRegions.add(language.Shared.Helsinki);
+        if (region === oldLanguage.Shared.Moscow) translateRegions.add(language.Shared.Moscow);
+        if (region === oldLanguage.Shared.SaintPetersburg) translateRegions.add(language.Shared.SaintPetersburg);
+        if (region === oldLanguage.Shared.NewYork) translateRegions.add(language.Shared.NewYork);
+        if (region === oldLanguage.Shared.Miami) translateRegions.add(language.Shared.Miami);
+        if (region === oldLanguage.Shared.LosAngeles) translateRegions.add(language.Shared.LosAngeles);
+        if (region === oldLanguage.Shared.Hillsboro) translateRegions.add(language.Shared.Hillsboro);
+        if (region === oldLanguage.Shared.Ashburn) translateRegions.add(language.Shared.Ashburn);
+        if (region === oldLanguage.Shared.Singapore) translateRegions.add(language.Shared.Singapore);
       });
       regions = translateRegions;
       
-      oldLanguage = language;
+      oldLanguage = {
+        Id: language.Id,
+        Shared: language.Shared,
+      };
     } else {
       init.init = true;
     }
