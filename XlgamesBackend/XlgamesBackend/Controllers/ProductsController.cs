@@ -1,6 +1,7 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using System.ComponentModel.DataAnnotations;
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using XlgamesBackend.Dtoes;
 using XlgamesBackend.Models;
 using XlgamesBackend.MySQL;
 
@@ -88,6 +89,22 @@ namespace XlgamesBackend.Controllers
                 })
                 .ToListAsync();
             return Ok(list);
+        }
+
+        [HttpPut("{id:int}")]
+        [Authorize]
+        public async Task<ActionResult> PutProduct(int id,
+            [Required(ErrorMessage = "Данные продукта не могут быть пустыми"), FromForm] string data)
+        {
+            var product = await _mySQLContext.Products.FindAsync(id);
+            if (product is null)
+            {
+                ModelState.AddModelError("Product", "Продукт с таким ID не найден");
+                return ValidationProblem();
+            }
+            product.short_description = data;
+            await _mySQLContext.SaveChangesAsync();
+            return Ok();
         }
     }
 }

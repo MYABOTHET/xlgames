@@ -93,7 +93,7 @@
         {#each news as newsItem}
           <PrimaryCard name={newsItem.Name} description={dateFormatter.format(new Date(newsItem.Date))}
                        src={newsItem.Src} href="/news/{newsItem.LinkName}"
-                       class="quinary-size"/>
+                       class="quinary-size" rel="nofollow"/>
         {/each}
         {#if data.maxNews - data.news.length >= 0}
           {#each {length: data.maxNews - data.news.length}}

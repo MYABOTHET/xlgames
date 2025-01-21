@@ -23,8 +23,12 @@ max-quaternary:items-start">
       <nav class="grid w-full h-fit gap-3.5 grid-cols-4 max-secondary:grid-cols-3 max-ternary:grid-cols-2
 max-quaternary:grid-cols-1 max-quaternary:gap-y-4">
         {#each [...navigationLinks.header.menu.links, ...navigationLinks.header.other,
-          ...navigationLinks.other, ...navigationLinks.menu] as link}
+          ...navigationLinks.other] as link}
           <PrimaryLink style="width: fit-content; text-align: left"
+                       href={link.href}>{language.Shared[link.name]}</PrimaryLink>
+        {/each}
+        {#each navigationLinks.menu as link}
+          <PrimaryLink style="width: fit-content; text-align: left" rel="nofollow"
                        href={link.href}>{language.Shared[link.name]}</PrimaryLink>
         {/each}
       </nav>

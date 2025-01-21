@@ -7,4 +7,4 @@
   let equals = $derived(page.url.pathname === href);
 </script>
 
-<a {href} {style} class="text-center h-fit"><PrimarySpan {...props} isActive={equals}>{@render children?.()}</PrimarySpan></a>
+<a {href} {style} rel={props.rel} class="text-center h-fit"><PrimarySpan {...props} isActive={equals}>{@render children?.()}</PrimarySpan></a>

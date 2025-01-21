@@ -99,13 +99,14 @@
         <div transition:fade={{duration}} class="absolute primary-top -mr-3 z-20">
           <PrimaryBlock position="primary-triangle-end">
             {#each navigationLinks.menu as link}
-              {@render linkBlock?.(link)}
+              <PrimaryLink href={link.href} class="primary-bg primary-p" rel="nofollow">
+                {language.Shared[link.name]}
+              </PrimaryLink>
             {/each}
           </PrimaryBlock>
         </div>
       </PrimaryDropdownMenu>
     {:else}
-      
       <div class="flex">
         <button onclick={toggle}><SecondaryIcon Icon={PrimaryMenu} isActive={menuIsVisible} class="ternary-height fill-white"/></button>
         {#if menuIsVisible}
@@ -115,14 +116,19 @@
                class="absolute top-0 left-0 overflow-y-auto w-full bg-primary primary-px py-6 scroll z-10">
             <nav class="flex flex-col w-full gap-y-6">
               {#each [...navigationLinks.header.menu.links, ...navigationLinks.header.other,
-                ...navigationLinks.other, ...navigationLinks.menu, ...navigationLinks.footer] as link}
+                ...navigationLinks.other] as link}
+                <PrimaryLink style="width: fit-content" href={link.href}>{language.Shared[link.name]}</PrimaryLink>
+              {/each}
+              {#each navigationLinks.menu as link}
+                <PrimaryLink style="width: fit-content" href={link.href} rel="nofollow">{language.Shared[link.name]}</PrimaryLink>
+              {/each}
+              {#each navigationLinks.footer as link}
                 <PrimaryLink style="width: fit-content" href={link.href}>{language.Shared[link.name]}</PrimaryLink>
               {/each}
             </nav>
           </div>
         {/if}
       </div>
-      
     {/if}
   </div>
 </div>
@@ -134,7 +140,7 @@ flex-center border-b border-b-secondary primary-px {menuIsVisible ? 'bg-primary'
   <div class="flex-center max-w-screen-primary w-full">
     {@render project?.()}
     {#if !userOnMobile}{@render navigation?.()}{/if}
-    {@render menus?.()}
+      {@render menus?.()}
   </div>
 </header>
 

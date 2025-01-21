@@ -29,7 +29,7 @@
       {#each news as newsItem}
         <PrimaryCard name={newsItem.Name} description={dateFormatter.format(new Date(newsItem.Date))}
                      src={newsItem.Src} href="/news/{newsItem.LinkName}"
-                     class="quaternary-height"/>
+                     class="quaternary-height" rel="nofollow"/>
       {/each}
     </nav>
   {/if}

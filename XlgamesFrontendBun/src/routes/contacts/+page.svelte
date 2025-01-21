@@ -35,6 +35,6 @@
       </section>
     {/if}
     <TernarySection {projectData} class="flex flex-wrap gap-2.5"/>
-    <p>{language.Shared.AnyQuestionsStart}<a href={projectData.Contacts} class="primary-link">{language.Shared.AnyQuestionsCenter}</a>{language.Shared.AnyQuestionsEnd}</p>
+    <p>{language.Shared.AnyQuestionsStart}<a href={projectData.Contacts} class="primary-link" rel="nofollow">{language.Shared.AnyQuestionsCenter}</a>{language.Shared.AnyQuestionsEnd}</p>
   </article>
 </div>

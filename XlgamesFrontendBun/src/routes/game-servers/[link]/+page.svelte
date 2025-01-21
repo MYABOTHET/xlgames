@@ -10,6 +10,25 @@
   let gameServerData = $state.raw(data.gameServerData);
   let priceFormatter = $derived(new Intl.NumberFormat(language.Locale));
   
+  function getControl(gameServer) {
+    let result = ''.concat(
+        gameServer.ControlPanel ? ', ' + language.Shared.ControlPanel : '',
+        gameServer.FTP ? ', ' + language.Shared.FTP : '').slice(2);
+    if (!result) result = "...";
+    return result;
+  }
+  
+  function getCountry(gameServer) {
+    let result = ''.concat(
+        gameServer.Germany ? ', ' + language.Shared.Germany : '',
+        gameServer.Finland ? ', ' + language.Shared.Finland : '',
+        gameServer.USA ? ', ' + language.Shared.USA : '',
+        gameServer.Russia ? ', ' + language.Shared.Russia : '',
+        gameServer.Singapore ? ', ' + language.Shared.Singapore : '').slice(2);
+    if (!result) result = "...";
+    return result;
+  }
+  
   $effect(async () => {
     if (language.Locale !== languageDto.Locale) {
       gameServerData = await (await fetch(`/game-servers/${data.gameServer.GameServerDataPrimaryModels.find(gameServerData => gameServerData.LanguageId === languageDto.Id).Id}`)).json();
@@ -44,8 +63,8 @@ max-decimal:aspect-square"/>
         {@render descLine?.(language.Shared.RAMType, data.gameServer.RAM)}
         {@render descLine?.(language.Shared.DiskType, data.gameServer.Disk)}
         {@render descLine?.(language.Shared.Slots, data.gameServer.Slots === "-" ? language.GameServer.Unlimited : data.gameServer.Slots)}
-        {@render descLine?.(language.Shared.Control, "Control panel, FTP")}
-        {@render descLine?.(language.Shared.Country, "Europe")}
+        {@render descLine?.(language.Shared.Control, getControl(data.gameServer))}
+        {@render descLine?.(language.Shared.Country, getCountry(data.gameServer))}
       </section>
       <article class="flex items-center max-decimal:gap-x-4 gap-x-8 max-decimal:justify-between">
         <h1>{language.Shared.PriceFrom} {language.Shared.CurrencySignPosition

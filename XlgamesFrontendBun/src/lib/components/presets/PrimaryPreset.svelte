@@ -292,16 +292,18 @@
   }
   
   function getCountries(server) {
-    return ''.concat(
+    let result = ''.concat(
         server.Data.Germany ? ', ' + language.Shared.Germany : '',
         server.Data.Finland ? ', ' + language.Shared.Finland : '',
         server.Data.Russia ? ', ' + language.Shared.Russia : '',
         server.Data.USA ? ', ' + language.Shared.USA : '',
         server.Data.Singapore ? ', ' + language.Shared.Singapore : '').slice(2);
+    if (!result) result = "...";
+    return result;
   }
   
   function getRegions(server) {
-    return ''.concat(
+    let result = ''.concat(
         server.Data.Falkenstein ? ', ' + language.Shared.Falkenstein : '',
         server.Data.Frankfurt ? ', ' + language.Shared.Frankfurt : '',
         server.Data.Nuremberg ? ', ' + language.Shared.Nuremberg : '',
@@ -314,6 +316,8 @@
         server.Data.Hillsboro ? ', ' + language.Shared.Hillsboro : '',
         server.Data.Ashburn ? ', ' + language.Shared.Ashburn : '',
         server.Data.Singapore ? ', ' + language.Shared.Singapore : '').slice(2);
+    if (!result) result = "...";
+    return result;
   }
   
   function getPrice(server) {
@@ -429,7 +433,7 @@ border-quaternary text-quaternary max-nine:w-full">{language.Shared.ResetFilters
             <td>{server.Data.Disk}</td>
             <td>{server.Data.DiskType}</td>
             <td>
-              <div class="flex flex-wrap justify-center gap-2 pt-px mx-auto max-w-[60px] min-w-[60px]">
+              <div class="flex flex-wrap justify-center gap-2 mx-auto max-w-[60px] min-w-[60px]">
                 {#if server.Data.Germany}
                   <Germany class="min-h-4 max-h-4"/>
                 {/if}
@@ -444,6 +448,9 @@ border-quaternary text-quaternary max-nine:w-full">{language.Shared.ResetFilters
                 {/if}
                 {#if server.Data.Singapore}
                   <Singapore class="min-h-4 max-h-4"/>
+                {/if}
+                {#if !(server.Data.Germany || server.Data.Finland || server.Data.Russia || server.Data.USA || server.Data.Singapore)}
+                  ...
                 {/if}
               </div>
             </td>

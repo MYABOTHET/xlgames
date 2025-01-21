@@ -65,6 +65,8 @@ namespace XlgamesBackend.Models.Translates
         public string Control { get; set; } = "...";
         public string GB { get; set; } = "...";
         public string ResetFilters { get; set; } = "...";
+        public string ControlPanel { get; set; } = "...";
+        public string FTP { get; set; } = "...";
 
         // Страны и регионы
         public string Russia { get; set; } = "...";

@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+Disallow: /news/
+Disallow: /store
+Disallow: /admin
+Sitemap: https://xlgames.gg/sitemap.xml
