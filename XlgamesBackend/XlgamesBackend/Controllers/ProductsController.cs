@@ -39,7 +39,7 @@ namespace XlgamesBackend.Controllers
                         .Select(pricing => new PricingModel()
                         {
                             CurrencyId = pricing.currency,
-                            Price = (int)pricing.monthly,
+                            Price = pricing.monthly,
                         })
                         .ToList()
                 });
@@ -68,6 +68,24 @@ namespace XlgamesBackend.Controllers
         {
             var list = await SelectProductModel(_mySQLContext.Products
                 .Where(server => server.gid.Equals(6)))
+                .ToListAsync();
+            return Ok(list);
+        }
+
+        [HttpGet("VPN")]
+        public async Task<ActionResult> GetVPN()
+        {
+            var list = await _mySQLContext.Pricings
+                .Where(pricing => pricing.type.Equals("product"))
+                .Where(pricing => pricing.relid.Equals(51))
+                .Select(pricing => new PrimaryPricingModel()
+                {
+                    CurrencyId = pricing.currency,
+                    Monthly = pricing.monthly,
+                    Quarterly = pricing.quarterly,
+                    Semiannually = pricing.semiannually,
+                    Annually = pricing.annually
+                })
                 .ToListAsync();
             return Ok(list);
         }

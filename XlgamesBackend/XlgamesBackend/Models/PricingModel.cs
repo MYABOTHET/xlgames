@@ -3,6 +3,6 @@
     public class PricingModel
     {
         public int CurrencyId { get; set; }
-        public int Price { get; set; }
+        public float Price { get; set; }
     }
 }

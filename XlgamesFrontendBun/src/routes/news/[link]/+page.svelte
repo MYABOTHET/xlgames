@@ -2,6 +2,7 @@
   import {getContext} from "svelte";
   import {createDateFormatter} from "$lib/tools.js";
   import SecondaryLink from "$lib/components/links/SecondaryLink.svelte";
+  import {replaceState} from "$app/navigation";
   
   const {data} = $props();
   
@@ -13,7 +14,9 @@
   
   $effect(async () => {
     if (language.Locale !== languageDto.Locale) {
-      news = await (await fetch(`/news/${newsParentId}`)).json();
+      const result = await (await fetch(`/news/${newsParentId}`)).json();
+      replaceState(`/news/${result.LinkName}`, {});
+      news = result;
     }
   });
 </script>

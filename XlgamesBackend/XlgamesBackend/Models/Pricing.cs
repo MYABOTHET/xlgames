@@ -10,6 +10,9 @@ namespace XlgamesBackend.Models
         public int currency { get; set; }
         public int relid { get; set; }
         public string type { get; set; } = "...";
-        public float monthly { get; set; } 
+        public float monthly { get; set; }
+        public float quarterly { get; set; }
+        public float semiannually { get; set; }
+        public float annually { get; set; }
     }
 }
