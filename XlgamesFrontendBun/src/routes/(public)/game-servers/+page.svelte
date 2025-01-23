@@ -70,7 +70,7 @@ max-nine:flex-[1_1_25%]">{content}</button>
       <PrimaryLoupe class="min-w-3.5 min-h-3.5 max-w-3.5 max-h-3.5"/>
       <input
           class="min-w-0 w-full pl-3 pr-6 py-2.5 bg-transparent placeholder-quaternary outline-none"
-          placeholder={language.GameServers.Search} spellcheck="false" autocomplete="false"
+          placeholder={language.GameServers.Search} spellcheck="false" autocomplete="off"
           bind:value={
           () => searchQuery,
           (value) => {allActive = true; popularActive = false; searchQuery = value; search();}

@@ -11,8 +11,8 @@
   
   let language = $derived(getContext("language")());
   let oldLanguage = $state.raw({
-    Id: language.Id,
-    Shared: language.Shared,
+    Id: getContext("language")().Id,
+    Shared: getContext("language")().Shared,
   });
   
   let result = $state.raw(serversProp);

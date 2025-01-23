@@ -89,6 +89,7 @@ namespace XlgamesBackend.Controllers
 
         #region Получить игровые серверы
         [HttpGet]
+        [Authorize]
         public async Task<ActionResult<IEnumerable<GameServerModel>>> GetGameServers()
         {
             return await _postgreSQLContext.GameServers

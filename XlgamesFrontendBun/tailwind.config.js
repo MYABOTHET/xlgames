@@ -8,6 +8,9 @@ export default {
         'secondary': '#212329',
         'ternary': '#FFB400',
         'quaternary': '#62687A',
+        'quinary': '#272a31',
+        'hexadecimal': '#3c3f45',
+        'septenary': '#36383e',
       },
       fontFamily: {
         'inter': 'Inter'

@@ -9,16 +9,12 @@
     src: url(/fonts/Inter.ttf) format('truetype');
   }
 
-  html {
-    @apply overflow-y-scroll overflow-x-hidden;
-  }
-
   html, body {
     @apply h-dvh w-full;
   }
 
   body {
-    @apply bg-primary flex flex-col font-inter text-white font-light-up tracking-wide justify-between;
+    @apply bg-primary font-inter text-white font-light-up tracking-wide;
   }
 
   p {

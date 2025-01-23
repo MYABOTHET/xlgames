@@ -63,6 +63,22 @@ namespace XlgamesBackend.Controllers
         }
         #endregion
 
+        #region Получить лист языков
+        [HttpGet("List")]
+        [Authorize]
+        public async Task<ActionResult<IEnumerable<LanguageListItem>>> GetLanguagesList()
+        {
+            // Возвращаем ответ
+            return await _postgreSQLContext.Languages
+                .Select(language => new LanguageListItem()
+                {
+                    Id = language.Id,
+                    Name = language.Name
+                })
+                .ToListAsync();
+        }
+        #endregion
+
         #region Получить язык по ID
         [HttpGet("{id:int}")]
         public async Task<ActionResult<Language>> GetLanguage(int id)

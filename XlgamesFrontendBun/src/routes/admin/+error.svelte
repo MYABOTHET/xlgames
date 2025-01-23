@@ -4,6 +4,6 @@
 
 <article class="flex-center h-full">
   <h1 class="text-quaternary text-4xl font-medium">
-    {page.error.message} | {page.status}
+    Ошибка | {page.status}
   </h1>
 </article>
