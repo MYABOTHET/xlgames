@@ -11,22 +11,23 @@
   let priceFormatter = $derived(new Intl.NumberFormat(language.Locale));
   
   function getControl(gameServer) {
-    let result = ''.concat(
-        gameServer.ControlPanel ? ', ' + language.Shared.ControlPanel : '',
-        gameServer.FTP ? ', ' + language.Shared.FTP : '').slice(2);
-    if (!result) result = "...";
-    return result;
+    let controls = [];
+    gameServer.ControlPanel ? controls.push(language.Shared.ControlPanel) : null;
+    gameServer.FTP ? controls.push(language.Shared.FTP) : null;
+    if (!controls.length) controls.push("...");
+    return controls.join(", ");
+    
   }
   
   function getCountry(gameServer) {
-    let result = ''.concat(
-        gameServer.Germany ? ', ' + language.Shared.Germany : '',
-        gameServer.Finland ? ', ' + language.Shared.Finland : '',
-        gameServer.USA ? ', ' + language.Shared.USA : '',
-        gameServer.Russia ? ', ' + language.Shared.Russia : '',
-        gameServer.Singapore ? ', ' + language.Shared.Singapore : '').slice(2);
-    if (!result) result = "...";
-    return result;
+    let countries = [];
+    gameServer.Germany ? countries.push(language.Shared.Germany) : null;
+    gameServer.Finland ? countries.push(language.Shared.Finland) : null;
+    gameServer.Russia ? countries.push(language.Shared.Russia) : null;
+    gameServer.USA ? countries.push(language.Shared.USA) : null;
+    gameServer.Singapore ? countries.push(language.Shared.Singapore) : null;
+    if (!countries.length) countries.push("...");
+    return countries.join(", ");
   }
   
   $effect(async () => {

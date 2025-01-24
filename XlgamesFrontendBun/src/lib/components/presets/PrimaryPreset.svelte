@@ -292,32 +292,32 @@
   }
   
   function getCountries(server) {
-    let result = ''.concat(
-        server.Data.Germany ? ', ' + language.Shared.Germany : '',
-        server.Data.Finland ? ', ' + language.Shared.Finland : '',
-        server.Data.Russia ? ', ' + language.Shared.Russia : '',
-        server.Data.USA ? ', ' + language.Shared.USA : '',
-        server.Data.Singapore ? ', ' + language.Shared.Singapore : '').slice(2);
-    if (!result) result = "...";
-    return result;
+    let countries = [];
+    server.Data.Germany ? countries.push(language.Shared.Germany) : null;
+    server.Data.Finland ? countries.push(language.Shared.Finland) : null;
+    server.Data.Russia ? countries.push(language.Shared.Russia) : null;
+    server.Data.USA ? countries.push(language.Shared.USA) : null;
+    server.Data.Singapore ? countries.push(language.Shared.Singapore) : null;
+    if (!countries.length) countries.push("...");
+    return countries.join(", ");
   }
   
   function getRegions(server) {
-    let result = ''.concat(
-        server.Data.Falkenstein ? ', ' + language.Shared.Falkenstein : '',
-        server.Data.Frankfurt ? ', ' + language.Shared.Frankfurt : '',
-        server.Data.Nuremberg ? ', ' + language.Shared.Nuremberg : '',
-        server.Data.Helsinki ? ', ' + language.Shared.Helsinki : '',
-        server.Data.Moscow ? ', ' + language.Shared.Moscow : '',
-        server.Data.SaintPetersburg ? ', ' + language.Shared.SaintPetersburg : '',
-        server.Data.NewYork ? ', ' + language.Shared.NewYork : '',
-        server.Data.Miami ? ', ' + language.Shared.Miami : '',
-        server.Data.LosAngeles ? ', ' + language.Shared.LosAngeles : '',
-        server.Data.Hillsboro ? ', ' + language.Shared.Hillsboro : '',
-        server.Data.Ashburn ? ', ' + language.Shared.Ashburn : '',
-        server.Data.Singapore ? ', ' + language.Shared.Singapore : '').slice(2);
-    if (!result) result = "...";
-    return result;
+    let regions = [];
+    server.Data.Falkenstein ? regions.push(language.Shared.Falkenstein) : null;
+    server.Data.Frankfurt ? regions.push(language.Shared.Frankfurt) : null;
+    server.Data.Nuremberg ? regions.push(language.Shared.Nuremberg) : null;
+    server.Data.Helsinki ? regions.push(language.Shared.Helsinki) : null;
+    server.Data.Moscow ? regions.push(language.Shared.Moscow) : null;
+    server.Data.SaintPetersburg ? regions.push(language.Shared.SaintPetersburg) : null;
+    server.Data.NewYork ? regions.push(language.Shared.NewYork) : null;
+    server.Data.Miami ? regions.push(language.Shared.Miami) : null;
+    server.Data.LosAngeles ? regions.push(language.Shared.LosAngeles) : null;
+    server.Data.Hillsboro ? regions.push(language.Shared.Hillsboro) : null;
+    server.Data.Ashburn ? regions.push(language.Shared.Ashburn) : null;
+    server.Data.Singapore ? regions.push(language.Shared.Singapore) : null;
+    if (!regions.length) regions.push("...");
+    return regions.join(", ");
   }
   
   function getPrice(server) {
@@ -339,7 +339,7 @@
 {/snippet}
 
 {#snippet Card(server)}
-<section class="flex flex-col gap-y-1 border-2 rounded-2xl overflow-hidden border-ternary py-5 px-6">
+<section class="flex flex-col gap-y-1 border-2 rounded-2xl overflow-hidden border-(--color-ternary) py-5 px-6">
   {@render Enum(language.Shared.CPU, server.Data.CPU)}
   {#if preset === "secondary"}
     {@render Enum(language.Shared.Cores, server.Data.Cores)}
@@ -382,12 +382,12 @@
                          defaultItem={language.Shared.AnyRegion} select={selectRegion} currentItem={currentRegion}
                          items={regions}>
   </SecondaryDropdownMenu>
-  <button onclick={clearFilters} class="border-2 px-6 py-2.5 rounded-full text-nowrap transition-colors hover:bg-secondary
-border-quaternary text-quaternary max-nine:w-full">{language.Shared.ResetFilters}</button>
+  <button onclick={clearFilters} class="border-2 px-6 py-2.5 rounded-full text-nowrap transition-colors hover:bg-(--color-secondary)
+border-(--color-quaternary) text-(--color-quaternary) max-nine:w-full">{language.Shared.ResetFilters}</button>
 </div>
 {#if result.length}
   {#if !userOnMobile}
-    <div class="border-2 border-ternary rounded-2xl overflow-hidden">
+    <div class="border-2 border-(--color-ternary) rounded-2xl overflow-hidden">
       <table class="w-full border-separate border-spacing-4 px-2 text-center text-sm">
         <thead>
         <tr>
@@ -454,7 +454,7 @@ border-quaternary text-quaternary max-nine:w-full">{language.Shared.ResetFilters
                 {/if}
               </div>
             </td>
-            <td class="!text-wrap break-all">{getRegions(server)}</td>
+            <td class="text-wrap! break-all">{getRegions(server)}</td>
             <td>{getPrice(server)}</td>
             <td><a class="primary-link mx-auto" href="/store/store/{server.Link}">{language.Shared.Order}</a></td>
           </tr>
@@ -470,10 +470,12 @@ border-quaternary text-quaternary max-nine:w-full">{language.Shared.ResetFilters
     </section>
   {/if}
 {:else}
-  <h1 class="mx-auto text-quaternary">{'≽^•⩊•^≼'}</h1>
+  <h1 class="mx-auto text-(--color-quaternary)">{'≽^•⩊•^≼'}</h1>
 {/if}
 
-<style lang="postcss">
+<style>
+  @reference "tailwindcss/theme";
+  
   table {
     th, td {
       @apply p-0 text-nowrap;

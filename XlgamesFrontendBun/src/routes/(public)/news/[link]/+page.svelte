@@ -26,12 +26,12 @@
   <title>{language.News.Title} - {news.Name} - {data.projectData.Name}</title>
 </svelte:head>
 
-<div class="max-w-screen-hexadecimal w-full mx-auto">
+<div class="max-w-(--breakpoint-hexadecimal) w-full mx-auto">
   <article class="secondary-section">
     <SecondaryLink name={news.Name} href="/news"/>
     <div class="flex flex-col gap-y-6">
       <img src={news.Src} alt={news.Name} class="rounded-2xl ternary-size quaternary-height">
-      <p class="text-quaternary text-xs mx-auto font-normal">{dateFormatter.format(new Date(news.Date))}</p>
+      <p class="text-(--color-quaternary) text-xs mx-auto font-normal">{dateFormatter.format(new Date(news.Date))}</p>
     </div>
     {#if news.Description}
       <div class="description">
@@ -41,7 +41,9 @@
   </article>
 </div>
 
-<style lang="postcss">
+<style>
+  @reference "tailwindcss/theme";
+  
   .description :global {
     @apply text-sm leading-[1.375rem] flex flex-col gap-y-4 text-wrap;
     
@@ -62,7 +64,7 @@
     }
     
     h1, h2, h3, h4, h5, h6, strong {
-      @apply font-medium-up;
+      @apply font-(--font-weight-medium-up);
     }
     
     h1 { @apply text-2xl; }
@@ -72,7 +74,7 @@
     h5 { @apply text-xs; }
     h6 { @apply text-[0.625rem] leading-[0.75rem]; }
     
-    a { @apply transition-colors text-ternary hover:text-quaternary; }
+    a { @apply transition-colors text-(--color-ternary) hover:text-(--color-quaternary); }
     
     iframe {
       @apply w-full;

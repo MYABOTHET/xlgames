@@ -9,7 +9,7 @@
 {#await navigating.complete}
   <div transition:fade={{delay: 2000}} class="opacity-20 w-full h-full bg-white fixed top-0 left-0 z-40"></div>
   <div transition:fade={{delay: 2000}} class="w-full h-full fixed top-0 left-0 z-50 flex justify-center items-center">
-    <svg class="w-20 stroke-ternary" viewBox="0 0 45 45" xmlns="http://www.w3.org/2000/svg">
+    <svg class="w-20 stroke-(--color-ternary)" viewBox="0 0 45 45" xmlns="http://www.w3.org/2000/svg">
       <g fill="none" fill-rule="evenodd" transform="translate(1 1)" stroke-width="2">
         <circle cx="22" cy="22" r="6" stroke-opacity="0">
           <animate attributeName="r"

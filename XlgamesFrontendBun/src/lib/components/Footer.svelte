@@ -10,8 +10,8 @@
   let language = $derived(getContext("language")());
 </script>
 
-<footer {...props} class="{props.class} flex-center primary-px pb-8 pt-12 border-t border-t-secondary">
-  <div class="max-w-screen-primary w-full flex-center flex flex-col gap-y-16 max-quaternary:primary-gap-y
+<footer {...props} class="{props.class} flex-center primary-px pb-8 pt-12 border-t border-t-(--color-secondary)">
+  <div class="max-w-(--breakpoint-primary) w-full flex-center flex flex-col gap-y-16 max-quaternary:primary-gap-y
 max-quaternary:items-start">
     <div class="flex gap-x-14 w-full max-quaternary:flex-col max-quaternary:primary-gap-y">
       <nav class="flex flex-col gap-y-5 min-w-fit">
@@ -33,7 +33,7 @@ max-quaternary:grid-cols-1 max-quaternary:gap-y-4">
         {/each}
       </nav>
     </div>
-    <nav class="flex gap-x-6 gap-y-3 font-normal text-xs text-quaternary max-quaternary:flex-col
+    <nav class="flex gap-x-6 gap-y-3 font-normal text-xs text-(--color-quaternary) max-quaternary:flex-col
 max-quaternary:items-start flex-wrap">
       <h1>© {Year} {new Date().getFullYear() > Year ? "- " + new Date().getFullYear() : ""} {Name}</h1>
       {#each navigationLinks.footer as link}

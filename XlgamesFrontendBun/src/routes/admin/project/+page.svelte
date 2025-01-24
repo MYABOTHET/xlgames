@@ -1,17 +1,52 @@
 <script>
   import SecondaryPage from "$lib/components/pages/SecondaryPage.svelte";
   import QuaternarySection from "$lib/components/sections/QuaternarySection.svelte";
+  import PrimaryTextarea from "$lib/components/textarea/PrimaryTextarea.svelte";
+  import SaveForm from "$lib/components/SaveForm.svelte";
   
   const {data} = $props();
+  let projectData = $state(data.projectData);
+  let access = $state(null);
+  
+  async function save() {
+    access = null;
+    const response = await fetch("/admin/project", {
+      method: "PUT",
+      body: JSON.stringify(projectData),
+      headers: {
+        'Content-Type': 'application/json'
+      }
+    });
+    access = response.status === 200;
+  }
 </script>
 
 <SecondaryPage title="Данные проекта">
   <QuaternarySection title="Общие">
-    <div class="flex flex-col gap-y-4 text-sm">
-      <input placeholder="Проверка..." spellcheck="false" autocomplete="off"
-             class="placeholder-quaternary outline-none bg-secondary px-3.5 py-2 min-w-0 max-w-56 w-full">
-      <input placeholder="Проверка..." spellcheck="false" autocomplete="off"
-             class="placeholder-quaternary outline-none bg-secondary px-3.5 py-2 min-w-0 max-w-56 w-full">
-    </div>
+    <PrimaryTextarea bind:value={projectData.Logo} title="Логотип"/>
+    <PrimaryTextarea bind:value={projectData.Name} title="Наименование"/>
+    <PrimaryTextarea bind:value={projectData.Year} title="Год создания"/>
   </QuaternarySection>
+  <QuaternarySection title="Контакты">
+    <PrimaryTextarea bind:value={projectData.Email} title="Почта"/>
+    <PrimaryTextarea bind:value={projectData.PhoneNumber} title="Номер телефона"/>
+    <PrimaryTextarea bind:value={projectData.OGRNIP} title="ОГРНИП"/>
+    <PrimaryTextarea bind:value={projectData.INN} title="ИНН"/>
+  </QuaternarySection>
+  <QuaternarySection title="Ссылки на социальные сети">
+    <PrimaryTextarea bind:value={projectData.Discord} title="Discord"/>
+    <PrimaryTextarea bind:value={projectData.Facebook} title="Facebook"/>
+    <PrimaryTextarea bind:value={projectData.Instagram} title="Instagram"/>
+    <PrimaryTextarea bind:value={projectData.Snapchat} title="Snapchat"/>
+    <PrimaryTextarea bind:value={projectData.Telegram} title="Telegram"/>
+    <PrimaryTextarea bind:value={projectData.Twitter} title="Twitter"/>
+    <PrimaryTextarea bind:value={projectData.Vk} title="VK"/>
+    <PrimaryTextarea bind:value={projectData.Whatsapp} title="Whatsapp"/>
+  </QuaternarySection>
+  <QuaternarySection title="Другие ссылки">
+    <PrimaryTextarea bind:value={projectData.Contacts} title="Контакты"/>
+    <PrimaryTextarea bind:value={projectData.PersonalAccount} title="Персональный аккаунт"/>
+    <PrimaryTextarea bind:value={projectData.GameHosting} title="Игровой хостинг"/>
+  </QuaternarySection>
+  <SaveForm {access} onclick={save}/>
 </SecondaryPage>

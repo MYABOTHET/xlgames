@@ -11,10 +11,10 @@
   {@html language.AboutUs.Head}
 </svelte:head>
 
-<div class="max-w-screen-hexadecimal w-full mx-auto">
+<div class="max-w-(--breakpoint-hexadecimal) w-full mx-auto">
   <article class="secondary-section">
     <h1 class="primary-title">{language.AboutUs.Name}</h1>
-    <img src={data.projectData.AboutUsSrc} alt={language.AboutUs.Name}
+    <img src="/images/about-us.webp" alt={language.AboutUs.Name}
          class="rounded-2xl ternary-size quaternary-height">
     <p class="text-sm leading-[1.375rem]">
       {language.AboutUs.Description}

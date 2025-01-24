@@ -84,7 +84,7 @@
 <Header {headerHeight} {navigationLinks} {projectData} {languages} {userOnMobile} {setLanguage}/>
 
 <main class="flex-auto primary-px py-14">
-  <div class="max-w-screen-primary w-full mx-auto h-full">{@render children?.()}</div>
+  <div class="max-w-(--breakpoint-primary) w-full mx-auto h-full">{@render children?.()}</div>
 </main>
 
 <Footer {navigationLinks} {projectData}/>
@@ -92,7 +92,7 @@
 {#if !agreeCookie}
   <div transition:fly={{x: "-100vw", duration: 375, delay: 0, opacity: 1, easing: quartInOut}}
        class="fixed w-full h-dvh bottom-0 pointer-events-none flex items-end primary-px py-5 z-30">
-    <article class="pointer-events-auto bg-primary primary-block-default border-ternary py-5 px-6 flex flex-col
+    <article class="pointer-events-auto bg-(--color-primary) primary-block-default border-(--color-ternary) py-5 px-6 flex flex-col
   gap-y-4 w-96 text-sm leading-[1.375rem] max-hexadecimal:w-full">
       <p>{language.CookiePolicy.CookiePolicyBanner.Description} <a href="/cookie-policy" class="primary-link">{language.Shared.ReadMore}...</a></p>
       <button onclick={setCookieAgreement} class="quinary-block rounded-none py-2 px-3">{language.CookiePolicy.CookiePolicyBanner.Name}</button>
@@ -100,7 +100,9 @@
   </div>
 {/if}
 
-<style lang="postcss">
+<style>
+  @reference "tailwindcss/theme";
+  
   :global(html) {
     @apply overflow-y-scroll overflow-x-hidden;
   }

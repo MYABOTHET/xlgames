@@ -21,7 +21,7 @@
 </article>
 {/snippet}
 
-<div class="max-w-screen-hexadecimal w-full mx-auto">
+<div class="max-w-(--breakpoint-hexadecimal) w-full mx-auto">
   <article class="secondary-section">
     <h1 class="primary-title">{language.Contacts.Name}</h1>
     <p>{language.Contacts.Description}</p>

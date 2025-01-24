@@ -28,7 +28,7 @@
 
 {#snippet noCard(cardProps)}
 <div class="{cardProps} primary-block border-transparent">
-  <div class="primary-block border-quaternary text-quaternary size-full flex-center font-medium text-lg">
+  <div class="primary-block border-(--color-quaternary) text-(--color-quaternary) size-full flex-center font-medium text-lg">
     ≽^•⩊•^≼
   </div>
 </div>
@@ -75,7 +75,7 @@
   </section>
   
   <section
-      class="{language.Home.DataCenters.length ? 'grid grid-cols-2 primary-gap-x max-ternary:grid-cols-1 max-ternary:gap-y-10' : ''}">
+      class="{language.Home.DataCenters.length ? 'grid grid-cols-2 primary-gap-x max-secondary:grid-cols-1 max-secondary:gap-y-10' : ''}">
     <article class="flex flex-col primary-gap-y">
       <h1 class="primary-title">{language.DataCenters.Name}</h1>
       <p>{language.Home.DataCentersDescription}</p>
@@ -83,7 +83,7 @@
          href="/data-centers">{language.Shared.ReadMore}</a>
     </article>
     {#if language.Home.DataCenters.length}
-      <SecondarySection items={language.Home.DataCenters} class="h-fit primary-block border-quaternary secondary-p"/>
+      <SecondarySection items={language.Home.DataCenters} class="h-fit primary-block border-(--color-quaternary) secondary-p"/>
     {/if}
   </section>
   
@@ -105,7 +105,9 @@
   {/if}
 </div>
 
-<style lang="postcss">
+<style>
+  @reference "tailwindcss/theme";
+  
   .section {
     @apply flex gap-8 overflow-x-scroll pb-1;
   }
@@ -118,6 +120,6 @@
   }
   
   .section::-webkit-scrollbar-thumb {
-    @apply bg-secondary rounded-full;
+    @apply bg-(--color-secondary) rounded-full;
   }
 </style>

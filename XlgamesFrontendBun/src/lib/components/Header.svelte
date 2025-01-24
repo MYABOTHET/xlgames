@@ -36,6 +36,14 @@
     !menuIsVisible ? openMenu() : closeMenu();
   }
   
+  function menu(node) {
+    $effect(() => {
+      return () => {
+        closeMenu();
+      };
+    });
+  }
+  
   afterNavigate(() => {closeMenu()});
 </script>
 
@@ -107,13 +115,13 @@
         </div>
       </PrimaryDropdownMenu>
     {:else}
-      <div class="flex">
+      <div class="flex" use:menu>
         <button onclick={toggle}><SecondaryIcon Icon={PrimaryMenu} isActive={menuIsVisible} class="ternary-height fill-white"/></button>
         {#if menuIsVisible}
           <div transition:fly={{x: "-100vw", duration: 175, delay: 0, opacity: 1, easing: quartInOut}}
                style="min-height: calc(100dvh - {headerHeight}rem);
              max-height: calc(100dvh - {headerHeight}rem); margin-top: {headerHeight}rem;"
-               class="absolute top-0 left-0 overflow-y-auto w-full bg-primary primary-px py-6 scroll z-10">
+               class="absolute top-0 left-0 overflow-y-auto w-full bg-(--color-primary) primary-px py-6 scroll z-10">
             <nav class="flex flex-col w-full gap-y-6">
               {#each [...navigationLinks.header.menu.links, ...navigationLinks.header.other,
                 ...navigationLinks.other] as link}
@@ -135,16 +143,18 @@
 {/snippet}
 
 <header {...props} style="min-height: {headerHeight}rem; max-height: {headerHeight}rem;" class="{props.class}
-flex-center border-b border-b-secondary primary-px {menuIsVisible ? 'bg-primary' : 'bg-secondary'}
+flex-center border-b border-b-(--color-secondary) primary-px {menuIsVisible ? 'bg-(--color-primary)' : 'bg-(--color-secondary)'}
 {userOnMobile ? 'transition-[background-color]' : ''}">
-  <div class="flex-center max-w-screen-primary w-full">
+  <div class="flex-center max-w-(--breakpoint-primary) w-full">
     {@render project?.()}
     {#if !userOnMobile}{@render navigation?.()}{/if}
       {@render menus?.()}
   </div>
 </header>
 
-<style lang="postcss">
+<style>
+  @reference "tailwindcss/theme";
+  
   .scroll {
     scrollbar-width: none;
   }

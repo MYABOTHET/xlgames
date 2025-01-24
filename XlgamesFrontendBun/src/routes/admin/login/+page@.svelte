@@ -10,13 +10,13 @@
     <h1 class="text-4xl font-medium">Вход в аккаунт</h1>
     <form spellcheck="false" method="POST" action="/admin/login" class="flex flex-col gap-y-6 max-w-[22rem] w-full"
           use:enhance>
-      <input autocomplete="off" name="login" placeholder="Логин" type="text" class="bg-transparent border-2 border-quaternary min-w-0 py-3 px-6
-    outline-none placeholder-quaternary rounded-full">
+      <input autocomplete="off" name="login" placeholder="Логин" type="text" class="bg-transparent border-2 border-(--color-quaternary) min-w-0 py-3 px-6
+    outline-hidden placeholder-(--color-quaternary) rounded-full">
       <input autocomplete="off" name="password" placeholder="Пароль" type="password"
-             class="bg-transparent border-2 border-quaternary min-w-0 py-3 px-6
-    outline-none placeholder-quaternary rounded-full">
-      <button class="mt-8 px-8 py-3 border-2 bg-ternary border-ternary w-fit rounded-full mx-auto text-primary
-transition-colors hover:bg-primary hover:text-white">Выполнить вход
+             class="bg-transparent border-2 border-(--color-quaternary) min-w-0 py-3 px-6
+    outline-hidden placeholder-(--color-quaternary) rounded-full">
+      <button class="mt-8 px-8 py-3 border-2 bg-(--color-ternary) border-(--color-ternary) w-fit rounded-full mx-auto text-(--color-primary)
+transition-colors hover:bg-(--color-primary) hover:text-white">Выполнить вход
       </button>
     </form>
   </div>

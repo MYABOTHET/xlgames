@@ -17,8 +17,6 @@
         public string Vk { get; set; } = "...";
         public string Whatsapp { get; set; } = "...";
 
-        public string AboutUsSrc { get; set; } = "...";
-
         public string Email { get; set; } = "...";
         public string OGRNIP { get; set; } = "...";
         public string INN { get; set; } = "...";
@@ -41,7 +39,6 @@
             Twitter = projectDataDto.Twitter;
             Vk = projectDataDto.Vk;
             Whatsapp = projectDataDto.Whatsapp;
-            AboutUsSrc = projectDataDto.AboutUsSrc;
             Email = projectDataDto.Email;
             OGRNIP = projectDataDto.OGRNIP;
             INN = projectDataDto.INN;
