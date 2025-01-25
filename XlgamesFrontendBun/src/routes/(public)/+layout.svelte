@@ -77,12 +77,12 @@
 </script>
 
 <svelte:head>
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="author" content={author}>
+  <meta content="width=device-width, initial-scale=1" name="viewport"/>
+  <meta content={author} name="author">
   {@html language.Shared.Head}
 </svelte:head>
 
-<Header {headerHeight} {navigationLinks} {projectData} {languages} {userOnMobile} {setLanguage}/>
+<Header {headerHeight} {languages} {navigationLinks} {projectData} {setLanguage} {userOnMobile}/>
 
 <main class="flex-auto primary-px py-14">
   <div class="max-w-(--breakpoint-primary) w-full mx-auto h-full">{@render children?.()}</div>
@@ -95,8 +95,11 @@
        class="fixed w-full h-dvh bottom-0 pointer-events-none flex items-end primary-px py-5 z-30">
     <article class="pointer-events-auto bg-(--color-primary) primary-block-default border-(--color-ternary) py-5 px-6 flex flex-col
   gap-y-4 w-96 text-sm leading-[1.375rem] max-hexadecimal:w-full">
-      <p>{language.CookiePolicy.CookiePolicyBanner.Description} <a href="/cookie-policy" class="primary-link">{language.Shared.ReadMore}...</a></p>
-      <button onclick={setCookieAgreement} class="quinary-block rounded-none py-2 px-3">{language.CookiePolicy.CookiePolicyBanner.Name}</button>
+      <p>{language.CookiePolicy.CookiePolicyBanner.Description} <a href="/cookie-policy"
+                                                                   class="primary-link">{language.Shared.ReadMore}
+        ...</a></p>
+      <button onclick={setCookieAgreement}
+              class="quinary-block rounded-none py-2 px-3">{language.CookiePolicy.CookiePolicyBanner.Name}</button>
     </article>
   </div>
 {/if}
@@ -107,6 +110,7 @@
   :global(html) {
     @apply overflow-y-scroll overflow-x-hidden;
   }
+  
   :global(body) {
     @apply flex flex-col justify-between;
   }

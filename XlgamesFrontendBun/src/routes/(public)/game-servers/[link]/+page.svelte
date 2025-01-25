@@ -56,8 +56,8 @@
 <article class="secondary-section">
   <SecondaryLink href="/game-servers" name='{language.GameServer.Name} «{data.gameServer.Name}»'/>
   <article class="flex gap-x-10 ternary-gap-y max-decimal:flex-col">
-    <img src={data.gameServer.Src} alt={data.gameServer.Name} class="decimal:secondary-size ternary-size rounded-2xl
-max-decimal:aspect-square"/>
+    <img alt={data.gameServer.Name} class="decimal:secondary-size ternary-size rounded-2xl
+max-decimal:aspect-square" src={data.gameServer.Src}/>
     <div class="flex flex-col gap-y-6">
       <section class="h-full flex flex-col gap-y-1 justify-between">
         {@render descLine?.(language.Shared.CPU, data.gameServer.CPU)}
@@ -71,7 +71,7 @@ max-decimal:aspect-square"/>
         <h1>{language.Shared.PriceFrom} {language.Shared.CurrencySignPosition
             ? language.Shared.CurrencySign + priceFormatter.format(gameServerData.Price)
             : priceFormatter.format(gameServerData.Price) + language.Shared.CurrencySign} / {language.Shared.Month}</h1>
-        <a href={data.gameServer.Link} class="quinary-block w-fit quaternary-p">{language.Shared.Order}</a>
+        <a class="quinary-block w-fit quaternary-p" href={data.gameServer.Link}>{language.Shared.Order}</a>
       </article>
     </div>
   </article>

@@ -1,5 +1,5 @@
 <script>
-  import { page } from '$app/state';
+  import {page} from '$app/state';
   import {getContext} from "svelte";
   
   const {data} = $props();

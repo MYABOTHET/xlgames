@@ -50,5 +50,5 @@
     <PrimaryTextarea bind:value={languageDto.Lang} title="Локаль в HTML | en"/>
     <PrimaryTextarea bind:value={languageDto.CurrencyId} title="ID валюты в WHMCS | 1"/>
   </QuaternarySection>
-  <SaveForm title="Создать язык" saved="Успешно" {error} {access} onclick={createLanguage}/>
+  <SaveForm {access} {error} onclick={createLanguage} saved="Успешно" title="Создать язык"/>
 </SecondaryPage>

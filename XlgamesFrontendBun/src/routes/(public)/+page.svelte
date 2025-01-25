@@ -28,7 +28,8 @@
 
 {#snippet noCard(cardProps)}
 <div class="{cardProps} primary-block border-transparent">
-  <div class="primary-block border-(--color-quaternary) text-(--color-quaternary) size-full flex-center font-medium text-lg">
+  <div
+      class="primary-block border-(--color-quaternary) text-(--color-quaternary) size-full flex-center font-medium text-lg">
     ≽^•⩊•^≼
   </div>
 </div>
@@ -57,21 +58,21 @@
   {/if}
   
   <section class="flex flex-wrap primary-gap">
-    <SecondaryCard name={language.Home.ServersWithoutGPU.Name} href="/servers"
-                   description={language.Home.ServersWithoutGPU.Description}
-                   class="quaternary-size"/>
-    <SecondaryCard name={language.Home.VPS.Name} href="/vps"
-                   description={language.Home.VPS.Description}
-                   class="quaternary-size"/>
-    <SecondaryCard name={language.Home.WebHosting.Name} href="/web-hosting"
-                   description={language.Home.WebHosting.Description}
-                   class="quaternary-size"/>
-    <SecondaryCard name={language.Home.VPN.Name} href="/vpn"
-                   description={language.Home.VPN.Description}
-                   class="quaternary-size"/>
-    <SecondaryCard name={language.Home.ServersWithGPU.Name} href="/servers-gpu"
-                   description={language.Home.ServersWithGPU.Description}
-                   class="quaternary-size"/>
+    <SecondaryCard class="quaternary-size" description={language.Home.ServersWithoutGPU.Description}
+                   href="/servers"
+                   name={language.Home.ServersWithoutGPU.Name}/>
+    <SecondaryCard class="quaternary-size" description={language.Home.VPS.Description}
+                   href="/vps"
+                   name={language.Home.VPS.Name}/>
+    <SecondaryCard class="quaternary-size" description={language.Home.WebHosting.Description}
+                   href="/web-hosting"
+                   name={language.Home.WebHosting.Name}/>
+    <SecondaryCard class="quaternary-size" description={language.Home.VPN.Description}
+                   href="/vpn"
+                   name={language.Home.VPN.Name}/>
+    <SecondaryCard class="quaternary-size" description={language.Home.ServersWithGPU.Description}
+                   href="/servers-gpu"
+                   name={language.Home.ServersWithGPU.Name}/>
   </section>
   
   <section
@@ -83,7 +84,8 @@
          href="/data-centers">{language.Shared.ReadMore}</a>
     </article>
     {#if language.Home.DataCenters.length}
-      <SecondarySection items={language.Home.DataCenters} class="h-fit primary-block border-(--color-quaternary) secondary-p"/>
+      <SecondarySection items={language.Home.DataCenters}
+                        class="h-fit primary-block border-(--color-quaternary) secondary-p"/>
     {/if}
   </section>
   
@@ -111,6 +113,7 @@
   .section {
     @apply flex gap-8 overflow-x-scroll pb-1;
   }
+  
   .section::-webkit-scrollbar {
     @apply h-1.5;
   }

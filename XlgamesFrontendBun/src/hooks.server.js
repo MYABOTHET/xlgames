@@ -23,7 +23,12 @@ export async function handle({event, resolve}) {
       userLocale = "en-US";
     }
     userLanguage = languages.find(language => language.Locale === userLocale);
-    cookies.set(configuration.userLanguage, JSON.stringify(userLanguage), {path: "/", httpOnly: false, secure: false, priority: "high"});
+    cookies.set(configuration.userLanguage, JSON.stringify(userLanguage), {
+      path: "/",
+      httpOnly: false,
+      secure: false,
+      priority: "high"
+    });
     locals.languages = languages;
   }
   return resolve(event, {

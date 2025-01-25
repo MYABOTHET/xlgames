@@ -53,9 +53,10 @@
 </svelte:head>
 
 {#snippet buttonFilter(click, isActive, content)}
-<button onclick={click} class="{isActive ? 'border-(--color-ternary) text-(--color-ternary)' : 'border-(--color-quaternary) text-(--color-quaternary)'}
+<button class="{isActive ? 'border-(--color-ternary) text-(--color-ternary)' : 'border-(--color-quaternary) text-(--color-quaternary)'}
     border-2 px-6 py-2.5 rounded-full text-nowrap transition-colors hover:bg-(--color-secondary)
-max-nine:flex-[1_1_25%]">{content}</button>
+max-nine:flex-[1_1_25%]"
+        onclick={click}>{content}</button>
 {/snippet}
 
 <article class="secondary-section">
@@ -68,13 +69,13 @@ max-nine:flex-[1_1_25%]">{content}</button>
     ? 'border-(--color-ternary) fill-(--color-ternary)'
     : 'border-(--color-quaternary) fill-(--color-quaternary)'}">
       <PrimaryLoupe class="min-w-3.5 min-h-3.5 max-w-3.5 max-h-3.5"/>
-      <input id="search" name="search"
-          class="min-w-0 w-full pl-3 pr-6 py-2.5 bg-transparent placeholder-(--color-quaternary) outline-hidden"
-          placeholder={language.GameServers.Search} spellcheck="false" autocomplete="off"
-          bind:value={
+      <input autocomplete="off" bind:value={
           () => searchQuery,
           (value) => {allActive = true; popularActive = false; searchQuery = value; search();}
-          }>
+          }
+             class="min-w-0 w-full pl-3 pr-6 py-2.5 bg-transparent placeholder-(--color-quaternary) outline-hidden"
+             id="search" name="search" placeholder={language.GameServers.Search}
+             spellcheck="false">
     </div>
   </div>
   {#if gameServers.length}

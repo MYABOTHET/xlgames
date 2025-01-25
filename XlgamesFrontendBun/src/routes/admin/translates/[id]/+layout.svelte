@@ -9,7 +9,7 @@
   let {children, data} = $props();
   
   let language = $state(data.language);
-  let links = getContext("links") ;
+  let links = getContext("links");
   let access = $state(null);
   let error = $state(null);
   let init = $state.raw({init: false});

@@ -44,19 +44,21 @@
     });
   }
   
-  afterNavigate(() => {closeMenu()});
+  afterNavigate(() => {
+    closeMenu()
+  });
 </script>
 
 {#snippet linkBlock(link)}
-<PrimaryLink href={link.href} class="primary-bg primary-p transition-colors">
+<PrimaryLink class="primary-bg primary-p transition-colors" href={link.href}>
   {language.Shared[link.name]}
 </PrimaryLink>
 {/snippet}
 
 {#snippet project()}
 <nav class="flex-1 flex items-center">
-  <a href="/" class="inline-block">
-    <ProjectData name={Name} logo={Logo}/>
+  <a class="inline-block" href="/">
+    <ProjectData logo={Logo} name={Name}/>
   </a>
 </nav>
 {/snippet}
@@ -66,11 +68,11 @@
   {#each navigationLinks.header.other as link}
     <PrimaryLink style="order: {link.position}" href={link.href}>{language.Shared[link.name]}</PrimaryLink>
   {/each}
-  <PrimaryDropdownMenu style="order: {navigationLinks.header.menu.position}" class="flex justify-center">
+  <PrimaryDropdownMenu class="flex justify-center" style="order: {navigationLinks.header.menu.position}">
     {#snippet button(isMenuVisible)}
     <PrimarySpan isActive={isMenuVisible}>{language.Shared[navigationLinks.header.menu.name]}</PrimarySpan>
     {/snippet}
-    <div transition:fade={{duration}} class="absolute primary-top z-20">
+    <div class="absolute primary-top z-20" transition:fade={{duration}}>
       <PrimaryBlock position="primary-triangle-center">
         {#each navigationLinks.header.menu.links as link}
           {@render linkBlock?.(link)}
@@ -86,9 +88,9 @@
   <div class="flex-center gap-x-6">
     <PrimaryDropdownMenu class="flex justify-end">
       {#snippet button(isMenuVisible)}
-      <PrimaryIcon Icon={PrimaryLanguage} isActive={isMenuVisible} class="secondary-height stroke-white"/>
+      <PrimaryIcon Icon={PrimaryLanguage} class="secondary-height stroke-white" isActive={isMenuVisible}/>
       {/snippet}
-      <div transition:fade={{duration}} class="absolute primary-top -mr-2 z-20">
+      <div class="absolute primary-top -mr-2 z-20" transition:fade={{duration}}>
         <PrimaryBlock position="primary-triangle-end">
           {#each languages as languageitem}
             <button onclick={() => {setLanguage(languageitem)}}>
@@ -116,7 +118,9 @@
       </PrimaryDropdownMenu>
     {:else}
       <div class="flex" use:menu>
-        <button onclick={toggle}><SecondaryIcon Icon={PrimaryMenu} isActive={menuIsVisible} class="ternary-height fill-white"/></button>
+        <button onclick={toggle}>
+          <SecondaryIcon Icon={PrimaryMenu} isActive={menuIsVisible} class="ternary-height fill-white"/>
+        </button>
         {#if menuIsVisible}
           <div transition:fly={{x: "-100vw", duration: 175, delay: 0, opacity: 1, easing: quartInOut}}
                style="min-height: calc(100dvh - {headerHeight}rem);
@@ -128,7 +132,8 @@
                 <PrimaryLink style="width: fit-content" href={link.href}>{language.Shared[link.name]}</PrimaryLink>
               {/each}
               {#each navigationLinks.menu as link}
-                <PrimaryLink style="width: fit-content" href={link.href} rel="nofollow">{language.Shared[link.name]}</PrimaryLink>
+                <PrimaryLink style="width: fit-content" href={link.href}
+                             rel="nofollow">{language.Shared[link.name]}</PrimaryLink>
               {/each}
               {#each navigationLinks.footer as link}
                 <PrimaryLink style="width: fit-content" href={link.href}>{language.Shared[link.name]}</PrimaryLink>
@@ -142,13 +147,13 @@
 </div>
 {/snippet}
 
-<header {...props} style="min-height: {headerHeight}rem; max-height: {headerHeight}rem;" class="{props.class}
+<header {...props} class="{props.class}
 flex-center border-b border-b-(--color-secondary) primary-px {menuIsVisible ? 'bg-(--color-primary)' : 'bg-(--color-secondary)'}
-{userOnMobile ? 'transition-[background-color]' : ''}">
+{userOnMobile ? 'transition-[background-color]' : ''}" style="min-height: {headerHeight}rem; max-height: {headerHeight}rem;">
   <div class="flex-center max-w-(--breakpoint-primary) w-full">
     {@render project?.()}
     {#if !userOnMobile}{@render navigation?.()}{/if}
-      {@render menus?.()}
+    {@render menus?.()}
   </div>
 </header>
 
@@ -158,6 +163,7 @@ flex-center border-b border-b-(--color-secondary) primary-px {menuIsVisible ? 'b
   .scroll {
     scrollbar-width: none;
   }
+  
   .scroll::-webkit-scrollbar {
     @apply w-0;
   }

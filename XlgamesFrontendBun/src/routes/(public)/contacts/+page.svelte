@@ -34,7 +34,9 @@
         {#if language.Shared.OGRNIP}{@render contact?.(language.Contacts.OGRNIP, projectData.OGRNIP)}{/if}
       </section>
     {/if}
-    <TernarySection {projectData} class="flex flex-wrap gap-2.5"/>
-    <p>{language.Shared.AnyQuestionsStart}<a href={projectData.Contacts} class="primary-link" rel="nofollow">{language.Shared.AnyQuestionsCenter}</a>{language.Shared.AnyQuestionsEnd}</p>
+    <TernarySection class="flex flex-wrap gap-2.5" {projectData}/>
+    <p>{language.Shared.AnyQuestionsStart}<a class="primary-link" href={projectData.Contacts}
+                                             rel="nofollow">{language.Shared.AnyQuestionsCenter}</a>{language.Shared.AnyQuestionsEnd}
+    </p>
   </article>
 </div>

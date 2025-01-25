@@ -6,7 +6,7 @@
 </script>
 
 <svelte:head>
-  <meta name="robots" content="noindex, nofollow" />
+  <meta content="noindex, nofollow" name="robots"/>
   <title>{data.title}</title>
 </svelte:head>
 

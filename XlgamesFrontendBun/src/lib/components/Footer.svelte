@@ -15,10 +15,10 @@
 max-quaternary:items-start">
     <div class="flex gap-x-14 w-full max-quaternary:flex-col max-quaternary:primary-gap-y">
       <nav class="flex flex-col gap-y-5 min-w-fit">
-        <a href="/" class="w-fit">
-          <ProjectData name={Name} logo={Logo}/>
+        <a class="w-fit" href="/">
+          <ProjectData logo={Logo} name={Name}/>
         </a>
-        <TernarySection {projectData} class="grid grid-cols-4 gap-2.5 w-fit"/>
+        <TernarySection class="grid grid-cols-4 gap-2.5 w-fit" {projectData}/>
       </nav>
       <nav class="grid w-full h-fit gap-3.5 grid-cols-4 max-secondary:grid-cols-3 max-ternary:grid-cols-2
 max-quaternary:grid-cols-1 max-quaternary:gap-y-4">

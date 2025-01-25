@@ -39,10 +39,10 @@
 <svelte:window onclick={click}/>
 
 <div {...props} class="{props.class} relative">
-  <button onmouseout={blur} onmouseover={focus} onblur={blur} onfocus={focus} onclick={toggle} class="{isActive ? 'border-(--color-ternary) text-(--color-ternary) fill-(--color-ternary)'
+  <button class="{isActive ? 'border-(--color-ternary) text-(--color-ternary) fill-(--color-ternary)'
     : 'border-(--color-quaternary) text-(--color-quaternary) fill-(--color-quaternary)'} w-full hover:bg-(--color-secondary) overflow-hidden
     border-2 px-6 py-2.5 rounded-full text-left transition-colors flex items-center justify-between gap-x-4
-{currentItem ? 'text-(--color-ternary) border-(--color-ternary) fill-(--color-ternary)' : ''}">
+{currentItem ? 'text-(--color-ternary) border-(--color-ternary) fill-(--color-ternary)' : ''}" onblur={blur} onclick={toggle} onfocus={focus} onmouseout={blur} onmouseover={focus}>
     {currentItem ? currentItem : defaultItem}
     <PrimaryArrow class="min-w-3 max-w-3 transition-transform {isActive ? '' : 'rotate-180'}"/>
   </button>

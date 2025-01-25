@@ -2,7 +2,7 @@
   const props = $props();
 </script>
 
-<svg {...props} id="uuid-cb646e63-5581-45d4-9fa1-444f44227795" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 15 15">
+<svg {...props} id="uuid-cb646e63-5581-45d4-9fa1-444f44227795" viewBox="0 0 15 15" xmlns="http://www.w3.org/2000/svg">
   <defs>
     <style>
       .uuid-3da2485b-5993-44dd-b2ac-82c4a011aa80 {

@@ -14,11 +14,13 @@
 <div class="max-w-(--breakpoint-hexadecimal) w-full mx-auto">
   <article class="secondary-section">
     <h1 class="primary-title">{language.AboutUs.Name}</h1>
-    <img src="/images/about-us.webp" alt={language.AboutUs.Name}
-         class="rounded-2xl ternary-size quaternary-height">
+    <img alt={language.AboutUs.Name} class="rounded-2xl ternary-size quaternary-height"
+         src="/images/about-us.webp">
     <p class="text-sm leading-[1.375rem]">
       {language.AboutUs.Description}
     </p>
-    <p class="text-sm leading-[1.375rem]">{language.Shared.AnySuggestionsStart}<a href="/contacts" class="primary-link">{language.Shared.AnySuggestionsCenter}</a>{language.Shared.AnySuggestionsEnd}</p>
+    <p class="text-sm leading-[1.375rem]">{language.Shared.AnySuggestionsStart}<a class="primary-link"
+                                                                                  href="/contacts">{language.Shared.AnySuggestionsCenter}</a>{language.Shared.AnySuggestionsEnd}
+    </p>
   </article>
 </div>

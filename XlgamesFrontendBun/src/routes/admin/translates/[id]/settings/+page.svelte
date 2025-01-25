@@ -18,7 +18,8 @@
     <PrimaryTextarea bind:value={language.Lang} title="Локаль в HTML"/>
     <PrimaryTextarea bind:value={language.CurrencyId} title="ID валюты в WHMCS"/>
   </QuaternarySection>
-  <button onclick={deleteLanguage} class="px-5 border-2 bg-red-500 border-red-500 rounded min-w-44
+  <button class="px-5 border-2 bg-red-500 border-red-500 rounded min-w-44
   text-nowrap text-(--color-primary) transition-colors hover:bg-(--color-primary) hover:text-white
-  min-h-9 text-sm">Удалить язык ({counter})</button>
+  min-h-9 text-sm" onclick={deleteLanguage}>Удалить язык ({counter})
+  </button>
 </SecondaryPage>

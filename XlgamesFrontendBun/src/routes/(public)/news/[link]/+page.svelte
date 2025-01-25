@@ -22,15 +22,15 @@
 </script>
 
 <svelte:head>
-  <meta name="robots" content="noindex, nofollow" />
+  <meta content="noindex, nofollow" name="robots"/>
   <title>{language.News.Title} - {news.Name} - {data.projectData.Name}</title>
 </svelte:head>
 
 <div class="max-w-(--breakpoint-hexadecimal) w-full mx-auto">
   <article class="secondary-section">
-    <SecondaryLink name={news.Name} href="/news"/>
+    <SecondaryLink href="/news" name={news.Name}/>
     <div class="flex flex-col gap-y-6">
-      <img src={news.Src} alt={news.Name} class="rounded-2xl ternary-size quaternary-height">
+      <img alt={news.Name} class="rounded-2xl ternary-size quaternary-height" src={news.Src}>
       <p class="text-(--color-quaternary) text-xs mx-auto font-normal">{dateFormatter.format(new Date(news.Date))}</p>
     </div>
     {#if news.Description}
@@ -67,14 +67,33 @@
       @apply font-(--font-weight-medium-up);
     }
     
-    h1 { @apply text-2xl; }
-    h2 { @apply text-xl; }
-    h3 { @apply text-lg; }
-    h4 { @apply text-sm; }
-    h5 { @apply text-xs; }
-    h6 { @apply text-[0.625rem] leading-[0.75rem]; }
+    h1 {
+      @apply text-2xl;
+    }
     
-    a { @apply transition-colors text-(--color-ternary) hover:text-(--color-quaternary); }
+    h2 {
+      @apply text-xl;
+    }
+    
+    h3 {
+      @apply text-lg;
+    }
+    
+    h4 {
+      @apply text-sm;
+    }
+    
+    h5 {
+      @apply text-xs;
+    }
+    
+    h6 {
+      @apply text-[0.625rem] leading-[0.75rem];
+    }
+    
+    a {
+      @apply transition-colors text-(--color-ternary) hover:text-(--color-quaternary);
+    }
     
     iframe {
       @apply w-full;

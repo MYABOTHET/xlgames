@@ -365,8 +365,8 @@
 
 <div {...props} class="{props.class} flex flex-wrap gap-4">
   <SecondaryDropdownMenu class="min-w-80 max-w-80 max-nine:max-w-full max-nine:min-w-full flex-[1_1_100%]"
-                         defaultItem={language.Shared.AnyCPU} select={selectCPU} currentItem={currentCPU}
-                         items={CPUs}>
+                         currentItem={currentCPU} defaultItem={language.Shared.AnyCPU} items={CPUs}
+                         select={selectCPU}>
   </SecondaryDropdownMenu>
   {#if preset === "primary"}
     <SecondaryDropdownMenu class="min-w-72 max-w-72 max-nine:max-w-full max-nine:min-w-full flex-[1_1_100%]"
@@ -375,15 +375,15 @@
     </SecondaryDropdownMenu>
   {/if}
   <SecondaryDropdownMenu class="min-w-56 max-w-56 max-nine:max-w-full max-nine:min-w-full flex-[1_1_100%]"
-                         defaultItem={language.Shared.AnyCountry} select={selectCountry} currentItem={currentCountry}
-                         items={countries}>
+                         currentItem={currentCountry} defaultItem={language.Shared.AnyCountry} items={countries}
+                         select={selectCountry}>
   </SecondaryDropdownMenu>
   <SecondaryDropdownMenu class="min-w-56 max-w-56 max-nine:max-w-full max-nine:min-w-full flex-[1_1_100%]"
-                         defaultItem={language.Shared.AnyRegion} select={selectRegion} currentItem={currentRegion}
-                         items={regions}>
+                         currentItem={currentRegion} defaultItem={language.Shared.AnyRegion} items={regions}
+                         select={selectRegion}>
   </SecondaryDropdownMenu>
-  <button onclick={clearFilters} class="border-2 px-6 py-2.5 rounded-full text-nowrap transition-colors hover:bg-(--color-secondary)
-border-(--color-quaternary) text-(--color-quaternary) max-nine:w-full">{language.Shared.ResetFilters}</button>
+  <button class="border-2 px-6 py-2.5 rounded-full text-nowrap transition-colors hover:bg-(--color-secondary)
+border-(--color-quaternary) text-(--color-quaternary) max-nine:w-full" onclick={clearFilters}>{language.Shared.ResetFilters}</button>
 </div>
 {#if result.length}
   {#if !userOnMobile}

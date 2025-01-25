@@ -18,5 +18,7 @@
   {#if language.TermsService.TermsServiceCollection.length}
     <SecondarySection items={language.TermsService.TermsServiceCollection}/>
   {/if}
-  <p>{language.Shared.AnyQuestionsStart}<a href="/contacts" class="primary-link">{language.Shared.AnyQuestionsCenter}</a>{language.Shared.AnyQuestionsEnd}</p>
+  <p>{language.Shared.AnyQuestionsStart}<a class="primary-link"
+                                           href="/contacts">{language.Shared.AnyQuestionsCenter}</a>{language.Shared.AnyQuestionsEnd}
+  </p>
 </article>

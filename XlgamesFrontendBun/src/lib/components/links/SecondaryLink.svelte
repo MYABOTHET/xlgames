@@ -1,5 +1,6 @@
 <script>
   import PrimaryArrow from "$lib/components/svg/PrimaryArrow.svelte";
+  
   const {name, ...props} = $props();
 </script>
 

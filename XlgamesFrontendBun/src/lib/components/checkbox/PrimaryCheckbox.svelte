@@ -4,9 +4,9 @@
   let {value = $bindable(), title, ...props} = $props();
 </script>
 
-<SecondaryPreset {title} {...props}>
-  <input name={value} bind:checked={value} spellcheck="false" autocomplete="off" type="checkbox"
-         class="accent-(--color-ternary)"/>
+<SecondaryPreset {...props} {title}>
+  <input autocomplete="off" bind:checked={value} class="accent-(--color-ternary)" name={value} spellcheck="false"
+         type="checkbox"/>
 </SecondaryPreset>
 
 <style>

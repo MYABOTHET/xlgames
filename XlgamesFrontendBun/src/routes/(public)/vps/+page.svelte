@@ -32,5 +32,5 @@
 <article class="flex flex-col gap-y-14">
   <h1 class="primary-title">{language.VPS.Title}</h1>
   <p>{language.VPS.Description}</p>
-  <PrimaryPreset serversProp={data.servers} {userOnMobile} preset="secondary"/>
+  <PrimaryPreset preset="secondary" serversProp={data.servers} {userOnMobile}/>
 </article>
