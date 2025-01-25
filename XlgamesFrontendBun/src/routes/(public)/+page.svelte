@@ -49,7 +49,7 @@
                        src={gameServer.Src} class="secondary-size" href="/game-servers/{gameServer.LinkName}"/>
         {/each}
         {#if data.max - data.gameServers.length >= 0}
-          {#each {length: data.max - data.gameServers.length}}
+          {#each {length: data.max - data.gameServers.length} as _}
             {@render noCard?.("secondary-size")}
           {/each}
         {/if}
@@ -98,7 +98,7 @@
                        class="quinary-size" rel="nofollow"/>
         {/each}
         {#if data.maxNews - data.news.length >= 0}
-          {#each {length: data.maxNews - data.news.length}}
+          {#each {length: data.maxNews - data.news.length} as _}
             {@render noCard?.("quinary-size")}
           {/each}
         {/if}
