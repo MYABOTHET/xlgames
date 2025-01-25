@@ -1,4 +1,5 @@
 import configuration from "$lib";
+import {validateResponse} from "$lib/tools.js";
 
 export async function PUT({request, fetch}) {
   const projectData = await request.json();
@@ -9,5 +10,5 @@ export async function PUT({request, fetch}) {
       'Content-Type': 'application/json'
     }
   });
-  return new Response(null, {status: response.status});
+  return validateResponse(response);
 }

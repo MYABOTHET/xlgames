@@ -1,4 +1,5 @@
 import configuration from "$lib";
+import {validateResponse} from "$lib/tools.js";
 
 export async function POST({request, fetch}) {
   let languageDto = await request.json();
@@ -9,14 +10,5 @@ export async function POST({request, fetch}) {
       'Content-Type': 'application/json'
     }
   });
-  if (response.status === 200) {
-    return new Response(null, {status: response.status});
-  }
-  const body = await response.json();
-  const errors = Object.values(body.errors);
-  let result = [];
-  errors.forEach(error => {
-    result = result.concat(error);
-  })
-  return new Response(result.join(", "), {status: response.status});
+  return validateResponse(response);
 }

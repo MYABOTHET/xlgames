@@ -3,7 +3,10 @@
   import QuaternarySection from "$lib/components/sections/QuaternarySection.svelte";
   import PrimaryTextarea from "$lib/components/textarea/PrimaryTextarea.svelte";
   import SaveForm from "$lib/components/SaveForm.svelte";
+  import {getContext} from "svelte";
+  import {goto} from "$app/navigation";
   
+  let links = getContext("links");
   let languageDto = $state({
     Name: "...",
     WHMCSName: "...",
@@ -27,6 +30,11 @@
     });
     if (response.status === 200) {
       access = true;
+      const language = await response.json();
+      links.push({
+        title: language.Name, href: `/admin/translates/${language.Id}`, id: language.Id
+      });
+      await goto(`/admin/translates/${language.Id}`);
     } else {
       access = false;
       error = await response.text();

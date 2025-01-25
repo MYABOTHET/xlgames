@@ -104,7 +104,14 @@ namespace XlgamesBackend.Controllers
                 return ValidationProblem();
             }
             // Проверяем существует ли язык с такими данными
-            string? name = await GetLanguageName(languageDto);
+            string? name = await _postgreSQLContext.Languages
+                .Where(language =>
+                (language.Name!.Equals(languageDto.Name)
+                || language.WHMCSName!.Equals(languageDto.WHMCSName)
+                || language.OriginalName!.Equals(languageDto.OriginalName)
+                || language.Locale!.Equals(languageDto.Locale)) && !language.Id.Equals(id))
+                .Select(language => language.Name)
+                .FirstOrDefaultAsync();
             // Если язык существует, то возвращаем ошибку
             if (name is not null && !name.Equals(language.Name))
             {
@@ -123,7 +130,7 @@ namespace XlgamesBackend.Controllers
         #region Создать новый язык
         [HttpPost]
         [Authorize]
-        public async Task<ActionResult<Language>> PostLanguage(LanguageDto languageDto)
+        public async Task<ActionResult<LanguageDto>> PostLanguage(LanguageDto languageDto)
         {
             // Проверяем существует ли язык с такими данными
             string? name = await GetLanguageName(languageDto);
@@ -145,8 +152,9 @@ namespace XlgamesBackend.Controllers
                 gameServer.GameServerDatas.Add(new GameServerData() { Language = language });
 
             await _postgreSQLContext.SaveChangesAsync();
+            languageDto.Id = language.Id;
             // Возвращаем ответ
-            return language;
+            return languageDto;
         }
         #endregion
 

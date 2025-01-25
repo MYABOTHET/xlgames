@@ -6,10 +6,13 @@
   
   const {data} = $props();
   let projectData = $state(data.projectData);
+  
   let access = $state(null);
+  let error = $state(null);
   
   async function save() {
     access = null;
+    error = null;
     const response = await fetch("/admin/project", {
       method: "PUT",
       body: JSON.stringify(projectData),
@@ -17,7 +20,12 @@
         'Content-Type': 'application/json'
       }
     });
-    access = response.status === 200;
+    if (response.status === 200) {
+      access = true;
+    } else {
+      access = false;
+      error = await response.text();
+    }
   }
 </script>
 
@@ -48,5 +56,5 @@
     <PrimaryTextarea bind:value={projectData.PersonalAccount} title="Персональный аккаунт"/>
     <PrimaryTextarea bind:value={projectData.GameHosting} title="Игровой хостинг"/>
   </QuaternarySection>
-  <SaveForm {access} onclick={save}/>
+  <SaveForm {access} {error} onclick={save}/>
 </SecondaryPage>

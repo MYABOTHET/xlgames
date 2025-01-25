@@ -6,11 +6,13 @@
   const {children, data} = $props();
   
   let links = $state(data.links);
+  let sorted = $derived(links.slice().sort((a, b) => a.title.localeCompare(b.title, "ru-RU")));
   
-  setContext("links", () => data.links);
+  setContext("links", links);
 </script>
 
-<PrimaryNav links={links}/>
+<PrimaryNav links={[{title: "Создать язык", href: "/admin/translates/create"}, ...sorted]}/>
+
 <PrimaryPage>
   {@render children?.()}
 </PrimaryPage>

@@ -22,3 +22,16 @@ export function getUserLanguageFromCookies(cookies) {
 export function getUserLanguageFromCookieClient(cookie) {
   return JSON.parse(decodeURIComponent(cookie[configuration.userLanguage]));
 }
+
+export async function validateResponse(response) {
+  if (response.status === 200) {
+    return new Response(await response.text(), {status: response.status});
+  }
+  const body = await response.json();
+  const errors = Object.values(body.errors);
+  let result = [];
+  errors.forEach(error => {
+    result = result.concat(error);
+  })
+  return new Response(result.join(", "), {status: response.status});
+}
