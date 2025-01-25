@@ -1,3 +1,7 @@
+<script module>
+  let language = $state(null);
+</script>
+
 <script>
   import PrimaryPage from "$lib/components/pages/PrimaryPage.svelte";
   import PrimaryNav from "$lib/components/nav/PrimaryNav.svelte";
@@ -7,16 +11,17 @@
   import {goto} from "$app/navigation";
   
   let {children, data} = $props();
-  
-  let language = $state(data.language);
   let links = getContext("links");
+  language = data.language;
   let access = $state(null);
   let error = $state(null);
   let init = $state.raw({init: false});
   let counter = $state(20);
   let visible = $derived(page.url.pathname.split("/").length > 4);
+  let timeout = $state(null);
   
   async function updateLanguage() {
+    clearTimeout(timeout);
     access = null;
     error = null;
     const response = await fetch(`/admin/translates/${page.params.id}`, {
@@ -33,6 +38,10 @@
       access = false;
       error = await response.text();
     }
+    timeout = setTimeout(() => {
+      access = null;
+      error = null;
+    }, 5000);
   }
   
   async function deleteLanguage() {

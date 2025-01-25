@@ -7,8 +7,13 @@
   let language = getContext("language")();
 </script>
 
-<SecondaryPage title="Общий перевод">
-  <QuaternarySection title="...">
-    <PrimaryTextarea bind:value={language.Name} title="..."/>
+<SecondaryPage title="Игровой сервер">
+  <QuaternarySection title="Важное">
+    <PrimaryTextarea bind:value={language.GameServer.Title} title="Название страницы"/>
+    <PrimaryTextarea bind:value={language.GameServer.Head} title="Метаданные"/>
+  </QuaternarySection>
+  <QuaternarySection title="Остальное">
+    <PrimaryTextarea bind:value={language.GameServer.Name} title="Заголовок"/>
+    <PrimaryTextarea bind:value={language.GameServer.Unlimited} title="Неограничено"/>
   </QuaternarySection>
 </SecondaryPage>

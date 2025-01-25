@@ -7,8 +7,19 @@
   let language = getContext("language")();
 </script>
 
-<SecondaryPage title="Общий перевод">
-  <QuaternarySection title="...">
-    <PrimaryTextarea bind:value={language.Name} title="..."/>
+<SecondaryPage title="Контакты">
+  <QuaternarySection title="Важное">
+    <PrimaryTextarea bind:value={language.Contacts.Title} title="Название страницы"/>
+    <PrimaryTextarea bind:value={language.Contacts.Head} title="Метаданные"/>
+  </QuaternarySection>
+  <QuaternarySection title="Остальное">
+    <PrimaryTextarea bind:value={language.Contacts.Name} title="Заголовок"/>
+    <PrimaryTextarea bind:value={language.Contacts.Description} title="Описание"/>
+    <PrimaryTextarea bind:value={language.Contacts.FullName} title="ФИО"/>
+    <PrimaryTextarea bind:value={language.Contacts.PhoneNumber} title="Номер телефона"/>
+    <PrimaryTextarea bind:value={language.Contacts.Email} title="Почта"/>
+    <PrimaryTextarea bind:value={language.Contacts.OGRNIP} title="ОГРНИП"/>
+    <PrimaryTextarea bind:value={language.Contacts.INN} title="ИНН"/>
+    <PrimaryTextarea bind:value={language.Contacts.IP} title="ИП"/>
   </QuaternarySection>
 </SecondaryPage>
