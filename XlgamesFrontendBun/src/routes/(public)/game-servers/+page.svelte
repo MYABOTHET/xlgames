@@ -68,7 +68,7 @@ max-nine:flex-[1_1_25%]">{content}</button>
     ? 'border-(--color-ternary) fill-(--color-ternary)'
     : 'border-(--color-quaternary) fill-(--color-quaternary)'}">
       <PrimaryLoupe class="min-w-3.5 min-h-3.5 max-w-3.5 max-h-3.5"/>
-      <input
+      <input id="search" name="search"
           class="min-w-0 w-full pl-3 pr-6 py-2.5 bg-transparent placeholder-(--color-quaternary) outline-hidden"
           placeholder={language.GameServers.Search} spellcheck="false" autocomplete="off"
           bind:value={

@@ -48,7 +48,7 @@
 </script>
 
 {#snippet linkBlock(link)}
-<PrimaryLink href={link.href} class="primary-bg primary-p">
+<PrimaryLink href={link.href} class="primary-bg primary-p transition-colors">
   {language.Shared[link.name]}
 </PrimaryLink>
 {/snippet}

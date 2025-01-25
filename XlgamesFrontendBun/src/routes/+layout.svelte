@@ -2,9 +2,32 @@
   import "../app.css";
   import {navigating} from "$app/state";
   import {fade} from "svelte/transition";
+  import { pwaInfo } from 'virtual:pwa-info'
+  import {onMount} from "svelte";
   
   const {children} = $props();
+  
+  onMount(async () => {
+    if (pwaInfo) {
+      const { registerSW } = await import('virtual:pwa-register');
+      registerSW({
+        immediate: true,
+        onRegistered(r) {
+          // console.log(`SW Registered: ${r}`);
+        },
+        onRegisterError(error) {
+          // console.log('SW registration error', error);
+        }
+      })
+    }
+  });
+  
+  let webManifestLink = $derived(pwaInfo ? pwaInfo.webManifest.linkTag : '');
 </script>
+
+<svelte:head>
+  {@html webManifestLink}
+</svelte:head>
 
 {#await navigating.complete}
   <div transition:fade={{delay: 2000}} class="opacity-20 w-full h-full bg-white fixed top-0 left-0 z-40"></div>
