@@ -1,16 +1,20 @@
 <script>
+  import SecondaryPreset from "$lib/components/presets/SecondaryPreset.svelte";
+  
   let {value = $bindable(), title, ...props} = $props();
 </script>
 
-<div  {...props} class="{props.class} flex gap-x-3">
-  <textarea name={value} bind:value spellcheck="false" autocomplete="off" class="outline-none bg-(--color-octal)
+<SecondaryPreset {title} {...props}>
+  <textarea name={title} bind:value spellcheck="false" autocomplete="off" class="outline-none bg-(--color-octal)
       field-sizing-fixed px-3.5 py-2 w-xs resize rounded h-9 min-h-9 max-w-full min-w-20"></textarea>
-  <span class="text-(--color-quaternary) py-2 font-normal text-nowrap">—</span>
-  <h1 class="text-(--color-quaternary) py-2 font-normal text-nowrap">{title}</h1>
-</div>
+</SecondaryPreset>
 
 <style>
   @reference "tailwindcss/theme";
+  
+  textarea {
+    @apply font-light;
+  }
   
   textarea::-webkit-resizer {
     @apply bg-(--color-octal) bg-[url(/images/ugol.svg)] bg-no-repeat bg-right-bottom;

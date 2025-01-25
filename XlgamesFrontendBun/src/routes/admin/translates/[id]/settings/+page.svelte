@@ -2,29 +2,11 @@
   import SecondaryPage from "$lib/components/pages/SecondaryPage.svelte";
   import QuaternarySection from "$lib/components/sections/QuaternarySection.svelte";
   import PrimaryTextarea from "$lib/components/textarea/PrimaryTextarea.svelte";
-  import SaveForm from "$lib/components/SaveForm.svelte";
   import {getContext} from "svelte";
-  import {goto} from "$app/navigation";
   
   let language = getContext("language")();
-  let access = getContext("access");
-  let error = getContext("error");
-  let updateLanguage = getContext("updateLanguage");
+  let counter = $derived(getContext("counter")());
   let deleteLanguage = getContext("deleteLanguage");
-  
-  let counter = $state(10);
-  
-  async function deleteCounter() {
-    counter--;
-    if (counter <= 0) {
-      await deleteLanguage();
-      if (access) {
-        await goto(`/admin/translates`);
-      } else {
-        counter = 10;
-      }
-    }
-  }
 </script>
 
 <SecondaryPage title="Настройки языка «{language.Name}»">
@@ -36,8 +18,7 @@
     <PrimaryTextarea bind:value={language.Lang} title="Локаль в HTML"/>
     <PrimaryTextarea bind:value={language.CurrencyId} title="ID валюты в WHMCS"/>
   </QuaternarySection>
-  <SaveForm buttonClass="min-w-36" error={error()} access={access()} onclick={updateLanguage}/>
-  <button onclick={deleteCounter} class="mt-4 px-5 border-2 bg-red-500 border-red-500 rounded
-  text-nowrap text-(--color-primary) transition-colors hover:bg-(--color-primary) hover:text-white min-w-36
-  min-h-9 text-sm">Удалить ({counter})</button>
+  <button onclick={deleteLanguage} class="px-5 border-2 bg-red-500 border-red-500 rounded min-w-44
+  text-nowrap text-(--color-primary) transition-colors hover:bg-(--color-primary) hover:text-white
+  min-h-9 text-sm">Удалить язык ({counter})</button>
 </SecondaryPage>

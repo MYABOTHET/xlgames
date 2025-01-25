@@ -29,7 +29,6 @@
       }
     });
     if (response.status === 200) {
-      access = true;
       const language = await response.json();
       links.push({
         title: language.Name, href: `/admin/translates/${language.Id}`, id: language.Id

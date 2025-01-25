@@ -3,6 +3,8 @@
   import PrimaryNav from "$lib/components/nav/PrimaryNav.svelte";
   import {page} from "$app/state";
   import {getContext, setContext} from "svelte";
+  import SaveForm from "$lib/components/SaveForm.svelte";
+  import {goto} from "$app/navigation";
   
   let {children, data} = $props();
   
@@ -11,6 +13,8 @@
   let access = $state(null);
   let error = $state(null);
   let init = $state.raw({init: false});
+  let counter = $state(20);
+  let visible = $derived(page.url.pathname.split("/").length > 4);
   
   async function updateLanguage() {
     access = null;
@@ -34,16 +38,20 @@
   async function deleteLanguage() {
     access = null;
     error = null;
-    const response = await fetch(`/admin/translates/${page.params.id}`, {
-      method: "DELETE"
-    });
-    if (response.status === 200) {
-      access = true;
-      const index = links.findIndex(link => link.id === language.Id);
-      links.splice(index, 1);
-    } else {
-      access = false;
-      error = await response.text();
+    counter--;
+    if (counter <= 0) {
+      const response = await fetch(`/admin/translates/${page.params.id}`, {
+        method: "DELETE"
+      });
+      if (response.status === 200) {
+        const index = links.findIndex(link => link.id === language.Id);
+        links.splice(index, 1);
+        await goto(`/admin/translates`);
+      } else {
+        counter = 20;
+        access = false;
+        error = await response.text();
+      }
     }
   }
   
@@ -53,20 +61,24 @@
       language = data.language;
       access = null;
       error = null;
+      counter = 20;
     } else {
       init.init = true;
     }
   });
   
-  setContext("updateLanguage", updateLanguage);
   setContext("deleteLanguage", deleteLanguage);
   setContext("language", () => language);
-  setContext("access", () => access);
-  setContext("error", () => error);
+  setContext("counter", () => counter);
 </script>
 
 <PrimaryNav links={data.linksOptions}/>
 
-<PrimaryPage>
-  {@render children?.()}
+<PrimaryPage class="flex flex-col justify-between">
+  {@render children()}
+  {#if visible}
+    <div class="sticky bottom-0 px-4 py-3 bg-(--color-primary) border-t border-t-(--color-hexadecimal) w-full">
+      <SaveForm error={error} access={access} onclick={updateLanguage}/>
+    </div>
+  {/if}
 </PrimaryPage>

@@ -7,6 +7,6 @@
 <div {...props} class="{props.class} flex items-center gap-x-6">
   <PrimaryButton class={buttonClass} {onclick}>{title}</PrimaryButton>
   {#if access !== null}
-    <h1 class="{access ? 'text-green-600' : 'text-red-600'} text-sm">{access ? saved : error}...</h1>
+    <h1 class="{access ? 'text-(--color-ternary)' : 'text-red-600'} text-sm">{access ? saved : error}...</h1>
   {/if}
 </div>
