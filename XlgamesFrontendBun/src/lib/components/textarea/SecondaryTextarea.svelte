@@ -14,7 +14,7 @@
   }
   
   textarea::-webkit-resizer {
-    @apply bg-(--color-octal) bg-[url(/images/ugol.svg)] bg-no-repeat bg-right-bottom;
+    @apply bg-(--color-octal) bg-[url(/assets/ugol.svg)] bg-no-repeat bg-right-bottom;
     background-size: 0.5rem;
   }
   

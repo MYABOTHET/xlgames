@@ -13,9 +13,9 @@ export async function handle({event, resolve}) {
     }
   }
   let userLanguage = getUserLanguageFromCookies(cookies);
+  const languages = await (await fetch(`${configuration.api}/Languages`)).json();
   if (!userLanguage) {
     let userLocale = null;
-    const languages = await (await fetch(`${configuration.api}/Languages`)).json();
     const userAcceptLanguage = request.headers.get("accept-language");
     try {
       userLocale = resolveAcceptLanguage(userAcceptLanguage, languages.map(language => language.Locale), "en-US");
@@ -29,8 +29,26 @@ export async function handle({event, resolve}) {
       secure: false,
       priority: "high"
     });
-    locals.languages = languages;
+  } else {
+    if (!languages.find(language =>
+        language.Name === userLanguage.Name
+        && language.WHMCSName === userLanguage.WHMCSName
+        && language.OriginalName === userLanguage.OriginalName
+        && language.Locale === userLanguage.Locale
+        && language.Lang === userLanguage.Lang
+        && language.CurrencyId === userLanguage.CurrencyId
+    )) {
+      userLanguage = languages.find(language => language.Id === userLanguage.Id)
+          ?? languages.find(language => language.Id === 1);
+      cookies.set(configuration.userLanguage, JSON.stringify(userLanguage), {
+        path: "/",
+        httpOnly: false,
+        secure: false,
+        priority: "high"
+      });
+    }
   }
+  locals.languages = languages;
   return resolve(event, {
     transformPageChunk: ({html}) => html.replace('%lang%', userLanguage.Lang)
   });

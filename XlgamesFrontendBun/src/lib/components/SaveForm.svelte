@@ -2,7 +2,7 @@
   import PrimaryButton from "$lib/components/buttons/PrimaryButton.svelte";
   
   const {
-    access,
+    access = null,
     buttonClass,
     title = "Сохранить",
     saved = "Сохранено",

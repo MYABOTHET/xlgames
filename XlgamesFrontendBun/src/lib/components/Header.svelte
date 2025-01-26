@@ -45,7 +45,7 @@
   }
   
   afterNavigate(() => {
-    closeMenu()
+    closeMenu();
   });
 </script>
 

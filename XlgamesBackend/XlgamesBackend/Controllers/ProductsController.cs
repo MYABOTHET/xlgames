@@ -46,35 +46,82 @@ namespace XlgamesBackend.Controllers
                 });
         }
 
+        [HttpGet("{id:int}")]
+        [Authorize]
+        public async Task<ActionResult<string>> GetProduct(int id)
+        {
+            var product = await _mySQLContext.Products
+                .Where(product => product.id.Equals(id))
+                .Select(product => product.short_description)
+                .FirstOrDefaultAsync();
+            return product!;
+        }
+
         [HttpGet("Servers")]
-        public async Task<ActionResult> GetServers()
+        public async Task<ActionResult<IEnumerable<ProductModel>>> GetServers()
         {
             var list = await SelectProductModel(_mySQLContext.Products
                 .Where(server => server.gid.Equals(1) || server.gid.Equals(3) || server.gid.Equals(4)))
                 .ToListAsync();
-            return Ok(list);
+            return list;
+        }
+
+        [HttpGet("Servers/List")]
+        [Authorize]
+        public async Task<ActionResult<int[]>> GetServersList()
+        {
+            var list = await _mySQLContext.Products
+                .Where(server => server.gid.Equals(1) || server.gid.Equals(3) || server.gid.Equals(4))
+                .Select(server => server.id)
+                .OrderBy(id => id)
+                .ToArrayAsync();
+            return list;
         }
 
         [HttpGet("Servers-GPU")]
-        public async Task<ActionResult> GetServersGPU()
+        public async Task<ActionResult<IEnumerable<ProductModel>>> GetServersGPU()
         {
             var list = await SelectProductModel(_mySQLContext.Products
                 .Where(server => server.gid.Equals(9)))
                 .ToListAsync();
-            return Ok(list);
+            return list;
+        }
+
+        [HttpGet("Servers-GPU/List")]
+        [Authorize]
+        public async Task<ActionResult<int[]>> GetServersGPUList()
+        {
+            var list = await _mySQLContext.Products
+                .Where(server => server.gid.Equals(9))
+                .Select(server => server.id)
+                .OrderBy(id => id)
+                .ToArrayAsync();
+            return list;
         }
 
         [HttpGet("VPS")]
-        public async Task<ActionResult> GetVPS()
+        public async Task<ActionResult<IEnumerable<ProductModel>>> GetVPS()
         {
             var list = await SelectProductModel(_mySQLContext.Products
                 .Where(server => server.gid.Equals(6)))
                 .ToListAsync();
-            return Ok(list);
+            return list;
+        }
+
+        [HttpGet("VPS/List")]
+        [Authorize]
+        public async Task<ActionResult<int[]>> GetVPSList()
+        {
+            var list = await _mySQLContext.Products
+                .Where(server => server.gid.Equals(6))
+                .Select(server => server.id)
+                .OrderBy(id => id)
+                .ToArrayAsync();
+            return list;
         }
 
         [HttpGet("VPN")]
-        public async Task<ActionResult> GetVPN()
+        public async Task<ActionResult<IEnumerable<PrimaryPricingModel>>> GetVPN()
         {
             var list = await _mySQLContext.Pricings
                 .Where(pricing => pricing.type.Equals("product"))
@@ -88,7 +135,7 @@ namespace XlgamesBackend.Controllers
                     Annually = pricing.annually
                 })
                 .ToListAsync();
-            return Ok(list);
+            return list;
         }
 
         [HttpPut("{id:int}")]

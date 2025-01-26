@@ -9,6 +9,10 @@ const links = [
     href: "/admin/translates"
   },
   {
+    title: "Игровые серверы",
+    href: "/admin/game-servers"
+  },
+  {
     title: "Продукты",
     href: "/admin/products"
   }

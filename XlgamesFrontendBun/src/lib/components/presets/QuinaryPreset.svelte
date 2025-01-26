@@ -2,8 +2,8 @@
   import QuaternaryPreset from "$lib/components/presets/QuaternaryPreset.svelte";
   import NinePreset from "$lib/components/presets/NinePreset.svelte";
   
-  let {list = $bindable(), title, ...props} = $props();
+  let {list = $bindable(), ...props} = $props();
 </script>
 
-<NinePreset Component={QuaternaryPreset} length={list.length} {title} {list}
+<NinePreset Component={QuaternaryPreset} length={list.length} {...props} bind:list
 onclick={() => {list.push({Name: "...", Description: "..."})}}/>
