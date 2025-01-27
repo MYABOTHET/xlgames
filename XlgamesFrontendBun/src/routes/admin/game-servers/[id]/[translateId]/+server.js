@@ -3,7 +3,7 @@ import {validateResponse} from "$lib/tools.js";
 
 export async function PUT({request, fetch, params}) {
   const translate = await request.json();
-  const response = await fetch(`${configuration.api}/GameServerDatas/${params.id}`, {
+  const response = await fetch(`${configuration.api}/GameServerDatas/${params.translateId}`, {
     method: "PUT",
     body: JSON.stringify(translate),
     headers: {

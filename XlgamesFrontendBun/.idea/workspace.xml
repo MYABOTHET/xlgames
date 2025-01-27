@@ -6,6 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="99b663dd-f91d-428e-817e-a654984c5689" name="Changes" comment="Обновление">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/routes/admin/game-servers/[id]/[translateId]/+page.svelte" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/admin/game-servers/[id]/[translateId]/+page.svelte" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -153,6 +154,8 @@
       <workItem from="1737992740107" duration="44000" />
       <workItem from="1737993713905" duration="159000" />
       <workItem from="1737998732015" duration="2730000" />
+      <workItem from="1738011954466" duration="610000" />
+      <workItem from="1738013127964" duration="301000" />
     </task>
     <task id="LOCAL-00001" summary="Обновление">
       <option name="closed" value="true" />
@@ -354,7 +357,15 @@
       <option name="project" value="LOCAL" />
       <updated>1738000859781</updated>
     </task>
-    <option name="localTasksCounter" value="26" />
+    <task id="LOCAL-00026" summary="Обновление">
+      <option name="closed" value="true" />
+      <created>1738012021939</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1738012021939</updated>
+    </task>
+    <option name="localTasksCounter" value="27" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
