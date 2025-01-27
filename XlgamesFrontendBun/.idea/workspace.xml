@@ -4,34 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="99b663dd-f91d-428e-817e-a654984c5689" name="Changes" comment="Обновление">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/files/7-days-to-die-news.webp" beforeDir="false" afterPath="$PROJECT_DIR$/files/images/7-days-to-die-news.webp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/files/7-days-to-die.webp" beforeDir="false" afterPath="$PROJECT_DIR$/files/images/7-days-to-die.webp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/files/about-us-news.webp" beforeDir="false" afterPath="$PROJECT_DIR$/files/images/about-us-news.webp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/files/about-us.webp" beforeDir="false" afterPath="$PROJECT_DIR$/files/images/about-us.webp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/files/battlefield-2042.webp" beforeDir="false" afterPath="$PROJECT_DIR$/files/images/battlefield-2042.webp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/files/battlefield-4-news.webp" beforeDir="false" afterPath="$PROJECT_DIR$/files/images/battlefield-4-news.webp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/files/data-centers-news.webp" beforeDir="false" afterPath="$PROJECT_DIR$/files/images/data-centers-news.webp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/files/dayz-frostline-news.webp" beforeDir="false" afterPath="$PROJECT_DIR$/files/images/dayz-frostline-news.webp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/files/farming-simulator-20gb-news.webp" beforeDir="false" afterPath="$PROJECT_DIR$/files/images/farming-simulator-20gb-news.webp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/files/farming-simulator-25-news.webp" beforeDir="false" afterPath="$PROJECT_DIR$/files/images/farming-simulator-25-news.webp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/files/happy-new-year-2025-en-news.webp" beforeDir="false" afterPath="$PROJECT_DIR$/files/images/happy-new-year-2025-en-news.webp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/files/happy-new-year-2025-ru-news.webp" beforeDir="false" afterPath="$PROJECT_DIR$/files/images/happy-new-year-2025-ru-news.webp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/files/minecraft.webp" beforeDir="false" afterPath="$PROJECT_DIR$/files/images/minecraft.webp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/files/palworld-feybreak-news.webp" beforeDir="false" afterPath="$PROJECT_DIR$/files/images/palworld-feybreak-news.webp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/files/rust.webp" beforeDir="false" afterPath="$PROJECT_DIR$/files/images/rust.webp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/files/satisfactory-news.webp" beforeDir="false" afterPath="$PROJECT_DIR$/files/images/satisfactory-news.webp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/files/servers-gpu-news.webp" beforeDir="false" afterPath="$PROJECT_DIR$/files/images/servers-gpu-news.webp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/files/terraria.webp" beforeDir="false" afterPath="$PROJECT_DIR$/files/images/terraria.webp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/lib/components/cards/SecondaryCard.svelte" beforeDir="false" afterPath="$PROJECT_DIR$/src/lib/components/cards/SecondaryCard.svelte" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/lib/components/dropdown-menus/PrimaryDropdownMenu.svelte" beforeDir="false" afterPath="$PROJECT_DIR$/src/lib/components/dropdown-menus/PrimaryDropdownMenu.svelte" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/lib/components/sections/TernarySection.svelte" beforeDir="false" afterPath="$PROJECT_DIR$/src/lib/components/sections/TernarySection.svelte" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/lib/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/lib/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/routes/(public)/about-us/+page.svelte" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/(public)/about-us/+page.svelte" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/routes/admin/translates/[id]/home/+page.svelte" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/admin/translates/[id]/home/+page.svelte" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/fonts/Inter.ttf" beforeDir="false" afterPath="$PROJECT_DIR$/files/fonts/Inter.ttf" afterDir="false" />
-    </list>
+    <list default="true" id="99b663dd-f91d-428e-817e-a654984c5689" name="Changes" comment="Обновление" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -177,7 +150,7 @@
       <workItem from="1737990152543" duration="23000" />
       <workItem from="1737992740107" duration="44000" />
       <workItem from="1737993713905" duration="159000" />
-      <workItem from="1737998732015" duration="657000" />
+      <workItem from="1737998732015" duration="1185000" />
     </task>
     <task id="LOCAL-00001" summary="Обновление">
       <option name="closed" value="true" />
@@ -355,7 +328,15 @@
       <option name="project" value="LOCAL" />
       <updated>1737977182323</updated>
     </task>
-    <option name="localTasksCounter" value="23" />
+    <task id="LOCAL-00023" summary="Обновление">
+      <option name="closed" value="true" />
+      <created>1737999620476</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1737999620476</updated>
+    </task>
+    <option name="localTasksCounter" value="24" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
