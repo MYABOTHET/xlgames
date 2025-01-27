@@ -28,9 +28,9 @@ export async function load({request, fetch, cookies, locals}) {
     header: {
       menu: {
         name: "DedicatedServers", position: 2, links: [{
-          name: "ServersWithoutGPU", href: "/servers"
+          name: "ServersWithoutGPU", href: "/servers-without-a-gpu"
         }, {
-          name: "ServersWithGPU", href: "/servers-gpu"
+          name: "ServersWithGPU", href: "/servers-with-gpu"
         }]
       }, other: [{
         position: 1, name: "GameServers", href: "/game-servers"

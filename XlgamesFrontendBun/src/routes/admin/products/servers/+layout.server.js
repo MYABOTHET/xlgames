@@ -5,7 +5,7 @@ export async function load({fetch}) {
   return {
     links: serversList.map(server => {
       return {
-        title: server, href: `/admin/products/servers/${server}`, id: server
+        title: server, href: `/admin/products/servers-without-a-gpu/${server}`, id: server
       }
     })
   }

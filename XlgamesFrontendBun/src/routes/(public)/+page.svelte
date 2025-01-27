@@ -59,7 +59,7 @@
   
   <section class="flex flex-wrap primary-gap">
     <SecondaryCard class="quaternary-size" description={language.Home.ServersWithoutGPU.Description}
-                   href="/servers"
+                   href="/servers-without-a-gpu"
                    name={language.Home.ServersWithoutGPU.Name}/>
     <SecondaryCard class="quaternary-size" description={language.Home.VPS.Description}
                    href="/vps"
@@ -71,7 +71,7 @@
                    href="/vpn"
                    name={language.Home.VPN.Name}/>
     <SecondaryCard class="quaternary-size" description={language.Home.ServersWithGPU.Description}
-                   href="/servers-gpu"
+                   href="/servers-with-gpu"
                    name={language.Home.ServersWithGPU.Name}/>
   </section>
   
