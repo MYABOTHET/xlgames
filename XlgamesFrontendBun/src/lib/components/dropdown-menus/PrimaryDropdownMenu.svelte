@@ -40,7 +40,7 @@
 <svelte:window onclick={click}/>
 
 <div {...props} class={props.class}>
-  <button onblur={blur} onclick={toggle} onfocus={focus} onmouseout={blur} onmouseover={focus}>
+  <button aria-label="Menu" onblur={blur} onclick={toggle} onfocus={focus} onmouseout={blur} onmouseover={focus}>
     {@render button?.(isMenuVisible)}
   </button>
   {#if isMenuVisible}

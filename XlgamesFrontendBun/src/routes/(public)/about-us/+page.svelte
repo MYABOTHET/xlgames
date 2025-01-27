@@ -15,7 +15,7 @@
   <article class="secondary-section">
     <h1 class="primary-title">{language.AboutUs.Name}</h1>
     <img alt={language.AboutUs.Name} class="rounded-2xl ternary-size quaternary-height"
-         src="/files/about-us.webp">
+         src="/files/images/about-us.webp">
     <p class="text-sm leading-[1.375rem]">
       {language.AboutUs.Description}
     </p>

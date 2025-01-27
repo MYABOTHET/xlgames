@@ -81,7 +81,7 @@
       <h1 class="primary-title">{language.DataCenters.Name}</h1>
       <p>{language.Home.DataCentersDescription}</p>
       <a class="quinary-block w-fit px-6 py-2.5"
-         href="/data-centers">{language.Shared.ReadMore}</a>
+         href="/data-centers" aria-label="Data centers">{language.Shared.ReadMore}</a>
     </article>
     {#if language.Home.DataCenters.length}
       <SecondarySection items={language.Home.DataCenters}
