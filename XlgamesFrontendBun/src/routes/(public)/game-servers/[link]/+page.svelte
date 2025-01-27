@@ -71,7 +71,7 @@ max-decimal:aspect-square" src={data.gameServer.Src}/>
         <h1>{language.Shared.PriceFrom} {language.Shared.CurrencySignPosition
             ? language.Shared.CurrencySign + priceFormatter.format(gameServerData.Price)
             : priceFormatter.format(gameServerData.Price) + language.Shared.CurrencySign} / {language.Shared.Month}</h1>
-        <a class="quinary-block w-fit quaternary-p" href={data.gameServer.Link}>{language.Shared.Order}</a>
+        <a rel="nofollow" class="quinary-block w-fit quaternary-p" href={data.gameServer.Link}>{language.Shared.Order}</a>
       </article>
     </div>
   </article>

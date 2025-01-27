@@ -1,40 +1,38 @@
 <script module>
-  let language = $state(null);
+  let gameServer = $state(null);
 </script>
 
 <script>
   import PrimaryPage from "$lib/components/pages/PrimaryPage.svelte";
   import PrimaryNav from "$lib/components/nav/PrimaryNav.svelte";
-  import {page} from "$app/state";
   import {getContext, setContext} from "svelte";
+  import {page} from "$app/state";
   import {goto} from "$app/navigation";
-  import SaveFormPreset from "$lib/components/SaveFormPreset.svelte";
   
-  let {children, data} = $props();
+  const {children, data} = $props();
+  
+  gameServer = data.gameServer;
   let links = getContext("links");
-  language = data.language;
   let access = $state(null);
   let error = $state(null);
   let init = $state.raw({init: false});
   let counter = $state(20);
-  let visible = $derived(page.url.pathname.split("/").length > 4);
   let timeout = $state(null);
   
-  async function updateLanguage() {
-    if (invalidLocale) return;
+  async function updateGameServer() {
     clearTimeout(timeout);
     access = null;
     error = null;
-    const response = await fetch(`/admin/translates/${page.params.id}`, {
+    const response = await fetch(`/admin/game-servers/${page.params.id}`, {
       method: "PUT",
-      body: JSON.stringify(language),
+      body: JSON.stringify(gameServer),
       headers: {
         'Content-Type': 'application/json'
       }
     });
     if (response.status === 200) {
       access = true;
-      links.find(link => link.id === language.Id).title = language.Name;
+      links.find(gameServerItem => gameServerItem.id === gameServer.Id).title = gameServer.Name;
     } else {
       access = false;
       error = await response.text();
@@ -45,18 +43,18 @@
     }, 5000);
   }
   
-  async function deleteLanguage() {
+  async function deleteGameServer() {
     access = null;
     error = null;
     counter--;
     if (counter <= 0) {
-      const response = await fetch(`/admin/translates/${page.params.id}`, {
+      const response = await fetch(`/admin/game-servers/${page.params.id}`, {
         method: "DELETE"
       });
       if (response.status === 200) {
-        const index = links.findIndex(link => link.id === language.Id);
+        const index = links.findIndex(link => link.id === gameServer.Id);
         links.splice(index, 1);
-        await goto(`/admin/translates`);
+        await goto(`/admin/game-servers`);
       } else {
         counter = 20;
         access = false;
@@ -66,9 +64,9 @@
   }
   
   $effect(() => {
-    data.language;
+    data.gameServer;
     if (init.init) {
-      language = data.language;
+      gameServer = data.gameServer;
       access = null;
       error = null;
       counter = 20;
@@ -77,26 +75,16 @@
     }
   });
   
-  let invalidLocale = $derived.by(() => {
-    try {
-      new Intl.DateTimeFormat(language.Locale);
-      return false;
-    } catch {
-      return true;
-    }
-  });
-  
-  setContext("deleteLanguage", deleteLanguage);
-  setContext("language", () => language);
+  setContext("gameServer", () => gameServer);
+  setContext("access", () => access);
+  setContext("error", () => error);
+  setContext("updateGameServer", updateGameServer);
+  setContext("deleteGameServer", deleteGameServer);
   setContext("counter", () => counter);
-  setContext("invalidLocale", () => invalidLocale);
 </script>
 
 <PrimaryNav links={data.linksOptions}/>
 
-<PrimaryPage class="flex flex-col justify-between">
-  {@render children()}
-  {#if visible}
-    <SaveFormPreset error={error} access={access} onclick={updateLanguage}/>
-  {/if}
+<PrimaryPage>
+  {@render children?.()}
 </PrimaryPage>

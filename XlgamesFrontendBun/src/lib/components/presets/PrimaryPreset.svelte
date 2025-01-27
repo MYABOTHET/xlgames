@@ -359,7 +359,7 @@
   {@render Enum(language.Shared.Country, getCountries(server))}
   {@render Enum(language.Shared.Region, getRegions(server))}
   {@render Enum(language.Shared.PricePerMonth, getPrice(server))}
-  <a class="primary-link mx-auto mt-3" href="/store/store/{server.Link}">{language.Shared.Order}</a>
+  <a rel="nofollow" class="primary-link mx-auto mt-3" href="/store/store/{server.Link}">{language.Shared.Order}</a>
 </section>
 {/snippet}
 
@@ -456,7 +456,7 @@ border-(--color-quaternary) text-(--color-quaternary) max-nine:w-full" onclick={
             </td>
             <td class="text-wrap! break-all">{getRegions(server)}</td>
             <td>{getPrice(server)}</td>
-            <td><a class="primary-link mx-auto" href="/store/store/{server.Link}">{language.Shared.Order}</a></td>
+            <td><a rel="nofollow" class="primary-link mx-auto" href="/store/store/{server.Link}">{language.Shared.Order}</a></td>
           </tr>
         {/each}
         </tbody>

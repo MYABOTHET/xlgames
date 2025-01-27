@@ -49,12 +49,47 @@ namespace XlgamesBackend.Controllers
         }
         #endregion
 
+        [HttpGet("{id:int}")]
+        [Authorize]
+        public async Task<ActionResult<GameServerLink?>> GetGameServer(int id)
+        {
+            return await _postgreSQLContext.GameServers
+                .Where(gameServer => gameServer.Id.Equals(id))
+                .Select(gameServer => new GameServerLink()
+                {
+                    CPU = gameServer.CPU,
+                    Disk = gameServer.Disk,
+                    Id = gameServer.Id,
+                    isPopular = gameServer.isPopular,
+                    Link = gameServer.Link,
+                    LinkName = gameServer.LinkName,
+                    Name = gameServer.Name,
+                    RAM = gameServer.RAM,
+                    Slots = gameServer.Slots,
+                    Src = gameServer.Src,
+                    ControlPanel = gameServer.ControlPanel,
+                    FTP = gameServer.FTP,
+                    Finland = gameServer.Finland,
+                    Germany = gameServer.Germany,
+                    Russia = gameServer.Russia,
+                    Singapore = gameServer.Singapore,
+                    USA = gameServer.USA,
+                    GameServerDataPrimaryModels = gameServer.GameServerDatas
+                        .Select(gameServerData => new GameServerDataPrimaryModel()
+                        {
+                            Id = gameServerData.Id,
+                            LanguageId = gameServerData.LanguageId,
+                        })
+                        .ToList(),
+                })
+                .FirstOrDefaultAsync();
+        }
+
         #region Получить игровой сервер по ссылке
         [HttpGet("{linkName}")]
         public async Task<ActionResult<GameServerLink?>> GetGameServer(string linkName)
         {
             return await _postgreSQLContext.GameServers
-                .AsNoTracking()
                 .Where(gameServer => gameServer.LinkName.Equals(linkName))
                 .Select(gameServer => new GameServerLink()
                 {
@@ -106,7 +141,7 @@ namespace XlgamesBackend.Controllers
         [HttpPost]
         [Authorize]
         public async Task<ActionResult<GameServer>>
-            PostGameServer([Required(ErrorMessage = "Название не может быть пустым")] string name)
+            PostGameServer([Required(ErrorMessage = "Название не может быть пустым")] [FromForm] string name)
         {
             bool exists = await _postgreSQLContext.GameServers
                 .Where(gameServer => gameServer.Name.Equals(name))
@@ -168,6 +203,18 @@ namespace XlgamesBackend.Controllers
             gameServer.Finland = gameServerDto.Finland;
             gameServer.Germany = gameServerDto.Germany;
             await _postgreSQLContext.SaveChangesAsync();
+            return Ok();
+        }
+        #endregion
+
+        #region Удалить игровой сервер по ID
+        [HttpDelete("{id:int}")]
+        [Authorize]
+        public async Task<ActionResult> DeleteLanguage(int id)
+        {
+            // Удаляем игровой сервер из базы данных
+            await _postgreSQLContext.GameServers.Where(gameServer => gameServer.Id.Equals(id)).ExecuteDeleteAsync();
+            // Возвращаем ответ
             return Ok();
         }
         #endregion

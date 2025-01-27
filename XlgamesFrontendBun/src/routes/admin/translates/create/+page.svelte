@@ -19,6 +19,7 @@
   let error = $state(null);
   
   async function createLanguage() {
+    if (invalidLocale) return;
     access = null;
     error = null;
     const response = await fetch("/admin/translates/create", {
@@ -39,6 +40,14 @@
       error = await response.text();
     }
   }
+  let invalidLocale = $derived.by(() => {
+    try {
+      new Intl.DateTimeFormat(languageDto.Locale);
+      return false;
+    } catch {
+      return true;
+    }
+  });
 </script>
 
 <SecondaryPage title="Создать язык">
@@ -46,7 +55,12 @@
     <PrimaryTextarea bind:value={languageDto.Name} title="Название на русском | Английский"/>
     <PrimaryTextarea bind:value={languageDto.WHMCSName} title="Название в WHMCS | english"/>
     <PrimaryTextarea bind:value={languageDto.OriginalName} title="Название на этом языке | English"/>
-    <PrimaryTextarea bind:value={languageDto.Locale} title="Локаль | en-US"/>
+    <div class="flex gap-x-4 items-center">
+      <PrimaryTextarea class="w-fit max-w-full" bind:value={languageDto.Locale} title="Локаль | en-US"/>
+      {#if invalidLocale}
+        <h1 class="text-red-600 text-nowrap min-w-fit">- Невалидная локаль -</h1>
+      {/if}
+    </div>
     <PrimaryTextarea bind:value={languageDto.Lang} title="Локаль в HTML | en"/>
     <PrimaryTextarea bind:value={languageDto.CurrencyId} title="ID валюты в WHMCS | 1"/>
   </QuaternarySection>

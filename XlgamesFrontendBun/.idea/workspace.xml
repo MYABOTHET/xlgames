@@ -5,10 +5,32 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="99b663dd-f91d-428e-817e-a654984c5689" name="Changes" comment="Обновление">
-      <change afterPath="$PROJECT_DIR$/src/routes/admin/game-servers/+layout.server.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/routes/admin/game-servers/+layout.svelte" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/lib/components/SaveFormPreset.svelte" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/lib/components/nav/SecondaryNav.svelte" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/routes/admin/game-servers/[id]/+layout.server.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/routes/admin/game-servers/[id]/+layout.svelte" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/routes/admin/game-servers/[id]/+page.svelte" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/routes/admin/game-servers/[id]/+server.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/routes/admin/game-servers/[id]/[translateId]/+page.server.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/routes/admin/game-servers/[id]/[translateId]/+page.svelte" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/routes/admin/game-servers/[id]/[translateId]/+server.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/routes/admin/game-servers/[id]/settings/+page.svelte" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/routes/admin/game-servers/create/+page.svelte" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/routes/admin/game-servers/create/+server.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../XlgamesBackend/XlgamesBackend/Controllers/GameServersController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../XlgamesBackend/XlgamesBackend/Controllers/GameServersController.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/routes/+error.svelte" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/+error.svelte" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lib/components/links/TernaryLink.svelte" beforeDir="false" afterPath="$PROJECT_DIR$/src/lib/components/links/TernaryLink.svelte" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lib/components/nav/PrimaryNav.svelte" beforeDir="false" afterPath="$PROJECT_DIR$/src/lib/components/nav/PrimaryNav.svelte" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lib/components/presets/HexadecimalPreset.svelte" beforeDir="false" afterPath="$PROJECT_DIR$/src/lib/components/presets/HexadecimalPreset.svelte" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lib/components/presets/PrimaryPreset.svelte" beforeDir="false" afterPath="$PROJECT_DIR$/src/lib/components/presets/PrimaryPreset.svelte" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/routes/(public)/+layout.svelte" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/(public)/+layout.svelte" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/routes/(public)/game-servers/[link]/+page.svelte" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/(public)/game-servers/[link]/+page.svelte" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/routes/(public)/vpn/+page.svelte" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/(public)/vpn/+page.svelte" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/routes/admin/game-servers/+layout.svelte" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/admin/game-servers/+layout.svelte" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/routes/admin/translates/[id]/+layout.svelte" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/admin/translates/[id]/+layout.svelte" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/routes/admin/translates/[id]/settings/+page.svelte" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/admin/translates/[id]/settings/+page.svelte" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/routes/admin/translates/create/+page.svelte" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/admin/translates/create/+page.svelte" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vite.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/vite.config.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -42,10 +64,13 @@
         <option value="OctalPreset" />
         <option value="NinePreset" />
         <option value="game-servers" />
-        <option value="+page" />
         <option value="DecimalPreset" />
         <option value="ProductCountriesRegions" />
         <option value="+layout" />
+        <option value="SaveFormPreset" />
+        <option value="+page" />
+        <option value="SecondaryNav" />
+        <option value="QuaternaryLink" />
         <option value="JavaScript File" />
       </list>
     </option>
@@ -79,33 +104,33 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Bun.dev.executor": "Run",
-    "DefaultHtmlFileTemplate": "HTML File",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "main",
-    "last_opened_file_path": "C:/Users/myabo/OneDrive/Документы/GitHub/xlgames/XlgamesFrontendBun/src/routes/admin/products/servers/[id]",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.stylelint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.stylelint": "",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "settings.nodejs",
-    "ts.external.directory.path": "C:\\Program Files\\JetBrains\\WebStorm 2024.1.5\\plugins\\javascript-plugin\\jsLanguageServicesImpl\\external",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Bun.dev.executor&quot;: &quot;Run&quot;,
+    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/myabo/OneDrive/Документы/GitHub/xlgames/XlgamesFrontendBun/src/routes/admin/game-servers/[id]&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.stylelint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.stylelint&quot;: &quot;&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;settings.nodejs&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;C:\\Program Files\\JetBrains\\WebStorm 2024.1.5\\plugins\\javascript-plugin\\jsLanguageServicesImpl\\external&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\myabo\OneDrive\Документы\GitHub\xlgames\XlgamesFrontendBun\src\routes\admin\game-servers\[id]" />
+      <recent name="C:\Users\myabo\OneDrive\Документы\GitHub\xlgames\XlgamesFrontendBun\src\routes\admin\game-servers" />
       <recent name="C:\Users\myabo\OneDrive\Документы\GitHub\xlgames\XlgamesFrontendBun\src\routes\admin\products\servers\[id]" />
       <recent name="C:\Users\myabo\OneDrive\Документы\GitHub\xlgames\XlgamesFrontendBun\src\routes\admin\products\servers-gpu\[id]" />
       <recent name="C:\Users\myabo\OneDrive\Документы\GitHub\xlgames\XlgamesFrontendBun\src\routes\admin\products\servers" />
-      <recent name="C:\Users\myabo\OneDrive\Документы\GitHub\xlgames\XlgamesFrontendBun\src\routes\admin\products\servers-gpu" />
-      <recent name="C:\Users\myabo\OneDrive\Документы\GitHub\xlgames\XlgamesFrontendBun\src\routes\admin\products\vps" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\myabo\OneDrive\Документы\GitHub\xlgames\XlgamesFrontendBun\static\assets" />
@@ -146,6 +171,8 @@
       <workItem from="1737785038057" duration="19706000" />
       <workItem from="1737808849489" duration="351000" />
       <workItem from="1737809212692" duration="37853000" />
+      <workItem from="1737883381152" duration="18496000" />
+      <workItem from="1737967207764" duration="5176000" />
     </task>
     <task id="LOCAL-00001" summary="Обновление">
       <option name="closed" value="true" />
@@ -299,7 +326,15 @@
       <option name="project" value="LOCAL" />
       <updated>1737854103957</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="Обновление">
+      <option name="closed" value="true" />
+      <created>1737883519173</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1737883519173</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

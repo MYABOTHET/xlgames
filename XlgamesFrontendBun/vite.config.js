@@ -4,5 +4,20 @@ import { defineConfig } from 'vite';
 import { SvelteKitPWA } from '@vite-pwa/sveltekit'
 
 export default defineConfig({
-	plugins: [sveltekit(), tailwindcss(),  SvelteKitPWA()]
+	plugins: [sveltekit(), tailwindcss(),  SvelteKitPWA({
+		includeAssets: ['favicon.ico', 'favicon.svg'],
+		manifest: {
+			name: 'XLGAMES',
+			short_name: 'XLGAMES',
+			description: 'XLGAMES - Professional hosting of game servers',
+			theme_color: '#15181f',
+			icons: [
+				{
+					src: 'favicon.svg',
+					sizes: 'auto',
+					type: 'image/svg+xml'
+				}
+			]
+		}
+	})]
 });

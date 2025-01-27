@@ -7,6 +7,7 @@
   let language = getContext("language")();
   let counter = $derived(getContext("counter")());
   let deleteLanguage = getContext("deleteLanguage");
+  let invalidLocale = $derived(getContext("invalidLocale")());
 </script>
 
 <SecondaryPage title="Настройки языка «{language.Name}»">
@@ -14,7 +15,12 @@
     <PrimaryTextarea bind:value={language.Name} title="Название на русском"/>
     <PrimaryTextarea bind:value={language.WHMCSName} title="Название в WHMCS"/>
     <PrimaryTextarea bind:value={language.OriginalName} title="Название на этом языке"/>
-    <PrimaryTextarea bind:value={language.Locale} title="Локаль"/>
+    <div class="flex gap-x-4 items-center">
+      <PrimaryTextarea class="w-fit max-w-full" bind:value={language.Locale} title="Локаль | en-US"/>
+      {#if invalidLocale}
+        <h1 class="text-red-600 text-nowrap min-w-fit">- Невалидная локаль -</h1>
+      {/if}
+    </div>
     <PrimaryTextarea bind:value={language.Lang} title="Локаль в HTML"/>
     <PrimaryTextarea bind:value={language.CurrencyId} title="ID валюты в WHMCS"/>
   </QuaternarySection>

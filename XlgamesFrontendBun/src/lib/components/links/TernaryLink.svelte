@@ -2,7 +2,7 @@
   import {page} from "$app/state";
   
   const {children, href, ...props} = $props();
-  let splitHref = href.split("/");
+  let splitHref = $derived(href.split("/"));
   let splitPath = $derived(page.url.pathname.split("/"));
   let startsWith = $derived.by(() => {
     let result = null;
