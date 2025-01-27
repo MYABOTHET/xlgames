@@ -14,11 +14,11 @@
 </svelte:head>
 
 {#snippet contact(title, description)}
-<article class="flex">
-  <h1 class="text-nowrap h-fit">{title}</h1>
-  <div class="min-w-4 flex-1 secondary-line"></div>
-  <address class="break-all not-italic">{description}</address>
-</article>
+  <article class="flex">
+    <h1 class="text-nowrap h-fit">{title}</h1>
+    <div class="min-w-4 flex-1 secondary-line"></div>
+    <address class="break-all not-italic">{description}</address>
+  </article>
 {/snippet}
 
 <div class="max-w-(--breakpoint-hexadecimal) w-full mx-auto">

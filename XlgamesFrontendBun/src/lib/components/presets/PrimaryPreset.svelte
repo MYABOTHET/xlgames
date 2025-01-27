@@ -329,38 +329,38 @@
 </script>
 
 {#snippet Enum(title, description)}
-<article class="flex">
-  <article class="flex min-w-44 max-hexadecimal:min-w-fit max-hexadecimal:flex-1">
-    <h1 class="text-nowrap h-fit">{title}</h1>
-    <div class="min-w-4 flex-1 secondary-line"></div>
+  <article class="flex">
+    <article class="flex min-w-44 max-hexadecimal:min-w-fit max-hexadecimal:flex-1">
+      <h1 class="text-nowrap h-fit">{title}</h1>
+      <div class="min-w-4 flex-1 secondary-line"></div>
+    </article>
+    <h1 class="text-wrap break-all">{description}</h1>
   </article>
-  <h1 class="text-wrap break-all">{description}</h1>
-</article>
 {/snippet}
 
 {#snippet Card(server)}
-<section class="flex flex-col gap-y-1 border-2 rounded-2xl overflow-hidden border-(--color-ternary) py-5 px-6">
-  {@render Enum(language.Shared.CPU, server.Data.CPU)}
-  {#if preset === "secondary"}
-    {@render Enum(language.Shared.Cores, server.Data.Cores)}
-  {/if}
-  {#if preset !== "secondary"}
-    {@render Enum(language.Shared.GHz, server.Data.GHz)}
-    {#if preset === "primary"}
-      {@render Enum(language.Shared.GPU, server.Data.GPU)}
+  <section class="flex flex-col gap-y-1 border-2 rounded-2xl overflow-hidden border-(--color-ternary) py-5 px-6">
+    {@render Enum(language.Shared.CPU, server.Data.CPU)}
+    {#if preset === "secondary"}
+      {@render Enum(language.Shared.Cores, server.Data.Cores)}
     {/if}
-  {/if}
-  {@render Enum(`${language.Shared.RAM} (${language.Shared.GB})`, server.Data.RAM)}
-  {#if preset !== "secondary"}
-    {@render Enum(language.Shared.RAMType, server.Data.RAMType)}
-  {/if}
-  {@render Enum(`${language.Shared.Disk} (${language.Shared.GB})`, server.Data.Disk)}
-  {@render Enum(language.Shared.DiskType, server.Data.DiskType)}
-  {@render Enum(language.Shared.Country, getCountries(server))}
-  {@render Enum(language.Shared.Region, getRegions(server))}
-  {@render Enum(language.Shared.PricePerMonth, getPrice(server))}
-  <a rel="nofollow" class="primary-link mx-auto mt-3" href="/store/store/{server.Link}">{language.Shared.Order}</a>
-</section>
+    {#if preset !== "secondary"}
+      {@render Enum(language.Shared.GHz, server.Data.GHz)}
+      {#if preset === "primary"}
+        {@render Enum(language.Shared.GPU, server.Data.GPU)}
+      {/if}
+    {/if}
+    {@render Enum(`${language.Shared.RAM} (${language.Shared.GB})`, server.Data.RAM)}
+    {#if preset !== "secondary"}
+      {@render Enum(language.Shared.RAMType, server.Data.RAMType)}
+    {/if}
+    {@render Enum(`${language.Shared.Disk} (${language.Shared.GB})`, server.Data.Disk)}
+    {@render Enum(language.Shared.DiskType, server.Data.DiskType)}
+    {@render Enum(language.Shared.Country, getCountries(server))}
+    {@render Enum(language.Shared.Region, getRegions(server))}
+    {@render Enum(language.Shared.PricePerMonth, getPrice(server))}
+    <a rel="nofollow" class="primary-link mx-auto mt-3" href="/store/store/{server.Link}">{language.Shared.Order}</a>
+  </section>
 {/snippet}
 
 <div {...props} class="{props.class} flex flex-wrap gap-4">
@@ -383,7 +383,8 @@
                          select={selectRegion}>
   </SecondaryDropdownMenu>
   <button class="border-2 px-6 py-2.5 rounded-full text-nowrap transition-colors hover:bg-(--color-secondary)
-border-(--color-quaternary) text-(--color-quaternary) max-nine:w-full" onclick={clearFilters}>{language.Shared.ResetFilters}</button>
+border-(--color-quaternary) text-(--color-quaternary) max-nine:w-full"
+          onclick={clearFilters}>{language.Shared.ResetFilters}</button>
 </div>
 {#if result.length}
   {#if !userOnMobile}
@@ -456,7 +457,8 @@ border-(--color-quaternary) text-(--color-quaternary) max-nine:w-full" onclick={
             </td>
             <td class="text-wrap! break-all">{getRegions(server)}</td>
             <td>{getPrice(server)}</td>
-            <td><a rel="nofollow" class="primary-link mx-auto" href="/store/store/{server.Link}">{language.Shared.Order}</a></td>
+            <td><a rel="nofollow" class="primary-link mx-auto"
+                   href="/store/store/{server.Link}">{language.Shared.Order}</a></td>
           </tr>
         {/each}
         </tbody>

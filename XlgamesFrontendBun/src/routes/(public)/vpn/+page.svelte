@@ -32,12 +32,12 @@
 </svelte:head>
 
 {#snippet VPNCard(title, price, href)}
-<article class="border-2 border-(--color-quaternary) rounded-2xl h-[264px] py-6 flex items-center flex-col text-center
+  <article class="border-2 border-(--color-quaternary) rounded-2xl h-[264px] py-6 flex items-center flex-col text-center
 transition-colors hover:bg-(--color-secondary)">
-  <h1 class="text-2xl font-medium">{title}</h1>
-  <p class="mt-6">{price}</p>
-  <a rel="nofollow" class="quinary-block w-fit px-6 py-2.5 mt-auto" {href}>{language.Shared.Order}</a>
-</article>
+    <h1 class="text-2xl font-medium">{title}</h1>
+    <p class="mt-6">{price}</p>
+    <a rel="nofollow" class="quinary-block w-fit px-6 py-2.5 mt-auto" {href}>{language.Shared.Order}</a>
+  </article>
 {/snippet}
 
 <article class="secondary-section">

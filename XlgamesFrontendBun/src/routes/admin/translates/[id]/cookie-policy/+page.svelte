@@ -17,7 +17,7 @@
   <QuaternarySection title="Остальное">
     <PrimaryTextarea bind:value={language.CookiePolicy.Name} title="Заголовок"/>
     <PrimaryTextarea bind:value={language.CookiePolicy.Description} title="Описание"/>
-    <TernaryPreset title="Банер" bind:object={language.CookiePolicy.CookiePolicyBanner}/>
+    <TernaryPreset bind:object={language.CookiePolicy.CookiePolicyBanner} title="Банер"/>
     <QuinaryPreset bind:list={language.CookiePolicy.CookiePolicyCollection} title="Перечисление"/>
   </QuaternarySection>
 </SecondaryPage>

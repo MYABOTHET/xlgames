@@ -50,106 +50,107 @@
 </script>
 
 {#snippet linkBlock(link)}
-<PrimaryLink class="primary-bg primary-p transition-colors" href={link.href}>
-  {language.Shared[link.name]}
-</PrimaryLink>
+  <PrimaryLink class="primary-bg primary-p transition-colors" href={link.href}>
+    {language.Shared[link.name]}
+  </PrimaryLink>
 {/snippet}
 
 {#snippet project()}
-<nav class="flex-1 flex items-center">
-  <a class="inline-block" href="/">
-    <ProjectData logo={Logo} name={Name}/>
-  </a>
-</nav>
+  <nav class="flex-1 flex items-center">
+    <a class="inline-block" href="/">
+      <ProjectData logo={Logo} name={Name}/>
+    </a>
+  </nav>
 {/snippet}
 
 {#snippet navigation()}
-<nav class="flex-center gap-x-8">
-  {#each navigationLinks.header.other as link}
-    <PrimaryLink style="order: {link.position}" href={link.href}>{language.Shared[link.name]}</PrimaryLink>
-  {/each}
-  <PrimaryDropdownMenu class="flex justify-center" style="order: {navigationLinks.header.menu.position}">
-    {#snippet button(isMenuVisible)}
-    <PrimarySpan isActive={isMenuVisible}>{language.Shared[navigationLinks.header.menu.name]}</PrimarySpan>
-    {/snippet}
-    <div class="absolute primary-top z-20" transition:fade={{duration}}>
-      <PrimaryBlock position="primary-triangle-center">
-        {#each navigationLinks.header.menu.links as link}
-          {@render linkBlock?.(link)}
-        {/each}
-      </PrimaryBlock>
-    </div>
-  </PrimaryDropdownMenu>
-</nav>
-{/snippet}
-
-{#snippet menus()}
-<div class="flex-1 flex justify-end items-center">
-  <div class="flex-center gap-x-6">
-    <PrimaryDropdownMenu class="flex justify-end">
+  <nav class="flex-center gap-x-8">
+    {#each navigationLinks.header.other as link}
+      <PrimaryLink style="order: {link.position}" href={link.href}>{language.Shared[link.name]}</PrimaryLink>
+    {/each}
+    <PrimaryDropdownMenu class="flex justify-center" style="order: {navigationLinks.header.menu.position}">
       {#snippet button(isMenuVisible)}
-      <PrimaryIcon Icon={PrimaryLanguage} class="secondary-height stroke-white" isActive={isMenuVisible}/>
+        <PrimarySpan isActive={isMenuVisible}>{language.Shared[navigationLinks.header.menu.name]}</PrimarySpan>
       {/snippet}
-      <div class="absolute primary-top -mr-2 z-20" transition:fade={{duration}}>
-        <PrimaryBlock position="primary-triangle-end">
-          {#each languages as languageitem}
-            <button onclick={() => {setLanguage(languageitem)}}>
-              <PrimarySpan isActive={languageitem.Locale === language.Locale} class="primary-bg primary-p
-              transition-colors">{languageitem.OriginalName}</PrimarySpan>
-            </button>
+      <div class="absolute primary-top z-20" transition:fade={{duration}}>
+        <PrimaryBlock position="primary-triangle-center">
+          {#each navigationLinks.header.menu.links as link}
+            {@render linkBlock?.(link)}
           {/each}
         </PrimaryBlock>
       </div>
     </PrimaryDropdownMenu>
-    {#if !userOnMobile}
+  </nav>
+{/snippet}
+
+{#snippet menus()}
+  <div class="flex-1 flex justify-end items-center">
+    <div class="flex-center gap-x-6">
       <PrimaryDropdownMenu class="flex justify-end">
         {#snippet button(isMenuVisible)}
-        <PrimaryIcon Icon={PrimaryProfile} isActive={isMenuVisible} class="secondary-height stroke-white"/>
+          <PrimaryIcon Icon={PrimaryLanguage} class="secondary-height stroke-white" isActive={isMenuVisible}/>
         {/snippet}
-        <div transition:fade={{duration}} class="absolute primary-top -mr-3 z-20">
+        <div class="absolute primary-top -mr-2 z-20" transition:fade={{duration}}>
           <PrimaryBlock position="primary-triangle-end">
-            {#each navigationLinks.menu as link}
-              <PrimaryLink href={link.href} class="primary-bg primary-p" rel="nofollow">
-                {language.Shared[link.name]}
-              </PrimaryLink>
+            {#each languages as languageitem}
+              <button onclick={() => {setLanguage(languageitem)}}>
+                <PrimarySpan isActive={languageitem.Locale === language.Locale} class="primary-bg primary-p
+              transition-colors">{languageitem.OriginalName}</PrimarySpan>
+              </button>
             {/each}
           </PrimaryBlock>
         </div>
       </PrimaryDropdownMenu>
-    {:else}
-      <div class="flex" use:menu>
-        <button onclick={toggle}>
-          <SecondaryIcon Icon={PrimaryMenu} isActive={menuIsVisible} class="ternary-height fill-white"/>
-        </button>
-        {#if menuIsVisible}
-          <div transition:fly={{x: "-100vw", duration: 175, delay: 0, opacity: 1, easing: quartInOut}}
-               style="min-height: calc(100dvh - {headerHeight}rem);
-             max-height: calc(100dvh - {headerHeight}rem); margin-top: {headerHeight}rem;"
-               class="absolute top-0 left-0 overflow-y-auto w-full bg-(--color-primary) primary-px py-6 scroll z-10">
-            <nav class="flex flex-col w-full gap-y-6">
-              {#each [...navigationLinks.header.menu.links, ...navigationLinks.header.other,
-                ...navigationLinks.other] as link}
-                <PrimaryLink style="width: fit-content" href={link.href}>{language.Shared[link.name]}</PrimaryLink>
-              {/each}
+      {#if !userOnMobile}
+        <PrimaryDropdownMenu class="flex justify-end">
+          {#snippet button(isMenuVisible)}
+            <PrimaryIcon Icon={PrimaryProfile} isActive={isMenuVisible} class="secondary-height stroke-white"/>
+          {/snippet}
+          <div transition:fade={{duration}} class="absolute primary-top -mr-3 z-20">
+            <PrimaryBlock position="primary-triangle-end">
               {#each navigationLinks.menu as link}
-                <PrimaryLink style="width: fit-content" href={link.href}
-                             rel="nofollow">{language.Shared[link.name]}</PrimaryLink>
+                <PrimaryLink href={link.href} class="primary-bg primary-p" rel="nofollow">
+                  {language.Shared[link.name]}
+                </PrimaryLink>
               {/each}
-              {#each navigationLinks.footer as link}
-                <PrimaryLink style="width: fit-content" href={link.href}>{language.Shared[link.name]}</PrimaryLink>
-              {/each}
-            </nav>
+            </PrimaryBlock>
           </div>
-        {/if}
-      </div>
-    {/if}
+        </PrimaryDropdownMenu>
+      {:else}
+        <div class="flex" use:menu>
+          <button onclick={toggle}>
+            <SecondaryIcon Icon={PrimaryMenu} isActive={menuIsVisible} class="ternary-height fill-white"/>
+          </button>
+          {#if menuIsVisible}
+            <div transition:fly={{x: "-100vw", duration: 175, delay: 0, opacity: 1, easing: quartInOut}}
+                 style="min-height: calc(100dvh - {headerHeight}rem);
+             max-height: calc(100dvh - {headerHeight}rem); margin-top: {headerHeight}rem;"
+                 class="absolute top-0 left-0 overflow-y-auto w-full bg-(--color-primary) primary-px py-6 scroll z-10">
+              <nav class="flex flex-col w-full gap-y-6">
+                {#each [...navigationLinks.header.menu.links, ...navigationLinks.header.other,
+                  ...navigationLinks.other] as link}
+                  <PrimaryLink style="width: fit-content" href={link.href}>{language.Shared[link.name]}</PrimaryLink>
+                {/each}
+                {#each navigationLinks.menu as link}
+                  <PrimaryLink style="width: fit-content" href={link.href}
+                               rel="nofollow">{language.Shared[link.name]}</PrimaryLink>
+                {/each}
+                {#each navigationLinks.footer as link}
+                  <PrimaryLink style="width: fit-content" href={link.href}>{language.Shared[link.name]}</PrimaryLink>
+                {/each}
+              </nav>
+            </div>
+          {/if}
+        </div>
+      {/if}
+    </div>
   </div>
-</div>
 {/snippet}
 
 <header {...props} class="{props.class}
 flex-center border-b border-b-(--color-secondary) primary-px {menuIsVisible ? 'bg-(--color-primary)' : 'bg-(--color-secondary)'}
-{userOnMobile ? 'transition-[background-color]' : ''}" style="min-height: {headerHeight}rem; max-height: {headerHeight}rem;">
+{userOnMobile ? 'transition-[background-color]' : ''}"
+        style="min-height: {headerHeight}rem; max-height: {headerHeight}rem;">
   <div class="flex-center max-w-(--breakpoint-primary) w-full">
     {@render project?.()}
     {#if !userOnMobile}{@render navigation?.()}{/if}

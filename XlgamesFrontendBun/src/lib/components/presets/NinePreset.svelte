@@ -24,8 +24,8 @@ border-(--color-hexadecimal) px-5 py-4 min-w-xs">
   {#each list as item, index}
     <Component bind:object={list[index]} {index} {up} {down} {deleteItem} length={list.length}/>
   {/each}
-  <button {onclick} class="font-normal border border-(--color-hexadecimal) h-8 w-36 rounded-full flex items-center
-              justify-center transition-colors hover:bg-(--color-quaternary)/10 text-(--color-quaternary)">
+  <button class="font-normal border border-(--color-hexadecimal) h-8 w-36 rounded-full flex items-center
+              justify-center transition-colors hover:bg-(--color-quaternary)/10 text-(--color-quaternary)" {onclick}>
     <span>Добавить</span>
   </button>
 </div>

@@ -27,12 +27,12 @@
 </svelte:head>
 
 {#snippet noCard(cardProps)}
-<div class="{cardProps} primary-block border-transparent">
-  <div
-      class="primary-block border-(--color-quaternary) text-(--color-quaternary) size-full flex-center font-medium text-lg">
-    ≽^•⩊•^≼
+  <div class="{cardProps} primary-block border-transparent">
+    <div
+        class="primary-block border-(--color-quaternary) text-(--color-quaternary) size-full flex-center font-medium text-lg">
+      ≽^•⩊•^≼
+    </div>
   </div>
-</div>
 {/snippet}
 
 <div class="flex flex-col gap-y-28">

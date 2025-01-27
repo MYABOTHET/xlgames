@@ -30,8 +30,8 @@ w-fit max-w-full px-5 py-4">
         <PrimaryArrow class="min-w-3 max-w-3 fill-(--color-quaternary) rotate-180"/>
       </button>
     {/if}
-    <button onclick={del} class="font-normal border border-(--color-hexadecimal) h-8 w-32 rounded-full flex items-center
-    justify-center transition-colors hover:bg-(--color-quaternary)/10 text-(--color-quaternary)">
+    <button class="font-normal border border-(--color-hexadecimal) h-8 w-32 rounded-full flex items-center
+    justify-center transition-colors hover:bg-(--color-quaternary)/10 text-(--color-quaternary)" onclick={del}>
       <span>Удалить ({counter})</span>
     </button>
   </div>

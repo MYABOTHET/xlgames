@@ -15,11 +15,11 @@
     <PrimaryTextarea bind:value={language.Home.Head} title="Метаданные"/>
   </QuaternarySection>
   <QuaternarySection title="Навигационные блоки">
-    <TernaryPreset title="Серверы без видеокарты" bind:object={language.Home.ServersWithoutGPU}/>
-    <TernaryPreset title="VPS" bind:object={language.Home.VPS}/>
-    <TernaryPreset title="Веб хостинг" bind:object={language.Home.WebHosting}/>
-    <TernaryPreset title="VPN" bind:object={language.Home.VPN}/>
-    <TernaryPreset title="Серверы с видеокартой" bind:object={language.Home.ServersWithGPU}/>
+    <TernaryPreset bind:object={language.Home.ServersWithoutGPU} title="Серверы без видеокарты"/>
+    <TernaryPreset bind:object={language.Home.VPS} title="VPS"/>
+    <TernaryPreset bind:object={language.Home.WebHosting} title="Веб хостинг"/>
+    <TernaryPreset bind:object={language.Home.VPN} title="VPN"/>
+    <TernaryPreset bind:object={language.Home.ServersWithGPU} title="Серверы с видеокартой"/>
   </QuaternarySection>
   <QuaternarySection title="Дата центры">
     <PrimaryTextarea bind:value={language.Home.DataCentersDescription} title="Описание дата центров"/>

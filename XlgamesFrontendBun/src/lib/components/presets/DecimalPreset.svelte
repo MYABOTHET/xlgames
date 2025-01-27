@@ -1,7 +1,10 @@
 <script>
   import PrimaryCheckbox from "$lib/components/checkbox/PrimaryCheckbox.svelte";
   
-  let {value = $bindable(), title, children, off = () => {}, ...props} = $props();
+  let {
+    value = $bindable(), title, children, off = () => {
+    }, ...props
+  } = $props();
   
   let visible = $derived(value);
   

@@ -40,6 +40,7 @@
       error = await response.text();
     }
   }
+  
   let invalidLocale = $derived.by(() => {
     try {
       new Intl.DateTimeFormat(languageDto.Locale);
@@ -56,7 +57,7 @@
     <PrimaryTextarea bind:value={languageDto.WHMCSName} title="Название в WHMCS | english"/>
     <PrimaryTextarea bind:value={languageDto.OriginalName} title="Название на этом языке | English"/>
     <div class="flex gap-x-4 items-center">
-      <PrimaryTextarea class="w-fit max-w-full" bind:value={languageDto.Locale} title="Локаль | en-US"/>
+      <PrimaryTextarea bind:value={languageDto.Locale} class="w-fit max-w-full" title="Локаль | en-US"/>
       {#if invalidLocale}
         <h1 class="text-red-600 text-nowrap min-w-fit">- Невалидная локаль -</h1>
       {/if}

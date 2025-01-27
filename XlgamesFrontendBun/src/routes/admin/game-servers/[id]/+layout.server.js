@@ -10,10 +10,12 @@ export async function load({fetch, params}) {
     },
   ];
   let linksResult = linksOptions.concat(gameServer.GameServerDataPrimaryModels
-  .map(model => {return {
-    title: languageList.find(language => language.Id === model.LanguageId).Name,
-    href: `/admin/game-servers/${params.id}/${model.Id}`
-  }}).sort((a, b) => a.title.localeCompare(b.title, "ru-RU")));
+  .map(model => {
+    return {
+      title: languageList.find(language => language.Id === model.LanguageId).Name,
+      href: `/admin/game-servers/${params.id}/${model.Id}`
+    }
+  }).sort((a, b) => a.title.localeCompare(b.title, "ru-RU")));
   return {
     gameServer,
     linksOptions: linksResult,

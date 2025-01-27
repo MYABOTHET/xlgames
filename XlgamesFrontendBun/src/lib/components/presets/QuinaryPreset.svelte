@@ -5,5 +5,5 @@
   let {list = $bindable(), ...props} = $props();
 </script>
 
-<NinePreset Component={QuaternaryPreset} length={list.length} {...props} bind:list
-onclick={() => {list.push({Name: "...", Description: "..."})}}/>
+<NinePreset {...props} Component={QuaternaryPreset} bind:list length={list.length}
+            onclick={() => {list.push({Name: "...", Description: "..."})}}/>

@@ -5,32 +5,33 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="99b663dd-f91d-428e-817e-a654984c5689" name="Changes" comment="Обновление">
-      <change afterPath="$PROJECT_DIR$/src/lib/components/SaveFormPreset.svelte" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/lib/components/nav/SecondaryNav.svelte" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/routes/admin/game-servers/[id]/+layout.server.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/routes/admin/game-servers/[id]/+layout.svelte" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/routes/admin/game-servers/[id]/+page.svelte" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/routes/admin/game-servers/[id]/+server.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/routes/admin/game-servers/[id]/[translateId]/+page.server.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/routes/admin/game-servers/[id]/[translateId]/+page.svelte" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/routes/admin/game-servers/[id]/[translateId]/+server.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/routes/admin/game-servers/[id]/settings/+page.svelte" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/routes/admin/game-servers/create/+page.svelte" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/routes/admin/game-servers/create/+server.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../XlgamesBackend/XlgamesBackend/Controllers/GameServersController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../XlgamesBackend/XlgamesBackend/Controllers/GameServersController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lib/components/Header.svelte" beforeDir="false" afterPath="$PROJECT_DIR$/src/lib/components/Header.svelte" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lib/components/ProductCountriesRegions.svelte" beforeDir="false" afterPath="$PROJECT_DIR$/src/lib/components/ProductCountriesRegions.svelte" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lib/components/dropdown-menus/SecondaryDropdownMenu.svelte" beforeDir="false" afterPath="$PROJECT_DIR$/src/lib/components/dropdown-menus/SecondaryDropdownMenu.svelte" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/lib/components/links/TernaryLink.svelte" beforeDir="false" afterPath="$PROJECT_DIR$/src/lib/components/links/TernaryLink.svelte" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/lib/components/nav/PrimaryNav.svelte" beforeDir="false" afterPath="$PROJECT_DIR$/src/lib/components/nav/PrimaryNav.svelte" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lib/components/presets/DecimalPreset.svelte" beforeDir="false" afterPath="$PROJECT_DIR$/src/lib/components/presets/DecimalPreset.svelte" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/lib/components/presets/HexadecimalPreset.svelte" beforeDir="false" afterPath="$PROJECT_DIR$/src/lib/components/presets/HexadecimalPreset.svelte" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lib/components/presets/NinePreset.svelte" beforeDir="false" afterPath="$PROJECT_DIR$/src/lib/components/presets/NinePreset.svelte" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lib/components/presets/OctalPreset.svelte" beforeDir="false" afterPath="$PROJECT_DIR$/src/lib/components/presets/OctalPreset.svelte" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/lib/components/presets/PrimaryPreset.svelte" beforeDir="false" afterPath="$PROJECT_DIR$/src/lib/components/presets/PrimaryPreset.svelte" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lib/components/presets/QuinaryPreset.svelte" beforeDir="false" afterPath="$PROJECT_DIR$/src/lib/components/presets/QuinaryPreset.svelte" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lib/components/sections/TernarySection.svelte" beforeDir="false" afterPath="$PROJECT_DIR$/src/lib/components/sections/TernarySection.svelte" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lib/components/svg/messengers/Snapchat.svelte" beforeDir="false" afterPath="$PROJECT_DIR$/src/lib/components/svg/messengers/Snapchat.svelte" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lib/components/svg/messengers/Twitter.svelte" beforeDir="false" afterPath="$PROJECT_DIR$/src/lib/components/svg/messengers/Twitter.svelte" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lib/components/svg/messengers/Whatsapp.svelte" beforeDir="false" afterPath="$PROJECT_DIR$/src/lib/components/svg/messengers/Whatsapp.svelte" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/routes/(public)/+layout.svelte" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/(public)/+layout.svelte" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/routes/(public)/+page.svelte" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/(public)/+page.svelte" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/routes/(public)/contacts/+page.svelte" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/(public)/contacts/+page.svelte" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/routes/(public)/game-servers/+page.svelte" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/(public)/game-servers/+page.svelte" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/routes/(public)/game-servers/[link]/+page.svelte" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/(public)/game-servers/[link]/+page.svelte" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/routes/(public)/vpn/+page.svelte" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/(public)/vpn/+page.svelte" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/routes/admin/game-servers/+layout.svelte" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/admin/game-servers/+layout.svelte" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/routes/admin/translates/[id]/+layout.svelte" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/admin/translates/[id]/+layout.svelte" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/routes/admin/game-servers/[id]/+layout.server.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/admin/game-servers/[id]/+layout.server.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/routes/admin/game-servers/[id]/[translateId]/+page.svelte" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/admin/game-servers/[id]/[translateId]/+page.svelte" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/routes/admin/game-servers/[id]/settings/+page.svelte" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/admin/game-servers/[id]/settings/+page.svelte" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/routes/admin/translates/[id]/cookie-policy/+page.svelte" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/admin/translates/[id]/cookie-policy/+page.svelte" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/routes/admin/translates/[id]/home/+page.svelte" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/admin/translates/[id]/home/+page.svelte" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/routes/admin/translates/[id]/settings/+page.svelte" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/admin/translates/[id]/settings/+page.svelte" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/routes/admin/translates/create/+page.svelte" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/admin/translates/create/+page.svelte" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vite.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/vite.config.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -172,7 +173,7 @@
       <workItem from="1737808849489" duration="351000" />
       <workItem from="1737809212692" duration="37853000" />
       <workItem from="1737883381152" duration="18496000" />
-      <workItem from="1737967207764" duration="5176000" />
+      <workItem from="1737967207764" duration="5529000" />
     </task>
     <task id="LOCAL-00001" summary="Обновление">
       <option name="closed" value="true" />
@@ -334,7 +335,15 @@
       <option name="project" value="LOCAL" />
       <updated>1737883519173</updated>
     </task>
-    <option name="localTasksCounter" value="21" />
+    <task id="LOCAL-00021" summary="Обновление">
+      <option name="closed" value="true" />
+      <created>1737976976455</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1737976976455</updated>
+    </task>
+    <option name="localTasksCounter" value="22" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

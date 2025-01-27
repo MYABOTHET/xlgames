@@ -16,7 +16,7 @@
     <PrimaryTextarea bind:value={language.WHMCSName} title="Название в WHMCS"/>
     <PrimaryTextarea bind:value={language.OriginalName} title="Название на этом языке"/>
     <div class="flex gap-x-4 items-center">
-      <PrimaryTextarea class="w-fit max-w-full" bind:value={language.Locale} title="Локаль | en-US"/>
+      <PrimaryTextarea bind:value={language.Locale} class="w-fit max-w-full" title="Локаль | en-US"/>
       {#if invalidLocale}
         <h1 class="text-red-600 text-nowrap min-w-fit">- Невалидная локаль -</h1>
       {/if}

@@ -7,34 +7,34 @@
 </script>
 
 <QuaternarySection childrenProps="gap-y-8" title="Страны и регионы">
-  <DecimalPreset bind:value={product.Germany} title="Германия" off={() => {
+  <DecimalPreset bind:value={product.Germany} off={() => {
       product.Falkenstein = false;
       product.Frankfurt = false;
       product.Nuremberg = false;
-    }}>
+    }} title="Германия">
     <PrimaryCheckbox bind:value={product.Falkenstein} title="Фалькенштайн"/>
     <PrimaryCheckbox bind:value={product.Frankfurt} title="Франкфурт"/>
     <PrimaryCheckbox bind:value={product.Nuremberg} title="Нюрнберг"/>
   </DecimalPreset>
-  <DecimalPreset bind:value={product.Finland} title="Финляндия" off={() => {
+  <DecimalPreset bind:value={product.Finland} off={() => {
       product.Helsinki = false;
-    }}>
+    }} title="Финляндия">
     <PrimaryCheckbox bind:value={product.Helsinki} title="Хельсинки"/>
   </DecimalPreset>
-  <DecimalPreset bind:value={product.Russia} title="Россия" off={() => {
+  <DecimalPreset bind:value={product.Russia} off={() => {
       product.Moscow = false;
       product.SaintPetersburg = false;
-    }}>
+    }} title="Россия">
     <PrimaryCheckbox bind:value={product.Moscow} title="Москва"/>
     <PrimaryCheckbox bind:value={product.SaintPetersburg} title="Санкт-Петербург"/>
   </DecimalPreset>
-  <DecimalPreset bind:value={product.USA} title="США" off={() => {
+  <DecimalPreset bind:value={product.USA} off={() => {
       product.NewYork = false;
       product.Miami = false;
       product.LosAngeles = false;
       product.Hillsboro = false;
       product.Ashburn = false;
-    }}>
+    }} title="США">
     <PrimaryCheckbox bind:value={product.NewYork} title="Нью-Йорк"/>
     <PrimaryCheckbox bind:value={product.Miami} title="Майами"/>
     <PrimaryCheckbox bind:value={product.LosAngeles} title="Лос-Анджелес"/>

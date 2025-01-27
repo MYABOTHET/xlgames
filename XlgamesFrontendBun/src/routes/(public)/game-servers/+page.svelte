@@ -53,10 +53,11 @@
 </svelte:head>
 
 {#snippet buttonFilter(click, isActive, content)}
-<button class="{isActive ? 'border-(--color-ternary) text-(--color-ternary)' : 'border-(--color-quaternary) text-(--color-quaternary)'}
+  <button
+      class="{isActive ? 'border-(--color-ternary) text-(--color-ternary)' : 'border-(--color-quaternary) text-(--color-quaternary)'}
     border-2 px-6 py-2.5 rounded-full text-nowrap transition-colors hover:bg-(--color-secondary)
 max-nine:flex-[1_1_25%]"
-        onclick={click}>{content}</button>
+      onclick={click}>{content}</button>
 {/snippet}
 
 <article class="secondary-section">

@@ -16,9 +16,9 @@
 </script>
 
 {#snippet icon(Icon, href)}
-<a class="w-fit" {href} rel="nofollow">
-  <SecondaryIcon {Icon} class="primary-size fill-(--color-quaternary)"></SecondaryIcon>
-</a>
+  <a class="w-fit" {href} rel="nofollow">
+    <SecondaryIcon {Icon} class="primary-size fill-(--color-quaternary)"></SecondaryIcon>
+  </a>
 {/snippet}
 
 {#if

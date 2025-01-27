@@ -40,7 +40,7 @@
   <QuaternarySection title="Остальное">
     <PrimaryCheckbox bind:value={gameServer.isPopular} title="Популярен?"/>
   </QuaternarySection>
-  <SaveForm {access} {error} class="*:first:min-w-40" onclick={updateGameServer}/>
+  <SaveForm {access} class="*:first:min-w-40" {error} onclick={updateGameServer}/>
   <button class="min-w-40 mt-4 px-5 border-2 bg-red-500 border-red-500 rounded
   text-nowrap text-(--color-primary) transition-colors hover:bg-(--color-primary) hover:text-white
   min-h-9 text-sm" onclick={deleteGameServer}>Удалить ({counter})

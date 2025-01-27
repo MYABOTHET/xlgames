@@ -59,5 +59,5 @@
     <PrimaryTextarea bind:value={translate.Description} title="Описание"/>
     <HexadecimalPreset bind:list={translate.GameServerDataPoints} title="Перечисление"/>
   </QuaternarySection>
-    <SaveForm {access} {error} onclick={updateGameServerData}/>
+  <SaveForm {access} {error} onclick={updateGameServerData}/>
 </SecondaryPage>

@@ -44,13 +44,13 @@
 </svelte:head>
 
 {#snippet descLine(title, description)}
-<article class="flex">
-  <article class="flex min-w-48 max-decimal:min-w-fit max-decimal:flex-1">
-    <h1 class="text-nowrap h-fit">{title}</h1>
-    <div class="min-w-4 flex-1 secondary-line"></div>
+  <article class="flex">
+    <article class="flex min-w-48 max-decimal:min-w-fit max-decimal:flex-1">
+      <h1 class="text-nowrap h-fit">{title}</h1>
+      <div class="min-w-4 flex-1 secondary-line"></div>
+    </article>
+    <h1 class="text-wrap break-all">{description}</h1>
   </article>
-  <h1 class="text-wrap break-all">{description}</h1>
-</article>
 {/snippet}
 
 <article class="secondary-section">
@@ -71,7 +71,8 @@ max-decimal:aspect-square" src={data.gameServer.Src}/>
         <h1>{language.Shared.PriceFrom} {language.Shared.CurrencySignPosition
             ? language.Shared.CurrencySign + priceFormatter.format(gameServerData.Price)
             : priceFormatter.format(gameServerData.Price) + language.Shared.CurrencySign} / {language.Shared.Month}</h1>
-        <a rel="nofollow" class="quinary-block w-fit quaternary-p" href={data.gameServer.Link}>{language.Shared.Order}</a>
+        <a class="quinary-block w-fit quaternary-p" href={data.gameServer.Link}
+           rel="nofollow">{language.Shared.Order}</a>
       </article>
     </div>
   </article>
