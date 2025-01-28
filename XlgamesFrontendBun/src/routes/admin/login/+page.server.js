@@ -27,8 +27,8 @@ export const actions = {
     });
     if (response.status === 200) {
       cookies.set(".AspNetCore.Cookies", getCookie(response)[".AspNetCore.Cookies"], {
-        path: "/admin", maxAge: 60 * 60 * 24 * 5,
-        sameSite: "Strict", priority: "high", httpOnly: true, secure: true
+        path: "/", maxAge: 60 * 60 * 24 * 5,
+        sameSite: "Lax", priority: "high", httpOnly: true, secure: true
       });
       redirect(301, "/admin");
       return {success: true};
