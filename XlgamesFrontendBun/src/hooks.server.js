@@ -8,7 +8,6 @@ export async function handle({event, resolve}) {
   const {cookies, request, locals, url, fetch} = event;
   if (url.pathname.startsWith("/admin") && !url.pathname.startsWith("/admin/login")) {
     const response = await fetch(`${configuration.api}/Auth/Validate`);
-    console.log(cookies.getAll());
     if (response.status === 401) {
       redirect(301, "/admin/login");
     }
@@ -53,4 +52,12 @@ export async function handle({event, resolve}) {
   return resolve(event, {
     transformPageChunk: ({html}) => html.replace('%lang%', userLanguage.Lang)
   });
+}
+
+/** @type {import('@sveltejs/kit').HandleFetch} */
+export async function handleFetch({ event, request, fetch }) {
+  if (request.url.startsWith('/')) {
+    request.headers.set('cookie', event.request.headers.get('cookie'));
+  }
+  return fetch(request);
 }
