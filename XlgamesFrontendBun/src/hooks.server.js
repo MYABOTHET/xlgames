@@ -8,6 +8,7 @@ export async function handle({event, resolve}) {
   const {cookies, request, locals, url, fetch} = event;
   if (url.pathname.startsWith("/admin") && !url.pathname.startsWith("/admin/login")) {
     const response = await fetch(`${configuration.api}/Auth/Validate`);
+    console.log(cookies.getAll());
     if (response.status === 401) {
       redirect(301, "/admin/login");
     }
