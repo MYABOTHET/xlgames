@@ -4,7 +4,7 @@
 	"version": "0.0.1",
 	"type": "module",
 	"scripts": {
-		"dev": "bun --bun run vite dev --host 0.0.0.0 --port 80",
+		"dev": "bun --bun run vite dev --host 0.0.0.0 --port 8962",
 		"build": "bun --bun run vite build",
 		"preview": "bun --bun run vite preview"
 	},
