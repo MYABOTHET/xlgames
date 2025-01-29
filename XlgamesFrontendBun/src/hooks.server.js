@@ -56,8 +56,6 @@ export async function handle({event, resolve}) {
 
 /** @type {import('@sveltejs/kit').HandleFetch} */
 export async function handleFetch({ event, request, fetch }) {
-  if (request.url.startsWith('/')) {
-    request.headers.set('cookie', event.request.headers.get('cookie'));
-  }
+  request.headers.set('cookie', event.request.headers.get('cookie'));
   return fetch(request);
 }
