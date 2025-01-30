@@ -348,6 +348,7 @@
     server.Data.Gravelines ? regions.push(language.Shared.Gravelines) : null;
     server.Data.Singapore ? regions.push(language.Shared.Singapore) : null;
     if (!regions.length) regions.push("...");
+    for (let i = 0; i < regions.length; i++) regions[i] = regions[i].replaceAll(" ", "&nbsp;");
     return regions.join(", ");
   }
   
@@ -365,7 +366,7 @@
       <h1 class="text-nowrap h-fit">{title}</h1>
       <div class="min-w-4 flex-1 secondary-line"></div>
     </article>
-    <h1 class="text-wrap break-all">{description}</h1>
+    <h1>{@html description}</h1>
   </article>
 {/snippet}
 
@@ -465,7 +466,7 @@ border-(--color-quaternary) text-(--color-quaternary) max-nine:w-full"
             <td>{server.Data.Disk}</td>
             <td>{server.Data.DiskType}</td>
             <td>
-              <div class="flex flex-wrap justify-center gap-2 mx-auto max-w-[60px] min-w-[60px]">
+              <div class="grid grid-cols-2 mt-0.5 gap-2">
                 {#if server.Data.Germany}
                   <Germany class="min-h-4 max-h-4"/>
                 {/if}
@@ -489,7 +490,7 @@ border-(--color-quaternary) text-(--color-quaternary) max-nine:w-full"
                 {/if}
               </div>
             </td>
-            <td class="text-wrap! break-all">{getRegions(server)}</td>
+            <td class="text-left"><p class="pl-5">{@html getRegions(server)}</p></td>
             <td>{getPrice(server)}</td>
             <td><a rel="nofollow" class="primary-link mx-auto"
                    href="/store/store/{server.Link}">{language.Shared.Order}</a></td>

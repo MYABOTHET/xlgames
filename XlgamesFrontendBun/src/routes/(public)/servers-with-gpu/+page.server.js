@@ -1,6 +1,6 @@
 import configuration from "$lib";
 
-const mobileWidth = 72;
+const mobileWidth = 74;
 
 export async function load({fetch}) {
   return {

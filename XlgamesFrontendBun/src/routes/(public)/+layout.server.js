@@ -2,7 +2,7 @@ import configuration from "$lib";
 import {getUserLanguageFromCookies} from "$lib/tools.js";
 import Bowser from "bowser";
 
-const mobileWidth = 64;
+const mobileWidth = 72;
 const headerHeight = 5;
 const author = "Лёвин Валерий Дмитриевич";
 

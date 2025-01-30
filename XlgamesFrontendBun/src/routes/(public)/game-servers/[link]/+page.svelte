@@ -50,7 +50,7 @@
       <h1 class="text-nowrap h-fit">{title}</h1>
       <div class="min-w-4 flex-1 secondary-line"></div>
     </article>
-    <h1 class="text-wrap break-all">{description}</h1>
+    <h1>{description}</h1>
   </article>
 {/snippet}
 
