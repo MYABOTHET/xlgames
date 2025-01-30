@@ -20,7 +20,7 @@
 		"vite": "^6.0.11"
 	},
 	"dependencies": {
-		"node-device-detector": "^2.1.6",
+		"bowser": "^2.11.0",
 		"resolve-accept-language": "^3.1.10"
 	}
 }

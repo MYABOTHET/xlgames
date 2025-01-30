@@ -1,12 +1,10 @@
 import configuration from "$lib";
-import DeviceDetector from "node-device-detector";
-import DeviceHelper from "node-device-detector/helper";
 import {getUserLanguageFromCookies} from "$lib/tools.js";
+import Bowser from "bowser";
 
 const mobileWidth = 64;
 const headerHeight = 5;
 const author = "Лёвин Валерий Дмитриевич";
-const detector = new DeviceDetector();
 
 export async function load({request, fetch, cookies, locals}) {
   const promises = [
@@ -62,8 +60,8 @@ export async function load({request, fetch, cookies, locals}) {
     },]
   };
   const userAgent = request.headers.get("user-agent");
-  const userData = detector.detect(userAgent);
-  const userOnMobile = DeviceHelper.isMobile(userData);
+  const browser = Bowser.getParser(userAgent)
+  const userOnMobile = browser.getPlatformType() === "mobile";
   return {
     mobileWidth,
     headerHeight,

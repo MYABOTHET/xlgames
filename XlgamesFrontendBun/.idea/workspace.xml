@@ -5,7 +5,31 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="99b663dd-f91d-428e-817e-a654984c5689" name="Changes" comment="Обновление">
+      <change afterPath="$PROJECT_DIR$/static/fonts/Inter.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/images/7-days-to-die-news.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/images/7-days-to-die.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/images/about-us-news.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/images/about-us.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/images/battlefield-2042.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/images/battlefield-3.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/images/battlefield-4-news.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/images/battlefield-4.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/images/data-centers-news.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/images/dayz-frostline-news.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/images/farming-simulator-20gb-news.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/images/farming-simulator-25-news.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/images/happy-new-year-2025-en-news.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/images/happy-new-year-2025-ru-news.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/images/minecraft.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/images/palworld-feybreak-news.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/images/rust.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/images/satisfactory-news.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/images/servers-gpu-news.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/images/terraria.webp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bun.lockb" beforeDir="false" afterPath="$PROJECT_DIR$/bun.lockb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/routes/(public)/+layout.server.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/(public)/+layout.server.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -79,33 +103,33 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Bun.dev.executor&quot;: &quot;Run&quot;,
-    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/myabo/OneDrive/Документы/GitHub/xlgames/XlgamesFrontendBun/src/routes/admin/game-servers/[id]&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.stylelint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.stylelint&quot;: &quot;&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;settings.nodejs&quot;,
-    &quot;ts.external.directory.path&quot;: &quot;C:\\Program Files\\JetBrains\\WebStorm 2024.1.5\\plugins\\javascript-plugin\\jsLanguageServicesImpl\\external&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Bun.dev.executor": "Run",
+    "DefaultHtmlFileTemplate": "HTML File",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "git-widget-placeholder": "main",
+    "last_opened_file_path": "C:/Users/myabo/OneDrive/Документы/GitHub/xlgames/XlgamesFrontendBun/static",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.stylelint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.stylelint": "",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "settings.nodejs",
+    "ts.external.directory.path": "C:\\Program Files\\JetBrains\\WebStorm 2024.1.5\\plugins\\javascript-plugin\\jsLanguageServicesImpl\\external",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\myabo\OneDrive\Документы\GitHub\xlgames\XlgamesFrontendBun\static" />
       <recent name="C:\Users\myabo\OneDrive\Документы\GitHub\xlgames\XlgamesFrontendBun\src\routes\admin\game-servers\[id]" />
       <recent name="C:\Users\myabo\OneDrive\Документы\GitHub\xlgames\XlgamesFrontendBun\src\routes\admin\game-servers" />
       <recent name="C:\Users\myabo\OneDrive\Документы\GitHub\xlgames\XlgamesFrontendBun\src\routes\admin\products\servers\[id]" />
       <recent name="C:\Users\myabo\OneDrive\Документы\GitHub\xlgames\XlgamesFrontendBun\src\routes\admin\products\servers-gpu\[id]" />
-      <recent name="C:\Users\myabo\OneDrive\Документы\GitHub\xlgames\XlgamesFrontendBun\src\routes\admin\products\servers" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\myabo\OneDrive\Документы\GitHub\xlgames\XlgamesFrontendBun\files\images" />
@@ -158,7 +182,9 @@
       <workItem from="1738064635993" duration="627000" />
       <workItem from="1738080247776" duration="180000" />
       <workItem from="1738082572323" duration="2289000" />
-      <workItem from="1738145104377" duration="5456000" />
+      <workItem from="1738145104377" duration="6187000" />
+      <workItem from="1738156028019" duration="961000" />
+      <workItem from="1738230723554" duration="4909000" />
     </task>
     <task id="LOCAL-00001" summary="Обновление">
       <option name="closed" value="true" />
@@ -432,7 +458,15 @@
       <option name="project" value="LOCAL" />
       <updated>1738149952488</updated>
     </task>
-    <option name="localTasksCounter" value="35" />
+    <task id="LOCAL-00035" summary="Обновление">
+      <option name="closed" value="true" />
+      <created>1738155428066</created>
+      <option name="number" value="00035" />
+      <option name="presentableId" value="LOCAL-00035" />
+      <option name="project" value="LOCAL" />
+      <updated>1738155428066</updated>
+    </task>
+    <option name="localTasksCounter" value="36" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
