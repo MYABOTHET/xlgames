@@ -4,9 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="99b663dd-f91d-428e-817e-a654984c5689" name="Changes" comment="Обновление">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="99b663dd-f91d-428e-817e-a654984c5689" name="Changes" comment="Обновление" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -47,6 +45,7 @@
         <option value="SecondaryNav" />
         <option value="QuaternaryLink" />
         <option value="JavaScript File" />
+        <option value="France" />
       </list>
     </option>
   </component>
@@ -174,6 +173,7 @@
       <workItem from="1738230723554" duration="5693000" />
       <workItem from="1738244095499" duration="1344000" />
       <workItem from="1738251273700" duration="62000" />
+      <workItem from="1738254562390" duration="7408000" />
     </task>
     <task id="LOCAL-00001" summary="Обновление">
       <option name="closed" value="true" />
@@ -471,7 +471,31 @@
       <option name="project" value="LOCAL" />
       <updated>1738241093033</updated>
     </task>
-    <option name="localTasksCounter" value="38" />
+    <task id="LOCAL-00038" summary="Обновление">
+      <option name="closed" value="true" />
+      <created>1738257725019</created>
+      <option name="number" value="00038" />
+      <option name="presentableId" value="LOCAL-00038" />
+      <option name="project" value="LOCAL" />
+      <updated>1738257725019</updated>
+    </task>
+    <task id="LOCAL-00039" summary="Обновление">
+      <option name="closed" value="true" />
+      <created>1738262306300</created>
+      <option name="number" value="00039" />
+      <option name="presentableId" value="LOCAL-00039" />
+      <option name="project" value="LOCAL" />
+      <updated>1738262306300</updated>
+    </task>
+    <task id="LOCAL-00040" summary="Обновление">
+      <option name="closed" value="true" />
+      <created>1738262478220</created>
+      <option name="number" value="00040" />
+      <option name="presentableId" value="LOCAL-00040" />
+      <option name="project" value="LOCAL" />
+      <updated>1738262478220</updated>
+    </task>
+    <option name="localTasksCounter" value="41" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
