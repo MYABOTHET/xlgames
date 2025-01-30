@@ -42,4 +42,9 @@
     <PrimaryCheckbox bind:value={product.Ashburn} title="Ашберн"/>
   </DecimalPreset>
   <PrimaryCheckbox bind:value={product.Singapore} title="Сингапур"/>
+  <DecimalPreset bind:value={product.France} off={() => {
+      product.Gravelines = false;
+    }} title="Франция">
+    <PrimaryCheckbox bind:value={product.Gravelines} title="Гравлин"/>
+  </DecimalPreset>
 </QuaternarySection>

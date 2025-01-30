@@ -26,6 +26,7 @@
     gameServer.Russia ? countries.push(language.Shared.Russia) : null;
     gameServer.USA ? countries.push(language.Shared.USA) : null;
     gameServer.Singapore ? countries.push(language.Shared.Singapore) : null;
+    gameServer.France ? countries.push(language.Shared.France) : null;
     if (!countries.length) countries.push("...");
     return countries.join(", ");
   }

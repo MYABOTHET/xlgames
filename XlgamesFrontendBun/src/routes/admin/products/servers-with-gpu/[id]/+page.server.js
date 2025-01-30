@@ -30,7 +30,9 @@ export async function load({fetch, params}) {
       LosAngeles: false,
       Hillsboro: false,
       Ashburn: false,
-      Singapore: false
+      Singapore: false,
+      France: false,
+      Gravelines: false
     };
   }
   return {productData}

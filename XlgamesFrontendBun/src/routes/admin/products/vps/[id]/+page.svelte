@@ -30,7 +30,9 @@
     LosAngeles: data?.productData?.LosAngeles ?? false,
     Hillsboro: data?.productData?.Hillsboro ?? false,
     Ashburn: data?.productData?.Ashburn ?? false,
-    Singapore: data?.productData?.Singapore ?? false
+    Singapore: data?.productData?.Singapore ?? false,
+    France: data?.productData?.France ?? false,
+    Gravelines: data?.productData?.Gravelines ?? false,
   });
   let init = $state.raw({init: false});
   let updateProduct = getContext("updateProduct");
