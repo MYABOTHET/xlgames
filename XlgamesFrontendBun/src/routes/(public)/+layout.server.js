@@ -26,12 +26,12 @@ export async function load({request, fetch, cookies, locals}) {
     header: {
       menu: {
         name: "DedicatedServers", position: 2, links: [{
-          name: "ServersWithoutGPU", href: "/servers-without-a-gpu"
+          name: "ServersWithoutGPU", href: "/dedicated"
         }, {
-          name: "ServersWithGPU", href: "/servers-with-gpu"
+          name: "ServersWithGPU", href: "/gpu-servers"
         }]
       }, other: [{
-        position: 1, name: "GameServers", href: "/game-servers"
+        position: 1, name: "GameServers", href: "/games"
       }, {
         position: 3, name: "VPS", href: "/vps"
       }, {

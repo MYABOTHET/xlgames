@@ -1,7 +1,7 @@
 const links = [
   {
     title: "Серверы без GPU",
-    href: "/admin/products/servers-without-a-gpu"
+    href: "/admin/products/dedicated"
   },
   {
     title: "Серверы с GPU",

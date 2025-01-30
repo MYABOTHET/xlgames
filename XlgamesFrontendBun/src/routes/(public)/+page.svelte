@@ -37,7 +37,7 @@
 
 <div class="flex flex-col gap-y-28">
   {#if data.gameServers.length}
-    <PrimarySection title={language.GameServers.Name} href="/game-servers">
+    <PrimarySection title={language.GameServers.Name} href="/games">
       <nav class="section">
         {#each data.gameServers as gameServer}
           {@const translate = gameServer.GameServerDataModels.find(item => item.LanguageId === language.Id)}
@@ -46,7 +46,7 @@
           {@const price = priceFormatter.format(translate.Price)}
           <PrimaryCard name={gameServer.Name} description="{language.Shared.PriceFrom}
 {position ? sign + price : price + sign}"
-                       src={gameServer.Src} class="secondary-size" href="/game-servers/{gameServer.LinkName}"/>
+                       src={gameServer.Src} class="secondary-size" href="/games/{gameServer.LinkName}"/>
         {/each}
         {#if data.max - data.gameServers.length >= 0}
           {#each {length: data.max - data.gameServers.length} as _}
@@ -59,7 +59,7 @@
   
   <section class="flex flex-wrap primary-gap">
     <SecondaryCard class="quaternary-size" description={language.Home.ServersWithoutGPU.Description}
-                   href="/servers-without-a-gpu"
+                   href="/dedicated"
                    name={language.Home.ServersWithoutGPU.Name}/>
     <SecondaryCard class="quaternary-size" description={language.Home.VPS.Description}
                    href="/vps"
@@ -71,7 +71,7 @@
                    href="/vpn"
                    name={language.Home.VPN.Name}/>
     <SecondaryCard class="quaternary-size" description={language.Home.ServersWithGPU.Description}
-                   href="/servers-with-gpu"
+                   href="/gpu-servers"
                    name={language.Home.ServersWithGPU.Name}/>
   </section>
   

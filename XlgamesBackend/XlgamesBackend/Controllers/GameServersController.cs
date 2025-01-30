@@ -152,7 +152,7 @@ namespace XlgamesBackend.Controllers
                 ModelState.AddModelError("GameServer", "Это название уже занято");
                 return ValidationProblem();
             }
-            string linkName = name.Replace(" ", "~");
+            string linkName = name.Replace(" ", string.Empty);
             var languageIds = await _postgreSQLContext.Languages
                 .Select(language => language.Id)
                 .ToListAsync();
@@ -188,7 +188,7 @@ namespace XlgamesBackend.Controllers
                 return ValidationProblem();
             }
             gameServer.Name = gameServerDto.Name;
-            gameServer.LinkName = gameServerDto.Name.Replace(" ", "~");
+            gameServer.LinkName = gameServerDto.Name.Replace(" ", string.Empty);
             gameServer.Src = gameServerDto.Src;
             gameServer.isPopular = gameServerDto.isPopular;
             gameServer.CPU = gameServerDto.CPU;
