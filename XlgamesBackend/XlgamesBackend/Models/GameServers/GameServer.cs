@@ -20,7 +20,7 @@ namespace XlgamesBackend.Models.GameServers
         public bool Singapore { get; set; }
         public bool Finland { get; set; }
         public bool Germany { get; set; }
-        public string France { get; set; } = "...";
+        public bool France { get; set; }
         [JsonIgnore]
         public ICollection<GameServerData> GameServerDatas { get; } = new List<GameServerData>();
     }
