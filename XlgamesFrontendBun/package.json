@@ -4,9 +4,9 @@
 	"version": "0.0.1",
 	"type": "module",
 	"scripts": {
-		"dev": "bun --bun run vite dev --host 0.0.0.0 --port 8962",
-		"build": "bun --bun run vite build",
-		"preview": "bun --bun run vite preview"
+		"dev": "vite dev --host 0.0.0.0 --port 8962",
+		"build": "vite build",
+		"preview": "vite preview"
 	},
 	"devDependencies": {
 		"@sveltejs/kit": "^2.16.0",
