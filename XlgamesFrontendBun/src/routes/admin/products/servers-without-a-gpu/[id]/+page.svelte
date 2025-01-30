@@ -6,6 +6,7 @@
   import SaveForm from "$lib/components/SaveForm.svelte";
   import ProductCountriesRegions from "$lib/components/ProductCountriesRegions.svelte";
   import {getContext} from "svelte";
+  import {getDefaultCountriesAndRegions} from "$lib/tools.js";
   
   let {data} = $props();
   
@@ -16,24 +17,7 @@
     RAMType: data?.productData?.RAMType ?? "...",
     Disk: data?.productData?.Disk ?? "0",
     DiskType: data?.productData?.DiskType ?? "...",
-    Germany: data?.productData?.Germany ?? false,
-    Falkenstein: data?.productData?.Falkenstein ?? false,
-    Frankfurt: data?.productData?.Frankfurt ?? false,
-    Nuremberg: data?.productData?.Nuremberg ?? false,
-    Finland: data?.productData?.Finland ?? false,
-    Helsinki: data?.productData?.Helsinki ?? false,
-    Russia: data?.productData?.Russia ?? false,
-    Moscow: data?.productData?.Moscow ?? false,
-    SaintPetersburg: data?.productData?.SaintPetersburg ?? false,
-    USA: data?.productData?.USA ?? false,
-    NewYork: data?.productData?.NewYork ?? false,
-    Miami: data?.productData?.Miami ?? false,
-    LosAngeles: data?.productData?.LosAngeles ?? false,
-    Hillsboro: data?.productData?.Hillsboro ?? false,
-    Ashburn: data?.productData?.Ashburn ?? false,
-    Singapore: data?.productData?.Singapore ?? false,
-    France: data?.productData?.France ?? false,
-    Gravelines: data?.productData?.Gravelines ?? false,
+    ...getDefaultCountriesAndRegions(data)
   });
   let init = $state.raw({init: false});
   let updateProduct = getContext("updateProduct");

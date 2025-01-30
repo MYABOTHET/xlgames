@@ -72,6 +72,9 @@ namespace XlgamesBackend.Models.Translates
         public string Russia { get; set; } = "...";
         public string Moscow { get; set; } = "...";
         public string SaintPetersburg { get; set; } = "...";
+        public string Orenburg { get; set; } = "...";
+        public string Ekaterenburg { get; set; } = "...";
+        public string Vladivastok { get; set; } = "...";
 
         public string USA { get; set; } = "...";
         public string NewYork { get; set; } = "...";

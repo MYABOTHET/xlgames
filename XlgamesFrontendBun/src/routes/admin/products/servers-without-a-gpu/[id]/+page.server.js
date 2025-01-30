@@ -1,4 +1,5 @@
 import configuration from "$lib";
+import {defaultCountriesAndRegions} from "$lib/tools.js";
 
 export async function load({fetch, params}) {
   let productDataResponse = await fetch(`${configuration.api}/Products/${params.id}`);
@@ -14,24 +15,7 @@ export async function load({fetch, params}) {
       RAMType: "...",
       Disk: "0",
       DiskType: "...",
-      Germany: false,
-      Falkenstein: false,
-      Frankfurt: false,
-      Nuremberg: false,
-      Finland: false,
-      Helsinki: false,
-      Russia: false,
-      Moscow: false,
-      SaintPetersburg: false,
-      USA: false,
-      NewYork: false,
-      Miami: false,
-      LosAngeles: false,
-      Hillsboro: false,
-      Ashburn: false,
-      Singapore: false,
-      France: false,
-      Gravelines: false
+      ...defaultCountriesAndRegions
     };
   }
   return {productData}

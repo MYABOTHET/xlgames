@@ -24,9 +24,15 @@
   <DecimalPreset bind:value={product.Russia} off={() => {
       product.Moscow = false;
       product.SaintPetersburg = false;
+      product.Orenburg = false;
+      product.Ekaterenburg = false;
+      product.Vladivastok = false;
     }} title="Россия">
     <PrimaryCheckbox bind:value={product.Moscow} title="Москва"/>
     <PrimaryCheckbox bind:value={product.SaintPetersburg} title="Санкт-Петербург"/>
+    <PrimaryCheckbox bind:value={product.Orenburg} title="Оренбург"/>
+    <PrimaryCheckbox bind:value={product.Ekaterenburg} title="Екатеринбург"/>
+    <PrimaryCheckbox bind:value={product.Vladivastok} title="Владивосток"/>
   </DecimalPreset>
   <DecimalPreset bind:value={product.USA} off={() => {
       product.NewYork = false;

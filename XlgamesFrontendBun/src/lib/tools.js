@@ -35,3 +35,53 @@ export async function validateResponse(response) {
   })
   return new Response(result.join(", "), {status: response.status});
 }
+
+export let defaultCountriesAndRegions = {
+  Germany: false,
+  Falkenstein: false,
+  Frankfurt: false,
+  Nuremberg: false,
+  Finland: false,
+  Helsinki: false,
+  Russia: false,
+  Moscow: false,
+  SaintPetersburg: false,
+  Orenburg: false,
+  Ekaterenburg: false,
+  Vladivastok: false,
+  USA: false,
+  NewYork: false,
+  Miami: false,
+  LosAngeles: false,
+  Hillsboro: false,
+  Ashburn: false,
+  Singapore: false,
+  France: false,
+  Gravelines: false
+}
+
+export function getDefaultCountriesAndRegions(data) {
+  return {
+    Germany: data?.productData?.Germany ?? false,
+    Falkenstein: data?.productData?.Falkenstein ?? false,
+    Frankfurt: data?.productData?.Frankfurt ?? false,
+    Nuremberg: data?.productData?.Nuremberg ?? false,
+    Finland: data?.productData?.Finland ?? false,
+    Helsinki: data?.productData?.Helsinki ?? false,
+    Russia: data?.productData?.Russia ?? false,
+    Moscow: data?.productData?.Moscow ?? false,
+    SaintPetersburg: data?.productData?.SaintPetersburg ?? false,
+    Orenburg: data?.productData?.Orenburg ?? false,
+    Ekaterenburg: data?.productData?.Ekaterenburg ?? false,
+    Vladivastok: data?.productData?.Vladivastok ?? false,
+    USA: data?.productData?.USA ?? false,
+    NewYork: data?.productData?.NewYork ?? false,
+    Miami: data?.productData?.Miami ?? false,
+    LosAngeles: data?.productData?.LosAngeles ?? false,
+    Hillsboro: data?.productData?.Hillsboro ?? false,
+    Ashburn: data?.productData?.Ashburn ?? false,
+    Singapore: data?.productData?.Singapore ?? false,
+    France: data?.productData?.France ?? false,
+    Gravelines: data?.productData?.Gravelines ?? false,
+  }
+}
