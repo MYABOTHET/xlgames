@@ -14,7 +14,7 @@
 </svelte:head>
 
 <article class="secondary-section">
-  <h1 class="primary-title">{language.DataCenters.Title}</h1>
+  <h1 class="primary-title">{language.DataCenters.Name}</h1>
   <p>{language.DataCenters.Description}</p>
   {#if language.DataCenters.DataCenterCollection.length}
     <SecondarySection items={language.DataCenters.DataCenterCollection}/>

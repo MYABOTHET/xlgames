@@ -12,6 +12,6 @@
 </svelte:head>
 
 <article class="secondary-section">
-  <h1 class="primary-title">{language.WebHosting.Title}</h1>
+  <h1 class="primary-title">{language.WebHosting.Name}</h1>
   <p>{language.WebHosting.Description}</p>
 </article>

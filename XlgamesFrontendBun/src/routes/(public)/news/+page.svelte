@@ -23,7 +23,7 @@
 </svelte:head>
 
 <article class="secondary-section">
-  <h1 class="primary-title">{language.News.Title}</h1>
+  <h1 class="primary-title">{language.News.Name}</h1>
   {#if news.length}
     <nav class="grid grid-cols-2 max-quinary:grid-cols-1 primary-gap">
       {#each news as newsItem}

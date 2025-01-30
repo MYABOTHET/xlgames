@@ -61,7 +61,7 @@ max-nine:flex-[1_1_25%]"
 {/snippet}
 
 <article class="secondary-section">
-  <h1 class="primary-title">{language.GameServers.Title}</h1>
+  <h1 class="primary-title">{language.GameServers.Name}</h1>
   <div class="flex flex-wrap gap-4">
     {@render buttonFilter?.(seeAll, allActive, language.GameServers.All)}
     {@render buttonFilter?.(seePopular, popularActive, language.GameServers.Popular)}

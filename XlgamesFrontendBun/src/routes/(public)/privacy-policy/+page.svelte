@@ -13,7 +13,7 @@
 </svelte:head>
 
 <article class="secondary-section">
-  <h1 class="primary-title">{language.PrivacyPolicy.Title}</h1>
+  <h1 class="primary-title">{language.PrivacyPolicy.Name}</h1>
   <p>{language.PrivacyPolicy.Description}</p>
   {#if language.PrivacyPolicy.PrivacyPolicyCollection.length}
     <SecondarySection items={language.PrivacyPolicy.PrivacyPolicyCollection}/>

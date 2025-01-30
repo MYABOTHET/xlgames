@@ -13,7 +13,7 @@
 </svelte:head>
 
 <article class="secondary-section">
-  <h1 class="primary-title">{language.TermsService.Title}</h1>
+  <h1 class="primary-title">{language.TermsService.Name}</h1>
   <p>{language.TermsService.Description}</p>
   {#if language.TermsService.TermsServiceCollection.length}
     <SecondarySection items={language.TermsService.TermsServiceCollection}/>

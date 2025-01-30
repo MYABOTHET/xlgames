@@ -30,7 +30,7 @@
 </svelte:head>
 
 <article class="flex flex-col gap-y-14">
-  <h1 class="primary-title">{language.VPS.Title}</h1>
+  <h1 class="primary-title">{language.VPS.Name}</h1>
   <p>{language.VPS.Description}</p>
   <PrimaryPreset preset="secondary" serversProp={data.servers} {userOnMobile}/>
 </article>

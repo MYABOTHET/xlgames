@@ -41,7 +41,7 @@ transition-colors hover:bg-(--color-secondary)">
 {/snippet}
 
 <article class="secondary-section">
-  <h1 class="primary-title">{language.VPN.Title}</h1>
+  <h1 class="primary-title">{language.VPN.Name}</h1>
   <p>{language.VPN.Description}</p>
   {#if language.VPN.VPNCollection.length}
     <SecondarySection items={language.VPN.VPNCollection}/>

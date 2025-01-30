@@ -30,7 +30,7 @@
 </svelte:head>
 
 <article class="flex flex-col gap-y-14">
-  <h1 class="primary-title">{language.ServersWithGPU.Title}</h1>
+  <h1 class="primary-title">{language.ServersWithGPU.Name}</h1>
   <p>{language.ServersWithGPU.Description}</p>
   <PrimaryPreset preset="primary" serversProp={data.servers} {userOnMobile}/>
 </article>

@@ -13,7 +13,7 @@
 </svelte:head>
 
 <article class="secondary-section">
-  <h1 class="primary-title">{language.CookiePolicy.Title}</h1>
+  <h1 class="primary-title">{language.CookiePolicy.Name}</h1>
   <p>{language.CookiePolicy.Description}</p>
   {#if language.CookiePolicy.CookiePolicyCollection.length}
     <SecondarySection items={language.CookiePolicy.CookiePolicyCollection}/>
