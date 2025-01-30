@@ -73,6 +73,7 @@ namespace XlgamesBackend.Controllers
                     Germany = gameServer.Germany,
                     Russia = gameServer.Russia,
                     Singapore = gameServer.Singapore,
+                    France = gameServer.France,
                     USA = gameServer.USA,
                     GameServerDataPrimaryModels = gameServer.GameServerDatas
                         .Select(gameServerData => new GameServerDataPrimaryModel()
@@ -202,6 +203,7 @@ namespace XlgamesBackend.Controllers
             gameServer.Singapore = gameServerDto.Singapore;
             gameServer.Finland = gameServerDto.Finland;
             gameServer.Germany = gameServerDto.Germany;
+            gameServer.France = gameServerDto.France;
             await _postgreSQLContext.SaveChangesAsync();
             return Ok();
         }

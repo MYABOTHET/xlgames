@@ -90,6 +90,9 @@ namespace XlgamesBackend.Models.Translates
         public string Frankfurt { get; set; } = "...";
         public string Nuremberg { get; set; } = "...";
 
+        public string France { get; set; } = "...";
+        public string Gravelines { get; set; } = "..."; 
+
         // Предложения
         public string AnySuggestionsStart { get; set; } = "..."; // Предложения
         public string AnySuggestionsCenter { get; set; } = "...";
