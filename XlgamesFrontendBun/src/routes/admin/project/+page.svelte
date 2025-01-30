@@ -41,16 +41,6 @@
     <PrimaryTextarea bind:value={projectData.OGRNIP} title="ОГРНИП"/>
     <PrimaryTextarea bind:value={projectData.INN} title="ИНН"/>
   </QuaternarySection>
-  <QuaternarySection title="Ссылки на социальные сети">
-    <PrimaryTextarea bind:value={projectData.Discord} title="Discord"/>
-    <PrimaryTextarea bind:value={projectData.Facebook} title="Facebook"/>
-    <PrimaryTextarea bind:value={projectData.Instagram} title="Instagram"/>
-    <PrimaryTextarea bind:value={projectData.Snapchat} title="Snapchat"/>
-    <PrimaryTextarea bind:value={projectData.Telegram} title="Telegram"/>
-    <PrimaryTextarea bind:value={projectData.Twitter} title="Twitter"/>
-    <PrimaryTextarea bind:value={projectData.Vk} title="VK"/>
-    <PrimaryTextarea bind:value={projectData.Whatsapp} title="Whatsapp"/>
-  </QuaternarySection>
   <QuaternarySection title="Другие ссылки">
     <PrimaryTextarea bind:value={projectData.Contacts} title="Контакты"/>
     <PrimaryTextarea bind:value={projectData.PersonalAccount} title="Персональный аккаунт"/>

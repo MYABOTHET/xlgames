@@ -18,7 +18,7 @@ max-quaternary:items-start">
         <a class="w-fit" href="/">
           <ProjectData logo={Logo} name={Name}/>
         </a>
-        <TernarySection class="grid grid-cols-4 gap-2.5 w-fit" {projectData}/>
+        <TernarySection class="grid grid-cols-4 gap-2.5 w-fit"/>
       </nav>
       <nav class="grid w-full h-fit gap-3.5 grid-cols-4 max-secondary:grid-cols-3 max-ternary:grid-cols-2
 max-quaternary:grid-cols-1 max-quaternary:gap-y-4">

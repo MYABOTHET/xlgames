@@ -14,7 +14,7 @@ export default defineConfig({
 			icons: [
 				{
 					src: 'favicon.svg',
-					sizes: '512x512',
+					sizes: '128x128',
 					type: 'image/svg+xml'
 				}
 			]

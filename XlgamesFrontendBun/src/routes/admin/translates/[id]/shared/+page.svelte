@@ -30,6 +30,16 @@
     <PrimaryTextarea bind:value={language.Shared.PersonalAccount} title="Персональный аккаунт"/>
     <PrimaryTextarea bind:value={language.Shared.GameHosting} title="Игровой хостинг"/>
   </QuaternarySection>
+  <QuaternarySection title="Ссылки на социальные сети">
+    <PrimaryTextarea bind:value={language.Shared.DiscordLink} title="Discord"/>
+    <PrimaryTextarea bind:value={language.Shared.FacebookLink} title="Facebook"/>
+    <PrimaryTextarea bind:value={language.Shared.InstagramLink} title="Instagram"/>
+    <PrimaryTextarea bind:value={language.Shared.SnapchatLink} title="Snapchat"/>
+    <PrimaryTextarea bind:value={language.Shared.TelegramLink} title="Telegram"/>
+    <PrimaryTextarea bind:value={language.Shared.TwitterLink} title="Twitter"/>
+    <PrimaryTextarea bind:value={language.Shared.VkLink} title="VK"/>
+    <PrimaryTextarea bind:value={language.Shared.WhatsappLink} title="Whatsapp"/>
+  </QuaternarySection>
   <QuaternarySection title="Социальные сети">
     <PrimaryCheckbox bind:value={language.Shared.Discord} title="Discord"/>
     <PrimaryCheckbox bind:value={language.Shared.Facebook} title="Facebook"/>

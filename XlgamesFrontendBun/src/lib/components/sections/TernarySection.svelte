@@ -10,7 +10,7 @@
   import {getContext} from "svelte";
   import SecondaryIcon from "$lib/components/icons/SecondaryIcon.svelte";
   
-  const {projectData, ...props} = $props();
+  const props = $props();
   
   let language = $derived(getContext("language")());
 </script>
@@ -31,14 +31,14 @@
     || language.Shared.Twitter
     || language.Shared.Facebook
 }
-  <nav {...props} class="{props.class}">
-    {#if language.Shared.Vk}{@render icon?.(Vk, projectData.Vk)}{/if}
-    {#if language.Shared.Whatsapp}{@render icon?.(Whatsapp, projectData.Whatsapp)}{/if}
-    {#if language.Shared.Discord}{@render icon?.(Discord, projectData.Discord)}{/if}
-    {#if language.Shared.Instagram}{@render icon?.(Instagram, projectData.Instagram)}{/if}
-    {#if language.Shared.Snapchat}{@render icon?.(Snapchat, projectData.Snapchat)}{/if}
-    {#if language.Shared.Telegram}{@render icon?.(Telegram, projectData.Telegram)}{/if}
-    {#if language.Shared.Twitter}{@render icon?.(Twitter, projectData.Twitter)}{/if}
-    {#if language.Shared.Facebook}{@render icon?.(Facebook, projectData.Facebook)}{/if}
+  <nav {...props}>
+    {#if language.Shared.Vk}{@render icon?.(Vk, language.Shared.VkLink)}{/if}
+    {#if language.Shared.Whatsapp}{@render icon?.(Whatsapp, language.Shared.WhatsappLink)}{/if}
+    {#if language.Shared.Discord}{@render icon?.(Discord, language.Shared.DiscordLink)}{/if}
+    {#if language.Shared.Instagram}{@render icon?.(Instagram, language.Shared.InstagramLink)}{/if}
+    {#if language.Shared.Snapchat}{@render icon?.(Snapchat, language.Shared.SnapchatLink)}{/if}
+    {#if language.Shared.Telegram}{@render icon?.(Telegram, language.Shared.TelegramLink)}{/if}
+    {#if language.Shared.Twitter}{@render icon?.(Twitter, language.Shared.TwitterLink)}{/if}
+    {#if language.Shared.Facebook}{@render icon?.(Facebook, language.Shared.FacebookLink)}{/if}
   </nav>
 {/if}

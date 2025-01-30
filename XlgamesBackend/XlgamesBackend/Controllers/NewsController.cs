@@ -60,6 +60,7 @@ namespace XlgamesBackend.Controllers
                     if (translatedNewsItem is not null)
                     {
                         translatedNewsItem.Date = item.Date;
+                        translatedNewsItem.LinkName = item.Name.Replace(" ", "~");
                         result.Add(translatedNewsItem);
                     }
                 }
@@ -79,24 +80,34 @@ namespace XlgamesBackend.Controllers
 
         #region Получить новость по имени
         [HttpGet("{name}")]
-        public async Task<ActionResult<NewsDto>> GetNewsByName(string name)
+        public async Task<ActionResult<NewsDto>> GetNewsByName(string name, string whmcsName)
         {
+            if (whmcsName.Equals("english")) whmcsName = "";
             name = name.Replace("~", " ");
             var news = await SelectNewsDto(_mySQLContext.News
-                .Where(news => news.title.Equals(name)))
+                .Where(news => news.title.Equals(name))
+                .Where(news => news.language.Equals("")))
                 .FirstOrDefaultAsync();
             if (news is null)
             {
                 ModelState.AddModelError("News", "Новость не найдена");
                 return ValidationProblem();
             }
-            if (!news.ParentId.Equals(0))
+            if (!whmcsName.Equals(""))
             {
-                var date = await SelectNewsDto(_mySQLContext.News
-                    .Where(englishNews => englishNews.id.Equals(news.ParentId)))
-                    .Select(englishNews => englishNews.Date)
+                var translatedNews = await SelectNewsDto(_mySQLContext.News
+                    .Where(translatedNews => translatedNews.parentid.Equals(news.Id))
+                    .Where(translatedNews => translatedNews.language.Equals(whmcsName)))
                     .FirstOrDefaultAsync();
-                news.Date = date;
+                if (translatedNews is not null)
+                {
+                    translatedNews.Date = news.Date;
+                    translatedNews.LinkName = news.LinkName;
+                    news = translatedNews;
+                } else
+                {
+                    news.ParentId = news.Id;
+                }
             }
             else news.ParentId = news.Id;
             var document = new HtmlDocument();
@@ -130,6 +141,7 @@ namespace XlgamesBackend.Controllers
                 if (translatedNews is not null)
                 {
                     translatedNews.Date = news.Date;
+                    translatedNews.LinkName = news.Name.Replace(" ", "~");
                     news = translatedNews;
                 }
             }

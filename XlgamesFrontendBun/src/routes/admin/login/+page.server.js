@@ -1,6 +1,13 @@
 import configuration from "$lib";
 import {redirect} from '@sveltejs/kit';
 
+export function load({setHeaders}) {
+  setHeaders({
+    'X-Robots-Tag': 'noindex, nofollow'
+  });
+  return {}
+}
+
 function getCookie(response) {
   return response.headers.get("set-cookie").split("; ").reduce((acc, item) => {
     const [name, value] = item.split("=")

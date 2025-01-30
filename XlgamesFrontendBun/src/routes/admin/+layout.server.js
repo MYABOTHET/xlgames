@@ -18,7 +18,10 @@ const links = [
   }
 ];
 
-export function load() {
+export function load({setHeaders}) {
+  setHeaders({
+    'X-Robots-Tag': 'noindex, nofollow'
+  });
   return {
     title,
     links
