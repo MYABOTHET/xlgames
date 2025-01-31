@@ -466,7 +466,7 @@ border-(--color-quaternary) text-(--color-quaternary) max-nine:w-full"
             <td>{server.Data.Disk}</td>
             <td>{server.Data.DiskType}</td>
             <td>
-              <div class="grid grid-cols-2 mt-0.5 gap-2">
+              <div class="grid grid-cols-2 mt-0.5 gap-2 mx-auto w-fit">
                 {#if server.Data.Germany}
                   <Germany class="min-h-4 max-h-4"/>
                 {/if}
