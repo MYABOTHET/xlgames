@@ -25,11 +25,11 @@ export async function load({fetch, params}) {
     },
     {
       title: "Серверы без GPU",
-      href: `/admin/translates/${params.id}/servers-without-a-gpu`
+      href: `/admin/translates/${params.id}/dedicated`
     },
     {
       title: "Серверы с GPU",
-      href: `/admin/translates/${params.id}/servers-with-gpu`
+      href: `/admin/translates/${params.id}/gpu-servers`
     },
     {
       title: "VPS",

@@ -5,7 +5,7 @@ const links = [
   },
   {
     title: "Серверы с GPU",
-    href: "/admin/products/servers-with-gpu"
+    href: "/admin/products/gpu-servers"
   },
   {
     title: "VPS",

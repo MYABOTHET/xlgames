@@ -5,7 +5,7 @@ export async function load({fetch}) {
   return {
     links: serversGPUList.map(serverGPU => {
       return {
-        title: serverGPU, href: `/admin/products/servers-with-gpu/${serverGPU}`, id: serverGPU
+        title: serverGPU, href: `/admin/products/gpu-servers/${serverGPU}`, id: serverGPU
       }
     })
   }

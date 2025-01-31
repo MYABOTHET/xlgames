@@ -4,7 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="99b663dd-f91d-428e-817e-a654984c5689" name="Changes" comment="Обновление" />
+    <list default="true" id="99b663dd-f91d-428e-817e-a654984c5689" name="Changes" comment="Обновление">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/routes/admin/products/+layout.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/admin/products/+layout.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/routes/admin/products/servers-with-gpu/+layout.server.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/admin/products/servers-with-gpu/+layout.server.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/routes/admin/products/servers-without-a-gpu/+layout.server.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/admin/products/servers-without-a-gpu/+layout.server.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/routes/admin/translates/[id]/+layout.server.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/admin/translates/[id]/+layout.server.js" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -44,8 +50,8 @@
         <option value="+page" />
         <option value="SecondaryNav" />
         <option value="QuaternaryLink" />
-        <option value="JavaScript File" />
         <option value="France" />
+        <option value="JavaScript File" />
       </list>
     </option>
   </component>
@@ -115,16 +121,6 @@
       <recent name="C:\Users\myabo\OneDrive\Документы\GitHub\xlgames\XlgamesFrontendBun\static" />
     </key>
   </component>
-  <component name="RunManager">
-    <configuration name="localhost:5173" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="https://localhost:5173/">
-      <method v="2" />
-    </configuration>
-    <recent_temporary>
-      <list>
-        <item itemvalue="JavaScript Debug.localhost:5173" />
-      </list>
-    </recent_temporary>
-  </component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
@@ -174,6 +170,8 @@
       <workItem from="1738244095499" duration="1344000" />
       <workItem from="1738251273700" duration="62000" />
       <workItem from="1738254562390" duration="7408000" />
+      <workItem from="1738264235116" duration="14654000" />
+      <workItem from="1738281531314" duration="204000" />
     </task>
     <task id="LOCAL-00001" summary="Обновление">
       <option name="closed" value="true" />
@@ -495,7 +493,71 @@
       <option name="project" value="LOCAL" />
       <updated>1738262478220</updated>
     </task>
-    <option name="localTasksCounter" value="41" />
+    <task id="LOCAL-00041" summary="Обновление">
+      <option name="closed" value="true" />
+      <created>1738264576986</created>
+      <option name="number" value="00041" />
+      <option name="presentableId" value="LOCAL-00041" />
+      <option name="project" value="LOCAL" />
+      <updated>1738264576986</updated>
+    </task>
+    <task id="LOCAL-00042" summary="Обновление">
+      <option name="closed" value="true" />
+      <created>1738265110578</created>
+      <option name="number" value="00042" />
+      <option name="presentableId" value="LOCAL-00042" />
+      <option name="project" value="LOCAL" />
+      <updated>1738265110578</updated>
+    </task>
+    <task id="LOCAL-00043" summary="Обновление">
+      <option name="closed" value="true" />
+      <created>1738265440757</created>
+      <option name="number" value="00043" />
+      <option name="presentableId" value="LOCAL-00043" />
+      <option name="project" value="LOCAL" />
+      <updated>1738265440757</updated>
+    </task>
+    <task id="LOCAL-00044" summary="Обновление">
+      <option name="closed" value="true" />
+      <created>1738272614157</created>
+      <option name="number" value="00044" />
+      <option name="presentableId" value="LOCAL-00044" />
+      <option name="project" value="LOCAL" />
+      <updated>1738272614157</updated>
+    </task>
+    <task id="LOCAL-00045" summary="Обновление">
+      <option name="closed" value="true" />
+      <created>1738273763283</created>
+      <option name="number" value="00045" />
+      <option name="presentableId" value="LOCAL-00045" />
+      <option name="project" value="LOCAL" />
+      <updated>1738273763283</updated>
+    </task>
+    <task id="LOCAL-00046" summary="Обновление">
+      <option name="closed" value="true" />
+      <created>1738275833046</created>
+      <option name="number" value="00046" />
+      <option name="presentableId" value="LOCAL-00046" />
+      <option name="project" value="LOCAL" />
+      <updated>1738275833046</updated>
+    </task>
+    <task id="LOCAL-00047" summary="Обновление">
+      <option name="closed" value="true" />
+      <created>1738276034432</created>
+      <option name="number" value="00047" />
+      <option name="presentableId" value="LOCAL-00047" />
+      <option name="project" value="LOCAL" />
+      <updated>1738276034432</updated>
+    </task>
+    <task id="LOCAL-00048" summary="Обновление">
+      <option name="closed" value="true" />
+      <created>1738280540833</created>
+      <option name="number" value="00048" />
+      <option name="presentableId" value="LOCAL-00048" />
+      <option name="project" value="LOCAL" />
+      <updated>1738280540833</updated>
+    </task>
+    <option name="localTasksCounter" value="49" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
