@@ -12,7 +12,6 @@
   
   let product = $state({
     CPU: data?.productData?.CPU ?? "...",
-    GPU: data?.productData?.GPU ?? "...",
     GHz: data?.productData?.GHz ?? "0",
     RAM: data?.productData?.RAM ?? "0",
     RAMType: data?.productData?.RAMType ?? "...",
@@ -39,7 +38,6 @@
   <QuaternarySection title="Данные продукта">
     <PrimaryTextarea bind:value={product.CPU} title="Процессор"/>
     <PrimaryTextarea bind:value={product.GHz} title="ГГц"/>
-    <PrimaryTextarea bind:value={product.GPU} title="Видеокарта"/>
     <PrimaryTextarea bind:value={product.RAM} title="Кол-во ОЗУ (ГБ)"/>
     <PrimaryTextarea bind:value={product.RAMType} title="Тип ОЗУ"/>
     <PrimaryTextarea bind:value={product.Disk} title="Место на диске"/>

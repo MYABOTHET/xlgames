@@ -1,11 +1,11 @@
 import configuration from "$lib";
 
 export async function load({fetch}) {
-  const serversList = await (await fetch(`${configuration.api}/Products/Servers/List`)).json();
+  const serversGPUList = await (await fetch(`${configuration.api}/Products/Servers-GPU/List`)).json();
   return {
-    links: serversList.map(server => {
+    links: serversGPUList.map(serverGPU => {
       return {
-        title: server, href: `/admin/products/dedicated/${server}`, id: server
+        title: serverGPU, href: `/admin/products/gpu-servers/${serverGPU}`, id: serverGPU
       }
     })
   }

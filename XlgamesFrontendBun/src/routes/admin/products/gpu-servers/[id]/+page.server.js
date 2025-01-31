@@ -11,6 +11,7 @@ export async function load({fetch, params}) {
   } catch {
     productData = {
       CPU: "...",
+      GPU: "...",
       GHz: "0",
       RAM: "0",
       RAMType: "...",
