@@ -24,7 +24,7 @@
 </script>
 
 <svelte:head>
-  <link rel="preload" href="/fonts/Inter.woff2" as="font" crossorigin/>
+  <link rel="preload" href="/fonts/Inter.woff2" as="font" type="font/woff2" crossorigin/>
   {@html webManifestLink}
 </svelte:head>
 
