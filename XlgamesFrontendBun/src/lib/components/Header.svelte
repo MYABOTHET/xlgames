@@ -147,11 +147,10 @@
   </div>
 {/snippet}
 
-<header {...props} class="{props.class} sticky
+<header {...props} class="{props.class}
 flex-center border-b border-b-(--color-secondary) primary-px {menuIsVisible ? 'bg-(--color-primary)' : 'bg-(--color-secondary)'}
-{userOnMobile ? 'transition-[background-color]' : ''}"
-        style="min-height: {headerHeight}rem; max-height: {headerHeight}rem; height: {headerHeight}rem;">
-  <div class="flex-center max-w-(--breakpoint-primary) w-full" style="min-height: {headerHeight}rem; max-height: {headerHeight}rem; height: {headerHeight}rem;">
+{userOnMobile ? 'transition-[background-color]' : ''}" style="min-height: {headerHeight * 16}px;">
+  <div class="flex-center max-w-(--breakpoint-primary) w-full h-full">
     {@render project?.()}
     {#if !userOnMobile}{@render navigation?.()}{/if}
     {@render menus?.()}
