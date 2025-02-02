@@ -15,12 +15,6 @@ namespace XlgamesBackend.Models.GameServers
         public string Link { get; set; } = "...";
         public bool ControlPanel { get; set; }
         public bool FTP { get; set; }
-        public bool Russia { get; set; }
-        public bool USA { get; set; }
-        public bool Singapore { get; set; }
-        public bool Finland { get; set; }
-        public bool Germany { get; set; }
-        public bool France { get; set; }
         [JsonIgnore]
         public ICollection<GameServerData> GameServerDatas { get; } = new List<GameServerData>();
     }

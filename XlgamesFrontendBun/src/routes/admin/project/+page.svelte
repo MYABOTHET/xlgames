@@ -34,6 +34,7 @@
     <PrimaryTextarea bind:value={projectData.Logo} title="Логотип"/>
     <PrimaryTextarea bind:value={projectData.Name} title="Наименование"/>
     <PrimaryTextarea bind:value={projectData.Year} title="Год создания"/>
+    <PrimaryTextarea bind:value={projectData.Head} title="Метаданные"/>
   </QuaternarySection>
   <QuaternarySection title="Контакты">
     <PrimaryTextarea bind:value={projectData.Email} title="Почта"/>

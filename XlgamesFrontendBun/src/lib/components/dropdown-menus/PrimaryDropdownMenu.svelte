@@ -2,9 +2,7 @@
   import {onMount} from "svelte";
   
   const {
-    children, button, open = () => {
-    }, close = () => {
-    }, ...props
+    children, button, open = () => {}, close = () => {}, aria, ...props
   } = $props();
   
   let isMenuVisible = $state(false);
@@ -40,7 +38,7 @@
 <svelte:window onclick={click}/>
 
 <div {...props} class={props.class}>
-  <button aria-label="Menu" onblur={blur} onclick={toggle} onfocus={focus} onmouseout={blur} onmouseover={focus}>
+  <button aria-label={aria} onblur={blur} onclick={toggle} onfocus={focus} onmouseout={blur} onmouseover={focus}>
     {@render button?.(isMenuVisible)}
   </button>
   {#if isMenuVisible}

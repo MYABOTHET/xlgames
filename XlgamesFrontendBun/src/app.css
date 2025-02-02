@@ -43,7 +43,7 @@
   @font-face {
     font-family: 'Inter';
     font-display: fallback;
-    src: url(/fonts/Inter.ttf) format('truetype');
+    src: url(/fonts/Inter.woff2) format('woff2');
   }
 
   html, body {

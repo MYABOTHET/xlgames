@@ -60,6 +60,26 @@ export let defaultCountriesAndRegions = {
   Gravelines: false
 }
 
+export let defaultProductData = {
+  CPU: "...",
+  RAM: "0",
+  Disk: "0",
+  DiskType: "...",
+  GB: false,
+  TB: false,
+}
+
+export function getDefaultProductData(data) {
+  return {
+    CPU: data?.productData?.CPU ?? "...",
+    RAM: data?.productData?.RAM ?? "0",
+    Disk: data?.productData?.Disk ?? "0",
+    DiskType: data?.productData?.DiskType ?? "...",
+    GB: data?.productData?.GB ?? false,
+    TB: data?.productData?.TB ?? false,
+  }
+}
+
 export function getDefaultCountriesAndRegions(data) {
   return {
     Germany: data?.productData?.Germany ?? false,

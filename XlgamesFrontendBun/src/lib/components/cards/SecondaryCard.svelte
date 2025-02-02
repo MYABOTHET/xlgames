@@ -8,7 +8,7 @@
 primary-block primary-bg border-(--color-quaternary)">
   <h1 class="primary-title">{name}</h1>
   <p>{description}</p>
-  <a aria-label="Link" class="quaternary-block flex-center size-12 fill-(--color-primary) hover:fill-white mt-auto" {href}>
+  <a aria-label={name} class="quaternary-block flex-center size-12 fill-(--color-primary) hover:fill-white mt-auto" {href}>
     <SecondaryArrow class="rotate-90 size-3"/>
   </a>
 </article>

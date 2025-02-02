@@ -43,7 +43,13 @@ namespace XlgamesBackend.Controllers
             gameServerData.Description = gameServerDataDto.Description;
             gameServerData.Head = gameServerDataDto.Head;
             gameServerData.GameServerDataPoints = gameServerDataDto.GameServerDataPoints;
-            gameServerData.Price = gameServerDataDto.Price;
+            gameServerData.Russia = gameServerDataDto.Russia;
+            gameServerData.USA = gameServerDataDto.USA;
+            gameServerData.Singapore = gameServerDataDto.Singapore;
+            gameServerData.Finland = gameServerDataDto.Finland;
+            gameServerData.Germany = gameServerDataDto.Germany;
+            gameServerData.France = gameServerDataDto.France;
+            gameServerData.Europe = gameServerDataDto.Europe;
             await _postgreSQLContext.SaveChangesAsync();
             return Ok();
         }

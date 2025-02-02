@@ -386,8 +386,7 @@
     {#if preset !== "secondary"}
       {@render Enum(language.Shared.RAMType, server.Data.RAMType)}
     {/if}
-    {@render Enum(`${language.Shared.Disk} (${language.Shared.GB})`, server.Data.Disk)}
-    {@render Enum(language.Shared.DiskType, server.Data.DiskType)}
+    {@render Enum(language.Shared.Disk, `${server.Data.Disk} ${server.Data.GB ? language.Shared.GB : server.Data.TB ? language.Shared.TB : language.Shared.GB} ${server.Data.DiskType}`)}
     {@render Enum(language.Shared.Country, getCountries(server))}
     {@render Enum(language.Shared.Region, getRegions(server))}
     {@render Enum(language.Shared.PricePerMonth, getPrice(server))}
@@ -438,10 +437,9 @@ border-(--color-quaternary) text-(--color-quaternary) max-nine:w-full"
           {#if preset !== "secondary"}
             <th>{language.Shared.RAMType}</th>
           {/if}
-          <th>{language.Shared.Disk} ({language.Shared.GB})</th>
-          <th>{language.Shared.DiskType}</th>
+          <th>{language.Shared.Disk}</th>
           <th>{language.Shared.Country}</th>
-          <th>{language.Shared.Region}</th>
+          <th><p class="pl-4">{language.Shared.Region}</p></th>
           <th>{language.Shared.PricePerMonth}</th>
           <th></th>
         </tr>
@@ -463,8 +461,7 @@ border-(--color-quaternary) text-(--color-quaternary) max-nine:w-full"
             {#if preset !== "secondary"}
               <td>{server.Data.RAMType}</td>
             {/if}
-            <td>{server.Data.Disk}</td>
-            <td>{server.Data.DiskType}</td>
+            <td>{server.Data.Disk} {#if server.Data.GB}{language.Shared.GB}{/if}{#if server.Data.TB}{language.Shared.TB}{/if}{#if !server.Data.TB && !server.Data.GB}{language.Shared.GB}{/if} {server.Data.DiskType}</td>
             <td>
               <div class="grid grid-cols-2 mt-0.5 gap-2 mx-auto w-fit">
                 {#if server.Data.Germany}
@@ -490,7 +487,7 @@ border-(--color-quaternary) text-(--color-quaternary) max-nine:w-full"
                 {/if}
               </div>
             </td>
-            <td class="text-left"><p class="pl-5">{@html getRegions(server)}</p></td>
+            <td class="text-left"><p class="pl-4">{@html getRegions(server)}</p></td>
             <td>{getPrice(server)}</td>
             <td><a rel="nofollow" class="primary-link mx-auto"
                    href="/store/store/{server.Link}">{language.Shared.Order}</a></td>

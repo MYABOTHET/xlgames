@@ -7,6 +7,7 @@
 
 <svelte:head>
   <meta content="noindex, nofollow" name="robots"/>
+  <meta content="initial-scale=0.1" name="viewport"/>
   <title>{data.title}</title>
 </svelte:head>
 

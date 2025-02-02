@@ -30,14 +30,6 @@
     <PrimaryCheckbox bind:value={gameServer.ControlPanel} title="Панель управления"/>
     <PrimaryCheckbox bind:value={gameServer.FTP} title="FTP"/>
   </QuaternarySection>
-  <QuaternarySection title="Страны">
-    <PrimaryCheckbox bind:value={gameServer.Germany} title="Германия"/>
-    <PrimaryCheckbox bind:value={gameServer.Finland} title="Финляндия"/>
-    <PrimaryCheckbox bind:value={gameServer.Russia} title="Россия"/>
-    <PrimaryCheckbox bind:value={gameServer.USA} title="США"/>
-    <PrimaryCheckbox bind:value={gameServer.Singapore} title="Сингапур"/>
-    <PrimaryCheckbox bind:value={gameServer.France} title="Франция"/>
-  </QuaternarySection>
   <QuaternarySection title="Остальное">
     <PrimaryCheckbox bind:value={gameServer.isPopular} title="Популярен?"/>
   </QuaternarySection>

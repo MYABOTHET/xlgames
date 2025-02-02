@@ -73,6 +73,7 @@ namespace XlgamesBackend.Models.Translates
         public string Slots { get; set; } = "...";
         public string Control { get; set; } = "...";
         public string GB { get; set; } = "...";
+        public string TB { get; set; } = "...";
         public string ResetFilters { get; set; } = "...";
         public string ControlPanel { get; set; } = "...";
         public string FTP { get; set; } = "...";
@@ -103,7 +104,10 @@ namespace XlgamesBackend.Models.Translates
         public string Nuremberg { get; set; } = "...";
 
         public string France { get; set; } = "...";
-        public string Gravelines { get; set; } = "..."; 
+        public string Gravelines { get; set; } = "...";
+
+        // Континенты
+        public string Europe { get; set; } = "...";
 
         // Предложения
         public string AnySuggestionsStart { get; set; } = "..."; // Предложения

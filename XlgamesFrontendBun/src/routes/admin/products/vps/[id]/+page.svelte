@@ -6,16 +6,15 @@
   import SaveForm from "$lib/components/SaveForm.svelte";
   import ProductCountriesRegions from "$lib/components/ProductCountriesRegions.svelte";
   import {getContext} from "svelte";
-  import {getDefaultCountriesAndRegions} from "$lib/tools.js";
+  import {getDefaultCountriesAndRegions, getDefaultProductData} from "$lib/tools.js";
+  import SecondaryPreset from "$lib/components/presets/SecondaryPreset.svelte";
+  import SetDiskType from "$lib/components/SetDiskType.svelte";
   
   let {data} = $props();
   
   let product = $state({
-    CPU: data?.productData?.CPU ?? "...",
     Cores: data?.productData?.Cores ?? "0",
-    RAM: data?.productData?.RAM ?? "0",
-    Disk: data?.productData?.Disk ?? "0",
-    DiskType: data?.productData?.DiskType ?? "...",
+    ...getDefaultProductData(data),
     ...getDefaultCountriesAndRegions(data)
   });
   let init = $state.raw({init: false});
@@ -40,6 +39,7 @@
     <PrimaryTextarea bind:value={product.RAM} title="Кол-во ОЗУ (ГБ)"/>
     <PrimaryTextarea bind:value={product.Disk} title="Место на диске"/>
     <PrimaryTextarea bind:value={product.DiskType} title="Тип диска"/>
+    <SetDiskType bind:product/>
   </QuaternarySection>
   <ProductCountriesRegions bind:product/>
   <SaveForm {access} onclick={() => {clearTimeout(timeout); updateProduct(page.params.id, product);

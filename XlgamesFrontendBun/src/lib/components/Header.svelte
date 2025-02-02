@@ -86,7 +86,7 @@
 {#snippet menus()}
   <div class="flex-1 flex justify-end items-center">
     <div class="flex-center gap-x-6">
-      <PrimaryDropdownMenu class="flex justify-end">
+      <PrimaryDropdownMenu aria="Languages" class="flex justify-end">
         {#snippet button(isMenuVisible)}
           <PrimaryIcon Icon={PrimaryLanguage} class="secondary-height stroke-white" isActive={isMenuVisible}/>
         {/snippet}
@@ -102,7 +102,7 @@
         </div>
       </PrimaryDropdownMenu>
       {#if !userOnMobile}
-        <PrimaryDropdownMenu class="flex justify-end">
+        <PrimaryDropdownMenu aria="Menu" class="flex justify-end">
           {#snippet button(isMenuVisible)}
             <PrimaryIcon Icon={PrimaryProfile} isActive={isMenuVisible} class="secondary-height stroke-white"/>
           {/snippet}
@@ -118,7 +118,7 @@
         </PrimaryDropdownMenu>
       {:else}
         <div class="flex" use:menu>
-          <button onclick={toggle}>
+          <button aria-label="Menu" onclick={toggle}>
             <SecondaryIcon Icon={PrimaryMenu} isActive={menuIsVisible} class="ternary-height fill-white"/>
           </button>
           {#if menuIsVisible}

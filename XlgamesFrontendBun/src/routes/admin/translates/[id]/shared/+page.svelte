@@ -81,6 +81,7 @@
     <PrimaryTextarea bind:value={language.Shared.Slots} title="Кол-во слотов"/>
     <PrimaryTextarea bind:value={language.Shared.Control} title="Доступ"/>
     <PrimaryTextarea bind:value={language.Shared.GB} title="ГБ"/>
+    <PrimaryTextarea bind:value={language.Shared.TB} title="ТБ"/>
     <PrimaryTextarea bind:value={language.Shared.ResetFilters} title="Сбросить фильтры"/>
     <PrimaryTextarea bind:value={language.Shared.ControlPanel} title="Панель управления"/>
     <PrimaryTextarea bind:value={language.Shared.FTP} title="FTP"/>
@@ -109,6 +110,9 @@
     <PrimaryTextarea bind:value={language.Shared.Frankfurt} title="Франкфурт"/>
     <PrimaryTextarea bind:value={language.Shared.Nuremberg} title="Нюрнберг"/>
     <PrimaryTextarea bind:value={language.Shared.Gravelines} title="Гравлин"/>
+  </QuaternarySection>
+  <QuaternarySection title="Континенты">
+    <PrimaryTextarea bind:value={language.Shared.Europe} title="Европа"/>
   </QuaternarySection>
   <QuaternarySection title="Остальное">
     <PrimaryTextarea bind:value={language.Shared.More} title="Ещё"/>

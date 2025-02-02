@@ -1,5 +1,5 @@
 import configuration from "$lib";
-import {defaultCountriesAndRegions} from "$lib/tools.js";
+import {defaultCountriesAndRegions, defaultProductData} from "$lib/tools.js";
 
 export async function load({fetch, params}) {
   let productDataResponse = await fetch(`${configuration.api}/Products/${params.id}`);
@@ -10,11 +10,8 @@ export async function load({fetch, params}) {
     if (!productData) throw new Error();
   } catch {
     productData = {
-      CPU: "...",
       Cores: "0",
-      RAM: "0",
-      Disk: "0",
-      DiskType: "...",
+      ...defaultProductData,
       ...defaultCountriesAndRegions
     };
   }

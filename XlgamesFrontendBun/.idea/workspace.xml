@@ -5,7 +5,116 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="99b663dd-f91d-428e-817e-a654984c5689" name="Changes" comment="Обновление">
+      <change afterPath="$PROJECT_DIR$/files/fonts/Inter.woff2" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/files/images/dest/games/1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/files/images/dest/games/2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/files/images/dest/games/3.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/files/images/dest/games/4.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/files/images/dest/games/7dtd.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/files/images/dest/games/bf3.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/files/images/dest/games/bf4.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/files/images/dest/games/conanexiles.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/files/images/dest/games/minecraft.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/files/images/dest/news/1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/files/images/dest/news/2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/files/images/dest/news/3.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/files/images/meta/meta_main.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/files/images/meta/meta_main.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/files/images/src/about-us-news.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/files/images/src/games/1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/files/images/src/games/2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/files/images/src/games/3.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/files/images/src/games/4.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/files/images/src/knowledgebase/1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/files/images/src/knowledgebase/2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/files/images/src/knowledgebase/3.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/files/images/src/knowledgebase/4.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/files/images/src/knowledgebase/5-2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/files/images/src/knowledgebase/6.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/files/images/src/knowledgebase/gameserverCP1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/files/images/src/knowledgebase/gameserverCP10.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/files/images/src/knowledgebase/gameserverCP2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/files/images/src/knowledgebase/gameserverCP3.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/files/images/src/knowledgebase/gameserverCP4.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/files/images/src/knowledgebase/gameserverCP5.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/files/images/src/knowledgebase/gameserverCP6.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/files/images/src/knowledgebase/gameserverCP7.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/files/images/src/knowledgebase/gameserverCP8.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/files/images/src/knowledgebase/gameserverCP9.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/files/images/src/knowledgebase/vps_en_1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/files/images/src/knowledgebase/vps_en_2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/files/images/src/knowledgebase/vps_en_3.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/files/images/src/knowledgebase/vps_en_4.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/files/images/src/knowledgebase/vps_en_5.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/files/images/src/knowledgebase/vps_en_6.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/files/images/src/knowledgebase/vps_ru_1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/files/images/src/knowledgebase/vps_ru_2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/files/images/src/knowledgebase/vps_ru_3.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/files/images/src/knowledgebase/vps_ru_4.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/files/images/src/knowledgebase/vps_ru_5.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/files/images/src/knowledgebase/vps_ru_6.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/files/images/src/news/1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/files/images/src/news/2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/files/images/src/news/3.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/files/images/src/news/7_days_to_die_1_0_release.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/files/images/src/news/GPU_servers_news.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/files/images/src/news/Satisfactory_10.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/files/images/src/news/bf4bg.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/files/images/src/news/dayz_frostline_news.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/files/images/src/news/domains_news.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/files/images/src/news/fs22_20GB_now.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/files/images/src/news/fs25bg.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/files/images/src/news/happynewyear2025_en.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/files/images/src/news/happynewyear2025_ru.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/files/images/src/news/palworld-feybreak.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/files/images/src/news/xlgames_about_us.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/files/images/src/news/xlgames_datacenter.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/lib/components/SetDiskType.svelte" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../XlgamesBackend/XlgamesBackend/Controllers/GameServerDatasController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../XlgamesBackend/XlgamesBackend/Controllers/GameServerDatasController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../XlgamesBackend/XlgamesBackend/Controllers/GameServersController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../XlgamesBackend/XlgamesBackend/Controllers/GameServersController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../XlgamesBackend/XlgamesBackend/Dtoes/GameServerDataDto.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../XlgamesBackend/XlgamesBackend/Dtoes/GameServerDataDto.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../XlgamesBackend/XlgamesBackend/Models/GameServers/GameServer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../XlgamesBackend/XlgamesBackend/Models/GameServers/GameServer.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../XlgamesBackend/XlgamesBackend/Models/ProjectData.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../XlgamesBackend/XlgamesBackend/Models/ProjectData.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../XlgamesBackend/XlgamesBackend/Models/Translates/Shared.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../XlgamesBackend/XlgamesBackend/Models/Translates/Shared.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../XlgamesBackend/XlgamesBackend/Models/Translates/VPN.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../XlgamesBackend/XlgamesBackend/Models/Translates/VPN.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/files/images/7-days-to-die.webp" beforeDir="false" afterPath="$PROJECT_DIR$/files/images/7-days-to-die.webp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/files/images/battlefield-2042.webp" beforeDir="false" afterPath="$PROJECT_DIR$/files/images/battlefield-2042.webp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/files/images/battlefield-3.webp" beforeDir="false" afterPath="$PROJECT_DIR$/files/images/battlefield-3.webp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/files/images/battlefield-4.webp" beforeDir="false" afterPath="$PROJECT_DIR$/files/images/battlefield-4.webp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/files/images/minecraft.webp" beforeDir="false" afterPath="$PROJECT_DIR$/files/images/minecraft.webp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/files/images/rust.webp" beforeDir="false" afterPath="$PROJECT_DIR$/files/images/rust.webp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/files/images/terraria.webp" beforeDir="false" afterPath="$PROJECT_DIR$/files/images/terraria.webp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/app.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lib/components/Header.svelte" beforeDir="false" afterPath="$PROJECT_DIR$/src/lib/components/Header.svelte" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lib/components/cards/PrimaryCard.svelte" beforeDir="false" afterPath="$PROJECT_DIR$/src/lib/components/cards/PrimaryCard.svelte" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lib/components/cards/SecondaryCard.svelte" beforeDir="false" afterPath="$PROJECT_DIR$/src/lib/components/cards/SecondaryCard.svelte" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lib/components/dropdown-menus/PrimaryDropdownMenu.svelte" beforeDir="false" afterPath="$PROJECT_DIR$/src/lib/components/dropdown-menus/PrimaryDropdownMenu.svelte" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lib/components/presets/PrimaryPreset.svelte" beforeDir="false" afterPath="$PROJECT_DIR$/src/lib/components/presets/PrimaryPreset.svelte" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lib/components/sections/PrimarySection.svelte" beforeDir="false" afterPath="$PROJECT_DIR$/src/lib/components/sections/PrimarySection.svelte" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lib/components/sections/TernarySection.svelte" beforeDir="false" afterPath="$PROJECT_DIR$/src/lib/components/sections/TernarySection.svelte" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lib/tools.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/lib/tools.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/routes/(public)/+error.svelte" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/routes/(public)/+layout.svelte" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/(public)/+layout.svelte" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/routes/(public)/+page.svelte" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/(public)/+page.svelte" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/routes/(public)/games/[link]/+page.svelte" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/(public)/games/[link]/+page.svelte" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/routes/(public)/vpn/+page.svelte" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/(public)/vpn/+page.svelte" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/routes/+layout.svelte" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/+layout.svelte" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/routes/admin/+error.svelte" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/routes/admin/+layout.svelte" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/admin/+layout.svelte" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/routes/admin/game-servers/[id]/[translateId]/+page.server.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/admin/game-servers/[id]/[translateId]/+page.server.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/routes/admin/game-servers/[id]/[translateId]/+page.svelte" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/admin/game-servers/[id]/[translateId]/+page.svelte" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/routes/admin/game-servers/[id]/settings/+page.svelte" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/admin/game-servers/[id]/settings/+page.svelte" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/routes/admin/products/dedicated/[id]/+page.server.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/admin/products/dedicated/[id]/+page.server.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/routes/admin/products/dedicated/[id]/+page.svelte" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/admin/products/dedicated/[id]/+page.svelte" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/routes/admin/products/gpu-servers/[id]/+page.server.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/admin/products/gpu-servers/[id]/+page.server.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/routes/admin/products/gpu-servers/[id]/+page.svelte" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/admin/products/gpu-servers/[id]/+page.svelte" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/routes/admin/products/vps/[id]/+page.server.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/admin/products/vps/[id]/+page.server.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/routes/admin/products/vps/[id]/+page.svelte" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/admin/products/vps/[id]/+page.svelte" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/routes/admin/project/+page.svelte" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/admin/project/+page.svelte" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/routes/admin/translates/[id]/shared/+page.svelte" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/admin/translates/[id]/shared/+page.svelte" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/routes/admin/translates/[id]/vpn/+page.svelte" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/admin/translates/[id]/vpn/+page.svelte" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../files/games.psd" beforeDir="false" afterPath="$PROJECT_DIR$/../files/games.psd" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -48,6 +157,7 @@
         <option value="QuaternaryLink" />
         <option value="France" />
         <option value="JavaScript File" />
+        <option value="SetDiskType" />
       </list>
     </option>
   </component>
@@ -80,38 +190,39 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Bun.dev.executor&quot;: &quot;Run&quot;,
-    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
-    &quot;JavaScript Debug.localhost:5173.executor&quot;: &quot;Debug&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/myabo/OneDrive/Документы/GitHub/xlgames/XlgamesFrontendBun/static&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.stylelint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.stylelint&quot;: &quot;&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;settings.nodejs&quot;,
-    &quot;ts.external.directory.path&quot;: &quot;C:\\Program Files\\JetBrains\\WebStorm 2024.1.5\\plugins\\javascript-plugin\\jsLanguageServicesImpl\\external&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Bun.dev.executor": "Run",
+    "DefaultHtmlFileTemplate": "HTML File",
+    "JavaScript Debug.localhost:5173.executor": "Debug",
+    "JavaScript Debug.localhost:8962.executor": "Debug",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "git-widget-placeholder": "main",
+    "last_opened_file_path": "C:/Users/myabo/OneDrive/Документы/GitHub/xlgames/XlgamesFrontendBun/static",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.stylelint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.stylelint": "",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "settings.nodejs",
+    "ts.external.directory.path": "C:\\Program Files\\JetBrains\\WebStorm 2024.1.5\\plugins\\javascript-plugin\\jsLanguageServicesImpl\\external",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\myabo\OneDrive\Документы\GitHub\xlgames\XlgamesFrontendBun\static" />
+      <recent name="C:\Users\myabo\OneDrive\Документы\GitHub\xlgames\XlgamesFrontendBun\static\images" />
       <recent name="C:\Users\myabo\OneDrive\Документы\GitHub\xlgames\XlgamesFrontendBun\src\routes\admin\game-servers\[id]" />
       <recent name="C:\Users\myabo\OneDrive\Документы\GitHub\xlgames\XlgamesFrontendBun\src\routes\admin\game-servers" />
       <recent name="C:\Users\myabo\OneDrive\Документы\GitHub\xlgames\XlgamesFrontendBun\src\routes\admin\products\servers\[id]" />
-      <recent name="C:\Users\myabo\OneDrive\Документы\GitHub\xlgames\XlgamesFrontendBun\src\routes\admin\products\servers-gpu\[id]" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\myabo\OneDrive\Документы\GitHub\xlgames\XlgamesFrontendBun\files" />
       <recent name="C:\Users\myabo\OneDrive\Документы\GitHub\xlgames\XlgamesFrontendBun\files\images" />
+      <recent name="C:\Users\myabo\OneDrive\Документы\GitHub\xlgames\XlgamesFrontendBun\files" />
       <recent name="C:\Users\myabo\OneDrive\Документы\GitHub\xlgames\XlgamesFrontendBun\static\assets" />
       <recent name="C:\Users\myabo\OneDrive\Документы\GitHub\xlgames\XlgamesFrontendBun\src\lib\components" />
       <recent name="C:\Users\myabo\OneDrive\Документы\GitHub\xlgames\XlgamesFrontendBun\static" />
@@ -174,22 +285,8 @@
       <workItem from="1738284755750" duration="260000" />
       <workItem from="1738287932115" duration="11000" />
       <workItem from="1738326825470" duration="44000" />
-    </task>
-    <task id="LOCAL-00003" summary="Обновление">
-      <option name="closed" value="true" />
-      <created>1737374240042</created>
-      <option name="number" value="00003" />
-      <option name="presentableId" value="LOCAL-00003" />
-      <option name="project" value="LOCAL" />
-      <updated>1737374240042</updated>
-    </task>
-    <task id="LOCAL-00004" summary="Обновление">
-      <option name="closed" value="true" />
-      <created>1737384711435</created>
-      <option name="number" value="00004" />
-      <option name="presentableId" value="LOCAL-00004" />
-      <option name="project" value="LOCAL" />
-      <updated>1737384711435</updated>
+      <workItem from="1738327946951" duration="873000" />
+      <workItem from="1738409797758" duration="35898000" />
     </task>
     <task id="LOCAL-00005" summary="Обновление">
       <option name="closed" value="true" />
@@ -567,7 +664,23 @@
       <option name="project" value="LOCAL" />
       <updated>1738284830438</updated>
     </task>
-    <option name="localTasksCounter" value="52" />
+    <task id="LOCAL-00052" summary="Обновление">
+      <option name="closed" value="true" />
+      <created>1738328085551</created>
+      <option name="number" value="00052" />
+      <option name="presentableId" value="LOCAL-00052" />
+      <option name="project" value="LOCAL" />
+      <updated>1738328085552</updated>
+    </task>
+    <task id="LOCAL-00053" summary="Обновление">
+      <option name="closed" value="true" />
+      <created>1738328832034</created>
+      <option name="number" value="00053" />
+      <option name="presentableId" value="LOCAL-00053" />
+      <option name="project" value="LOCAL" />
+      <updated>1738328832034</updated>
+    </task>
+    <option name="localTasksCounter" value="54" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

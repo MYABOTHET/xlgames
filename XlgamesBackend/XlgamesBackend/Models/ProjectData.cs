@@ -17,6 +17,8 @@
         public string PersonalAccount { get; set; } = "...";
         public string GameHosting { get; set; } = "...";
 
+        public string Head { get; set; } = string.Empty;
+
         public void Update(ProjectData projectDataDto)
         {
             Logo = projectDataDto.Logo;
@@ -29,6 +31,7 @@
             Contacts = projectDataDto.Contacts;
             PersonalAccount = projectDataDto.PersonalAccount;
             GameHosting = projectDataDto.GameHosting;
+            Head = projectDataDto.Head;
         }
     }
 }

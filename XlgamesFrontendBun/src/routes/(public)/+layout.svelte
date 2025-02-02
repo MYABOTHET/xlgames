@@ -79,6 +79,7 @@
 <svelte:head>
   <meta content="width=device-width, initial-scale=1" name="viewport"/>
   <meta content={author} name="author">
+  {@html projectData.Head}
   {@html language.Shared.Head}
 </svelte:head>
 

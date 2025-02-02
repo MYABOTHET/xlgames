@@ -69,12 +69,6 @@ namespace XlgamesBackend.Controllers
                     Src = gameServer.Src,
                     ControlPanel = gameServer.ControlPanel,
                     FTP = gameServer.FTP,
-                    Finland = gameServer.Finland,
-                    Germany = gameServer.Germany,
-                    Russia = gameServer.Russia,
-                    Singapore = gameServer.Singapore,
-                    France = gameServer.France,
-                    USA = gameServer.USA,
                     GameServerDataPrimaryModels = gameServer.GameServerDatas
                         .Select(gameServerData => new GameServerDataPrimaryModel()
                         {
@@ -106,11 +100,6 @@ namespace XlgamesBackend.Controllers
                     Src = gameServer.Src,
                     ControlPanel = gameServer.ControlPanel,
                     FTP = gameServer.FTP,
-                    Finland = gameServer.Finland,
-                    Germany = gameServer.Germany,
-                    Russia = gameServer.Russia,
-                    Singapore = gameServer.Singapore,
-                    USA = gameServer.USA,
                     GameServerDataPrimaryModels = gameServer.GameServerDatas
                         .Select(gameServerData => new GameServerDataPrimaryModel()
                         {
@@ -198,12 +187,6 @@ namespace XlgamesBackend.Controllers
             gameServer.Link = gameServerDto.Link;
             gameServer.ControlPanel = gameServerDto.ControlPanel;
             gameServer.FTP = gameServerDto.FTP;
-            gameServer.Russia = gameServerDto.Russia;
-            gameServer.USA = gameServerDto.USA;
-            gameServer.Singapore = gameServerDto.Singapore;
-            gameServer.Finland = gameServerDto.Finland;
-            gameServer.Germany = gameServerDto.Germany;
-            gameServer.France = gameServerDto.France;
             await _postgreSQLContext.SaveChangesAsync();
             return Ok();
         }

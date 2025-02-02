@@ -19,14 +19,15 @@
     
   }
   
-  function getCountry(gameServer) {
+  function getCountry(gameServerData) {
     let countries = [];
-    gameServer.Germany ? countries.push(language.Shared.Germany) : null;
-    gameServer.Finland ? countries.push(language.Shared.Finland) : null;
-    gameServer.Russia ? countries.push(language.Shared.Russia) : null;
-    gameServer.USA ? countries.push(language.Shared.USA) : null;
-    gameServer.Singapore ? countries.push(language.Shared.Singapore) : null;
-    gameServer.France ? countries.push(language.Shared.France) : null;
+    gameServerData.Germany ? countries.push(language.Shared.Germany) : null;
+    gameServerData.Finland ? countries.push(language.Shared.Finland) : null;
+    gameServerData.Russia ? countries.push(language.Shared.Russia) : null;
+    gameServerData.USA ? countries.push(language.Shared.USA) : null;
+    gameServerData.Singapore ? countries.push(language.Shared.Singapore) : null;
+    gameServerData.France ? countries.push(language.Shared.France) : null;
+    gameServerData.Europe ? countries.push(language.Shared.Europe) : null;
     if (!countries.length) countries.push("...");
     return countries.join(", ");
   }
@@ -66,7 +67,7 @@ max-decimal:aspect-square" src={data.gameServer.Src}/>
         {@render descLine?.(language.Shared.DiskType, data.gameServer.Disk)}
         {@render descLine?.(language.Shared.Slots, data.gameServer.Slots === "-" ? language.GameServer.Unlimited : data.gameServer.Slots)}
         {@render descLine?.(language.Shared.Control, getControl(data.gameServer))}
-        {@render descLine?.(language.Shared.Country, getCountry(data.gameServer))}
+        {@render descLine?.(language.Shared.Country, getCountry(gameServerData))}
       </section>
       <article class="flex items-center max-decimal:gap-x-4 gap-x-8 max-decimal:justify-between">
         <h1>{language.Shared.PriceFrom} {language.Shared.CurrencySignPosition

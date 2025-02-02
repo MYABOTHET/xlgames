@@ -6,6 +6,7 @@
   import {getContext} from "svelte";
   import HexadecimalPreset from "$lib/components/presets/HexadecimalPreset.svelte";
   import {page} from "$app/state";
+  import PrimaryCheckbox from "$lib/components/checkbox/PrimaryCheckbox.svelte";
   
   let {data} = $props();
   
@@ -58,6 +59,15 @@
     <PrimaryTextarea bind:value={translate.Price} title="Цена"/>
     <PrimaryTextarea bind:value={translate.Description} title="Описание"/>
     <HexadecimalPreset bind:list={translate.GameServerDataPoints} title="Перечисление"/>
+  </QuaternarySection>
+  <QuaternarySection title="Страны и континенты">
+    <PrimaryCheckbox bind:value={translate.Germany} title="Германия"/>
+    <PrimaryCheckbox bind:value={translate.Finland} title="Финляндия"/>
+    <PrimaryCheckbox bind:value={translate.Russia} title="Россия"/>
+    <PrimaryCheckbox bind:value={translate.USA} title="США"/>
+    <PrimaryCheckbox bind:value={translate.Singapore} title="Сингапур"/>
+    <PrimaryCheckbox bind:value={translate.France} title="Франция"/>
+    <PrimaryCheckbox bind:value={translate.Europe} title="Европа"/>
   </QuaternarySection>
   <SaveForm {access} {error} onclick={updateGameServerData}/>
 </SecondaryPage>
