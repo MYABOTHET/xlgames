@@ -11,5 +11,8 @@ namespace XlgamesBackend.Models.Translates
         public string OGRNIP { get; set; } = "...";
         public string INN { get; set; } = "...";
         public string IP { get; set; } = "...";
+
+        public string SubTitle { get; set; } = "...";
+        public bool SubTitleShow { get; set; }
     }
 }

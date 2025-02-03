@@ -3,6 +3,7 @@
   import QuaternarySection from "$lib/components/sections/QuaternarySection.svelte";
   import PrimaryTextarea from "$lib/components/textarea/PrimaryTextarea.svelte";
   import {getContext} from "svelte";
+  import PrimaryCheckbox from "$lib/components/checkbox/PrimaryCheckbox.svelte";
   
   let language = getContext("language")();
 </script>
@@ -21,5 +22,7 @@
     <PrimaryTextarea bind:value={language.Contacts.OGRNIP} title="ОГРНИП"/>
     <PrimaryTextarea bind:value={language.Contacts.INN} title="ИНН"/>
     <PrimaryTextarea bind:value={language.Contacts.IP} title="ИП"/>
+    <PrimaryTextarea bind:value={language.Contacts.SubTitle} title="Подзаголовок"/>
+    <PrimaryCheckbox bind:value={language.Contacts.SubTitleShow} title="Показывать подзаголовок?"/>
   </QuaternarySection>
 </SecondaryPage>

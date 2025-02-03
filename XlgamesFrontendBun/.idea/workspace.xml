@@ -91,9 +91,11 @@
       <change afterPath="$PROJECT_DIR$/static/images/src/news/xlgames_datacenter.png" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/static/images/terraria.webp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/lib/components/Header.svelte" beforeDir="false" afterPath="$PROJECT_DIR$/src/lib/components/Header.svelte" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/routes/+layout.svelte" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/+layout.svelte" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/routes/(public)/contacts/+page.svelte" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/(public)/contacts/+page.svelte" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/routes/(public)/games/[link]/+page.svelte" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/(public)/games/[link]/+page.svelte" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/routes/admin/translates/[id]/contacts/+page.svelte" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/admin/translates/[id]/contacts/+page.svelte" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/routes/admin/translates/[id]/game-server/+page.svelte" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/admin/translates/[id]/game-server/+page.svelte" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/robots.txt" beforeDir="false" afterPath="$PROJECT_DIR$/static/robots.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -268,6 +270,10 @@
       <workItem from="1738409797758" duration="36225000" />
       <workItem from="1738466803355" duration="641000" />
       <workItem from="1738468013717" duration="2588000" />
+      <workItem from="1738472931380" duration="178000" />
+      <workItem from="1738473175612" duration="208000" />
+      <workItem from="1738568880584" duration="16000" />
+      <workItem from="1738576040012" duration="5513000" />
     </task>
     <task id="LOCAL-00008" summary="Обновление">
       <option name="closed" value="true" />

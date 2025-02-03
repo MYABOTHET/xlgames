@@ -27,6 +27,7 @@
     <p>{language.Contacts.Description}</p>
     {#if true}
       <section class="flex flex-col gap-y-1">
+        {#if language.Contacts.SubTitleShow}<h1 class="text-nowrap h-fit">{language.Contacts.SubTitle}</h1>{/if}
         {#if language.Shared.IP}{@render contact?.(language.Contacts.IP, language.Contacts.FullName)}{/if}
         {#if language.Shared.Email}{@render contact?.(language.Contacts.Email, projectData.Email)}{/if}
         {#if language.Shared.PhoneNumber}{@render contact?.(language.Contacts.PhoneNumber, projectData.PhoneNumber)}{/if}

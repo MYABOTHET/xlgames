@@ -3,6 +3,7 @@
   import QuaternarySection from "$lib/components/sections/QuaternarySection.svelte";
   import PrimaryTextarea from "$lib/components/textarea/PrimaryTextarea.svelte";
   import {getContext} from "svelte";
+  import PrimaryCheckbox from "$lib/components/checkbox/PrimaryCheckbox.svelte";
   
   let language = getContext("language")();
 </script>
@@ -15,5 +16,6 @@
   <QuaternarySection title="Остальное">
     <PrimaryTextarea bind:value={language.GameServer.Name} title="Заголовок"/>
     <PrimaryTextarea bind:value={language.GameServer.Unlimited} title="Неограничено"/>
+    <PrimaryCheckbox bind:value={language.GameServer.TitlePosition} title="Название игр. сервера слева?"/>
   </QuaternarySection>
 </SecondaryPage>

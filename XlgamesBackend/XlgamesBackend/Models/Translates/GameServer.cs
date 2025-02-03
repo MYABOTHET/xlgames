@@ -6,5 +6,6 @@ namespace XlgamesBackend.Models.Translates
     public class GameServer : SecondaryBase
     {
         public string Unlimited { get; set; } = "...";
+        public bool TitlePosition { get; set; } // true - <Title> Game Server, false - Game Server <Title>
     }
 }
