@@ -61,7 +61,6 @@
   <SecondaryLink href="/games" name='{language.GameServer.TitlePosition
       ? "«" + data.gameServer.Name + "» " + language.GameServer.Name
       : language.GameServer.Name + " «" + data.gameServer.Name  + "»"}'/>
-  <SecondaryLink href="/games" name="{language.GameServer.Name} «{data.gameServer.Name}»"/>
   <article class="flex gap-x-10 ternary-gap-y max-decimal:flex-col">
     <img alt={data.gameServer.Name} class="decimal:secondary-size ternary-size rounded-2xl
 max-decimal:aspect-square" src={data.gameServer.Src}/>
