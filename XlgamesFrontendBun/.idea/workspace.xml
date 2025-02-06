@@ -4,9 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="99b663dd-f91d-428e-817e-a654984c5689" name="Changes" comment="Обновление">
-      <change beforePath="$PROJECT_DIR$/src/routes/(public)/dedicated/+page.server.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/(public)/dedicated/+page.server.js" afterDir="false" />
-    </list>
+    <list default="true" id="99b663dd-f91d-428e-817e-a654984c5689" name="Changes" comment="Обновление" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -53,6 +51,11 @@
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$/.." value="languages" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
   <component name="GitHubPullRequestSearchHistory">{
@@ -190,6 +193,7 @@
       <workItem from="1738805787557" duration="314000" />
       <workItem from="1738847057389" duration="639000" />
       <workItem from="1738858437140" duration="713000" />
+      <workItem from="1738878824837" duration="1001000" />
     </task>
     <task id="LOCAL-00011" summary="Обновление">
       <option name="closed" value="true" />
