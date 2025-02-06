@@ -6,7 +6,7 @@ export async function load({fetch, params}) {
   let productData = null;
   try {
     productData = await productDataResponse.text();
-    productData = JSON.parse(productData.replaceAll("&quot;", "\""));
+    productData = JSON.parse(productData.replaceAll("&quot;", '"'));
     if (!productData) throw new Error();
   } catch {
     productData = {
