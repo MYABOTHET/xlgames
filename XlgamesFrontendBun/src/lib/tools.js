@@ -1,4 +1,4 @@
-import configuration from "$lib/index.js";
+import {page} from "$app/state";
 
 export function createDateFormatter(locale) {
   return new Intl.DateTimeFormat(locale, {
@@ -9,18 +9,6 @@ export function createDateFormatter(locale) {
     month: "long",
     day: "numeric",
   });
-}
-
-export function getUserLanguageFromCookies(cookies) {
-  try {
-    return JSON.parse(cookies.get(configuration.userLanguage));
-  } catch {
-    return null;
-  }
-}
-
-export function getUserLanguageFromCookieClient(cookie) {
-  return JSON.parse(decodeURIComponent(cookie[configuration.userLanguage]));
 }
 
 export async function validateResponse(response) {
@@ -104,4 +92,30 @@ export function getDefaultCountriesAndRegions(data) {
     France: data?.productData?.France ?? false,
     Gravelines: data?.productData?.Gravelines ?? false,
   }
+}
+
+export function transformLocale(locale, url) {
+  if (locale === 'en') locale = '';
+  if (url === "/") return `/${locale}`;
+  if (locale) return `/${locale}${url}`;
+  return url;
+}
+
+export function generateUrl(locale, pathname, language) {
+  if (pathname === '/') pathname = '';
+  if (language.Locale === "en-US") {
+    if (locale === "en") {
+      return `${page.url.origin}${pathname}`;
+    }
+    return `${page.url.origin}/${locale}${pathname}`;
+  }
+  let url = pathname.split("/");
+  url = url.filter(url => url !== '');
+  url.splice(0, 1);
+  if (locale !== "en") {
+    url.unshift(locale);
+  }
+  let newUrl = '/' + url.join('/');
+  if (newUrl === '/') newUrl = '';
+  return `${page.url.origin}${newUrl}`;
 }

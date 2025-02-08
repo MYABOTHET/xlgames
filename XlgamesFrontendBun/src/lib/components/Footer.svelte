@@ -3,11 +3,13 @@
   import PrimaryLink from "$lib/components/links/PrimaryLink.svelte";
   import ProjectData from "$lib/components/ProjectData.svelte";
   import TernarySection from "$lib/components/sections/TernarySection.svelte";
+  import {transformLocale} from "$lib/tools.js";
   
   const {navigationLinks, projectData, ...props} = $props();
   const {Name, Logo, Year} = projectData;
   
   let language = $derived(getContext("language")());
+  let languageDto = $derived(getContext("languageDto")());
 </script>
 
 <footer {...props} class="{props.class} flex-center primary-px pb-8 pt-12 border-t border-t-(--color-secondary)">
@@ -15,7 +17,7 @@
 max-quaternary:items-start">
     <div class="flex gap-x-14 w-full max-quaternary:flex-col max-quaternary:primary-gap-y">
       <nav class="flex flex-col gap-y-5 min-w-fit">
-        <a class="w-fit" href="/">
+        <a class="w-fit" href={transformLocale(languageDto.Lang, navigationLinks.default)}>
           <ProjectData logo={Logo} name={Name}/>
         </a>
         <TernarySection class="grid grid-cols-4 gap-2.5 w-fit"/>
@@ -25,7 +27,7 @@ max-quaternary:grid-cols-1 max-quaternary:gap-y-4">
         {#each [...navigationLinks.header.menu.links, ...navigationLinks.header.other,
           ...navigationLinks.other] as link}
           <PrimaryLink style="width: fit-content; text-align: left"
-                       href={link.href}>{language.Shared[link.name]}</PrimaryLink>
+                       href={transformLocale(languageDto.Lang, link.href)}>{language.Shared[link.name]}</PrimaryLink>
         {/each}
         {#each navigationLinks.menu as link}
           <PrimaryLink style="width: fit-content; text-align: left" rel="nofollow"
@@ -37,7 +39,7 @@ max-quaternary:grid-cols-1 max-quaternary:gap-y-4">
 max-quaternary:items-start flex-wrap">
       <h1>© {Year} {new Date().getFullYear() > Year ? "- " + new Date().getFullYear() : ""} {Name}</h1>
       {#each navigationLinks.footer as link}
-        <PrimaryLink href={link.href}>{language.Shared[link.name]}</PrimaryLink>
+        <PrimaryLink href={transformLocale(languageDto.Lang, link.href)}>{language.Shared[link.name]}</PrimaryLink>
       {/each}
     </nav>
   </div>

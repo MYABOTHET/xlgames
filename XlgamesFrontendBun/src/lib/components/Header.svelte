@@ -13,11 +13,13 @@
   import SecondaryIcon from "$lib/components/icons/SecondaryIcon.svelte";
   import {quartInOut} from "svelte/easing";
   import {afterNavigate} from "$app/navigation";
+  import {transformLocale} from "$lib/tools.js";
   
   const {headerHeight, navigationLinks, projectData, languages, userOnMobile, setLanguage, ...props} = $props();
   const {Name, Logo} = projectData;
   
   let language = $derived(getContext("language")());
+  let languageDto = $derived(getContext("languageDto")());
   let menuIsVisible = $state(false);
   
   const duration = 75;
@@ -49,15 +51,15 @@
   });
 </script>
 
-{#snippet linkBlock(link)}
-  <PrimaryLink class="primary-bg primary-p transition-colors" href={link.href}>
-    {language.Shared[link.name]}
+{#snippet linkBlock(name, href)}
+  <PrimaryLink class="primary-bg primary-p transition-colors" {href}>
+    {language.Shared[name]}
   </PrimaryLink>
 {/snippet}
 
 {#snippet project()}
   <nav class="flex-1 flex items-center">
-    <a class="inline-block" href="/">
+    <a class="inline-block" href={transformLocale(languageDto.Lang, navigationLinks.default)}>
       <ProjectData logo={Logo} name={Name}/>
     </a>
   </nav>
@@ -66,7 +68,7 @@
 {#snippet navigation()}
   <nav class="flex-center gap-x-8">
     {#each navigationLinks.header.other as link}
-      <PrimaryLink style="order: {link.position}" href={link.href}>{language.Shared[link.name]}</PrimaryLink>
+      <PrimaryLink style="order: {link.position}" href={transformLocale(languageDto.Lang, link.href)}>{language.Shared[link.name]}</PrimaryLink>
     {/each}
     <PrimaryDropdownMenu class="flex justify-center" style="order: {navigationLinks.header.menu.position}">
       {#snippet button(isMenuVisible)}
@@ -75,7 +77,7 @@
       <div class="absolute primary-top z-20" transition:fade={{duration}}>
         <PrimaryBlock position="primary-triangle-center">
           {#each navigationLinks.header.menu.links as link}
-            {@render linkBlock?.(link)}
+            {@render linkBlock?.(link.name, transformLocale(languageDto.Lang, link.href))}
           {/each}
         </PrimaryBlock>
       </div>
@@ -129,14 +131,14 @@
               <nav class="flex flex-col w-full gap-y-6">
                 {#each [...navigationLinks.header.menu.links, ...navigationLinks.header.other,
                   ...navigationLinks.other] as link}
-                  <PrimaryLink style="width: fit-content" href={link.href}>{language.Shared[link.name]}</PrimaryLink>
+                  <PrimaryLink style="width: fit-content" href={transformLocale(languageDto.Lang, link.href)}>{language.Shared[link.name]}</PrimaryLink>
                 {/each}
                 {#each navigationLinks.menu as link}
                   <PrimaryLink style="width: fit-content" href={link.href}
                                rel="nofollow">{language.Shared[link.name]}</PrimaryLink>
                 {/each}
                 {#each navigationLinks.footer as link}
-                  <PrimaryLink style="width: fit-content" href={link.href}>{language.Shared[link.name]}</PrimaryLink>
+                  <PrimaryLink style="width: fit-content" href={transformLocale(languageDto.Lang, link.href)}>{language.Shared[link.name]}</PrimaryLink>
                 {/each}
               </nav>
             </div>
