@@ -127,6 +127,20 @@ namespace XlgamesBackend.Controllers
         }
         #endregion
 
+        #region Получить ссылки на игровые серверы
+        [HttpGet("Links")]
+        public async Task<ActionResult<IEnumerable<GameServerModel>>> GetGameServerLinks()
+        {
+            return await _postgreSQLContext.GameServers
+                .Select(gameServer => new GameServerModel()
+                {
+                    Id = gameServer.Id,
+                    Name = gameServer.LinkName
+                })
+                .ToListAsync();
+        }
+        #endregion
+
         #region Создать игровой сервер
         [HttpPost]
         [Authorize]
