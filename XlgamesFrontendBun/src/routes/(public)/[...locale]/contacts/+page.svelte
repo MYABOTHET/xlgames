@@ -37,7 +37,7 @@
     {/if}
     <TernarySection class="flex flex-wrap gap-2.5"/>
     <p>{language.Shared.AnyQuestionsStart}<a class="primary-link" href={projectData.Contacts}
-                                             rel="nofollow">{language.Shared.AnyQuestionsCenter}</a>{language.Shared.AnyQuestionsEnd}
+                                             rel="nofollow" data-sveltekit-reload>{language.Shared.AnyQuestionsCenter}</a>{language.Shared.AnyQuestionsEnd}
     </p>
   </article>
 </div>

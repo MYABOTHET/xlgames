@@ -5,143 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="99b663dd-f91d-428e-817e-a654984c5689" name="Changes" comment="Обновление">
-      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_07_02_2025_1_34_[Changes]/shelved.patch" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_07_02_2025_1_34__Changes_.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_07_02_2025_1_49_[Changes]/shelved.patch" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_07_02_2025_1_49_[Changes]1/shelved.patch" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_07_02_2025_1_49__Changes_.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_07_02_2025_1_49__Changes_1.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/files/sitemapExample.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/routes/sitemap.xml/+server.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../XlgamesBackend/XlgamesBackend/Controllers/GameServersController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../XlgamesBackend/XlgamesBackend/Controllers/GameServersController.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/app.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/hooks.server.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/hooks.server.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/lib/components/Footer.svelte" beforeDir="false" afterPath="$PROJECT_DIR$/src/lib/components/Footer.svelte" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/lib/components/Header.svelte" beforeDir="false" afterPath="$PROJECT_DIR$/src/lib/components/Header.svelte" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/lib/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/lib/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/lib/tools.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/lib/tools.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/routes/(public)/[locale]/+layout.server.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/(public)/[...locale]/+layout.server.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/routes/(public)/[locale]/+layout.svelte" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/(public)/[...locale]/+layout.svelte" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/routes/(public)/[locale]/+page.server.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/(public)/[...locale]/+page.server.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/routes/(public)/[locale]/+page.svelte" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/(public)/[...locale]/+page.svelte" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/routes/(public)/[locale]/+server.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/(public)/[...locale]/+server.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/routes/(public)/[locale]/about-us/+page.svelte" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/(public)/[...locale]/about-us/+page.svelte" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/routes/(public)/[locale]/contacts/+page.svelte" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/(public)/[...locale]/contacts/+page.svelte" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/routes/(public)/[locale]/cookie-policy/+page.svelte" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/(public)/[...locale]/cookie-policy/+page.svelte" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/routes/(public)/[locale]/data-centers/+page.svelte" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/(public)/[...locale]/data-centers/+page.svelte" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/routes/(public)/[locale]/dedicated/+page.server.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/(public)/[...locale]/dedicated/+page.server.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/routes/(public)/[locale]/dedicated/+page.svelte" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/(public)/[...locale]/dedicated/+page.svelte" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/routes/(public)/[locale]/games/+page.server.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/(public)/[...locale]/games/+page.server.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/routes/(public)/[locale]/games/+page.svelte" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/(public)/[...locale]/games/+page.svelte" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/routes/(public)/[locale]/games/[link]/+page.server.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/(public)/[...locale]/games/[link]/+page.server.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/routes/(public)/[locale]/games/[link]/+page.svelte" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/(public)/[...locale]/games/[link]/+page.svelte" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/routes/(public)/[locale]/games/[link]/+server.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/(public)/[...locale]/games/[link]/+server.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/routes/(public)/[locale]/gpu-servers/+page.server.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/(public)/[...locale]/gpu-servers/+page.server.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/routes/(public)/[locale]/gpu-servers/+page.svelte" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/(public)/[...locale]/gpu-servers/+page.svelte" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/routes/(public)/[locale]/news/+page.server.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/(public)/[...locale]/news/+page.server.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/routes/(public)/[locale]/news/+page.svelte" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/(public)/[...locale]/news/+page.svelte" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/routes/(public)/[locale]/news/+server.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/(public)/[...locale]/news/+server.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/routes/(public)/[locale]/news/[link]/+page.server.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/(public)/[...locale]/news/[link]/+page.server.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/routes/(public)/[locale]/news/[link]/+page.svelte" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/(public)/[...locale]/news/[link]/+page.svelte" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/routes/(public)/[locale]/news/[link]/+server.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/(public)/[...locale]/news/[link]/+server.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/routes/(public)/[locale]/privacy-policy/+page.svelte" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/(public)/[...locale]/privacy-policy/+page.svelte" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/routes/(public)/[locale]/terms-of-service/+page.svelte" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/(public)/[...locale]/terms-of-service/+page.svelte" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/routes/(public)/[locale]/vpn/+page.server.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/(public)/[...locale]/vpn/+page.server.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/routes/(public)/[locale]/vpn/+page.svelte" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/(public)/[...locale]/vpn/+page.svelte" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/routes/(public)/[locale]/vps/+page.server.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/(public)/[...locale]/vps/+page.server.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/routes/(public)/[locale]/vps/+page.svelte" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/(public)/[...locale]/vps/+page.svelte" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/routes/(public)/[locale]/web-hosting/+page.svelte" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/(public)/[...locale]/web-hosting/+page.svelte" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/routes/(public)/test.svelte" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/robots.txt/+server.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/routes/+error.svelte" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/+error.svelte" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/fonts/Inter.ttf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/fonts/Inter.woff2" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/images/7-days-to-die-news.webp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/images/7-days-to-die.webp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/images/about-us-news.webp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/images/about-us.webp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/images/battlefield-2042.webp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/images/battlefield-3.webp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/images/battlefield-4-news.webp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/images/battlefield-4.webp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/images/data-centers-news.webp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/images/dayz-frostline-news.webp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/images/dest/games/1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/images/dest/games/2.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/images/dest/games/3.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/images/dest/games/4.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/images/dest/games/7dtd.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/images/dest/games/bf3.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/images/dest/games/bf4.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/images/dest/games/conanexiles.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/images/dest/games/minecraft.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/images/dest/news/1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/images/dest/news/2.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/images/dest/news/3.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/images/farming-simulator-20gb-news.webp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/images/farming-simulator-25-news.webp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/images/happy-new-year-2025-en-news.webp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/images/happy-new-year-2025-ru-news.webp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/images/meta/meta_main.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/images/meta/meta_main.webp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/images/minecraft.webp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/images/palworld-feybreak-news.webp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/images/rust.webp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/images/satisfactory-news.webp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/images/servers-gpu-news.webp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/images/src/about-us-news.webp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/images/src/games/1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/images/src/games/2.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/images/src/games/3.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/images/src/games/4.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/images/src/knowledgebase/1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/images/src/knowledgebase/2.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/images/src/knowledgebase/3.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/images/src/knowledgebase/4.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/images/src/knowledgebase/5-2.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/images/src/knowledgebase/6.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/images/src/knowledgebase/gameserverCP1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/images/src/knowledgebase/gameserverCP10.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/images/src/knowledgebase/gameserverCP2.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/images/src/knowledgebase/gameserverCP3.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/images/src/knowledgebase/gameserverCP4.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/images/src/knowledgebase/gameserverCP5.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/images/src/knowledgebase/gameserverCP6.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/images/src/knowledgebase/gameserverCP7.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/images/src/knowledgebase/gameserverCP8.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/images/src/knowledgebase/gameserverCP9.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/images/src/knowledgebase/vps_en_1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/images/src/knowledgebase/vps_en_2.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/images/src/knowledgebase/vps_en_3.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/images/src/knowledgebase/vps_en_4.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/images/src/knowledgebase/vps_en_5.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/images/src/knowledgebase/vps_en_6.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/images/src/knowledgebase/vps_ru_1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/images/src/knowledgebase/vps_ru_2.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/images/src/knowledgebase/vps_ru_3.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/images/src/knowledgebase/vps_ru_4.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/images/src/knowledgebase/vps_ru_5.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/images/src/knowledgebase/vps_ru_6.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/images/src/news/1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/images/src/news/2.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/images/src/news/3.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/images/src/news/7_days_to_die_1_0_release.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/images/src/news/GPU_servers_news.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/images/src/news/Satisfactory_10.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/images/src/news/bf4bg.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/images/src/news/dayz_frostline_news.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/images/src/news/domains_news.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/images/src/news/fs22_20GB_now.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/images/src/news/fs25bg.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/images/src/news/happynewyear2025_en.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/images/src/news/happynewyear2025_ru.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/images/src/news/palworld-feybreak.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/images/src/news/xlgames_about_us.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/images/src/news/xlgames_datacenter.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/images/terraria.webp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/robots.txt" beforeDir="false" afterPath="$PROJECT_DIR$/files/robotsExample.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/sitemap.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lib/components/links/PrimaryLink.svelte" beforeDir="false" afterPath="$PROJECT_DIR$/src/lib/components/links/PrimaryLink.svelte" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lib/components/presets/PrimaryPreset.svelte" beforeDir="false" afterPath="$PROJECT_DIR$/src/lib/components/presets/PrimaryPreset.svelte" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/routes/(public)/[...locale]/contacts/+page.svelte" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/(public)/[...locale]/contacts/+page.svelte" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -231,7 +99,7 @@
     &quot;JavaScript Debug.localhost:8962.executor&quot;: &quot;Debug&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;locale&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
     &quot;last_opened_file_path&quot;: &quot;C:/Users/myabo/OneDrive/Документы/GitHub/xlgames/XlgamesFrontendBun/static&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.stylelint&quot;: &quot;true&quot;,
@@ -336,14 +204,7 @@
       <workItem from="1738929548648" duration="8129000" />
       <workItem from="1738952061449" duration="25443000" />
       <workItem from="1739023890288" duration="23673000" />
-    </task>
-    <task id="LOCAL-00012" summary="Обновление">
-      <option name="closed" value="true" />
-      <created>1737693837486</created>
-      <option name="number" value="00012" />
-      <option name="presentableId" value="LOCAL-00012" />
-      <option name="project" value="LOCAL" />
-      <updated>1737693837486</updated>
+      <workItem from="1739056601055" duration="3107000" />
     </task>
     <task id="LOCAL-00013" summary="Обновление">
       <option name="closed" value="true" />
@@ -729,7 +590,15 @@
       <option name="project" value="LOCAL" />
       <updated>1738880683443</updated>
     </task>
-    <option name="localTasksCounter" value="61" />
+    <task id="LOCAL-00061" summary="Обновление">
+      <option name="closed" value="true" />
+      <created>1739055685917</created>
+      <option name="number" value="00061" />
+      <option name="presentableId" value="LOCAL-00061" />
+      <option name="project" value="LOCAL" />
+      <updated>1739055685917</updated>
+    </task>
+    <option name="localTasksCounter" value="62" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

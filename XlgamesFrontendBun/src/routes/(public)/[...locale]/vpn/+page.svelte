@@ -50,7 +50,7 @@ transition-colors hover:bg-(--color-secondary) px-4">
         </p>
       {/if}
     </div>
-    <a rel="nofollow" class="quinary-block w-fit px-6 py-2.5 mt-auto" {href}>{language.Shared.Order}</a>
+    <a rel="nofollow" class="quinary-block w-fit px-6 py-2.5 mt-auto" {href} data-sveltekit-reload>{language.Shared.Order}</a>
   </article>
 {/snippet}
 

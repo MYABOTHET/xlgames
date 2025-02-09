@@ -390,7 +390,7 @@
     {@render Enum(language.Shared.Country, getCountries(server))}
     {@render Enum(language.Shared.Region, getRegions(server))}
     {@render Enum(language.Shared.PricePerMonth, getPrice(server))}
-    <a rel="nofollow" class="primary-link mx-auto mt-3" href="/store/store/{server.Link}">{language.Shared.Order}</a>
+    <a rel="nofollow" class="primary-link mx-auto mt-3" href="/store/store/{server.Link}" data-sveltekit-reload>{language.Shared.Order}</a>
   </section>
 {/snippet}
 
@@ -490,7 +490,7 @@ border-(--color-quaternary) text-(--color-quaternary) max-nine:w-full"
             <td class="text-left"><p class="pl-4">{@html getRegions(server)}</p></td>
             <td>{getPrice(server)}</td>
             <td><a rel="nofollow" class="primary-link mx-auto"
-                   href="/store/store/{server.Link}">{language.Shared.Order}</a></td>
+                   href="/store/store/{server.Link}" data-sveltekit-reload>{language.Shared.Order}</a></td>
           </tr>
         {/each}
         </tbody>

@@ -111,7 +111,7 @@
           <div transition:fade={{duration}} class="absolute primary-top -mr-3 z-20">
             <PrimaryBlock position="primary-triangle-end">
               {#each navigationLinks.menu as link}
-                <PrimaryLink href={link.href} class="primary-bg primary-p" rel="nofollow">
+                <PrimaryLink href={link.href} class="primary-bg primary-p" rel="nofollow" reload={true}>
                   {language.Shared[link.name]}
                 </PrimaryLink>
               {/each}
@@ -134,7 +134,7 @@
                   <PrimaryLink style="width: fit-content" href={transformLocale(languageDto.Lang, link.href)}>{language.Shared[link.name]}</PrimaryLink>
                 {/each}
                 {#each navigationLinks.menu as link}
-                  <PrimaryLink style="width: fit-content" href={link.href}
+                  <PrimaryLink style="width: fit-content" href={link.href} reload={true}
                                rel="nofollow">{language.Shared[link.name]}</PrimaryLink>
                 {/each}
                 {#each navigationLinks.footer as link}

@@ -31,7 +31,7 @@
       <p class="text-(--color-quaternary) text-xs mx-auto font-normal">{dateFormatter.format(new Date(news.Date))}</p>
     </div>
     {#if news.Description}
-      <div class="description">
+      <div class="description" data-sveltekit-reload>
         {@html news.Description}
       </div>
     {/if}
