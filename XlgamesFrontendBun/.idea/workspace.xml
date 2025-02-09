@@ -6,10 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="99b663dd-f91d-428e-817e-a654984c5689" name="Changes" comment="Обновление">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/lib/components/Header.svelte" beforeDir="false" afterPath="$PROJECT_DIR$/src/lib/components/Header.svelte" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/lib/components/links/PrimaryLink.svelte" beforeDir="false" afterPath="$PROJECT_DIR$/src/lib/components/links/PrimaryLink.svelte" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/lib/components/presets/PrimaryPreset.svelte" beforeDir="false" afterPath="$PROJECT_DIR$/src/lib/components/presets/PrimaryPreset.svelte" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/routes/(public)/[...locale]/contacts/+page.svelte" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/(public)/[...locale]/contacts/+page.svelte" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -204,15 +200,8 @@
       <workItem from="1738929548648" duration="8129000" />
       <workItem from="1738952061449" duration="25443000" />
       <workItem from="1739023890288" duration="23673000" />
-      <workItem from="1739056601055" duration="3107000" />
-    </task>
-    <task id="LOCAL-00013" summary="Обновление">
-      <option name="closed" value="true" />
-      <created>1737786913790</created>
-      <option name="number" value="00013" />
-      <option name="presentableId" value="LOCAL-00013" />
-      <option name="project" value="LOCAL" />
-      <updated>1737786913790</updated>
+      <workItem from="1739056601055" duration="3506000" />
+      <workItem from="1739061191399" duration="630000" />
     </task>
     <task id="LOCAL-00014" summary="Обновление">
       <option name="closed" value="true" />
@@ -598,7 +587,15 @@
       <option name="project" value="LOCAL" />
       <updated>1739055685917</updated>
     </task>
-    <option name="localTasksCounter" value="62" />
+    <task id="LOCAL-00062" summary="Обновление">
+      <option name="closed" value="true" />
+      <created>1739060064575</created>
+      <option name="number" value="00062" />
+      <option name="presentableId" value="LOCAL-00062" />
+      <option name="project" value="LOCAL" />
+      <updated>1739060064576</updated>
+    </task>
+    <option name="localTasksCounter" value="63" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
