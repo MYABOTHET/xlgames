@@ -36,6 +36,7 @@
   }
   
   async function setLanguage(languageItem) {
+    document.cookie = `${configuration.userLanguage}=${encodeURIComponent(JSON.stringify(languageItem))};max-age=${maxAgeCookie};path=/;priority=high`;
     if (languageItem.Locale === languageDto.Locale) return;
     document.documentElement.lang = languageItem.Lang;
     let url = page.url.pathname.split("/");

@@ -20,6 +20,8 @@
 		"vite": "^6.0.11"
 	},
 	"dependencies": {
-		"bowser": "^2.11.0"
+		"bowser": "^2.11.0",
+		"isbot": "^5.1.22",
+		"resolve-accept-language": "^3.1.10"
 	}
 }

@@ -5,7 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="99b663dd-f91d-428e-817e-a654984c5689" name="Changes" comment="Обновление">
+      <change beforePath="$PROJECT_DIR$/../XlgamesBackend/XlgamesBackend.sln" beforeDir="false" afterPath="$PROJECT_DIR$/../XlgamesBackend/XlgamesBackend.sln" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bun.lockb" beforeDir="false" afterPath="$PROJECT_DIR$/bun.lockb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lib/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/lib/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lib/tools.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/lib/tools.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/routes/(public)/[...locale]/+layout.server.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/(public)/[...locale]/+layout.server.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/routes/(public)/[...locale]/+layout.svelte" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/(public)/[...locale]/+layout.svelte" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -202,6 +209,8 @@
       <workItem from="1739023890288" duration="23673000" />
       <workItem from="1739056601055" duration="3506000" />
       <workItem from="1739061191399" duration="630000" />
+      <workItem from="1739162211941" duration="11000" />
+      <workItem from="1739170755918" duration="1786000" />
     </task>
     <task id="LOCAL-00014" summary="Обновление">
       <option name="closed" value="true" />

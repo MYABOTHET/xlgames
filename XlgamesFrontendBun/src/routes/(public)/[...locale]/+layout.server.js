@@ -1,21 +1,49 @@
 import configuration from "$lib";
 import Bowser from "bowser";
+import {isbot} from "isbot";
+import {resolveAcceptLanguage} from "resolve-accept-language";
+import {redirect} from "@sveltejs/kit";
+import {getUserLanguageFromCookies, transformLocale} from "$lib/tools.js";
 
 const mobileWidth = 72;
 const headerHeight = 5;
 const author = "Лёвин Валерий Дмитриевич";
 
-export async function load({request, fetch, locals, setHeaders}) {
+export async function load({request, fetch, locals, params, url, cookies}) {
+  let languages = locals.languages;
+  if (params.locale !== undefined) {
+    let paramsLocale = params.locale.split('/');
+    let locale = paramsLocale[0];
+    if (locale === '') locale = 'en';
+    if (locale === 'en') {
+      const userAgent = request.headers.get("user-agent");
+      const isBot = isbot(userAgent);
+      if (!isBot) {
+        let userLocale = null;
+        const userAcceptLanguage = request.headers.get("accept-language");
+        try {
+          userLocale = resolveAcceptLanguage(userAcceptLanguage, languages.map(language => language.Locale), "en-US");
+        } catch {
+          userLocale = "en-US";
+        }
+        if (userLocale !== "en-US") {
+          let userLanguage = getUserLanguageFromCookies(cookies);
+          if (userLanguage) {
+            if (userLanguage.Locale !== "en-US") {
+              redirect(301, transformLocale(userLanguage.Lang, url.pathname));
+            }
+          } else {
+            let lang = languages.find(language => language.Locale === userLocale).Lang;
+            redirect(301, transformLocale(lang, url.pathname));
+          }
+        }
+      }
+    }
+  }
   const promises = [
     fetch(`${configuration.api}/Languages/${locals.language.Id}`),
     fetch(`${configuration.api}/ProjectDatas`),
   ];
-  let languages = null;
-  if (locals.languages) {
-    languages = locals.languages;
-  } else {
-    promises.push(fetch(`${configuration.api}/Languages`));
-  }
   const data = await Promise.all(promises);
   if (!languages) {
     languages = await data[2].json();

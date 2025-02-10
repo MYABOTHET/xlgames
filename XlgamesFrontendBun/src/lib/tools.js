@@ -1,4 +1,5 @@
 import {page} from "$app/state";
+import configuration from "$lib/index.js";
 
 export function createDateFormatter(locale) {
   return new Intl.DateTimeFormat(locale, {
@@ -118,4 +119,16 @@ export function generateUrl(locale, pathname, language) {
   let newUrl = '/' + url.join('/');
   if (newUrl === '/') newUrl = '';
   return `${page.url.origin}${newUrl}`;
+}
+
+export function getUserLanguageFromCookies(cookies) {
+  try {
+    return JSON.parse(cookies.get(configuration.userLanguage));
+  } catch {
+    return null;
+  }
+}
+
+export function getUserLanguageFromCookieClient(cookie) {
+  return JSON.parse(decodeURIComponent(cookie[configuration.userLanguage]));
 }
