@@ -5,6 +5,7 @@ import { SvelteKitPWA } from '@vite-pwa/sveltekit'
 
 export default defineConfig({
 	plugins: [sveltekit(), tailwindcss(),  SvelteKitPWA({
+		base: '/',
 		includeAssets: ['favicon.ico', 'favicon.svg'],
 		manifest: {
 			name: 'XLGAMES',
