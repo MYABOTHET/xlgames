@@ -62,28 +62,30 @@
   <SecondaryLink href={transformLocale(languageDto.Lang, "/games")} name='{language.GameServer.TitlePosition
       ? "«" + data.gameServer.Name + "» " + language.GameServer.Name
       : language.GameServer.Name + " «" + data.gameServer.Name  + "»"}'/>
-  <article class="flex gap-x-10 ternary-gap-y max-decimal:flex-col">
-    <img alt={data.gameServer.Name} class="decimal:secondary-size ternary-size rounded-2xl
+  <div>
+    <article class="flex gap-x-10 ternary-gap-y max-decimal:flex-col">
+      <img alt={data.gameServer.Name} class="decimal:secondary-size ternary-size rounded-2xl
 max-decimal:aspect-square" src={data.gameServer.Src}/>
-    <div class="flex flex-col gap-y-6">
-      <section class="h-full flex flex-col gap-y-1 justify-between">
-        {@render descLine?.(language.Shared.CPU, data.gameServer.CPU)}
-        {@render descLine?.(language.Shared.RAMType, data.gameServer.RAM)}
-        {@render descLine?.(language.Shared.DiskType, data.gameServer.Disk)}
-        {@render descLine?.(language.Shared.Slots, data.gameServer.Slots === "-" ? language.GameServer.Unlimited : data.gameServer.Slots)}
-        {@render descLine?.(language.Shared.Control, getControl(data.gameServer))}
-        {@render descLine?.(language.Shared.Country, getCountry(gameServerData))}
-      </section>
-      <article class="flex items-center max-decimal:gap-x-4 gap-x-8 max-decimal:justify-between">
-        <h1>{language.Shared.PriceFrom} {language.Shared.CurrencySignPosition
-            ? language.Shared.CurrencySign + priceFormatter.format(gameServerData.Price)
-            : priceFormatter.format(gameServerData.Price) + language.Shared.CurrencySign} / {language.Shared.Month}</h1>
-        <a class="quinary-block w-fit quaternary-p" href={data.gameServer.Link}
-           rel="nofollow" data-sveltekit-reload>{language.Shared.Order}</a>
-      </article>
-    </div>
-  </article>
-  <p>{gameServerData.Description}</p>
+      <div class="flex flex-col gap-y-6">
+        <section class="h-full flex flex-col gap-y-1 justify-between">
+          {@render descLine?.(language.Shared.CPU, data.gameServer.CPU)}
+          {@render descLine?.(language.Shared.RAMType, data.gameServer.RAM)}
+          {@render descLine?.(language.Shared.DiskType, data.gameServer.Disk)}
+          {@render descLine?.(language.Shared.Slots, data.gameServer.Slots === "-" ? language.GameServer.Unlimited : data.gameServer.Slots)}
+          {@render descLine?.(language.Shared.Control, getControl(data.gameServer))}
+          {@render descLine?.(language.Shared.Country, getCountry(gameServerData))}
+        </section>
+        <article class="flex items-center max-decimal:gap-x-4 gap-x-8 max-decimal:justify-between">
+          <h1>{language.Shared.PriceFrom} {language.Shared.CurrencySignPosition
+              ? language.Shared.CurrencySign + priceFormatter.format(gameServerData.Price)
+              : priceFormatter.format(gameServerData.Price) + language.Shared.CurrencySign} / {language.Shared.Month}</h1>
+          <a class="quinary-block w-fit quaternary-p" href={data.gameServer.Link}
+             rel="nofollow" data-sveltekit-reload>{language.Shared.Order}</a>
+        </article>
+      </div>
+    </article>
+    <p>{gameServerData.Description}</p>
+  </div>
   {#if gameServerData.GameServerDataPoints.length}
     <PrimaryList items={gameServerData.GameServerDataPoints}/>
   {/if}
