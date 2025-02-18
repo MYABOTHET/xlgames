@@ -42,6 +42,7 @@ namespace XlgamesBackend.Controllers
             }
             gameServerData.Description = gameServerDataDto.Description;
             gameServerData.Head = gameServerDataDto.Head;
+            gameServerData.Price = gameServerDataDto.Price;
             gameServerData.GameServerDataPoints = gameServerDataDto.GameServerDataPoints;
             gameServerData.Russia = gameServerDataDto.Russia;
             gameServerData.USA = gameServerDataDto.USA;

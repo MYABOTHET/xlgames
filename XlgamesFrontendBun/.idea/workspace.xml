@@ -4,7 +4,314 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="99b663dd-f91d-428e-817e-a654984c5689" name="Changes" comment="Обновление" />
+    <list default="true" id="99b663dd-f91d-428e-817e-a654984c5689" name="Changes" comment="Обновление">
+      <change afterPath="$PROJECT_DIR$/static/fonts/Inter.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/fonts/Inter.woff2" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/images/7-days-to-die-news.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/images/7-days-to-die.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/images/about-us-news.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/images/about-us.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/images/battlefield-2042.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/images/battlefield-3.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/images/battlefield-4-news.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/images/battlefield-4.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/images/data-centers-news.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/images/dayz-frostline-news.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/images/dest/games/1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/images/dest/games/2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/images/dest/games/3.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/images/dest/games/4.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/images/dest/games/7dtd.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/images/dest/games/bf3.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/images/dest/games/bf4.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/images/dest/games/conanexiles.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/images/dest/games/minecraft.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/images/dest/news/1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/images/dest/news/2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/images/dest/news/3.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/images/farming-simulator-20gb-news.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/images/farming-simulator-25-news.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/images/happy-new-year-2025-en-news.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/images/happy-new-year-2025-ru-news.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/images/meta/meta_main.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/images/meta/meta_main.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/images/minecraft.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/images/palworld-feybreak-news.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/images/rust.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/images/satisfactory-news.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/images/servers-gpu-news.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/images/src/about-us-news.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/images/src/games/1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/images/src/games/2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/images/src/games/3.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/images/src/games/4.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/images/src/knowledgebase/1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/images/src/knowledgebase/2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/images/src/knowledgebase/3.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/images/src/knowledgebase/4.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/images/src/knowledgebase/5-2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/images/src/knowledgebase/6.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/images/src/knowledgebase/gameserverCP1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/images/src/knowledgebase/gameserverCP10.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/images/src/knowledgebase/gameserverCP2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/images/src/knowledgebase/gameserverCP3.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/images/src/knowledgebase/gameserverCP4.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/images/src/knowledgebase/gameserverCP5.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/images/src/knowledgebase/gameserverCP6.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/images/src/knowledgebase/gameserverCP7.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/images/src/knowledgebase/gameserverCP8.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/images/src/knowledgebase/gameserverCP9.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/images/src/knowledgebase/vps_en_1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/images/src/knowledgebase/vps_en_2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/images/src/knowledgebase/vps_en_3.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/images/src/knowledgebase/vps_en_4.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/images/src/knowledgebase/vps_en_5.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/images/src/knowledgebase/vps_en_6.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/images/src/knowledgebase/vps_ru_1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/images/src/knowledgebase/vps_ru_2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/images/src/knowledgebase/vps_ru_3.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/images/src/knowledgebase/vps_ru_4.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/images/src/knowledgebase/vps_ru_5.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/images/src/knowledgebase/vps_ru_6.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/images/src/news/1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/images/src/news/2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/images/src/news/3.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/images/src/news/7_days_to_die_1_0_release.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/images/src/news/GPU_servers_news.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/images/src/news/Satisfactory_10.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/images/src/news/bf4bg.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/images/src/news/dayz_frostline_news.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/images/src/news/domains_news.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/images/src/news/fs22_20GB_now.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/images/src/news/fs25bg.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/images/src/news/happynewyear2025_en.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/images/src/news/happynewyear2025_ru.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/images/src/news/palworld-feybreak.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/images/src/news/xlgames_about_us.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/images/src/news/xlgames_datacenter.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/images/terraria.webp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_07_02_2025_1_34_[Changes]/shelved.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_07_02_2025_1_34__Changes_.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_07_02_2025_1_49_[Changes]/shelved.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_07_02_2025_1_49_[Changes]1/shelved.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_07_02_2025_1_49__Changes_.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_07_02_2025_1_49__Changes_1.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_09_02_2025_2_00_[Changes]/shelved.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_09_02_2025_2_00__Changes_.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/routes/(public)/[...locale]/games/+page.svelte" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/(public)/[...locale]/games/+page.svelte" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../xlgames-backend/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../xlgames-backend/xlgames-backend.sln" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../xlgames-backend/xlgames-backend/ApplicationContext/ApplicationDbContext.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../xlgames-backend/xlgames-backend/Controllers/AuthController.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../xlgames-backend/xlgames-backend/Controllers/LanguagesController.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../xlgames-backend/xlgames-backend/Controllers/NewsController.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../xlgames-backend/xlgames-backend/DTOs/Languages/CreateLanguageDTO.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../xlgames-backend/xlgames-backend/DTOs/LoginDTO.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../xlgames-backend/xlgames-backend/Models/BaseItem.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../xlgames-backend/xlgames-backend/Models/BasePage.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../xlgames-backend/xlgames-backend/Models/Items/ContactItem.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../xlgames-backend/xlgames-backend/Models/Items/DataCenterItem.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../xlgames-backend/xlgames-backend/Models/Items/MainBlock.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../xlgames-backend/xlgames-backend/Models/Items/MainDataCenterPoint.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../xlgames-backend/xlgames-backend/Models/Items/PrivacyPolicyItem.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../xlgames-backend/xlgames-backend/Models/Items/TermsServiceItem.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../xlgames-backend/xlgames-backend/Models/Language.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../xlgames-backend/xlgames-backend/Models/NewsItem.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../xlgames-backend/xlgames-backend/Models/NewsModel.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../xlgames-backend/xlgames-backend/Models/Translations/AboutPage.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../xlgames-backend/xlgames-backend/Models/Translations/ContactsPage.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../xlgames-backend/xlgames-backend/Models/Translations/DataCenterPage.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../xlgames-backend/xlgames-backend/Models/Translations/GameServersPage.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../xlgames-backend/xlgames-backend/Models/Translations/MainPage.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../xlgames-backend/xlgames-backend/Models/Translations/NewsPage.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../xlgames-backend/xlgames-backend/Models/Translations/PrivacyPolicyPage.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../xlgames-backend/xlgames-backend/Models/Translations/ServersAIPage.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../xlgames-backend/xlgames-backend/Models/Translations/ServersPage.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../xlgames-backend/xlgames-backend/Models/Translations/SharedPage.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../xlgames-backend/xlgames-backend/Models/Translations/TermsServicePage.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../xlgames-backend/xlgames-backend/Models/Translations/VPNPage.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../xlgames-backend/xlgames-backend/Models/Translations/VPSPage.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../xlgames-backend/xlgames-backend/Models/Translations/WebHostingPage.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../xlgames-backend/xlgames-backend/Models/User.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../xlgames-backend/xlgames-backend/MySqlApplicationContext/MySqlApplicationDbContext.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../xlgames-backend/xlgames-backend/Program.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../xlgames-backend/xlgames-backend/Properties/launchSettings.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../xlgames-backend/xlgames-backend/xlgames-backend.csproj" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../xlgames-test-ssg/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../xlgames-test-ssg/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../xlgames-test-ssg/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../xlgames-test-ssg/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../xlgames-test-ssg/.idea/xlgames-test-ssg.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../xlgames-test-ssg/.npmrc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../xlgames-test-ssg/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../xlgames-test-ssg/bun.lockb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../xlgames-test-ssg/jsconfig.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../xlgames-test-ssg/package.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../xlgames-test-ssg/src/app.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../xlgames-test-ssg/src/lib/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../xlgames-test-ssg/src/routes/+layout.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../xlgames-test-ssg/src/routes/+page.svelte" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../xlgames-test-ssg/static/favicon.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../xlgames-test-ssg/svelte.config.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../xlgames-test-ssg/vite.config.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../xlgames_old/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../xlgames_old/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../xlgames_old/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../xlgames_old/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../xlgames_old/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../xlgames_old/.idea/xlgames.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../xlgames_old/.npmrc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../xlgames_old/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../xlgames_old/eslint.config.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../xlgames_old/jsconfig.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../xlgames_old/package-lock.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../xlgames_old/package.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../xlgames_old/postcss.config.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../xlgames_old/src/app.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../xlgames_old/src/app.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../xlgames_old/src/lib/components/Footer.svelte" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../xlgames_old/src/lib/components/Header.svelte" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../xlgames_old/src/lib/components/blocks/Block1.svelte" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../xlgames_old/src/lib/components/blocks/Block2.svelte" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../xlgames_old/src/lib/components/blocks/Block3.svelte" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../xlgames_old/src/lib/components/blocks/Block4.svelte" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../xlgames_old/src/lib/components/blocks/Block5.svelte" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../xlgames_old/src/lib/components/cards/Card1.svelte" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../xlgames_old/src/lib/components/cards/Card2.svelte" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../xlgames_old/src/lib/components/drop-down-menus/DropDownMenu1.svelte" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../xlgames_old/src/lib/components/drop-down-menus/DropDownMenu2.svelte" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../xlgames_old/src/lib/components/icons/Icon1.svelte" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../xlgames_old/src/lib/components/icons/components/ProjectIcon.svelte" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../xlgames_old/src/lib/components/icons/components/ProjectLogo.svelte" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../xlgames_old/src/lib/components/icons/svg/Arrow.svelte" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../xlgames_old/src/lib/components/icons/svg/Arrow2.svelte" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../xlgames_old/src/lib/components/icons/svg/Language.svelte" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../xlgames_old/src/lib/components/icons/svg/Load.svelte" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../xlgames_old/src/lib/components/icons/svg/Menu.svelte" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../xlgames_old/src/lib/components/icons/svg/Profile.svelte" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../xlgames_old/src/lib/components/icons/svg/Triangle.svelte" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../xlgames_old/src/lib/components/icons/svg/VK.svelte" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../xlgames_old/src/lib/components/img/Img1.svelte" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../xlgames_old/src/lib/components/links/Link1.svelte" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../xlgames_old/src/lib/components/links/Link2.svelte" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../xlgames_old/src/lib/components/links/Link3.svelte" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../xlgames_old/src/lib/components/links/Link4.svelte" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../xlgames_old/src/lib/components/links/Link5.svelte" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../xlgames_old/src/lib/components/sections/Section1.svelte" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../xlgames_old/src/lib/components/titles/Title1.svelte" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../xlgames_old/src/lib/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../xlgames_old/src/lib/state.svelte.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../xlgames_old/src/routes/(user)/+layout.server.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../xlgames_old/src/routes/(user)/+layout.svelte" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../xlgames_old/src/routes/(user)/+page.server.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../xlgames_old/src/routes/(user)/+page.svelte" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../xlgames_old/src/routes/(user)/+server.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../xlgames_old/src/routes/(user)/about/+page.server.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../xlgames_old/src/routes/(user)/about/+page.svelte" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../xlgames_old/src/routes/(user)/about/+server.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../xlgames_old/src/routes/(user)/contacts/+page.server.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../xlgames_old/src/routes/(user)/contacts/+page.svelte" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../xlgames_old/src/routes/(user)/contacts/+server.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../xlgames_old/src/routes/(user)/data-center/+page.server.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../xlgames_old/src/routes/(user)/data-center/+page.svelte" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../xlgames_old/src/routes/(user)/data-center/+server.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../xlgames_old/src/routes/(user)/game-servers/+page.server.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../xlgames_old/src/routes/(user)/game-servers/+page.svelte" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../xlgames_old/src/routes/(user)/game-servers/+server.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../xlgames_old/src/routes/(user)/game-servers/[name]/+page.svelte" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../xlgames_old/src/routes/(user)/news/+page.server.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../xlgames_old/src/routes/(user)/news/+page.svelte" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../xlgames_old/src/routes/(user)/news/+server.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../xlgames_old/src/routes/(user)/news/[name]/+page.server.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../xlgames_old/src/routes/(user)/news/[name]/+page.svelte" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../xlgames_old/src/routes/(user)/news/[name]/+server.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../xlgames_old/src/routes/(user)/privacy-policy/+page.server.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../xlgames_old/src/routes/(user)/privacy-policy/+page.svelte" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../xlgames_old/src/routes/(user)/privacy-policy/+server.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../xlgames_old/src/routes/(user)/servers-ai/+page.server.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../xlgames_old/src/routes/(user)/servers-ai/+page.svelte" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../xlgames_old/src/routes/(user)/servers-ai/+server.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../xlgames_old/src/routes/(user)/servers/+page.server.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../xlgames_old/src/routes/(user)/servers/+page.svelte" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../xlgames_old/src/routes/(user)/servers/+server.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../xlgames_old/src/routes/(user)/terms-of-service/+page.server.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../xlgames_old/src/routes/(user)/terms-of-service/+page.svelte" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../xlgames_old/src/routes/(user)/terms-of-service/+server.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../xlgames_old/src/routes/(user)/vpn/+page.server.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../xlgames_old/src/routes/(user)/vpn/+page.svelte" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../xlgames_old/src/routes/(user)/vpn/+server.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../xlgames_old/src/routes/(user)/vps/+page.server.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../xlgames_old/src/routes/(user)/vps/+page.svelte" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../xlgames_old/src/routes/(user)/vps/+server.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../xlgames_old/src/routes/(user)/web-hosting/+page.server.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../xlgames_old/src/routes/(user)/web-hosting/+page.svelte" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../xlgames_old/src/routes/(user)/web-hosting/+server.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../xlgames_old/src/routes/+error.svelte" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../xlgames_old/src/routes/+layout.server.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../xlgames_old/src/routes/+layout.svelte" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../xlgames_old/src/routes/admin/+page.svelte" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../xlgames_old/static/farm.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../xlgames_old/static/favicon.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../xlgames_old/static/minecraft.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../xlgames_old/svelte.config.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../xlgames_old/tailwind.config.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../xlgames_old/vite.config.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../xlgames_whmcs/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../xlgames_whmcs/.vscode/extensions.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../xlgames_whmcs/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../xlgames_whmcs/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../xlgames_whmcs/jsconfig.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../xlgames_whmcs/package-lock.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../xlgames_whmcs/package.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../xlgames_whmcs/postcss.config.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../xlgames_whmcs/src/App.svelte" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../xlgames_whmcs/src/app.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../xlgames_whmcs/src/lib/components-old/Button.svelte" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../xlgames_whmcs/src/lib/components-old/ControlPanel.svelte" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../xlgames_whmcs/src/lib/components-old/Down.svelte" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../xlgames_whmcs/src/lib/components-old/FreezeScreen.svelte" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../xlgames_whmcs/src/lib/components-old/Input.svelte" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../xlgames_whmcs/src/lib/components-old/Item.svelte" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../xlgames_whmcs/src/lib/components-old/Loading.svelte" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../xlgames_whmcs/src/lib/components-old/NetworkStatistics.svelte" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../xlgames_whmcs/src/lib/components-old/Section.svelte" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../xlgames_whmcs/src/lib/components-old/Select.svelte" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../xlgames_whmcs/src/lib/components-old/SystemInfo.svelte" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../xlgames_whmcs/src/lib/components/BottomLine.svelte" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../xlgames_whmcs/src/lib/components/Keys.svelte" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../xlgames_whmcs/src/lib/components/Languages.svelte" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../xlgames_whmcs/src/lib/components/Links.svelte" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../xlgames_whmcs/src/lib/components/Saving.svelte" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../xlgames_whmcs/src/lib/components/Section.svelte" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../xlgames_whmcs/src/lib/components/StaticPrice.svelte" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../xlgames_whmcs/src/lib/components/buttons/PrimaryButton.svelte" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../xlgames_whmcs/src/lib/components/buttons/QuaternaryButton.svelte" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../xlgames_whmcs/src/lib/components/buttons/SecondaryButton.svelte" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../xlgames_whmcs/src/lib/components/buttons/TernaryButton.svelte" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../xlgames_whmcs/src/lib/components/enums/PrimaryEnum.svelte" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../xlgames_whmcs/src/lib/components/enums/SecondaryEnum.svelte" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../xlgames_whmcs/src/lib/components/enums/TernaryEnum.svelte" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../xlgames_whmcs/src/lib/components/inputs/PrimaryInput.svelte" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../xlgames_whmcs/src/lib/components/inputs/SecondaryInput.svelte" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../xlgames_whmcs/src/lib/components/inputs/TernaryInput.svelte" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../xlgames_whmcs/src/lib/components/svg/Loader.svelte" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../xlgames_whmcs/src/lib/components/svg/Selectel.svelte" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../xlgames_whmcs/src/lib/components/svg/SurvivalHost.svelte" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../xlgames_whmcs/src/lib/components/texts/PrimaryText.svelte" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../xlgames_whmcs/src/lib/components/texts/QuaternaryText.svelte" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../xlgames_whmcs/src/lib/components/texts/SecondaryText.svelte" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../xlgames_whmcs/src/lib/components/texts/TernaryText.svelte" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../xlgames_whmcs/src/lib/pages/AdminPage.svelte" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../xlgames_whmcs/src/lib/services/Admin.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../xlgames_whmcs/src/lib/services/Tools.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../xlgames_whmcs/src/lib/templates/AdminTemplate.svelte" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../xlgames_whmcs/src/main.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../xlgames_whmcs/src/vite-env.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../xlgames_whmcs/svelte.config.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../xlgames_whmcs/tailwind.config.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../xlgames_whmcs/vite.config.js" beforeDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -126,7 +433,7 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-js-predefined-d6986cc7102b-822845ee3bb5-JavaScript-WS-243.23654.157" />
+        <option value="bundled-js-predefined-d6986cc7102b-76f8388c3a79-JavaScript-WS-243.24978.60" />
       </set>
     </attachedChunks>
   </component>
@@ -206,14 +513,10 @@
       <workItem from="1739309651207" duration="232000" />
       <workItem from="1739383111180" duration="960000" />
       <workItem from="1739408018989" duration="120000" />
-    </task>
-    <task id="LOCAL-00015" summary="Обновление">
-      <option name="closed" value="true" />
-      <created>1737807726260</created>
-      <option name="number" value="00015" />
-      <option name="presentableId" value="LOCAL-00015" />
-      <option name="project" value="LOCAL" />
-      <updated>1737807726260</updated>
+      <workItem from="1739466880391" duration="93000" />
+      <workItem from="1739541014954" duration="93000" />
+      <workItem from="1739836171594" duration="1188000" />
+      <workItem from="1739837416387" duration="368000" />
     </task>
     <task id="LOCAL-00016" summary="Обновление">
       <option name="closed" value="true" />
@@ -599,7 +902,15 @@
       <option name="project" value="LOCAL" />
       <updated>1739408098765</updated>
     </task>
-    <option name="localTasksCounter" value="64" />
+    <task id="LOCAL-00064" summary="Обновление">
+      <option name="closed" value="true" />
+      <created>1739466938838</created>
+      <option name="number" value="00064" />
+      <option name="presentableId" value="LOCAL-00064" />
+      <option name="project" value="LOCAL" />
+      <updated>1739466938838</updated>
+    </task>
+    <option name="localTasksCounter" value="65" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

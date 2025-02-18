@@ -15,6 +15,12 @@
   let gameServers = $state.raw(data.gameServers);
   let priceFormatter = $derived(new Intl.NumberFormat(language.Locale));
   
+  function compare( a, b ) {
+    if ( a.Name < b.Name ) return -1;
+    if ( a.Name > b.Name ) return 1;
+    return 0;
+  }
+  
   function seeAll() {
     if (!allActive) {
       searchQuery = "";
@@ -84,7 +90,7 @@ max-nine:flex-[1_1_25%]"
   {#if gameServers.length}
     <nav class="grid grid-cols-4 primary-gap max-octal:grid-cols-3 max-ternary:grid-cols-2 max-nine:grid-cols-none
     max-nine:auto-cols-fr">
-      {#each gameServers as gameServer (gameServer.Id)}
+      {#each gameServers.slice().sort(compare) as gameServer (gameServer.Id)}
         {@const translate = gameServer.GameServerDataModels.find(item => item.LanguageId === language.Id)}
         {@const sign = language.Shared.CurrencySign}
         {@const position = language.Shared.CurrencySignPosition}
