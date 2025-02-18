@@ -43,7 +43,7 @@ namespace XlgamesBackend.Controllers
                             Price = gameServerData.Price,
                         }).ToList()
                 })
-                .OrderBy(gameServer => gameServer.Id)
+                .OrderBy(gameServer => gameServer.Name)
                 .Take(max)
                 .ToListAsync();
         }
