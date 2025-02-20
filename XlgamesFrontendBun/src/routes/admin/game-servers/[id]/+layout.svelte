@@ -47,7 +47,7 @@
     access = null;
     error = null;
     counter--;
-    if (counter <= 0) {
+    if (counter === 0) {
       const response = await fetch(`/admin/game-servers/${page.params.id}`, {
         method: "DELETE"
       });

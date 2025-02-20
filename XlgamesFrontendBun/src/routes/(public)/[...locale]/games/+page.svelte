@@ -97,7 +97,7 @@ max-nine:flex-[1_1_25%]"
         {@const price = priceFormatter.format(translate.Price)}
         <PrimaryCard name={gameServer.Name} description="{language.Shared.PriceFrom}
 {position ? sign + price : price + sign}"
-                     src={gameServer.Src} class="w-full h-full" href={transformLocale(languageDto.Lang, `/games/${gameServer.LinkName}`)}/>
+                     src={gameServer.Src} class="w-full h-full aspect-square" href={transformLocale(languageDto.Lang, `/games/${gameServer.LinkName}`)}/>
       {/each}
     </nav>
   {/if}
