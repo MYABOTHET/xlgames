@@ -43,7 +43,7 @@
     <a title="Ссылка на счёт" href="https://xlgames.gg/store/admin/invoices.php?action=edit&id={payment.invoice_id}"
     >{payment.invoice_id}</a>
   </Enum>
-  <Enum title="Клиент">{payment.fio}</Enum>
+  <Enum title="Клиент">{payment.fio} - <a href="https://xlgames.gg/store/admin/clientssummary.php?userid={payment.user_id}">{payment.user_id}</a></Enum>
   <Enum title="Куда">{payment.data}</Enum>
   <Enum title="Метод">{payment.bank}</Enum>
   <Enum title="Цена">≈ {payment.price} RUB</Enum>

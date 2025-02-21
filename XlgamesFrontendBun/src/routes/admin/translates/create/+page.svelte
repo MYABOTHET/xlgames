@@ -1,9 +1,13 @@
+<script module>
+  let languageDtoCache = null;
+</script>
+
 <script>
   import SecondaryPage from "$lib/components/pages/SecondaryPage.svelte";
   import QuaternarySection from "$lib/components/sections/QuaternarySection.svelte";
   import PrimaryTextarea from "$lib/components/textarea/PrimaryTextarea.svelte";
   import SaveForm from "$lib/components/SaveForm.svelte";
-  import {getContext} from "svelte";
+  import {getContext, onMount} from "svelte";
   import {goto} from "$app/navigation";
   
   let links = getContext("links");
@@ -48,6 +52,13 @@
     } catch {
       return true;
     }
+  });
+  
+  onMount(() => {
+    languageDtoCache ? languageDto = languageDtoCache : null;
+    return () => {
+      languageDtoCache = languageDto;
+    };
   });
 </script>
 

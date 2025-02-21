@@ -1,8 +1,13 @@
+<script module>
+  let projectDataCache = null;
+</script>
+
 <script>
   import SecondaryPage from "$lib/components/pages/SecondaryPage.svelte";
   import QuaternarySection from "$lib/components/sections/QuaternarySection.svelte";
   import PrimaryTextarea from "$lib/components/textarea/PrimaryTextarea.svelte";
   import SaveForm from "$lib/components/SaveForm.svelte";
+  import {onMount} from "svelte";
   
   const {data} = $props();
   let projectData = $state(data.projectData);
@@ -27,6 +32,13 @@
       error = await response.text();
     }
   }
+  
+  onMount(() => {
+    projectDataCache ? projectData = projectDataCache : null;
+    return () => {
+      projectDataCache = projectData;
+    };
+  });
 </script>
 
 <SecondaryPage title="Данные проекта">

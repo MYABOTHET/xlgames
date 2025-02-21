@@ -12,13 +12,13 @@ export async function handle({event, resolve}) {
   }
   if (params.locale !== undefined) {
     let paramsLocale = params.locale.split('/');
-    if (paramsLocale.length !== 1) error(404, 'Not found');
+    if (paramsLocale.length !== 1) error(404, 'Not Found');
     let locale = paramsLocale[0];
-    if (locale === 'en') error(404, 'Not found');
+    if (locale === 'en') error(404, 'Not Found');
     if (locale === '') locale = 'en';
     const languages = await (await fetch(`${configuration.api}/Languages`)).json();
     let language = languages.find(language => language.Lang === locale);
-    if (!language) error(404, 'Not found');
+    if (!language) error(404, 'Not Found');
     locals.languages = languages;
     locals.language = language;
     return resolve(event, {

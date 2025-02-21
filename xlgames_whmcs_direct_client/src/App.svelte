@@ -41,7 +41,9 @@
       price: formData.amount,
       date: new Date().getTime().toString(),
       data: "",
-      bank: ""
+      bank: "",
+      user_id: formData.user_id,
+      postcode: formData.postcode,
     };
     if (sbp) {
       result.data = payment_details.phone_number;

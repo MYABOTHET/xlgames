@@ -1,12 +1,13 @@
 <script module>
   let language = $state(null);
+  let languageCaches = new Map();
 </script>
 
 <script>
   import PrimaryPage from "$lib/components/pages/PrimaryPage.svelte";
   import PrimaryNav from "$lib/components/nav/PrimaryNav.svelte";
   import {page} from "$app/state";
-  import {getContext, setContext} from "svelte";
+  import {getContext, onMount, setContext} from "svelte";
   import {goto} from "$app/navigation";
   import SaveFormPreset from "$lib/components/SaveFormPreset.svelte";
   
@@ -84,6 +85,12 @@
     } catch {
       return true;
     }
+  });
+  
+  onMount(() => {
+    return () => {
+      // console.log('asd');
+    };
   });
   
   setContext("deleteLanguage", deleteLanguage);
