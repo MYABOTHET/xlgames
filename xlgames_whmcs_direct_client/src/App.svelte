@@ -13,6 +13,7 @@
   let sbp = $state(true);
   let current_payment_method = $state({});
   let payed = $state(false);
+  let load = $state(false);
   
   const general_headings = {
     headers: {
@@ -35,6 +36,7 @@
   }
   
   async function pay() {
+    load = true;
     let result = {
       invoice_id: formData.invoice_id,
       fio: decodeURI(formData.first_name) + " " + decodeURI(formData.last_name),
@@ -62,6 +64,7 @@
     } else {
       alert("Произошла ошибка... " + await response.text());
     }
+    load = false;
   }
   
   onMount(() => {
@@ -114,7 +117,11 @@
           <Enum title="Вы">{decodeURI(formData.first_name)} {decodeURI(formData.last_name)}</Enum>
         </div>
       </div>
-      <button class="pay" onclick={pay}>Я оплатил</button>
+      {#if load}
+        <h5 class="message">Загрузка...</h5>
+      {:else}
+        <button class="pay" onclick={pay}>Я оплатил</button>
+      {/if}
     {/if}
   </div>
 {/if}
