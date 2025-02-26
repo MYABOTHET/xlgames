@@ -8,6 +8,7 @@ namespace XlgamesBackend.Models.GameServers
     [Index(nameof(Name), IsUnique = true)]
     public class GameServer : GameServerBase
     {
+        public bool DedicatedDescription { get; set; }
         public string CPU { get; set; } = "...";
         public string RAM { get; set; } = "...";
         public string Disk { get; set; } = "...";

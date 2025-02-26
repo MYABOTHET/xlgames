@@ -69,6 +69,7 @@ namespace XlgamesBackend.Controllers
                     Src = gameServer.Src,
                     ControlPanel = gameServer.ControlPanel,
                     FTP = gameServer.FTP,
+                    DedicatedDescription = gameServer.DedicatedDescription,
                     GameServerDataPrimaryModels = gameServer.GameServerDatas
                         .Select(gameServerData => new GameServerDataPrimaryModel()
                         {
@@ -100,6 +101,7 @@ namespace XlgamesBackend.Controllers
                     Src = gameServer.Src,
                     ControlPanel = gameServer.ControlPanel,
                     FTP = gameServer.FTP,
+                    DedicatedDescription = gameServer.DedicatedDescription,
                     GameServerDataPrimaryModels = gameServer.GameServerDatas
                         .Select(gameServerData => new GameServerDataPrimaryModel()
                         {
@@ -201,6 +203,7 @@ namespace XlgamesBackend.Controllers
             gameServer.Link = gameServerDto.Link;
             gameServer.ControlPanel = gameServerDto.ControlPanel;
             gameServer.FTP = gameServerDto.FTP;
+            gameServer.DedicatedDescription = gameServer.DedicatedDescription;
             await _postgreSQLContext.SaveChangesAsync();
             return Ok();
         }

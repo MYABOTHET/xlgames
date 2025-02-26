@@ -4,9 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="99b663dd-f91d-428e-817e-a654984c5689" name="Changes" comment="Обновление">
-      <change beforePath="$PROJECT_DIR$/src/routes/admin/translates/[id]/game-server/+page.svelte" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/admin/translates/[id]/game-server/+page.svelte" afterDir="false" />
-    </list>
+    <list default="true" id="99b663dd-f91d-428e-817e-a654984c5689" name="Changes" comment="Обновление" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -229,31 +227,7 @@
       <workItem from="1740140951703" duration="89000" />
       <workItem from="1740553746479" duration="4247000" />
       <workItem from="1740572988356" duration="2364000" />
-      <workItem from="1740576474855" duration="6367000" />
-    </task>
-    <task id="LOCAL-00029" summary="Обновление">
-      <option name="closed" value="true" />
-      <created>1738082683958</created>
-      <option name="number" value="00029" />
-      <option name="presentableId" value="LOCAL-00029" />
-      <option name="project" value="LOCAL" />
-      <updated>1738082683958</updated>
-    </task>
-    <task id="LOCAL-00030" summary="Обновление">
-      <option name="closed" value="true" />
-      <created>1738084272882</created>
-      <option name="number" value="00030" />
-      <option name="presentableId" value="LOCAL-00030" />
-      <option name="project" value="LOCAL" />
-      <updated>1738084272882</updated>
-    </task>
-    <task id="LOCAL-00031" summary="Обновление">
-      <option name="closed" value="true" />
-      <created>1738146086985</created>
-      <option name="number" value="00031" />
-      <option name="presentableId" value="LOCAL-00031" />
-      <option name="project" value="LOCAL" />
-      <updated>1738146086985</updated>
+      <workItem from="1740576474855" duration="7207000" />
     </task>
     <task id="LOCAL-00032" summary="Обновление">
       <option name="closed" value="true" />
@@ -623,7 +597,31 @@
       <option name="project" value="LOCAL" />
       <updated>1740582683207</updated>
     </task>
-    <option name="localTasksCounter" value="78" />
+    <task id="LOCAL-00078" summary="Обновление">
+      <option name="closed" value="true" />
+      <created>1740582940892</created>
+      <option name="number" value="00078" />
+      <option name="presentableId" value="LOCAL-00078" />
+      <option name="project" value="LOCAL" />
+      <updated>1740582940892</updated>
+    </task>
+    <task id="LOCAL-00079" summary="Обновление">
+      <option name="closed" value="true" />
+      <created>1740582991589</created>
+      <option name="number" value="00079" />
+      <option name="presentableId" value="LOCAL-00079" />
+      <option name="project" value="LOCAL" />
+      <updated>1740582991589</updated>
+    </task>
+    <task id="LOCAL-00080" summary="Обновление">
+      <option name="closed" value="true" />
+      <created>1740583126926</created>
+      <option name="number" value="00080" />
+      <option name="presentableId" value="LOCAL-00080" />
+      <option name="project" value="LOCAL" />
+      <updated>1740583126926</updated>
+    </task>
+    <option name="localTasksCounter" value="81" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
