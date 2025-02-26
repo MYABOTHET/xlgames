@@ -7,5 +7,8 @@ namespace XlgamesBackend.Models.Translates
     {
         public string Unlimited { get; set; } = "...";
         public bool TitlePosition { get; set; } // true - <Title> Game Server, false - Game Server <Title>
+        public string DedicatedStart { get; set; } = "...";
+        public string DedicatedCenter { get; set; } = "...";
+        public string DedicatedEnd { get; set; } = "...";
     }
 }

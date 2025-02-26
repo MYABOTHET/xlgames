@@ -5,97 +5,23 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="99b663dd-f91d-428e-817e-a654984c5689" name="Changes" comment="Обновление">
-      <change afterPath="$PROJECT_DIR$/static/images/7-days-to-die-news.webp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/images/7-days-to-die.webp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/images/about-us-news.webp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/images/about-us.webp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/images/battlefield-2042.webp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/images/battlefield-3.webp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/images/battlefield-4-news.webp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/images/battlefield-4.webp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/images/data-centers-news.webp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/images/dayz-frostline-news.webp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/images/dest/games/1.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/images/dest/games/2.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/images/dest/games/3.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/images/dest/games/4.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/images/dest/games/7dtd.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/images/dest/games/bf3.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/images/dest/games/bf4.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/images/dest/games/conanexiles.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/images/dest/games/minecraft.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/images/dest/news/1.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/images/dest/news/2.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/images/dest/news/3.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/images/farming-simulator-20gb-news.webp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/images/farming-simulator-25-news.webp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/images/happy-new-year-2025-en-news.webp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/images/happy-new-year-2025-ru-news.webp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/images/meta/meta_main.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/images/meta/meta_main.webp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/images/minecraft.webp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/images/palworld-feybreak-news.webp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/images/rust.webp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/images/satisfactory-news.webp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/images/servers-gpu-news.webp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/images/src/about-us-news.webp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/images/src/games/1.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/images/src/games/2.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/images/src/games/3.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/images/src/games/4.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/images/src/knowledgebase/1.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/images/src/knowledgebase/2.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/images/src/knowledgebase/3.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/images/src/knowledgebase/4.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/images/src/knowledgebase/5-2.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/images/src/knowledgebase/6.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/images/src/knowledgebase/gameserverCP1.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/images/src/knowledgebase/gameserverCP10.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/images/src/knowledgebase/gameserverCP2.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/images/src/knowledgebase/gameserverCP3.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/images/src/knowledgebase/gameserverCP4.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/images/src/knowledgebase/gameserverCP5.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/images/src/knowledgebase/gameserverCP6.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/images/src/knowledgebase/gameserverCP7.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/images/src/knowledgebase/gameserverCP8.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/images/src/knowledgebase/gameserverCP9.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/images/src/knowledgebase/vps_en_1.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/images/src/knowledgebase/vps_en_2.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/images/src/knowledgebase/vps_en_3.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/images/src/knowledgebase/vps_en_4.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/images/src/knowledgebase/vps_en_5.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/images/src/knowledgebase/vps_en_6.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/images/src/knowledgebase/vps_ru_1.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/images/src/knowledgebase/vps_ru_2.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/images/src/knowledgebase/vps_ru_3.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/images/src/knowledgebase/vps_ru_4.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/images/src/knowledgebase/vps_ru_5.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/images/src/knowledgebase/vps_ru_6.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/images/src/news/1.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/images/src/news/2.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/images/src/news/3.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/images/src/news/7_days_to_die_1_0_release.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/images/src/news/GPU_servers_news.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/images/src/news/Satisfactory_10.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/images/src/news/bf4bg.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/images/src/news/dayz_frostline_news.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/images/src/news/domains_news.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/images/src/news/fs22_20GB_now.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/images/src/news/fs25bg.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/images/src/news/happynewyear2025_en.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/images/src/news/happynewyear2025_ru.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/images/src/news/palworld-feybreak.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/images/src/news/xlgames_about_us.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/images/src/news/xlgames_datacenter.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/images/terraria.webp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../XlgamesBackend/XlgamesBackend.sln" beforeDir="false" afterPath="$PROJECT_DIR$/../XlgamesBackend/XlgamesBackend.sln" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/lib/components/svg/PrimaryCPU.svelte" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/lib/components/svg/PrimaryGamepad.svelte" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/routes/(public)/[...locale]/about-us/+page.svelte" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/(public)/[...locale]/about-us/+page.svelte" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/routes/(public)/[...locale]/games/[link]/+error.svelte" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/(public)/[...locale]/+error.svelte" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/routes/(public)/[...locale]/games/[link]/+page.svelte" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/(public)/[...locale]/games/[link]/+page.svelte" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/routes/(public)/[...locale]/news/[link]/+error.svelte" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ChangesViewManager">
+    <option name="groupingKeys">
+      <option value="directory" />
+    </option>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -136,6 +62,8 @@
         <option value="+page.js" />
         <option value="JavaScript File" />
         <option value="HTML File" />
+        <option value="PrimaryGamepad" />
+        <option value="PrimaryCPU" />
       </list>
     </option>
   </component>
@@ -183,7 +111,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.git.unshallow": "true",
     "git-widget-placeholder": "main",
-    "last_opened_file_path": "C:/Users/myabo/OneDrive/Документы/GitHub/xlgames/XlgamesFrontendBun/static",
+    "last_opened_file_path": "C:/Users/myabo/OneDrive/Документы/GitHub/xlgames/XlgamesFrontendBun/src/routes/(public)/[...locale]",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.stylelint": "true",
     "node.js.detected.package.tslint": "true",
@@ -191,25 +119,25 @@
     "node.js.selected.package.stylelint": "",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "settings.nodejs",
+    "settings.editor.selected.configurable": "settings.bun",
     "ts.external.directory.path": "C:\\Program Files\\JetBrains\\WebStorm 2024.1.5\\plugins\\javascript-plugin\\jsLanguageServicesImpl\\external",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\myabo\OneDrive\Документы\GitHub\xlgames\XlgamesFrontendBun\static" />
       <recent name="C:\Users\myabo\OneDrive\Документы\GitHub\xlgames\XlgamesFrontendBun\src\routes\(public)\[...locale]" />
+      <recent name="C:\Users\myabo\OneDrive\Документы\GitHub\xlgames\XlgamesFrontendBun\static" />
       <recent name="C:\Users\myabo\OneDrive\Документы\GitHub\xlgames\XlgamesFrontendBun\src\routes\(public)\[...locale]\news\[link]" />
       <recent name="C:\Users\myabo\OneDrive\Документы\GitHub\xlgames\XlgamesFrontendBun\src\routes\(public)\[...locale]\games\[link]" />
       <recent name="C:\Users\myabo\OneDrive\Документы\GitHub\xlgames\XlgamesFrontendBun\src\routes\(public)" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\myabo\OneDrive\Документы\GitHub\xlgames\XlgamesFrontendBun\static\images\games" />
       <recent name="C:\Users\myabo\OneDrive\Документы\GitHub\xlgames\XlgamesFrontendBun\src\routes\(public)\[locale]" />
       <recent name="C:\Users\myabo\OneDrive\Документы\GitHub\xlgames\XlgamesFrontendBun\files\images" />
       <recent name="C:\Users\myabo\OneDrive\Документы\GitHub\xlgames\XlgamesFrontendBun\files" />
       <recent name="C:\Users\myabo\OneDrive\Документы\GitHub\xlgames\XlgamesFrontendBun\static\assets" />
-      <recent name="C:\Users\myabo\OneDrive\Документы\GitHub\xlgames\XlgamesFrontendBun\src\lib\components" />
     </key>
   </component>
   <component name="SharedIndexes">
@@ -306,31 +234,8 @@
       <workItem from="1740120443103" duration="1877000" />
       <workItem from="1740140951703" duration="89000" />
       <workItem from="1740553746479" duration="4247000" />
-      <workItem from="1740572988356" duration="384000" />
-    </task>
-    <task id="LOCAL-00025" summary="Обновление">
-      <option name="closed" value="true" />
-      <created>1738000859781</created>
-      <option name="number" value="00025" />
-      <option name="presentableId" value="LOCAL-00025" />
-      <option name="project" value="LOCAL" />
-      <updated>1738000859781</updated>
-    </task>
-    <task id="LOCAL-00026" summary="Обновление">
-      <option name="closed" value="true" />
-      <created>1738012021939</created>
-      <option name="number" value="00026" />
-      <option name="presentableId" value="LOCAL-00026" />
-      <option name="project" value="LOCAL" />
-      <updated>1738012021939</updated>
-    </task>
-    <task id="LOCAL-00027" summary="Обновление">
-      <option name="closed" value="true" />
-      <created>1738013582355</created>
-      <option name="number" value="00027" />
-      <option name="presentableId" value="LOCAL-00027" />
-      <option name="project" value="LOCAL" />
-      <updated>1738013582355</updated>
+      <workItem from="1740572988356" duration="2364000" />
+      <workItem from="1740576474855" duration="5925000" />
     </task>
     <task id="LOCAL-00028" summary="Обновление">
       <option name="closed" value="true" />
@@ -700,7 +605,31 @@
       <option name="project" value="LOCAL" />
       <updated>1740556456372</updated>
     </task>
-    <option name="localTasksCounter" value="74" />
+    <task id="LOCAL-00074" summary="Обновление">
+      <option name="closed" value="true" />
+      <created>1740573414487</created>
+      <option name="number" value="00074" />
+      <option name="presentableId" value="LOCAL-00074" />
+      <option name="project" value="LOCAL" />
+      <updated>1740573414488</updated>
+    </task>
+    <task id="LOCAL-00075" summary="Обновление">
+      <option name="closed" value="true" />
+      <created>1740573493744</created>
+      <option name="number" value="00075" />
+      <option name="presentableId" value="LOCAL-00075" />
+      <option name="project" value="LOCAL" />
+      <updated>1740573493744</updated>
+    </task>
+    <task id="LOCAL-00076" summary="Обновление">
+      <option name="closed" value="true" />
+      <created>1740573585727</created>
+      <option name="number" value="00076" />
+      <option name="presentableId" value="LOCAL-00076" />
+      <option name="project" value="LOCAL" />
+      <updated>1740573585727</updated>
+    </task>
+    <option name="localTasksCounter" value="77" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

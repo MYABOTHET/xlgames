@@ -3,6 +3,7 @@
   import SecondaryLink from "$lib/components/links/SecondaryLink.svelte";
   import PrimaryList from "$lib/components/lists/PrimaryList.svelte";
   import {transformLocale} from "$lib/tools.js";
+  import PrimaryCPU from "$lib/components/svg/PrimaryCPU.svelte";
   
   const {data} = $props();
   
@@ -38,11 +39,15 @@
       gameServerData = await (await fetch(`/games/${data.gameServer.GameServerDataPrimaryModels.find(gameServerData => gameServerData.LanguageId === languageDto.Id).Id}`)).json();
     }
   });
+  
+  function kav(value) {
+    return `«${value}»`;
+  }
 </script>
 
 <svelte:head>
   <title>{language.GameServer.TitlePosition
-      ? data.gameServer.Name  + " " + language.GameServer.Title
+      ? data.gameServer.Name + " " + language.GameServer.Title
       : language.GameServer.Title + " " + data.gameServer.Name } - {data.projectData.Name}</title>
   {@html language.GameServer.Head}
   {@html gameServerData.Head}
@@ -58,10 +63,14 @@
   </article>
 {/snippet}
 
+{#snippet orderHref(href, order, styles)}
+  <a class="quinary-block w-fit quaternary-p {styles}" rel="nofollow" {href} data-sveltekit-reload>{order}</a>
+{/snippet}
+
 <article class="secondary-section">
-  <SecondaryLink href={transformLocale(languageDto.Lang, "/games")} name='{language.GameServer.TitlePosition
-      ? "«" + data.gameServer.Name + "» " + language.GameServer.Name
-      : language.GameServer.Name + " «" + data.gameServer.Name  + "»"}'/>
+  <SecondaryLink href={transformLocale(languageDto.Lang, "/games")} name={language.GameServer.TitlePosition
+      ? `${kav(data.gameServer.Name)} ${language.GameServer.Name}`
+      : `${language.GameServer.Name} ${kav(data.gameServer.Name)}`}/>
   <article class="flex gap-x-10 ternary-gap-y max-decimal:flex-col">
     <img loading="lazy" alt={data.gameServer.Name} class="decimal:secondary-size ternary-size rounded-2xl
 max-decimal:aspect-square" src={data.gameServer.Src}/>
@@ -78,8 +87,7 @@ max-decimal:aspect-square" src={data.gameServer.Src}/>
         <h1>{language.Shared.PriceFrom} {language.Shared.CurrencySignPosition
             ? language.Shared.CurrencySign + priceFormatter.format(gameServerData.Price)
             : priceFormatter.format(gameServerData.Price) + language.Shared.CurrencySign} / {language.Shared.Month}</h1>
-        <a class="quinary-block w-fit quaternary-p" href={data.gameServer.Link}
-           rel="nofollow" data-sveltekit-reload>{language.Shared.Order}</a>
+        {@render orderHref(data.gameServer.Link, language.Shared.Order)}
       </article>
     </div>
   </article>
@@ -88,5 +96,16 @@ max-decimal:aspect-square" src={data.gameServer.Src}/>
     {#if gameServerData.GameServerDataPoints.length}
       <PrimaryList items={gameServerData.GameServerDataPoints}/>
     {/if}
+  </div>
+  {@render orderHref(data.gameServer.Link, language.GameServer.TitlePosition
+      ? `${language.Shared.Order} ${kav(data.gameServer.Name)} ${language.GameServer.Name}`
+      : `${language.Shared.Order} ${language.GameServer.Name.toLowerCase()} ${kav(data.gameServer.Name)}`,
+  "mx-auto text-center")}
+  <div class="mx-auto border-(--color-ternary) px-7 py-6 border-2 overflow-hidden rounded-2xl
+flex gap-6 justify-center items-center max-w-2xl">
+    <PrimaryCPU class="min-w-12 max-w-12 fill-(--color-ternary)"/>
+    <h1>{language.GameServer.DedicatedStart}<a
+        class="primary-link" href={transformLocale(languageDto.Lang, "/dedicated")}>{language.GameServer.Center}</a
+    >{language.GameServer.DedicatedEnd}</h1>
   </div>
 </article>
