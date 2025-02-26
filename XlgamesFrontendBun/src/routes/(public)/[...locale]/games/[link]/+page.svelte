@@ -105,7 +105,7 @@ max-decimal:aspect-square" src={data.gameServer.Src}/>
 flex gap-6 justify-center items-center max-w-2xl">
     <PrimaryCPU class="min-w-12 max-w-12 fill-(--color-ternary)"/>
     <h1>{language.GameServer.DedicatedStart}<a
-        class="primary-link" href={transformLocale(languageDto.Lang, "/dedicated")}>{language.GameServer.Center}</a
+        class="primary-link" href={transformLocale(languageDto.Lang, "/dedicated")}>{language.GameServer.DedicatedCenter}</a
     >{language.GameServer.DedicatedEnd}</h1>
   </div>
 </article>
