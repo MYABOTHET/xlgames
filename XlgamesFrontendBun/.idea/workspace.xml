@@ -5,13 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="99b663dd-f91d-428e-817e-a654984c5689" name="Changes" comment="Обновление">
-      <change afterPath="$PROJECT_DIR$/src/lib/components/svg/PrimaryCPU.svelte" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/lib/components/svg/PrimaryGamepad.svelte" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/routes/(public)/[...locale]/about-us/+page.svelte" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/(public)/[...locale]/about-us/+page.svelte" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/routes/(public)/[...locale]/games/[link]/+error.svelte" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/(public)/[...locale]/+error.svelte" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/routes/(public)/[...locale]/games/[link]/+page.svelte" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/(public)/[...locale]/games/[link]/+page.svelte" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/routes/(public)/[...locale]/news/[link]/+error.svelte" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/routes/admin/translates/[id]/game-server/+page.svelte" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/admin/translates/[id]/game-server/+page.svelte" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -235,15 +229,7 @@
       <workItem from="1740140951703" duration="89000" />
       <workItem from="1740553746479" duration="4247000" />
       <workItem from="1740572988356" duration="2364000" />
-      <workItem from="1740576474855" duration="5925000" />
-    </task>
-    <task id="LOCAL-00028" summary="Обновление">
-      <option name="closed" value="true" />
-      <created>1738080415188</created>
-      <option name="number" value="00028" />
-      <option name="presentableId" value="LOCAL-00028" />
-      <option name="project" value="LOCAL" />
-      <updated>1738080415188</updated>
+      <workItem from="1740576474855" duration="6367000" />
     </task>
     <task id="LOCAL-00029" summary="Обновление">
       <option name="closed" value="true" />
@@ -629,7 +615,15 @@
       <option name="project" value="LOCAL" />
       <updated>1740573585727</updated>
     </task>
-    <option name="localTasksCounter" value="77" />
+    <task id="LOCAL-00077" summary="Обновление">
+      <option name="closed" value="true" />
+      <created>1740582683206</created>
+      <option name="number" value="00077" />
+      <option name="presentableId" value="LOCAL-00077" />
+      <option name="project" value="LOCAL" />
+      <updated>1740582683207</updated>
+    </task>
+    <option name="localTasksCounter" value="78" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

@@ -17,5 +17,8 @@
     <PrimaryTextarea bind:value={language.GameServer.Name} title="Заголовок"/>
     <PrimaryTextarea bind:value={language.GameServer.Unlimited} title="Неограничено"/>
     <PrimaryCheckbox bind:value={language.GameServer.TitlePosition} title="Название игр. сервера слева?"/>
+    <PrimaryTextarea bind:value={language.GameServer.DedicatedStart} title="Выделенные сервера (Начало)"/>
+    <PrimaryTextarea bind:value={language.GameServer.DedicatedCenter} title="Выделенные сервера (Середина)"/>
+    <PrimaryTextarea bind:value={language.GameServer.DedicatedEnd} title="Выделенные сервера (Конец)"/>
   </QuaternarySection>
 </SecondaryPage>
