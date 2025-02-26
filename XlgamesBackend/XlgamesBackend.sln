@@ -5,8 +5,6 @@ VisualStudioVersion = 17.12.35527.113
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XlgamesBackend", "XlgamesBackend\XlgamesBackend.csproj", "{1A1D99B2-12D6-4882-81A5-9C248F4A5BC1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleApp1", "ConsoleApp1\ConsoleApp1.csproj", "{0BFB10FA-9E0E-4B26-8AF7-FC3F007572DA}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -17,12 +15,11 @@ Global
 		{1A1D99B2-12D6-4882-81A5-9C248F4A5BC1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1A1D99B2-12D6-4882-81A5-9C248F4A5BC1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1A1D99B2-12D6-4882-81A5-9C248F4A5BC1}.Release|Any CPU.Build.0 = Release|Any CPU
-		{0BFB10FA-9E0E-4B26-8AF7-FC3F007572DA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{0BFB10FA-9E0E-4B26-8AF7-FC3F007572DA}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{0BFB10FA-9E0E-4B26-8AF7-FC3F007572DA}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{0BFB10FA-9E0E-4B26-8AF7-FC3F007572DA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {88039F2C-9CC4-4D29-A0D3-B5CE62849D25}
 	EndGlobalSection
 EndGlobal
