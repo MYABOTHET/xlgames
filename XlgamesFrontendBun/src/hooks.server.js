@@ -21,6 +21,7 @@ export async function handle({event, resolve}) {
     if (!language) error(404, 'Not Found');
     locals.languages = languages;
     locals.language = language;
+    locals.locale = locale;
     return resolve(event, {
       transformPageChunk: ({html}) => html.replace('%lang%', locale)
     });

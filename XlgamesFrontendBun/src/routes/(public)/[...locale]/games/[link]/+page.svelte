@@ -63,7 +63,7 @@
       ? "«" + data.gameServer.Name + "» " + language.GameServer.Name
       : language.GameServer.Name + " «" + data.gameServer.Name  + "»"}'/>
   <article class="flex gap-x-10 ternary-gap-y max-decimal:flex-col">
-    <img alt={data.gameServer.Name} class="decimal:secondary-size ternary-size rounded-2xl
+    <img loading="lazy" alt={data.gameServer.Name} class="decimal:secondary-size ternary-size rounded-2xl
 max-decimal:aspect-square" src={data.gameServer.Src}/>
     <div class="flex flex-col gap-y-6">
       <section class="h-full flex flex-col gap-y-1 justify-between">

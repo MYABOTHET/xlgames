@@ -4,8 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="99b663dd-f91d-428e-817e-a654984c5689" name="Changes" comment="Хватит сюда смотреть">
+    <list default="true" id="99b663dd-f91d-428e-817e-a654984c5689" name="Changes" comment="Обновление">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/hooks.server.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/hooks.server.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/routes/(public)/[...locale]/+layout.server.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/(public)/[...locale]/+layout.server.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -219,14 +221,7 @@
       <workItem from="1740072672629" duration="25000" />
       <workItem from="1740120443103" duration="1877000" />
       <workItem from="1740140951703" duration="89000" />
-    </task>
-    <task id="LOCAL-00023" summary="Обновление">
-      <option name="closed" value="true" />
-      <created>1737999620476</created>
-      <option name="number" value="00023" />
-      <option name="presentableId" value="LOCAL-00023" />
-      <option name="project" value="LOCAL" />
-      <updated>1737999620476</updated>
+      <workItem from="1740553746479" duration="2424000" />
     </task>
     <task id="LOCAL-00024" summary="Обновление">
       <option name="closed" value="true" />
@@ -612,7 +607,15 @@
       <option name="project" value="LOCAL" />
       <updated>1740121666286</updated>
     </task>
-    <option name="localTasksCounter" value="72" />
+    <task id="LOCAL-00072" summary="Обновление">
+      <option name="closed" value="true" />
+      <created>1740554086666</created>
+      <option name="number" value="00072" />
+      <option name="presentableId" value="LOCAL-00072" />
+      <option name="project" value="LOCAL" />
+      <updated>1740554086666</updated>
+    </task>
+    <option name="localTasksCounter" value="73" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -634,11 +637,11 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Test branch locale" />
-    <MESSAGE value="Обновление" />
     <MESSAGE value="Еблан тупой" />
     <MESSAGE value="Обновление еблан" />
     <MESSAGE value="Ну и хули ты тут забыл?" />
     <MESSAGE value="Хватит сюда смотреть" />
-    <option name="LAST_COMMIT_MESSAGE" value="Хватит сюда смотреть" />
+    <MESSAGE value="Обновление" />
+    <option name="LAST_COMMIT_MESSAGE" value="Обновление" />
   </component>
 </project>

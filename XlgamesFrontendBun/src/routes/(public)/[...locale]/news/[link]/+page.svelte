@@ -27,7 +27,7 @@
   <article class="secondary-section">
     <SecondaryLink href={transformLocale(languageDto.Lang, "/news")} name={news.Name}/>
     <div class="flex flex-col gap-y-6">
-      <img alt={news.Name} class="rounded-2xl ternary-size quaternary-height" src={news.Src}>
+      <img loading="lazy" alt={news.Name} class="rounded-2xl ternary-size quaternary-height" src={news.Src}>
       <p class="text-(--color-quaternary) text-xs mx-auto font-normal">{dateFormatter.format(new Date(news.Date))}</p>
     </div>
     {#if news.Description}

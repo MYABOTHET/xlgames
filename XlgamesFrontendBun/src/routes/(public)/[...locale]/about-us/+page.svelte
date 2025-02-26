@@ -16,7 +16,7 @@
 <div class="max-w-(--breakpoint-hexadecimal) w-full mx-auto">
   <article class="secondary-section">
     <h1 class="primary-title">{language.AboutUs.Name}</h1>
-    <img alt={language.AboutUs.Name} class="rounded-2xl ternary-size quaternary-height"
+    <img loading="lazy" alt={language.AboutUs.Name} class="rounded-2xl ternary-size quaternary-height"
          src="/images/about-us.webp">
     <p class="text-sm leading-[1.375rem]">
       {language.AboutUs.Description}

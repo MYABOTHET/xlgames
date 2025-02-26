@@ -3,7 +3,7 @@
 </script>
 
 <a {...props} class="{props.class} ternary-block relative">
-  <img alt={name} class="ternary-size img-filter" {src}/>
+  <img loading="lazy" alt={name} class="ternary-size img-filter" {src}/>
   <article class="absolute top-0 left-0 p-4 flex flex-col justify-end size-full gap-y-1">
     <h1 class="text-shadow truncate font-medium">{name}</h1>
     <p class="text-shadow truncate text-sm">{description}</p>
