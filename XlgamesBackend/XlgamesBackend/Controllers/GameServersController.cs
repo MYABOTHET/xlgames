@@ -203,7 +203,7 @@ namespace XlgamesBackend.Controllers
             gameServer.Link = gameServerDto.Link;
             gameServer.ControlPanel = gameServerDto.ControlPanel;
             gameServer.FTP = gameServerDto.FTP;
-            gameServer.DedicatedDescription = gameServer.DedicatedDescription;
+            gameServer.DedicatedDescription = gameServerDto.DedicatedDescription;
             await _postgreSQLContext.SaveChangesAsync();
             return Ok();
         }
