@@ -98,8 +98,8 @@ max-decimal:aspect-square" src={data.gameServer.Src}/>
     {/if}
   </div>
   {@render orderHref(data.gameServer.Link, language.GameServer.TitlePosition
-      ? `${language.Shared.Order} ${kav(data.gameServer.Name)} ${language.GameServer.Name}`
-      : `${language.Shared.Order} ${language.GameServer.Name.toLowerCase()} ${kav(data.gameServer.Name)}`,
+      ? `${language.Shared.Order} ${data.gameServer.Name} ${language.GameServer.Name}`
+      : `${language.Shared.Order} ${language.GameServer.Name.toLowerCase()} ${data.gameServer.Name}`,
   "mx-auto text-center")}
   <div class="mx-auto border-(--color-ternary) px-7 py-6 border-2 overflow-hidden rounded-2xl
 flex gap-6 justify-center items-center max-w-2xl">
