@@ -32,6 +32,7 @@
   </QuaternarySection>
   <QuaternarySection title="Остальное">
     <PrimaryCheckbox bind:value={gameServer.isPopular} title="Популярен?"/>
+    <PrimaryCheckbox bind:value={gameServer.DedicatedDescription} title="Показывать описание выделенных серверов?"/>
   </QuaternarySection>
   <SaveForm {access} class="*:first:min-w-40" {error} onclick={updateGameServer}/>
   <button class="min-w-40 mt-4 px-5 border-2 bg-red-500 border-red-500 rounded

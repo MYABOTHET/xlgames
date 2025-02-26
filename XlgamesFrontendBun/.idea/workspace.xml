@@ -4,7 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="99b663dd-f91d-428e-817e-a654984c5689" name="Changes" comment="Обновление" />
+    <list default="true" id="99b663dd-f91d-428e-817e-a654984c5689" name="Changes" comment="Обновление">
+      <change beforePath="$PROJECT_DIR$/src/routes/admin/game-servers/[id]/settings/+page.svelte" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/admin/game-servers/[id]/settings/+page.svelte" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -227,15 +229,7 @@
       <workItem from="1740140951703" duration="89000" />
       <workItem from="1740553746479" duration="4247000" />
       <workItem from="1740572988356" duration="2364000" />
-      <workItem from="1740576474855" duration="7207000" />
-    </task>
-    <task id="LOCAL-00032" summary="Обновление">
-      <option name="closed" value="true" />
-      <created>1738146161055</created>
-      <option name="number" value="00032" />
-      <option name="presentableId" value="LOCAL-00032" />
-      <option name="project" value="LOCAL" />
-      <updated>1738146161055</updated>
+      <workItem from="1740576474855" duration="7515000" />
     </task>
     <task id="LOCAL-00033" summary="Обновление">
       <option name="closed" value="true" />
@@ -621,7 +615,15 @@
       <option name="project" value="LOCAL" />
       <updated>1740583126926</updated>
     </task>
-    <option name="localTasksCounter" value="81" />
+    <task id="LOCAL-00081" summary="Обновление">
+      <option name="closed" value="true" />
+      <created>1740583947599</created>
+      <option name="number" value="00081" />
+      <option name="presentableId" value="LOCAL-00081" />
+      <option name="project" value="LOCAL" />
+      <updated>1740583947599</updated>
+    </task>
+    <option name="localTasksCounter" value="82" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
