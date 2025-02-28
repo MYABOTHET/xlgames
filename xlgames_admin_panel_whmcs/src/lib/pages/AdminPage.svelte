@@ -18,7 +18,7 @@
   let saving_message = $state("Выполняется сохранение данных...");
   let error = $state(false);
   let error_message = $state("Произошла ошибка");
-  let loading = $state(true);
+  let loading = $state(false);
   let loading_message = $state("Загрузка ключей...");
   let loading_error_message = $state("Произошла ошибка");
   let loading_status = $state(true);
@@ -41,6 +41,7 @@
   let current_language = $state('Выберите язык');
   let language_content = $state('');
   let name_new_language = $state('');
+  let init = $state(false);
   
   async function change_language(new_language) {
     set_error('');
@@ -124,28 +125,14 @@
   
   onMount(async () => {
     try {
-      let res = await Admin.get_keys();
-      let body = await res.json();
-      if (res.status !== 200) {
-        loading_error_message = Tools.parse_error(body);
-        loading_status = false;
-      } else {
-        keys = body;
-      }
-      loading_message = "Загрузка языков...";
-      res = await Admin.get_languages();
-      body = await res.json();
-      if (res.status !== 200) {
-        loading_error_message = Tools.parse_error(body);
-        loading_status = false;
-      } else {
-        languages = body;
-      }
+      keys.selectel.key = PHP_selectel_key;
+      keys.survivalhost.key = PHP_survivalhost_key;
+      languages = PHP_languages;
     } catch (e) {
       loading_error_message = "Сервер отдал сломанные данные...";
       loading_status = false;
     }
-    loading = false;
+    init = true;
   });
   
   async function save_keys() {
@@ -286,7 +273,7 @@
 <AdminTemplate bind:keys bind:current_link {links} {saving} {saving_message} {save_keys} {error} {error_message}
                {loading} {loading_status} {loading_error_message} {loading_message} {languages} {change_language}
                {current_language} {create_new_language} bind:name_new_language bind:language_content
-               {save_language} {delete_language}
+               {save_language} {delete_language} {init}
                
                bind:id bind:price {product} {success_message} {get_product} {set_static_price}
                {delete_static_price} {update_static_price}

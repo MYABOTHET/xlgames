@@ -11,7 +11,7 @@
   let {current_link = $bindable(), links, saving, keys = $bindable(), saving_message, save_keys,
   error, error_message, loading, loading_message, loading_error_message, loading_status,
   current_language, languages, change_language, create_new_language, name_new_language = $bindable(),
-    language_content = $bindable(), save_language, delete_language,
+    language_content = $bindable(), save_language, delete_language, init,
     
     id = $bindable(),
     price = $bindable(),
@@ -23,6 +23,7 @@
     update_static_price,} = $props();
 </script>
 
+{#if init}
 <div class="relative text-[1.65rem]">
   <div class="w-full h-full absolute flex justify-center items-center z-20
 {loading || !loading_status ? 'backdrop-blur-[3px]' : 'backdrop-blur-0 opacity-0 pointer-events-none'}">
@@ -67,3 +68,4 @@
     </Section>
   </div>
 </div>
+{/if}

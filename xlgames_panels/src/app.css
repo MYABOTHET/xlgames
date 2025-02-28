@@ -1,3 +1,5 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+.abothet_panels {
+  @tailwind base;
+  @tailwind components;
+  @tailwind utilities;
+}

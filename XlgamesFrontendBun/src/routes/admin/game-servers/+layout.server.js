@@ -7,6 +7,6 @@ export async function load({fetch}) {
       return {
         title: gameServer.Name, href: `/admin/game-servers/${gameServer.Id}`, id: gameServer.Id
       }
-    })
+    }).sort((a, b) => a.title.localeCompare(b.title, "ru-RU"))
   }
 }

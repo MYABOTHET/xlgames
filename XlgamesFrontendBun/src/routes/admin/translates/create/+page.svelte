@@ -37,7 +37,7 @@
       const language = await response.json();
       links.push({
         title: language.Name, href: `/admin/translates/${language.Id}`, id: language.Id
-      });
+      }).sort((a, b) => a.title.localeCompare(b.title, "ru-RU"));
       await goto(`/admin/translates/${language.Id}`);
     } else {
       access = false;

@@ -7,7 +7,7 @@
   let have_error = $state(false);
   let error_message = $state("");
   let success_message = $state("");
-  let loading = $state(false);
+  let loading = $state(true);
   let loading_message = $state("");
   let language = $state(Object.assign({}, default_language));
   let network_statistics = $state('');
@@ -37,10 +37,9 @@
   onMount(async () => {
     try {
       document.getElementsByClassName('module-client-area')[0].className = "";
-    } catch (err) {}
-    loading = true;
-    loading_message = "≽^•⩊•^≼";
-    language = await get_language();
+    } catch (err) {
+    }
+    language = JSON.parse(PHP_language);
     loading_message = language.data;
     let error = await check_error();
     let body = await error.json();
@@ -70,6 +69,12 @@
     info = await get_system();
     loading_message = language.network_statistics;
     network_statistics = await get_network_statistics(date);
+    try {
+      JSON.parse(network_statistics);
+      network_statistics = false;
+    } catch {
+    
+    }
     init_reinstall();
   }
   
@@ -193,11 +198,13 @@
   function open() {
     have_confirm = true;
   }
-  
+
 </script>
 
 <ServerPanelClientSurvivalHost {language} {info} {have_error} {error_message} {loading_message} {loading}
-                   {on} {off} {reboot} {network_statistics} current_date={parse_date()} {date_next} {date_back}
-                   {can_back} {can_next} {current_os} {reinstall} {list_os} {select_os} {have_confirm} {close}
-                   {open} {success_message} {...props}
+                               {on} {off} {reboot} {network_statistics} current_date={parse_date()} {date_next}
+                               {date_back}
+                               {can_back} {can_next} {current_os} {reinstall} {list_os} {select_os} {have_confirm}
+                               {close}
+                               {open} {success_message} {...props}
 />

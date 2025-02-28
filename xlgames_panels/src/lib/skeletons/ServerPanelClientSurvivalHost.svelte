@@ -45,22 +45,24 @@
         <Button onclick={open} class="w-full" color="sky">{language.reinstall}</Button>
       </div>
     </Section>
-    <Section title={language.network_statistics_title}>
-      <div class="flex flex-col gap-1">
-        <div class="flex justify-end items-center gap-2 max-sm:flex-col">
-          <div>{current_date}</div>
-          <Button onclick={date_back} color={light ? 'white' : 'black'}
-                  class="w-24 max-sm:w-full select-none {can_back ? '' : 'opacity-30 pointer-events-none'}"
-          >{language.back}</Button>
-          <Button onclick={date_next} color={light ? 'white' : 'black'}
-                  class="w-24 max-sm:w-full select-none {can_next ? '' : 'opacity-30 pointer-events-none'}"
-          >{language.next}</Button>
+    {#if network_statistics}
+      <Section title={language.network_statistics_title}>
+        <div class="flex flex-col gap-1">
+          <div class="flex justify-end items-center gap-2 max-sm:flex-col">
+            <div>{current_date}</div>
+            <Button onclick={date_back} color={light ? 'white' : 'black'}
+                    class="w-24 max-sm:w-full select-none {can_back ? '' : 'opacity-30 pointer-events-none'}"
+            >{language.back}</Button>
+            <Button onclick={date_next} color={light ? 'white' : 'black'}
+                    class="w-24 max-sm:w-full select-none {can_next ? '' : 'opacity-30 pointer-events-none'}"
+            >{language.next}</Button>
+          </div>
+          <div class="relative overflow-auto {light ? 'network' : ''}">
+            {@html network_statistics}
+          </div>
         </div>
-        <div class="relative overflow-auto {light ? 'network' : ''}">
-          {@html network_statistics}
-        </div>
-      </div>
-    </Section>
+      </Section>
+    {/if}
   </div>
   {#snippet modal()}
   {#if have_confirm}

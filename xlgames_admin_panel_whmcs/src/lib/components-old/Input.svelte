@@ -1,7 +1,7 @@
 <script module>
   let colors = new Map();
   colors.set("black", "border-black text-black placeholder-gray-700");
-  colors.set("sky", "border-sky-500 text-sky-500 placeholder-sky-300");
+  colors.set("sky", "border-sky-500 text-sky-500 placeholder-sky-500");
 </script>
 
 <script>

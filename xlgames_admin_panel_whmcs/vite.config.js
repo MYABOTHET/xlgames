@@ -7,5 +7,8 @@ export default defineConfig({
       customElement: true
     },
     emitCss: false
-  })]
+  })],
+  server: {
+    cors: "*"
+  }
 })

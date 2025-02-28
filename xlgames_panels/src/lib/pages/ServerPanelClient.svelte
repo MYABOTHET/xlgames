@@ -8,7 +8,7 @@
   let have_error = $state(false);
   let error_message = $state("");
   let success_message = $state("");
-  let loading = $state(false);
+  let loading = $state(true);
   let loading_message = $state("");
   let language = $state(Object.assign({}, default_language));
   let network_statistics = $state(Object.assign({}, default_network_statistics));
@@ -124,9 +124,7 @@
     try {
       document.getElementsByClassName('module-client-area')[0].className = "";
     } catch (err) {}
-    loading = true;
-    loading_message = "≽^•⩊•^≼";
-    language = await get_language();
+    language = JSON.parse(PHP_language);
     loading_message = language.data;
     let error = await check_error();
     let body = await error.json();

@@ -33,6 +33,7 @@
     if (response.status === 200) {
       access = true;
       links.find(gameServerItem => gameServerItem.id === gameServer.Id).title = gameServer.Name;
+      links.sort((a, b) => a.title.localeCompare(b.title, "ru-RU"));
     } else {
       access = false;
       error = await response.text();
@@ -54,6 +55,7 @@
       if (response.status === 200) {
         const index = links.findIndex(link => link.id === gameServer.Id);
         links.splice(index, 1);
+        links.sort((a, b) => a.title.localeCompare(b.title, "ru-RU"));
         await goto(`/admin/game-servers`);
       } else {
         counter = 20;
