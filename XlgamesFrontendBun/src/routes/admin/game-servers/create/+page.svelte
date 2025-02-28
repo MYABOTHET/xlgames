@@ -5,7 +5,6 @@
   import SaveForm from "$lib/components/SaveForm.svelte";
   import {getContext} from "svelte";
   import {goto} from "$app/navigation";
-  import {compare} from "$lib/tools.js";
   
   let links = getContext("links");
   let name = $state("...");
@@ -23,7 +22,7 @@
       const gameServer = await response.json();
       links.push({
         title: gameServer.Name, href: `/admin/game-servers/${gameServer.Id}`, id: gameServer.Id
-      }).sort(compare);
+      }).sort((a, b) => a.title.localeCompare(b.title, "ru-RU"));
       await goto(`/admin/game-servers/${gameServer.Id}`);
     } else {
       access = false;

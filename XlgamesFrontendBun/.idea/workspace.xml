@@ -5,56 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="99b663dd-f91d-428e-817e-a654984c5689" name="Changes" comment="Обновление">
-      <change beforePath="$PROJECT_DIR$/../README.md" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/routes/admin/game-servers/+layout.server.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/admin/game-servers/+layout.server.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/routes/admin/game-servers/[id]/+layout.svelte" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/admin/game-servers/[id]/+layout.svelte" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/routes/admin/game-servers/create/+page.svelte" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/admin/game-servers/create/+page.svelte" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/routes/admin/translates/+layout.server.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/admin/translates/+layout.server.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/routes/admin/translates/[id]/+layout.svelte" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/admin/translates/[id]/+layout.svelte" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/routes/admin/translates/create/+page.svelte" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/admin/translates/create/+page.svelte" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../svelte/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../svelte/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../svelte/.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../svelte/.idea/svelte.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../svelte/.idea/vcs.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../svelte/.npmrc" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../svelte/README.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../svelte/bun.lock" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../svelte/jsconfig.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../svelte/package.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../svelte/src/app.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../svelte/src/lib/index.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../svelte/src/routes/+page.svelte" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../svelte/static/favicon.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../svelte/svelte.config.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../svelte/vite.config.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../xlgames_admin_panel_whmcs/jsconfig.json" beforeDir="false" afterPath="$PROJECT_DIR$/../xlgames_admin_panel_whmcs/jsconfig.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../xlgames_admin_panel_whmcs/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/../xlgames_admin_panel_whmcs/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../xlgames_admin_panel_whmcs/src/App.svelte" beforeDir="false" afterPath="$PROJECT_DIR$/../xlgames_admin_panel_whmcs/src/App.svelte" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../xlgames_admin_panel_whmcs/src/app.css" beforeDir="false" afterPath="$PROJECT_DIR$/../xlgames_admin_panel_whmcs/src/app.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../xlgames_admin_panel_whmcs/src/lib/components-old/Input.svelte" beforeDir="false" afterPath="$PROJECT_DIR$/../xlgames_admin_panel_whmcs/src/lib/components-old/Input.svelte" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../xlgames_admin_panel_whmcs/src/lib/components/Keys.svelte" beforeDir="false" afterPath="$PROJECT_DIR$/../xlgames_admin_panel_whmcs/src/lib/components/Keys.svelte" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../xlgames_admin_panel_whmcs/src/lib/components/inputs/SecondaryInput.svelte" beforeDir="false" afterPath="$PROJECT_DIR$/../xlgames_admin_panel_whmcs/src/lib/components/inputs/SecondaryInput.svelte" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../xlgames_admin_panel_whmcs/src/lib/components/inputs/TernaryInput.svelte" beforeDir="false" afterPath="$PROJECT_DIR$/../xlgames_admin_panel_whmcs/src/lib/components/inputs/TernaryInput.svelte" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../xlgames_admin_panel_whmcs/src/lib/pages/AdminPage.svelte" beforeDir="false" afterPath="$PROJECT_DIR$/../xlgames_admin_panel_whmcs/src/lib/pages/AdminPage.svelte" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../xlgames_admin_panel_whmcs/src/lib/templates/AdminTemplate.svelte" beforeDir="false" afterPath="$PROJECT_DIR$/../xlgames_admin_panel_whmcs/src/lib/templates/AdminTemplate.svelte" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../xlgames_admin_panel_whmcs/src/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/../xlgames_admin_panel_whmcs/src/main.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../xlgames_admin_panel_whmcs/vite.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/../xlgames_admin_panel_whmcs/vite.config.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../xlgames_panels/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/../xlgames_panels/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../xlgames_panels/package-lock.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../xlgames_panels/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/../xlgames_panels/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../xlgames_panels/src/App.svelte" beforeDir="false" afterPath="$PROJECT_DIR$/../xlgames_panels/src/App.svelte" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../xlgames_panels/src/app.css" beforeDir="false" afterPath="$PROJECT_DIR$/../xlgames_panels/src/app.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../xlgames_panels/src/lib/pages/ServerPanelAdmin.svelte" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../xlgames_panels/src/lib/pages/ServerPanelClient.svelte" beforeDir="false" afterPath="$PROJECT_DIR$/../xlgames_panels/src/lib/pages/ServerPanelClient.svelte" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../xlgames_panels/src/lib/pages/ServerPanelClientSurvivalHost.svelte" beforeDir="false" afterPath="$PROJECT_DIR$/../xlgames_panels/src/lib/pages/ServerPanelClientSurvivalHost.svelte" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../xlgames_panels/src/lib/pages/StaticPrice.svelte" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../xlgames_panels/src/lib/skeletons/ServerPanelAdmin.svelte" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../xlgames_panels/src/lib/skeletons/ServerPanelClientSurvivalHost.svelte" beforeDir="false" afterPath="$PROJECT_DIR$/../xlgames_panels/src/lib/skeletons/ServerPanelClientSurvivalHost.svelte" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../xlgames_panels/src/lib/skeletons/StaticPrice.svelte" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../xlgames_panels/src/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/../xlgames_panels/src/main.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../xlgames_panels/vite.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/../xlgames_panels/vite.config.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -281,15 +232,7 @@
       <workItem from="1740576474855" duration="8863000" />
       <workItem from="1740585647291" duration="516000" />
       <workItem from="1740636999978" duration="35000" />
-      <workItem from="1740750972919" duration="657000" />
-    </task>
-    <task id="LOCAL-00035" summary="Обновление">
-      <option name="closed" value="true" />
-      <created>1738155428066</created>
-      <option name="number" value="00035" />
-      <option name="presentableId" value="LOCAL-00035" />
-      <option name="project" value="LOCAL" />
-      <updated>1738155428066</updated>
+      <workItem from="1740750972919" duration="1089000" />
     </task>
     <task id="LOCAL-00036" summary="Обновление">
       <option name="closed" value="true" />
@@ -675,7 +618,15 @@
       <option name="project" value="LOCAL" />
       <updated>1740585050501</updated>
     </task>
-    <option name="localTasksCounter" value="84" />
+    <task id="LOCAL-00084" summary="Обновление">
+      <option name="closed" value="true" />
+      <created>1740752039319</created>
+      <option name="number" value="00084" />
+      <option name="presentableId" value="LOCAL-00084" />
+      <option name="project" value="LOCAL" />
+      <updated>1740752039319</updated>
+    </task>
+    <option name="localTasksCounter" value="85" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
