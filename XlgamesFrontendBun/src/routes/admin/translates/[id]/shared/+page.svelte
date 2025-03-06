@@ -124,5 +124,6 @@
     <PrimaryTextarea bind:value={language.Shared.AnyQuestionsStart} title="Есть вопросы? (Начало)"/>
     <PrimaryTextarea bind:value={language.Shared.AnyQuestionsCenter} title="Есть вопросы? (Середина)"/>
     <PrimaryTextarea bind:value={language.Shared.AnyQuestionsEnd} title="Есть вопросы? (Конец)"/>
+    <PrimaryTextarea bind:value={language.Shared.HelpMessage} title="Вспомогательное сообщение"/>
   </QuaternarySection>
 </SecondaryPage>
