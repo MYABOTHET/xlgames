@@ -14,7 +14,7 @@
 flex flex-col gap-5 justify-center items-center max-w-2xl">
   <div class="flex gap-6 justify-center items-center">
     <PrimaryInfo class="min-w-12 max-w-12"/>
-    <h1>{language.Shared.HelpMessage}</h1>
+    <h1 class="whitespace-pre-line">{@html language.Shared.HelpMessage}</h1>
   </div>
   <TernarySection IconPreset={TernaryIcon} class="flex flex-wrap gap-2.5 justify-center items-center" icons={[{
     Icon: PrimaryEmail,
