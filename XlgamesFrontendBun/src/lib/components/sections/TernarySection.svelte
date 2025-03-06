@@ -10,14 +10,14 @@
   import {getContext} from "svelte";
   import SecondaryIcon from "$lib/components/icons/SecondaryIcon.svelte";
   
-  const props = $props();
+  const {IconPreset = SecondaryIcon, icons = [], iconClass = "fill-(--color-quaternary)", ...props} = $props();
   
   let language = $derived(getContext("language")());
 </script>
 
 {#snippet icon(Icon, href, aria)}
-  <a aria-label={aria} class="w-fit" {href} rel="nofollow">
-    <SecondaryIcon {Icon} class="primary-size fill-(--color-quaternary)"></SecondaryIcon>
+  <a aria-label={aria} class="w-fit" {href} rel="nofollow" data-sveltekit-reload>
+    <IconPreset {Icon} class="primary-size {iconClass}"></IconPreset>
   </a>
 {/snippet}
 
@@ -30,6 +30,7 @@
     || language.Shared.Telegram
     || language.Shared.Twitter
     || language.Shared.Facebook
+    || icons.length
 }
   <nav {...props}>
     {#if language.Shared.Vk}{@render icon?.(Vk, language.Shared.VkLink, "Vk")}{/if}
@@ -40,5 +41,8 @@
     {#if language.Shared.Telegram}{@render icon?.(Telegram, language.Shared.TelegramLink, "Telegram")}{/if}
     {#if language.Shared.Twitter}{@render icon?.(Twitter, language.Shared.TwitterLink, "Twitter")}{/if}
     {#if language.Shared.Facebook}{@render icon?.(Facebook, language.Shared.FacebookLink, "Facebook")}{/if}
+    {#each icons as item}
+      {@render icon?.(item.Icon, item.link, item.Name)}
+    {/each}
   </nav>
 {/if}

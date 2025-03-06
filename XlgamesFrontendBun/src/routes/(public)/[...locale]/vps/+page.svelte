@@ -1,6 +1,7 @@
 <script>
   import {getContext, onMount} from "svelte";
   import PrimaryPreset from "$lib/components/presets/PrimaryPreset.svelte";
+  import QuinaryCard from "$lib/components/cards/QuinaryCard.svelte";
   
   const {data} = $props();
   
@@ -33,4 +34,5 @@
   <h1 class="primary-title">{language.VPS.Name}</h1>
   <p>{language.VPS.Description}</p>
   <PrimaryPreset preset="secondary" serversProp={data.servers} {userOnMobile}/>
+  <QuinaryCard/>
 </article>

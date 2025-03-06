@@ -4,6 +4,7 @@
   import PrimaryList from "$lib/components/lists/PrimaryList.svelte";
   import {transformLocale} from "$lib/tools.js";
   import PrimaryCPU from "$lib/components/svg/PrimaryCPU.svelte";
+  import QuaternaryCard from "$lib/components/cards/QuaternaryCard.svelte";
   
   const {data} = $props();
   
@@ -102,12 +103,7 @@ max-decimal:aspect-square" src={data.gameServer.Src}/>
       : `${language.Shared.Order} ${language.GameServer.Name.toLowerCase()} ${data.gameServer.Name}`,
   "mx-auto text-center")}
   {#if data.gameServer.DedicatedDescription}
-    <div class="mx-auto border-(--color-ternary) px-7 py-6 border-2 overflow-hidden rounded-2xl
-flex gap-6 justify-center items-center max-w-2xl">
-      <PrimaryCPU class="min-w-12 max-w-12 fill-(--color-ternary)"/>
-      <h1>{language.GameServer.DedicatedStart}<a
-          class="primary-link" href={transformLocale(languageDto.Lang, "/dedicated")}>{language.GameServer.DedicatedCenter}</a
-      >{language.GameServer.DedicatedEnd}</h1>
-    </div>
+    <QuaternaryCard Logo={PrimaryCPU} start={language.GameServer.DedicatedStart} center={language.GameServer.DedicatedCenter}
+    end={language.GameServer.DedicatedEnd} href="/dedicated"/>
   {/if}
 </article>

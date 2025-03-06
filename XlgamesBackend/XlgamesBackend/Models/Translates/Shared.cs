@@ -42,6 +42,8 @@ namespace XlgamesBackend.Models.Translates
         public string VkLink { get; set; } = "/";
         public string WhatsappLink { get; set; } = "/";
 
+        public string HelpMessage { get; set; } = "...";
+
         // Контакты
         public bool PhoneNumber { get; set; } = false;
         public bool Email { get; set; } = false;
