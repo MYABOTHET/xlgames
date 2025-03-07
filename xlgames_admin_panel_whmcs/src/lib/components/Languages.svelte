@@ -81,6 +81,11 @@
       <SecondaryEnum placeholder="Вам не выдали сервер" bind:value={language_content.server_not_assigned}>- Вам не выдали сервер</SecondaryEnum>
       <SecondaryEnum placeholder="Сервер не найден" bind:value={language_content.server_not_found}>- Сервер не найден</SecondaryEnum>
       <SecondaryEnum placeholder="Неизвестная ошибка" bind:value={language_content.unknown}>- Неизвестная ошибка</SecondaryEnum>
+      <SecondaryEnum placeholder="Час" bind:value={language_content.hour}>- Час</SecondaryEnum>
+      <SecondaryEnum placeholder="День" bind:value={language_content.day}>- День</SecondaryEnum>
+      <SecondaryEnum placeholder="Месяц" bind:value={language_content.month}>- Месяц</SecondaryEnum>
+      <SecondaryEnum placeholder="Год" bind:value={language_content.year}>- Год</SecondaryEnum>
+      <SecondaryEnum placeholder="Лицензионный ключ (Опционально)" bind:value={language_content.license_key}>- Лицензионный ключ (Опционально)</SecondaryEnum>
     </div>
   {/if}
 </div>
