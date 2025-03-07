@@ -1,0 +1,5 @@
+#xlgames_whmcs_all {
+  @tailwind base;
+  @tailwind components;
+  @tailwind utilities;
+}
