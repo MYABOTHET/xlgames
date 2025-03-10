@@ -1,11 +1,12 @@
 <script>
-  import AutomaticPurchaseSelectelProducts from "./modules/AutomaticPurchaseSelectelProducts.svelte";
+  import IPMonitoringRUST from "./modules/IPMonitoringRUST.svelte";
 </script>
 
 <section id="xlgames_whmcs_all">
-  <article class="font-[Roboto] tracking-wide">
+  <article class="font-[Roboto] tracking-wide text-[120%] text-slate-800">
     
-    <AutomaticPurchaseSelectelProducts/>
+    <!--        <AutomaticPurchaseSelectelProducts/>-->
+    <IPMonitoringRUST/>
   
   </article>
 </section>
