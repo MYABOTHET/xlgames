@@ -61,7 +61,7 @@ namespace XlgamesBackend.Controllers
         public async Task<ActionResult<IEnumerable<ProductModel>>> GetServers()
         {
             var list = await SelectProductModel(_mySQLContext.Products
-                .Where(server => server.gid.Equals(1) || server.gid.Equals(3) || server.gid.Equals(4)))
+                .Where(server => server.gid.Equals(1) || server.gid.Equals(3) || server.gid.Equals(7)))
                 .ToListAsync();
             return list;
         }
