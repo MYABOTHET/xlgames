@@ -71,7 +71,7 @@ namespace XlgamesBackend.Controllers
         public async Task<ActionResult<int[]>> GetServersList()
         {
             var list = await _mySQLContext.Products
-                .Where(server => server.gid.Equals(1) || server.gid.Equals(3) || server.gid.Equals(4))
+                .Where(server => server.gid.Equals(1) || server.gid.Equals(3) || server.gid.Equals(7))
                 .Select(server => server.id)
                 .OrderBy(id => id)
                 .ToArrayAsync();
