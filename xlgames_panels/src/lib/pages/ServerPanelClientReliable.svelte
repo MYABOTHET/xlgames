@@ -31,8 +31,8 @@
   
   let current_os = $state('-');
   let list_os = $state(['-']);
-  let current_time = $state('hour');
-  let list_time = $state(['hour', 'day', 'month', 'year']);
+  let current_time = $state('');
+  let list_time = $state([]);
   let network = $state({});
   
   async function select_time(new_time) {
@@ -50,8 +50,10 @@
   
   onMount(async () => {
     try {
+      PHP_language = PHP_language.replaceAll(/\r?\n|\r/g, '');
       language = JSON.parse(PHP_language);
       loading_message = language.data;
+      PHP_serverdetails = PHP_serverdetails.replaceAll(/\r?\n|\r/g, '');
       const serverdetails = JSON.parse(PHP_serverdetails);
       const server = serverdetails.data.server;
       info = {
@@ -66,12 +68,25 @@
         item_count: 0,
         result: []
       };
+      PHP_network = PHP_network.replaceAll(/\r?\n|\r/g, '');
       network = JSON.parse(PHP_network);
-      Object.entries(network.hour.data.bandwidthLogs).forEach(([key, value]) => {
+      let network_elements = [];
+      Object.entries(network).forEach(([key, value]) => {
+        if (value.data.bandwidthLogs.length !== 0) {
+          network_elements.push({
+            key,
+            value
+          });
+          list_time.push(key);
+        }
+      });
+      current_time = network_elements[0].key;
+      Object.entries(network_elements[0].value.data.bandwidthLogs).forEach(([key, value]) => {
         network_statistics.item_count += 1;
         network_statistics.result.push([new Date(key).getTime(), value[2] * 1000 * 1000, value[3] * 1000 * 1000]);
       });
       list_os = [];
+      PHP_list_os = PHP_list_os.replaceAll(/\r?\n|\r/g, '');
       JSON.parse(PHP_list_os).data.forEach(item => {
         info.list_os.push({
           id: item.operatingSystemId,
@@ -81,7 +96,7 @@
         list_os.push(item.osLabel);
       });
       current_os = list_os[0];
-    } catch {
+    } catch (error) {
       have_error = true;
       error_message = language.unknown;
     }
@@ -132,8 +147,9 @@
     })).json();
     if (result.errors.length) {
       alert(result.errors.join("\n"));
+    } else {
+      info.os = new_system.name;
     }
-    info.os = new_system.name;
     loading = false;
   }
   
