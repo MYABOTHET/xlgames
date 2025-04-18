@@ -149,6 +149,9 @@
         if (country === oldLanguage.Shared.USA) translateCountries.add(language.Shared.USA);
         if (country === oldLanguage.Shared.Singapore) translateCountries.add(language.Shared.Singapore);
         if (country === oldLanguage.Shared.France) translateCountries.add(language.Shared.France);
+        if (country === oldLanguage.Shared.UnitedKingdom) translateCountries.add(language.Shared.UnitedKingdom);
+        if (country === oldLanguage.Shared.Poland) translateCountries.add(language.Shared.Poland);
+        if (country === oldLanguage.Shared.Canada) translateCountries.add(language.Shared.Canada);
       });
       countries = translateCountries;
       
@@ -170,6 +173,11 @@
         if (region === oldLanguage.Shared.Ashburn) translateRegions.add(language.Shared.Ashburn);
         if (region === oldLanguage.Shared.Singapore) translateRegions.add(language.Shared.Singapore);
         if (region === oldLanguage.Shared.Gravelines) translateRegions.add(language.Shared.Gravelines);
+        if (region === oldLanguage.Shared.Limburg) translateRegions.add(language.Shared.Limburg);
+        if (region === oldLanguage.Shared.Erith) translateRegions.add(language.Shared.Erith);
+        if (region === oldLanguage.Shared.Strasbourg) translateRegions.add(language.Shared.Strasbourg);
+        if (region === oldLanguage.Shared.Warsaw) translateRegions.add(language.Shared.Warsaw);
+        if (region === oldLanguage.Shared.Beauharnois) translateRegions.add(language.Shared.Beauharnois);
       });
       regions = translateRegions;
       
@@ -199,6 +207,9 @@
       if (server.Data.USA) countries.add(language.Shared.USA);
       if (server.Data.Singapore) countries.add(language.Shared.Singapore);
       if (server.Data.France) countries.add(language.Shared.France);
+      if (server.Data.UnitedKingdom) countries.add(language.Shared.UnitedKingdom);
+      if (server.Data.Poland) countries.add(language.Shared.Poland);
+      if (server.Data.Canada) countries.add(language.Shared.Canada);
     });
     return countries;
   }

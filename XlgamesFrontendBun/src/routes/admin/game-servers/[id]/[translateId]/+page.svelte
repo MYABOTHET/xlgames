@@ -67,6 +67,9 @@
     <PrimaryCheckbox bind:value={translate.USA} title="США"/>
     <PrimaryCheckbox bind:value={translate.Singapore} title="Сингапур"/>
     <PrimaryCheckbox bind:value={translate.France} title="Франция"/>
+    <PrimaryCheckbox bind:value={translate.UnitedKingdom} title="Великобритания"/>
+    <PrimaryCheckbox bind:value={translate.Poland} title="Польша"/>
+    <PrimaryCheckbox bind:value={translate.Canada} title="Канада"/>
     <PrimaryCheckbox bind:value={translate.Europe} title="Европа"/>
   </QuaternarySection>
   <SaveForm {access} {error} onclick={updateGameServerData}/>

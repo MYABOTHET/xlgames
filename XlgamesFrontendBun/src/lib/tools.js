@@ -46,7 +46,15 @@ export let defaultCountriesAndRegions = {
   Ashburn: false,
   Singapore: false,
   France: false,
-  Gravelines: false
+  Gravelines: false,
+  UnitedKingdom: false,
+  Poland: false,
+  Canada: false,
+  Limburg: false,
+  Erith: false,
+  Strasbourg: false,
+  Warsaw: false,
+  Beauharnois: false,
 }
 
 export let defaultProductData = {
@@ -92,6 +100,14 @@ export function getDefaultCountriesAndRegions(data) {
     Singapore: data?.productData?.Singapore ?? false,
     France: data?.productData?.France ?? false,
     Gravelines: data?.productData?.Gravelines ?? false,
+    UnitedKingdom: data?.productData?.UnitedKingdom ?? false,
+    Poland: data?.productData?.Poland ?? false,
+    Canada: data?.productData?.Canada ?? false,
+    Limburg: data?.productData?.Limburg ?? false,
+    Erith: data?.productData?.Erith ?? false,
+    Strasbourg: data?.productData?.Strasbourg ?? false,
+    Warsaw: data?.productData?.Warsaw ?? false,
+    Beauharnois: data?.productData?.Beauharnois ?? false,
   }
 }
 

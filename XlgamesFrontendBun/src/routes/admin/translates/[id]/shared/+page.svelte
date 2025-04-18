@@ -93,6 +93,9 @@
     <PrimaryTextarea bind:value={language.Shared.Finland} title="Финляндия"/>
     <PrimaryTextarea bind:value={language.Shared.Germany} title="Германия"/>
     <PrimaryTextarea bind:value={language.Shared.France} title="Франция"/>
+    <PrimaryTextarea bind:value={language.Shared.UnitedKingdom} title="Великобритания"/>
+    <PrimaryTextarea bind:value={language.Shared.Poland} title="Польша"/>
+    <PrimaryTextarea bind:value={language.Shared.Canada} title="Канада"/>
   </QuaternarySection>
   <QuaternarySection title="Регионы">
     <PrimaryTextarea bind:value={language.Shared.Moscow} title="Москва"/>
@@ -110,6 +113,11 @@
     <PrimaryTextarea bind:value={language.Shared.Frankfurt} title="Франкфурт"/>
     <PrimaryTextarea bind:value={language.Shared.Nuremberg} title="Нюрнберг"/>
     <PrimaryTextarea bind:value={language.Shared.Gravelines} title="Гравлин"/>
+    <PrimaryTextarea bind:value={language.Shared.Limburg} title="Лимбург"/>
+    <PrimaryTextarea bind:value={language.Shared.Erith} title="Эрит"/>
+    <PrimaryTextarea bind:value={language.Shared.Strasbourg} title="Страсбург"/>
+    <PrimaryTextarea bind:value={language.Shared.Warsaw} title="Варшава"/>
+    <PrimaryTextarea bind:value={language.Shared.Beauharnois} title="Богарнуа"/>
   </QuaternarySection>
   <QuaternarySection title="Континенты">
     <PrimaryTextarea bind:value={language.Shared.Europe} title="Европа"/>
