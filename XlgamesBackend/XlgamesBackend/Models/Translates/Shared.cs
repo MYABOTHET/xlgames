@@ -104,9 +104,20 @@ namespace XlgamesBackend.Models.Translates
         public string Falkenstein { get; set; } = "...";
         public string Frankfurt { get; set; } = "...";
         public string Nuremberg { get; set; } = "...";
+        public string Limburg { get; set; } = "...";
 
         public string France { get; set; } = "...";
         public string Gravelines { get; set; } = "...";
+        public string Strasbourg { get; set; } = "...";
+
+        public string UnitedKingdom { get; set; } = "...";
+        public string Erith { get; set; } = "...";
+
+        public string Poland { get; set; } = "...";
+        public string Warsaw { get; set; } = "...";
+
+        public string Canada { get; set; } = "...";
+        public string Beauharnois { get; set; } = "...";
 
         // Континенты
         public string Europe { get; set; } = "...";

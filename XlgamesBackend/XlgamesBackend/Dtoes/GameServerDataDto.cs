@@ -13,5 +13,8 @@
         public bool Germany { get; set; }
         public bool France { get; set; }
         public bool Europe { get; set; }
+        public bool UnitedKingdom { get; set; }
+        public bool Poland { get; set; }
+        public bool Canada { get; set; }
     }
 }
