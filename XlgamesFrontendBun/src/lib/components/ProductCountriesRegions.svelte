@@ -29,7 +29,7 @@
     <PrimaryCheckbox bind:value={product.Warsaw} title="Варшава"/>
   </DecimalPreset>
   <DecimalPreset bind:value={product.Canada} off={() => {
-      product.Warsaw = false;
+      product.Beauharnois = false;
     }} title="Канада">
     <PrimaryCheckbox bind:value={product.Beauharnois} title="Богарнуа"/>
   </DecimalPreset>

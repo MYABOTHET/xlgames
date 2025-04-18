@@ -7,6 +7,9 @@
   import USA from "$lib/components/svg/flags/USA.svelte";
   import SecondaryDropdownMenu from "$lib/components/dropdown-menus/SecondaryDropdownMenu.svelte";
   import France from "$lib/components/svg/flags/France.svelte";
+  import Canada from "$lib/components/svg/flags/Canada.svelte";
+  import Poland from "$lib/components/svg/flags/Poland.svelte";
+  import Uk from "$lib/components/svg/flags/Uk.svelte";
   
   const {serversProp, userOnMobile, preset, ...props} = $props();
   
@@ -218,7 +221,8 @@
     let country = new Set();
     if (language.Shared.Falkenstein === region ||
         language.Shared.Frankfurt === region ||
-        language.Shared.Nuremberg === region) {
+        language.Shared.Nuremberg === region ||
+      language.Shared.Limburg === region) {
       country.add(language.Shared.Germany);
       return country;
     }
@@ -242,8 +246,21 @@
       country.add(language.Shared.USA);
       return country;
     }
-    if (language.Shared.Gravelines === region) {
+    if (language.Shared.Gravelines === region ||
+      language.Shared.Strasbourg === region) {
       country.add(language.Shared.France);
+      return country;
+    }
+    if (language.Shared.Erith === region) {
+      country.add(language.Shared.UnitedKingdom);
+      return country;
+    }
+    if (language.Shared.Warsaw === region) {
+      country.add(language.Shared.Poland);
+      return country;
+    }
+    if (language.Shared.Beauharnois === region) {
+      country.add(language.Shared.Canada);
       return country;
     }
     if (language.Shared.Singapore === region) {
@@ -259,12 +276,14 @@
         if (server.Data.Falkenstein) regions.add(language.Shared.Falkenstein);
         if (server.Data.Frankfurt) regions.add(language.Shared.Frankfurt);
         if (server.Data.Nuremberg) regions.add(language.Shared.Nuremberg);
+        if (server.Data.Limburg) regions.add(language.Shared.Limburg);
       }
       if (server.Data.Finland && language.Shared.Finland === country) {
         if (server.Data.Helsinki) regions.add(language.Shared.Helsinki);
       }
       if (server.Data.France && language.Shared.France === country) {
         if (server.Data.Gravelines) regions.add(language.Shared.Gravelines);
+        if (server.Data.Strasbourg) regions.add(language.Shared.Strasbourg);
       }
       if (server.Data.Russia && language.Shared.Russia === country) {
         if (server.Data.Moscow) regions.add(language.Shared.Moscow);
@@ -280,6 +299,9 @@
         if (server.Data.Hillsboro) regions.add(language.Shared.Hillsboro);
         if (server.Data.Ashburn) regions.add(language.Shared.Ashburn);
       }
+      if (server.Data.UnitedKingdom && language.Shared.UnitedKingdom === country) regions.add(language.Shared.Erith);
+      if (server.Data.Poland && language.Shared.Poland === country) regions.add(language.Shared.Warsaw);
+      if (server.Data.Canada && language.Shared.Canada === country) regions.add(language.Shared.Beauharnois);
       if (server.Data.Singapore && language.Shared.Singapore === country) regions.add(language.Shared.Singapore);
     });
     return regions;
@@ -292,12 +314,23 @@
         if (server.Data.Falkenstein) regions.add(language.Shared.Falkenstein);
         if (server.Data.Frankfurt) regions.add(language.Shared.Frankfurt);
         if (server.Data.Nuremberg) regions.add(language.Shared.Nuremberg);
+        if (server.Data.Limburg) regions.add(language.Shared.Limburg);
       }
       if (server.Data.Finland) {
         if (server.Data.Helsinki) regions.add(language.Shared.Helsinki);
       }
+      if (server.Data.UnitedKingdom) {
+        if (server.Data.Erith) regions.add(language.Shared.Erith);
+      }
+      if (server.Data.Poland) {
+        if (server.Data.Warsaw) regions.add(language.Shared.Warsaw);
+      }
+      if (server.Data.Canada) {
+        if (server.Data.Beauharnois) regions.add(language.Shared.Beauharnois);
+      }
       if (server.Data.France) {
         if (server.Data.Gravelines) regions.add(language.Shared.Gravelines);
+        if (server.Data.Strasbourg) regions.add(language.Shared.Strasbourg);
       }
       if (server.Data.Russia) {
         if (server.Data.Moscow) regions.add(language.Shared.Moscow);
@@ -336,6 +369,9 @@
     server.Data.USA ? countries.push(language.Shared.USA) : null;
     server.Data.Singapore ? countries.push(language.Shared.Singapore) : null;
     server.Data.France ? countries.push(language.Shared.France) : null;
+    server.Data.UnitedKingdom ? countries.push(language.Shared.UnitedKingdom) : null;
+    server.Data.Poland ? countries.push(language.Shared.Poland) : null;
+    server.Data.Canada ? countries.push(language.Shared.Canada) : null;
     if (!countries.length) countries.push("...");
     return countries.join(", ");
   }
@@ -358,6 +394,11 @@
     server.Data.Ashburn ? regions.push(language.Shared.Ashburn) : null;
     server.Data.Gravelines ? regions.push(language.Shared.Gravelines) : null;
     server.Data.Singapore ? regions.push(language.Shared.Singapore) : null;
+    server.Data.Limburg ? regions.push(language.Shared.Limburg) : null;
+    server.Data.Erith ? regions.push(language.Shared.Erith) : null;
+    server.Data.Strasbourg ? regions.push(language.Shared.Strasbourg) : null;
+    server.Data.Warsaw ? regions.push(language.Shared.Warsaw) : null;
+    server.Data.Beauharnois ? regions.push(language.Shared.Beauharnois) : null;
     if (!regions.length) regions.push("...");
     for (let i = 0; i < regions.length; i++) regions[i] = regions[i].replaceAll(" ", "&nbsp;");
     return regions.join(", ");
@@ -493,7 +534,16 @@ border-(--color-quaternary) text-(--color-quaternary) max-nine:w-full"
                 {#if server.Data.France}
                   <France class="min-h-4 max-h-4"/>
                 {/if}
-                {#if !(server.Data.Germany || server.Data.Finland || server.Data.Russia || server.Data.USA || server.Data.Singapore || server.Data.France)}
+                {#if server.Data.UnitedKingdom}
+                  <Uk class="min-h-4 max-h-4"/>
+                {/if}
+                {#if server.Data.Poland}
+                  <Poland class="min-h-4 max-h-4"/>
+                {/if}
+                {#if server.Data.Canada}
+                  <Canada class="min-h-4 max-h-4"/>
+                {/if}
+                {#if !(server.Data.Germany || server.Data.Finland || server.Data.Russia || server.Data.USA || server.Data.Singapore || server.Data.France || server.Data.UnitedKingdom || server.Data.Poland || server.Data.Canada)}
                   ...
                 {/if}
               </div>
