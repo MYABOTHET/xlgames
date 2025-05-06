@@ -121,8 +121,9 @@
     reinit();
   });
   
-  function clearFilters(clearInput = true) {
+  function clearFilters(event, clearInput) {
     if (currentCPU || currentCountry || currentRegion || currentGPU || searchQuery) {
+      if (clearInput === undefined) clearInput = true;
       result = serversProp;
       CPUs = initCPUs(serversProp);
       currentCPU = null;
