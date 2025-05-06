@@ -10,7 +10,8 @@
   import Canada from "$lib/components/svg/flags/Canada.svelte";
   import Poland from "$lib/components/svg/flags/Poland.svelte";
   import Uk from "$lib/components/svg/flags/Uk.svelte";
-  
+  import PrimaryLoupe from "$lib/components/svg/PrimaryLoupe.svelte";
+
   const {serversProp, userOnMobile, preset, ...props} = $props();
   
   let language = $derived(getContext("language")());
@@ -39,24 +40,30 @@
   
   let regions = $state.raw(initRegions(serversProp));
   let currentRegion = $state(null);
+
+  let searchQuery = $state("");
   
   function selectCPU(CPU) {
+    searchQuery = "";
     currentCPU = CPU;
     filter();
   }
   
   function selectGPU(GPU) {
+    searchQuery = "";
     currentGPU = GPU;
     filter();
   }
   
   function selectCountry(country) {
+    searchQuery = "";
     countryKey = country ? getKeyByValue(language.Shared, country) : null;
     currentCountry = country;
     filter();
   }
-  
+
   function selectRegion(region) {
+    searchQuery = "";
     regionKey = region ? getKeyByValue(language.Shared, region) : null;
     currentRegion = region;
     filter();
@@ -114,7 +121,7 @@
     reinit();
   });
   
-  function clearFilters() {
+  function clearFilters(clearInput = true) {
     if (currentCPU || currentCountry || currentRegion || currentGPU) {
       result = serversProp;
       CPUs = initCPUs(serversProp);
@@ -129,6 +136,7 @@
         GPUs = initGPUs(serversProp);
         currentGPU = null;
       }
+      if (clearInput) searchQuery = "";
     }
   }
   
@@ -410,6 +418,13 @@
     const price = priceFormatter.format(server.Pricings.find(pricing => pricing.CurrencyId === language.CurrencyId).Price);
     return position ? sign + price : price + sign;
   }
+
+  function search() {
+    clearFilters(false);
+    result = serversProp.filter(server => [server.Data.CPU, server.Data.Disk, server.Data.DiskType, server.Data.GHz,
+      server.Data.RAM, server.Data.RAMType, getCountries(server).replaceAll("&nbsp;", " ").replaceAll(",", ""), getRegions(server).replaceAll("&nbsp;", " ").replaceAll(",", ""),
+      (server.Data.GPU ? server.Data.GPU : "")].join(" ").toLowerCase().includes(searchQuery.toLowerCase()));
+  }
 </script>
 
 {#snippet Enum(title, description)}
@@ -446,28 +461,41 @@
   </section>
 {/snippet}
 
-<div {...props} class="{props.class} flex flex-wrap gap-4">
-  <SecondaryDropdownMenu class="min-w-80 max-w-80 max-nine:max-w-full max-nine:min-w-full flex-[1_1_100%]"
+<div {...props} class="{props.class} gap-4 grid grid-cols-2 max-sm:grid-cols-1">
+  <SecondaryDropdownMenu class=""
                          currentItem={currentCPU} defaultItem={language.Shared.AnyCPU} items={CPUs}
                          select={selectCPU}>
   </SecondaryDropdownMenu>
   {#if preset === "primary"}
-    <SecondaryDropdownMenu class="min-w-72 max-w-72 max-nine:max-w-full max-nine:min-w-full flex-[1_1_100%]"
+    <SecondaryDropdownMenu class=""
                            defaultItem={language.Shared.AnyGPU} select={selectGPU} currentItem={currentGPU}
                            items={GPUs}>
     </SecondaryDropdownMenu>
   {/if}
-  <SecondaryDropdownMenu class="min-w-56 max-w-56 max-nine:max-w-full max-nine:min-w-full flex-[1_1_100%]"
+  <SecondaryDropdownMenu class=""
                          currentItem={currentCountry} defaultItem={language.Shared.AnyCountry} items={countries}
                          select={selectCountry}>
   </SecondaryDropdownMenu>
-  <SecondaryDropdownMenu class="min-w-56 max-w-56 max-nine:max-w-full max-nine:min-w-full flex-[1_1_100%]"
+  <SecondaryDropdownMenu class=""
                          currentItem={currentRegion} defaultItem={language.Shared.AnyRegion} items={regions}
                          select={selectRegion}>
   </SecondaryDropdownMenu>
   <button class="border-2 px-6 py-2.5 rounded-full text-nowrap transition-colors hover:bg-(--color-secondary)
-border-(--color-quaternary) text-(--color-quaternary) max-nine:w-full"
+border-(--color-quaternary) text-(--color-quaternary) w-full"
           onclick={clearFilters}>{language.Shared.ResetFilters}</button>
+  <div class="pl-6 flex-center primary-block-default text-white rounded-full primary-bg w-full {preset === 'primary' ? '' : 'col-span-2 max-sm:col-span-1'}
+{searchQuery
+    ? 'border-(--color-ternary) fill-(--color-ternary)'
+    : 'border-(--color-quaternary) fill-(--color-quaternary)'}">
+    <PrimaryLoupe class="min-w-3.5 min-h-3.5 max-w-3.5 max-h-3.5"/>
+    <input autocomplete="off" bind:value={
+          () => searchQuery,
+          (value) => {searchQuery = value; search();}
+          }
+           class="min-w-0 w-full pl-3 pr-6 py-2.5 bg-transparent placeholder-(--color-quaternary) outline-hidden"
+           id="search" name="search" placeholder={language.GameServers.Search}
+           spellcheck="false">
+  </div>
 </div>
 {#if result.length}
   {#if !userOnMobile}

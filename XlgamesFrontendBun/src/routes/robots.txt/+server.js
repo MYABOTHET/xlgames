@@ -2,19 +2,19 @@ import configuration from "$lib";
 
 export async function GET({fetch}) {
   const languages = await (await fetch(`${configuration.api}/Languages`)).json();
-  let disallows = [];
-  languages.forEach(language => {
-    if (language.Lang === "en") {
-      disallows.push(`Disallow: /news/`);
-    } else {
-      disallows.push(`Disallow: /${language.Lang}/news/`);
-    }
-  });
+  // let disallows = [];
+  // languages.forEach(language => {
+  //   if (language.Lang === "en") {
+  //     disallows.push(`Disallow: /news/`);
+  //   } else {
+  //     disallows.push(`Disallow: /${language.Lang}/news/`);
+  //   }
+  // });
+  // ${disallows.join('\n')}
   return new Response(
       `
 User-agent: *
 Allow: /
-${disallows.join('\n')}
 Disallow: /images
 Disallow: /fonts
 Disallow: /store

@@ -3,6 +3,7 @@ import configuration from "$lib";
 export async function GET() {
   const languages = await (await fetch(`${configuration.api}/Languages`)).json();
   const games = await (await fetch(`${configuration.api}/GameServers/Links`)).json();
+  const news = await (await fetch(`${configuration.api}/News?whmcsName=english`)).json();
   let ip = 'https://xlgames.gg';
   let urls = [
       '/',
@@ -18,9 +19,10 @@ export async function GET() {
       '/terms-of-service',
       '/vpn',
       '/vps',
-      '/web-hosting'
+      '/web-hosting',
   ];
   urls = urls.concat(games.map(game => `/games/${game.Name}`));
+  urls = urls.concat(news.map(newsItem => `/news/${newsItem.LinkName}`));
   let output = [];
   languages.forEach(l => {
     urls.forEach(url => {
