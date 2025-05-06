@@ -1,3 +1,9 @@
-h1 {
-  color: blue;
+@import "tailwindcss";
+
+.xlgames-module {
+  @apply text-white tracking-wide text-[16px] font-[Inter] font-light;
+}
+
+button {
+  cursor: pointer;
 }

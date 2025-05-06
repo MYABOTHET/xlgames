@@ -2,13 +2,13 @@
 
 <script>
   import css from "./app.css?inline";
-  import OVHcloud from "./lib/modules/OVHcloud.svelte";
-
-  const style = `<style>${css}</style>`;
+  import Hetzner from "./lib/modules/presets/Hetzner.svelte";
 </script>
 
-{@html style}
+{@html `<style>${css}</style>`}
 
-<section>
-  <OVHcloud/>
+<section class="xlgames-module">
+  <Hetzner/>
+  <!--  <DeinServerHost/>-->
+  <!--  <OVHcloud/>-->
 </section>
