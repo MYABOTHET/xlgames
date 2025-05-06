@@ -121,8 +121,8 @@
     reinit();
   });
   
-  function clearFilters(clearInput) {
-    if (currentCPU || currentCountry || currentRegion || currentGPU) {
+  function clearFilters(clearInput = true) {
+    if (currentCPU || currentCountry || currentRegion || currentGPU || searchQuery) {
       result = serversProp;
       CPUs = initCPUs(serversProp);
       currentCPU = null;
@@ -136,8 +136,8 @@
         GPUs = initGPUs(serversProp);
         currentGPU = null;
       }
+      if (clearInput) searchQuery = "";
     }
-    if (clearInput) searchQuery = "";
   }
   
   function reinit() {
