@@ -121,7 +121,7 @@
     reinit();
   });
   
-  function clearFilters(clearInput = true) {
+  function clearFilters(clearInput) {
     if (currentCPU || currentCountry || currentRegion || currentGPU) {
       result = serversProp;
       CPUs = initCPUs(serversProp);
@@ -136,8 +136,8 @@
         GPUs = initGPUs(serversProp);
         currentGPU = null;
       }
-      if (clearInput) searchQuery = "";
     }
+    if (clearInput) searchQuery = "";
   }
   
   function reinit() {
