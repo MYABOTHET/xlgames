@@ -31,6 +31,8 @@
   }
 
   async function reinstall_os() {
+    let sure = confirm(`${language.are_you_sure_you_want_to_reinstall_the_os ?? "..."}\n\n* ${language.after_reinstalling_the_os_all_data_will_be_deleted_permanently_without_the_possibility_of_recovery ?? "..."}`);
+    if (!sure) return;
     loading_control = true;
     let result = await process("reinstall", {
       method: "POST",

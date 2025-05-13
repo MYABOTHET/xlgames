@@ -19,7 +19,6 @@
 </script>
 
 <svelte:head>
-  <meta content="noindex, nofollow" name="robots"/>
   <title>{language.News.Title} - {news.Name} - {data.projectData.Name}</title>
 </svelte:head>
 
