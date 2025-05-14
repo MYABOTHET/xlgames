@@ -1,15 +1,16 @@
 <svelte:options customElement="xlgames-module" />
-
 <script>
   import css from "./app.css?inline";
-  import Hetzner from "./lib/modules/presets/Hetzner.svelte";
-
+  import Module from "./lib/modules/hosting/Module.svelte";
 </script>
-
 {@html `<style>${css}</style>`}
-
 <section class="xlgames-module">
-  <Hetzner/>
-<!--    <DeinServerHost/>-->
-  <!--  <OVHcloud/>-->
+  <Module/>
 </section>
+
+<!--<svelte:options customElement={{-->
+<!--  tag: "schedule-module",-->
+<!--  shadow: "none",-->
+<!--}}/>-->
+<!--<script>import ScheduleModule from "./lib/modules/hosting/ScheduleModule.svelte";</script>-->
+<!--<ScheduleModule/>-->

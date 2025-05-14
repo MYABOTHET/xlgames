@@ -19,13 +19,15 @@
       <Arrow class="fill-gray-700/90 min-h-2.5 max-h-2.5 {see ? '-rotate-180 fill-white' : ''} transition-all"/>
     </button>
     {#if see}
-      <div class="absolute w-full z-5 top-full flex flex-col">
-        {#each available_os as item}
-          <button title={item} onclick={() => {os = item; see = false}}
-                  class="hover:bg-[#1f242e] truncate w-full py-3 px-5 border-gray-700/90 border-dotted border-b border-x bg-[#1b1f28]">
-            <span class="truncate">{item}</span>
-          </button>
-        {/each}
+      <div class="absolute w-full z-5 top-full overflow-hidden overflow-y-scroll scheme-dark h-[288px] border-b border-b-gray-700/90 border-dotted">
+        <div class="flex flex-col">
+          {#each available_os as item}
+            <button title={item} onclick={() => {os = item; see = false}}
+                    class="last:border-b-0 first:border-t-0 hover:bg-[#1f242e] truncate w-full py-3 px-5 border-gray-700/90 border-dotted border-b border-x bg-[#1b1f28]">
+              <span class="truncate">{item}</span>
+            </button>
+          {/each}
+        </div>
       </div>
     {/if}
   </div>
