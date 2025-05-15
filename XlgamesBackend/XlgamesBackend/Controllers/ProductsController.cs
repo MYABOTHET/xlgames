@@ -55,6 +55,20 @@ namespace XlgamesBackend.Controllers
                             CurrencyId = pricing.currency,
                             Price = pricing.monthly,
                         })
+                        .ToList(),
+                    qty = server.qty,
+                    Russian = server.gid.Equals(3) || server.gid.Equals(9),
+                    SetupTimes = _mySQLContext.DynamicTranslations
+                        .Where(dynamicTranslation =>
+                        dynamicTranslation.related_type.Equals("product.{id}.description") &&
+                        dynamicTranslation.related_id.Equals(server.id) &&
+                        dynamicTranslation.input_type.Equals("textarea"))
+                        .Select(dynamicTranslation =>
+                        new SetupTime
+                        {
+                            WHMCSName = dynamicTranslation.language,
+                            Content = ExtractSetupTime(dynamicTranslation.translation)
+                        })
                         .ToList()
                 })
                 .AsSplitQuery();
