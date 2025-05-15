@@ -513,7 +513,7 @@
     {@render Enum(language.Shared.Region, getRegions(server))}
     {@render Enum(language.Shared.PricePerMonth, getPrice(server))}
     {#if stock && setupTime}
-      {@render Enum(setupTime[0].split(" ")[0], setupTime[1])}
+      {@render Enum(setupTime[0].replaceAll("-", "").trim(), setupTime[1])}
     {/if}
     <a rel="nofollow" class="primary-link mx-auto mt-3" href="/store/store/{server.Link}" data-sveltekit-reload>{language.Shared.Order}</a>
   </section>
