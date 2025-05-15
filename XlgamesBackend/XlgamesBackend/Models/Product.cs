@@ -8,6 +8,7 @@ namespace XlgamesBackend.Models
     {
         public int id { get; set; }
         public int gid { get; set; }
+        public int qty { get; set; }
         public bool hidden { get; set; }
         public string short_description { get; set; } = "...";
     }

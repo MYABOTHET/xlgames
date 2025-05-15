@@ -1,9 +1,12 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using System.Text.RegularExpressions;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using XlgamesBackend.Dtoes;
 using XlgamesBackend.Models;
 using XlgamesBackend.MySQL;
+using XlgamesBackend.PostgreSQL;
 
 namespace XlgamesBackend.Controllers
 {
@@ -13,14 +16,24 @@ namespace XlgamesBackend.Controllers
     {
         #region Переменные
         private readonly MySQLContext _mySQLContext;
+        private readonly PostgreSQLContext _postgreSQLContext;
         #endregion
 
         #region Конструктор
-        public ProductsController(MySQLContext mySQLContext)
+        public ProductsController(MySQLContext mySQLContext, PostgreSQLContext postgreSQLContext)
         {
             _mySQLContext = mySQLContext;
+            _postgreSQLContext = postgreSQLContext;
         }
         #endregion
+
+        public static string ExtractSetupTime(string input)
+        {
+            var pattern = @"<strong>(.*?\b\d+-\d+\b.*?)<\/strong>";
+            var match = Regex.Match(input, pattern, RegexOptions.IgnoreCase);
+
+            return match.Success ? match.Groups[1].Value : "...";
+        }
 
         public IQueryable<ProductModel> SelectProductModel(IQueryable<Product> products)
         {
@@ -42,8 +55,21 @@ namespace XlgamesBackend.Controllers
                             CurrencyId = pricing.currency,
                             Price = pricing.monthly,
                         })
+                        .ToList(),
+                    qty = server.qty,
+                    Russian = server.gid.Equals(3) || server.gid.Equals(9),
+                    SetupTimes = _mySQLContext.DynamicTranslations
+                        .Where(dynamicTranslation =>
+                        dynamicTranslation.related_type.Equals("product.{id}.description") &&
+                        dynamicTranslation.related_id.Equals(server.id) &&
+                        dynamicTranslation.input_type.Equals("textarea"))
+                        .Select(dynamicTranslation => 
+                        new SetupTime { WHMCSName = dynamicTranslation.language,
+                            Content = ExtractSetupTime(dynamicTranslation.translation)
+                        })
                         .ToList()
-                });
+                })
+                .AsSplitQuery();
         }
 
         [HttpGet("{id:int}")]

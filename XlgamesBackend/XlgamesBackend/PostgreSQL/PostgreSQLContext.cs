@@ -27,12 +27,10 @@ namespace XlgamesBackend.PostgreSQL
             : base(options)
         {
             Configuration = configuration;
-            // if (!s_initialized)
-            // {
-            //     Database.EnsureDeleted();
-            //     Database.EnsureCreated();
-            // }
-            // s_initialized = true;
+            //if (!s_initialized)
+            //{
+            //}
+            //s_initialized = true;
         }
         #endregion
 

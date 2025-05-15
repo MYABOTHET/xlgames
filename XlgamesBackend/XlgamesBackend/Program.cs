@@ -39,8 +39,7 @@ string mysqlConnection = builder.Configuration.GetConnectionString("MySQL")!;
 
 #region Добавить базы данных
 builder.Services.AddDbContext<PostgreSQLContext>(
-    options => options.UseNpgsql(postgresqlConnection,
-    options => options.UseQuerySplittingBehavior(QuerySplittingBehavior.SplitQuery)));
+    options => options.UseNpgsql(postgresqlConnection, options => options.UseQuerySplittingBehavior(QuerySplittingBehavior.SplitQuery)));
 
 builder.Services.AddDbContext<MySQLContext>(
     options => options.UseMySql(mysqlConnection, new MySqlServerVersion(new Version(8, 0, 40))));
