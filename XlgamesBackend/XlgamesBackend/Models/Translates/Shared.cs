@@ -1,4 +1,5 @@
-﻿using XlgamesBackend.Models.TranslateBases;
+﻿using Humanizer;
+using XlgamesBackend.Models.TranslateBases;
 
 namespace XlgamesBackend.Models.Translates
 {
@@ -134,5 +135,8 @@ namespace XlgamesBackend.Models.Translates
         public string Error { get; set; } = "...";
         public string More { get; set; } = "...";
         public string ReadMore { get; set; } = "...";
+        public string Availability { get; set; } = "...";
+        public string CursorCircle { get; set; } = "...";
+        public string AvailableStock { get; set; } = "...";
     }
 }
