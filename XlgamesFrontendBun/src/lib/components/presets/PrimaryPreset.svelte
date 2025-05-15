@@ -74,6 +74,11 @@
   }
 
   $effect(() => {
+    language;
+    reinit();
+  });
+
+  $effect(() => {
     if (stock) {
       if (!searchQuery) {
         filter();
@@ -152,11 +157,6 @@
 
     result = servers;
   }
-  
-  $effect(() => {
-    language;
-    reinit();
-  });
   
   function clearFilters(event, clearInput) {
     if (currentCPU || currentCountry || currentRegion || currentGPU || searchQuery
