@@ -33,6 +33,6 @@
 <article class="flex flex-col gap-y-14">
   <h1 class="primary-title">{language.VPS.Name}</h1>
   <p>{language.VPS.Description}</p>
-  <PrimaryPreset preset="secondary" serversProp={data.servers} {userOnMobile}/>
+  <PrimaryPreset stock={false} preset="secondary" serversProp={data.servers} {userOnMobile}/>
   <QuinaryCard/>
 </article>

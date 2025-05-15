@@ -133,5 +133,8 @@
     <PrimaryTextarea bind:value={language.Shared.AnyQuestionsCenter} title="Есть вопросы? (Середина)"/>
     <PrimaryTextarea bind:value={language.Shared.AnyQuestionsEnd} title="Есть вопросы? (Конец)"/>
     <PrimaryTextarea bind:value={language.Shared.HelpMessage} title="Вспомогательное сообщение"/>
+    <PrimaryTextarea bind:value={language.Shared.Availability} title="Наличие"/>
+    <PrimaryTextarea bind:value={language.Shared.CursorCircle} title="Наведитесь курсором на кружок, чтобы узнать если ли в наличии продукт и сколько времени займет установка"/>
+    <PrimaryTextarea bind:value={language.Shared.AvailableStock} title="Есть в наличии?"/>
   </QuaternarySection>
 </SecondaryPage>

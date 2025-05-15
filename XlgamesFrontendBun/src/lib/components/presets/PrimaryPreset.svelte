@@ -1,5 +1,5 @@
 <script>
-  import {getContext} from "svelte";
+  import {getContext, untrack} from "svelte";
   import Singapore from "$lib/components/svg/flags/Singapore.svelte";
   import Germany from "$lib/components/svg/flags/Germany.svelte";
   import Finland from "$lib/components/svg/flags/Finland.svelte";
@@ -11,8 +11,10 @@
   import Poland from "$lib/components/svg/flags/Poland.svelte";
   import Uk from "$lib/components/svg/flags/Uk.svelte";
   import PrimaryLoupe from "$lib/components/svg/PrimaryLoupe.svelte";
+  import ProductHaveInfo from "$lib/components/svg/ProductHaveInfo.svelte";
+  import PrimaryCheckbox from "$lib/components/checkbox/PrimaryCheckbox.svelte";
 
-  const {serversProp, userOnMobile, preset, ...props} = $props();
+  const {serversProp, userOnMobile, preset, stock = true, ...props} = $props();
   
   let language = $derived(getContext("language")());
   let oldLanguage = $state.raw({
@@ -42,6 +44,8 @@
   let currentRegion = $state(null);
 
   let searchQuery = $state("");
+
+  let availableStock = $state();
   
   function selectCPU(CPU) {
     searchQuery = "";
@@ -68,9 +72,38 @@
     currentRegion = region;
     filter();
   }
-  
+
+  $effect(() => {
+    if (stock) {
+      if (!searchQuery) {
+        filter();
+        if (availableStock) {
+          untrack(() => {
+            if (!CPUs.has(currentCPU)) {
+              currentCPU = "";
+            }
+            if (!countries.has(currentCountry)) {
+              currentCountry = "";
+            }
+            if (!regions.has(currentRegion)) {
+              currentRegion = "";
+            }
+            if (preset === "primary") {
+              if (!GPUs.has(currentGPU)) {
+                currentGPU = "";
+              }
+            }
+          })
+        }
+      } else {
+        search();
+      }
+    }
+  });
+
   function filter() {
     const servers = serversProp.filter(server =>
+        (stock ? (availableStock ? (!server.Russian || server.qty) : true) : true) &&
         (currentCPU ? server.Data.CPU === currentCPU : true) &&
         (currentCountry ? server.Data[countryKey] : true) &&
         (currentRegion ? server.Data[regionKey] : true) &&
@@ -78,12 +111,14 @@
     );
     
     CPUs = new Set(serversProp.filter(server =>
+      (stock ? (availableStock ? (!server.Russian || server.qty) : true) : true) &&
         (currentCountry ? server.Data[countryKey] : true) &&
         (currentRegion ? server.Data[regionKey] : true) &&
         (preset === "primary" ? (currentGPU ? server.Data.GPU === currentGPU : true) : true)
     ).map(server => server.Data.CPU));
     
     const serversCountries = serversProp.filter(server =>
+      (stock ? (availableStock ? (!server.Russian || server.qty) : true) : true) &&
         (currentCPU ? server.Data.CPU === currentCPU : true) &&
         (currentRegion ? server.Data[regionKey] : true) &&
         (preset === "primary" ? (currentGPU ? server.Data.GPU === currentGPU : true) : true));
@@ -95,6 +130,7 @@
     }
     
     const serversRegions = serversProp.filter(server =>
+      (stock ? (availableStock ? (!server.Russian || server.qty) : true) : true) &&
         (currentCPU ? server.Data.CPU === currentCPU : true) &&
         (currentCountry ? server.Data[countryKey] : true) &&
         (preset === "primary" ? (currentGPU ? server.Data.GPU === currentGPU : true) : true));
@@ -107,12 +143,13 @@
     
     if (preset === "primary") {
       GPUs = new Set(serversProp.filter(server =>
+        (stock ? (availableStock ? (!server.Russian || server.qty) : true) : true) &&
           (currentCPU ? server.Data.CPU === currentCPU : true) &&
           (currentCountry ? server.Data[countryKey] : true) &&
           (currentRegion ? server.Data[regionKey] : true)
       ).map(server => server.Data.GPU));
     }
-    
+
     result = servers;
   }
   
@@ -122,7 +159,9 @@
   });
   
   function clearFilters(event, clearInput) {
-    if (currentCPU || currentCountry || currentRegion || currentGPU || searchQuery) {
+    if (currentCPU || currentCountry || currentRegion || currentGPU || searchQuery
+      || availableStock === true
+    ) {
       if (clearInput === undefined) clearInput = true;
       result = serversProp;
       CPUs = initCPUs(serversProp);
@@ -137,7 +176,10 @@
         GPUs = initGPUs(serversProp);
         currentGPU = null;
       }
-      if (clearInput) searchQuery = "";
+      if (clearInput) {
+        searchQuery = "";
+        availableStock = false;
+      }
     }
   }
   
@@ -421,10 +463,22 @@
   }
 
   function search() {
-    clearFilters(false);
-    result = serversProp.filter(server => [server.Data.CPU, server.Data.Disk, server.Data.DiskType, server.Data.GHz,
+    clearFilters({}, false);
+    result = serversProp.filter(server => (stock ? (availableStock ? (!server.Russian || server.qty) : true) : true) && [server.Data.CPU, server.Data.Disk, server.Data.DiskType, server.Data.GHz,
       server.Data.RAM, server.Data.RAMType, getCountries(server).replaceAll("&nbsp;", " ").replaceAll(",", ""), getRegions(server).replaceAll("&nbsp;", " ").replaceAll(",", ""),
-      (server.Data.GPU ? server.Data.GPU : "")].join(" ").toLowerCase().includes(searchQuery.toLowerCase()));
+      (server.Data.GPU ? server.Data.GPU : "")].join(" ").toLowerCase().includes(searchQuery.trim().toLowerCase()));
+  }
+
+  function splitAtFirstNumber(str) {
+    const match = str.match(/\d/);
+    if (match) {
+      const index = match.index;
+      return [
+        str.substring(0, index).trim(),
+        str.substring(index).trim()
+      ];
+    }
+    return [str.trim(), ''];
   }
 </script>
 
@@ -438,7 +492,7 @@
   </article>
 {/snippet}
 
-{#snippet Card(server)}
+{#snippet Card(server, setupTime)}
   <section class="flex flex-col gap-y-1 border-2 rounded-2xl overflow-hidden border-(--color-ternary) py-5 px-6">
     {@render Enum(language.Shared.CPU, server.Data.CPU)}
     {#if preset === "secondary"}
@@ -458,8 +512,17 @@
     {@render Enum(language.Shared.Country, getCountries(server))}
     {@render Enum(language.Shared.Region, getRegions(server))}
     {@render Enum(language.Shared.PricePerMonth, getPrice(server))}
+    {#if stock && setupTime}
+      {@render Enum(setupTime[0].split(" ")[0], setupTime[1])}
+    {/if}
     <a rel="nofollow" class="primary-link mx-auto mt-3" href="/store/store/{server.Link}" data-sveltekit-reload>{language.Shared.Order}</a>
   </section>
+{/snippet}
+
+{#snippet resetFiltersPreset()}
+  <button class="border-2 px-6 py-2.5 rounded-full text-nowrap transition-colors hover:bg-(--color-secondary)
+border-(--color-quaternary) text-(--color-quaternary)"
+          onclick={clearFilters}>{language.Shared.ResetFilters}</button>
 {/snippet}
 
 <div {...props} class="{props.class} gap-4 grid grid-cols-2 max-sm:grid-cols-1">
@@ -481,27 +544,41 @@
                          currentItem={currentRegion} defaultItem={language.Shared.AnyRegion} items={regions}
                          select={selectRegion}>
   </SecondaryDropdownMenu>
-  <button class="border-2 px-6 py-2.5 rounded-full text-nowrap transition-colors hover:bg-(--color-secondary)
-border-(--color-quaternary) text-(--color-quaternary) w-full"
-          onclick={clearFilters}>{language.Shared.ResetFilters}</button>
-  <div class="pl-6 flex-center primary-block-default text-white rounded-full primary-bg w-full {preset === 'primary' ? '' : 'col-span-2 max-sm:col-span-1'}
+  {#if preset !== "primary"}
+    {@render resetFiltersPreset()}
+  {/if}
+  <div class="flex col-span-2 max-sm:col-span-1 max-sm:flex max-sm:flex-col" style="gap: inherit">
+    {#if preset === "primary"}
+      {@render resetFiltersPreset()}
+    {/if}
+    <div class="pl-6 flex-center primary-block-default text-white rounded-full primary-bg w-full {preset === 'primary' ? '' : 'col-span-2 max-sm:col-span-1'}
 {searchQuery
     ? 'border-(--color-ternary) fill-(--color-ternary)'
     : 'border-(--color-quaternary) fill-(--color-quaternary)'}">
-    <PrimaryLoupe class="min-w-3.5 min-h-3.5 max-w-3.5 max-h-3.5"/>
-    <input autocomplete="off" bind:value={
+      <PrimaryLoupe class="min-w-3.5 min-h-3.5 max-w-3.5 max-h-3.5"/>
+      <input autocomplete="off" bind:value={
           () => searchQuery,
           (value) => {searchQuery = value; search();}
           }
-           class="min-w-0 w-full pl-3 pr-6 py-2.5 bg-transparent placeholder-(--color-quaternary) outline-hidden"
-           id="search" name="search" placeholder={language.GameServers.Search}
-           spellcheck="false">
+             class="min-w-0 w-full pl-3 pr-6 py-2.5 bg-transparent placeholder-(--color-quaternary) outline-hidden"
+             id="search" name="search" placeholder={language.GameServers.Search}
+             spellcheck="false">
+    </div>
+    {#if stock}
+      <div class="flex gap-2 items-center justify-center mr-1">
+        <button aria-label={language.Shared.AvailableStock}
+                onclick={() => {availableStock = !availableStock}}
+                class="rounded-full border-2 transition-colors size-5.5 {availableStock ? 'bg-(--color-ternary) border-(--color-ternary)' : 'border-(--color-quaternary) hover:bg-(--color-secondary)'}"></button>
+        <span class="text-nowrap text-(--color-quaternary) font-[390]"><span class="mr-1">—</span> {language.Shared.AvailableStock}</span>
+      </div>
+    {/if}
   </div>
 </div>
+
 {#if result.length}
   {#if !userOnMobile}
     <div class="border-2 border-(--color-ternary) rounded-2xl overflow-hidden">
-      <table class="w-full border-separate border-spacing-4 px-2 text-center text-sm">
+      <table class="w-full border-separate border-spacing-x-4 border-spacing-y-4 px-1 text-center text-sm text-[13px]">
         <thead>
         <tr>
           <th>{language.Shared.CPU}</th>
@@ -522,6 +599,14 @@ border-(--color-quaternary) text-(--color-quaternary) w-full"
           <th>{language.Shared.Country}</th>
           <th><p class="pl-4">{language.Shared.Region}</p></th>
           <th>{language.Shared.PricePerMonth}</th>
+          {#if stock}
+            <th><div class="flex gap-2 items-center justify-center">
+              <span>{language.Shared.Availability}</span>
+              <ProductHaveInfo title={language.Shared.CursorCircle}
+                               class="min-w-3.5 max-w-3.5 fill-(--color-ternary)
+                                hover:fill-(--color-quaternary) transition-colors"/>
+            </div></th>
+          {/if}
           <th></th>
         </tr>
         </thead>
@@ -542,7 +627,7 @@ border-(--color-quaternary) text-(--color-quaternary) w-full"
             {#if preset !== "secondary"}
               <td>{server.Data.RAMType}</td>
             {/if}
-            <td>{server.Data.Disk} {#if server.Data.GB}{language.Shared.GB}{/if}{#if server.Data.TB}{language.Shared.TB}{/if}{#if !server.Data.TB && !server.Data.GB}{language.Shared.GB}{/if} {server.Data.DiskType}</td>
+            <td class="text-wrap! min-w-24">{server.Data.Disk} {#if server.Data.GB}{language.Shared.GB}{/if}{#if server.Data.TB}{language.Shared.TB}{/if}{#if !server.Data.TB && !server.Data.GB}{language.Shared.GB}{/if} {server.Data.DiskType}</td>
             <td>
               <div class="grid grid-cols-2 mt-0.5 gap-2 mx-auto w-fit">
                 {#if server.Data.Germany}
@@ -579,6 +664,13 @@ border-(--color-quaternary) text-(--color-quaternary) w-full"
             </td>
             <td class="text-left"><p class="pl-4">{@html getRegions(server)}</p></td>
             <td>{getPrice(server)}</td>
+            {#if stock}
+              <td>
+                <div title={(!server.Russian || server.qty ? `${language.Shared.AvailableStock}. ` : '') + server.SetupTimes.find(setupTime => setupTime.WHMCSName === language.WHMCSName)?.Content} class="mt-1 place-self-center size-2 rounded-full flex justify-center items-center {(!server.Russian || server.qty) ? 'bg-green-500' : server.SetupTimes.find(setupTime => setupTime.WHMCSName === 'english')?.Content.includes('hour') ? 'bg-yellow-300' : 'bg-red-500'}">
+                  <div class="absolute size-8 rounded-full"></div>
+                </div>
+              </td>
+            {/if}
             <td><a rel="nofollow" class="primary-link mx-auto"
                    href="/store/store/{server.Link}" data-sveltekit-reload>{language.Shared.Order}</a></td>
           </tr>
@@ -589,7 +681,9 @@ border-(--color-quaternary) text-(--color-quaternary) w-full"
   {:else}
     <section class="flex flex-col gap-y-8">
       {#each resultSorted as server (server.Id)}
-        {@render Card?.(server)}
+        {@const content = server.SetupTimes.find(setupTime => setupTime.WHMCSName === language.WHMCSName)?.Content}
+        {@const setupTime = (!content || content === "...") ? null : splitAtFirstNumber(content)}
+        {@render Card?.(server, setupTime)}
       {/each}
     </section>
   {/if}

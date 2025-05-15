@@ -19,7 +19,7 @@
       <Arrow class="fill-gray-700/90 min-h-2.5 max-h-2.5 {see ? '-rotate-180 fill-white' : ''} transition-all"/>
     </button>
     {#if see}
-      <div class="absolute w-full z-5 top-full overflow-hidden overflow-y-scroll scheme-dark h-[288px] border-b border-b-gray-700/90 border-dotted">
+      <div class="absolute w-full z-5 top-full overflow-hidden overflow-y-scroll scheme-dark h-[220px] border-b border-b-gray-700/90 border-dotted">
         <div class="flex flex-col">
           {#each available_os as item}
             <button title={item} onclick={() => {os = item; see = false}}
