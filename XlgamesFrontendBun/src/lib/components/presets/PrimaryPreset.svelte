@@ -569,7 +569,7 @@ border-(--color-quaternary) text-(--color-quaternary)"
         <button aria-label={language.Shared.AvailableStock}
                 onclick={() => {availableStock = !availableStock}}
                 class="rounded-full border-2 transition-colors size-5.5 {availableStock ? 'bg-(--color-ternary) border-(--color-ternary)' : 'border-(--color-quaternary) hover:bg-(--color-secondary)'}"></button>
-        <span class="text-nowrap text-(--color-quaternary) font-[390]"><span class="mr-1">—</span> {language.Shared.AvailableStock}</span>
+        <span class="text-nowrap text-(--color-quaternary) font-[390]"><span class="mr-1">—</span> {language.Shared.AvailableStock}?</span>
       </div>
     {/if}
   </div>
@@ -602,9 +602,11 @@ border-(--color-quaternary) text-(--color-quaternary)"
           {#if stock}
             <th><div class="flex gap-2 items-center justify-center">
               <span>{language.Shared.Availability}</span>
-              <ProductHaveInfo title={language.Shared.CursorCircle}
-                               class="min-w-3.5 max-w-3.5 fill-(--color-ternary)
+              <div title={language.Shared.CursorCircle}>
+                <ProductHaveInfo title={language.Shared.CursorCircle}
+                                 class="min-w-3.5 max-w-3.5 fill-(--color-ternary)
                                 hover:fill-(--color-quaternary) transition-colors"/>
+              </div>
             </div></th>
           {/if}
           <th></th>
