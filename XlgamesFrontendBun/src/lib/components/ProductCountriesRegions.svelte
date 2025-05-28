@@ -2,6 +2,7 @@
   import DecimalPreset from "$lib/components/presets/DecimalPreset.svelte";
   import QuaternarySection from "$lib/components/sections/QuaternarySection.svelte";
   import PrimaryCheckbox from "$lib/components/checkbox/PrimaryCheckbox.svelte";
+  import PrimaryTextarea from "$lib/components/textarea/PrimaryTextarea.svelte";
   
   let {product = $bindable(), ...props} = $props();
 </script>
@@ -44,12 +45,14 @@
       product.Orenburg = false;
       product.Ekaterenburg = false;
       product.Vladivastok = false;
+      product.Novosibirsk = false;
     }} title="Россия">
     <PrimaryCheckbox bind:value={product.Moscow} title="Москва"/>
     <PrimaryCheckbox bind:value={product.SaintPetersburg} title="Санкт-Петербург"/>
     <PrimaryCheckbox bind:value={product.Orenburg} title="Оренбург"/>
     <PrimaryCheckbox bind:value={product.Ekaterenburg} title="Екатеринбург"/>
     <PrimaryCheckbox bind:value={product.Vladivastok} title="Владивосток"/>
+    <PrimaryCheckbox bind:value={product.Novosibirsk} title="Новосибирск"/>
   </DecimalPreset>
   <DecimalPreset bind:value={product.USA} off={() => {
       product.NewYork = false;
