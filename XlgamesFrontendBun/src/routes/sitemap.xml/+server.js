@@ -21,8 +21,8 @@ export async function GET() {
       '/vps',
       '/web-hosting',
   ];
-  urls = urls.concat(games.map(game => `/games/${game.Name}`));
-  urls = urls.concat(news.map(newsItem => `/news/${newsItem.LinkName}`));
+  urls = urls.concat(games.map(game => `/games/${encodeURI(game.Name)}`));
+  urls = urls.concat(news.map(newsItem => `/news/${encodeURI(newsItem.LinkName)}`));
   let output = [];
   languages.forEach(l => {
     urls.forEach(url => {
