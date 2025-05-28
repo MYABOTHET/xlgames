@@ -12,7 +12,6 @@
   import Uk from "$lib/components/svg/flags/Uk.svelte";
   import PrimaryLoupe from "$lib/components/svg/PrimaryLoupe.svelte";
   import ProductHaveInfo from "$lib/components/svg/ProductHaveInfo.svelte";
-  import PrimaryCheckbox from "$lib/components/checkbox/PrimaryCheckbox.svelte";
 
   const {serversProp, userOnMobile, preset, stock = true, ...props} = $props();
   
@@ -220,6 +219,7 @@
         if (region === oldLanguage.Shared.Orenburg) translateRegions.add(language.Shared.Orenburg);
         if (region === oldLanguage.Shared.Ekaterenburg) translateRegions.add(language.Shared.Ekaterenburg);
         if (region === oldLanguage.Shared.Vladivastok) translateRegions.add(language.Shared.Vladivastok);
+        if (region === oldLanguage.Shared.Novosibirsk) translateRegions.add(language.Shared.Novosibirsk);
         if (region === oldLanguage.Shared.NewYork) translateRegions.add(language.Shared.NewYork);
         if (region === oldLanguage.Shared.Miami) translateRegions.add(language.Shared.Miami);
         if (region === oldLanguage.Shared.LosAngeles) translateRegions.add(language.Shared.LosAngeles);
@@ -285,7 +285,8 @@
         language.Shared.SaintPetersburg === region ||
       language.Shared.Orenburg === region ||
       language.Shared.Ekaterenburg === region ||
-      language.Shared.Vladivastok === region) {
+      language.Shared.Vladivastok === region ||
+      language.Shared.Novosibirsk === region) {
       country.add(language.Shared.Russia);
       return country;
     }
@@ -342,6 +343,7 @@
         if (server.Data.Orenburg) regions.add(language.Shared.Orenburg);
         if (server.Data.Ekaterenburg) regions.add(language.Shared.Ekaterenburg);
         if (server.Data.Vladivastok) regions.add(language.Shared.Vladivastok);
+        if (server.Data.Novosibirsk) regions.add(language.Shared.Novosibirsk);
       }
       if (server.Data.USA && language.Shared.USA === country) {
         if (server.Data.NewYork) regions.add(language.Shared.NewYork);
@@ -389,6 +391,7 @@
         if (server.Data.Orenburg) regions.add(language.Shared.Orenburg);
         if (server.Data.Ekaterenburg) regions.add(language.Shared.Ekaterenburg);
         if (server.Data.Vladivastok) regions.add(language.Shared.Vladivastok);
+        if (server.Data.Novosibirsk) regions.add(language.Shared.Novosibirsk);
       }
       if (server.Data.USA) {
         if (server.Data.NewYork) regions.add(language.Shared.NewYork);
@@ -438,6 +441,7 @@
     server.Data.Orenburg ? regions.push(language.Shared.Orenburg) : null;
     server.Data.Ekaterenburg ? regions.push(language.Shared.Ekaterenburg) : null;
     server.Data.Vladivastok ? regions.push(language.Shared.Vladivastok) : null;
+    server.Data.Novosibirsk ? regions.push(language.Shared.Novosibirsk) : null;
     server.Data.NewYork ? regions.push(language.Shared.NewYork) : null;
     server.Data.Miami ? regions.push(language.Shared.Miami) : null;
     server.Data.LosAngeles ? regions.push(language.Shared.LosAngeles) : null;

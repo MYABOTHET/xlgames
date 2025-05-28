@@ -103,6 +103,7 @@
     <PrimaryTextarea bind:value={language.Shared.Orenburg} title="Оренбург"/>
     <PrimaryTextarea bind:value={language.Shared.Ekaterenburg} title="Екатеринбург"/>
     <PrimaryTextarea bind:value={language.Shared.Vladivastok} title="Владивосток"/>
+    <PrimaryTextarea bind:value={language.Shared.Novosibirsk} title="Новосибирск"/>
     <PrimaryTextarea bind:value={language.Shared.NewYork} title="Нью-Йорк"/>
     <PrimaryTextarea bind:value={language.Shared.Miami} title="Майами"/>
     <PrimaryTextarea bind:value={language.Shared.LosAngeles} title="Лос-Анджелес"/>
