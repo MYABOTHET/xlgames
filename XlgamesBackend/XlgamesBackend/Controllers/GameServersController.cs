@@ -69,6 +69,7 @@ namespace XlgamesBackend.Controllers
                     Src = gameServer.Src,
                     ControlPanel = gameServer.ControlPanel,
                     FTP = gameServer.FTP,
+                    Execute = gameServer.Execute,
                     DedicatedDescription = gameServer.DedicatedDescription,
                     GameServerDataPrimaryModels = gameServer.GameServerDatas
                         .Select(gameServerData => new GameServerDataPrimaryModel()
