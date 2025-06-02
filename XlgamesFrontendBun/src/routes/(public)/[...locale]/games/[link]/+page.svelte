@@ -5,7 +5,7 @@
   import {transformLocale} from "$lib/tools.js";
   import PrimaryCPU from "$lib/components/svg/PrimaryCPU.svelte";
   import QuaternaryCard from "$lib/components/cards/QuaternaryCard.svelte";
-  
+
   const {data} = $props();
   
   let language = $derived(getContext("language")());
@@ -66,7 +66,15 @@
 
 {#snippet orderHref(href, order, styles)}
   <a class="quinary-block w-fit quaternary-p {styles}" rel="nofollow" {href} data-sveltekit-reload
-  onclick={() => {try {eval(data.gameServer.Execute)} catch (ex) {console.log(`Ошибка функции метрики ${ex}`)}}}>{order}</a>
+  onclick={async (e) => {
+    e.preventDefault();
+    try {
+      eval(data.gameServer.Execute);
+    } catch (ex) {
+      console.log(`Ошибка функции метрики ${ex}`);
+    }
+    window.location.href = href;
+  }}>{order}</a>
 {/snippet}
 
 <article class="secondary-section">
