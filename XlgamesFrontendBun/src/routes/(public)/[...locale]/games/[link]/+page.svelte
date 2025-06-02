@@ -65,7 +65,7 @@
 {/snippet}
 
 {#snippet orderHref(href, order, styles)}
-  <a class="quinary-block w-fit quaternary-p {styles}" rel="nofollow" {href} data-sveltekit-reload
+  <a class="quinary-block w-fit quaternary-p {styles}" rel="nofollow" {href}
   onclick={async (e) => {
     e.preventDefault();
     try {
