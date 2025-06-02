@@ -65,7 +65,8 @@
 {/snippet}
 
 {#snippet orderHref(href, order, styles)}
-  <a class="quinary-block w-fit quaternary-p {styles}" rel="nofollow" {href} data-sveltekit-reload>{order}</a>
+  <a class="quinary-block w-fit quaternary-p {styles}" rel="nofollow" {href} data-sveltekit-reload
+  onclick={() => {try {eval(data.gameServer.Execute)} catch (ex) {console.log(`Ошибка функции метрики ${ex}`)}}}>{order}</a>
 {/snippet}
 
 <article class="secondary-section">

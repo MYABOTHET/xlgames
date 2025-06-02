@@ -16,6 +16,7 @@
 
 <SecondaryPage title="Настройки игрового сервера «{gameServer.Name}»">
   <QuaternarySection title="Идентификационные данные">
+    <PrimaryTextarea bind:value={gameServer.Execute} title="Функция метрики"/>
     <PrimaryTextarea bind:value={gameServer.Name} title="Название игрового сервера"/>
     <PrimaryTextarea bind:value={gameServer.CPU} title="Процессор"/>
     <PrimaryTextarea bind:value={gameServer.RAM} title="Тип ОЗУ"/>

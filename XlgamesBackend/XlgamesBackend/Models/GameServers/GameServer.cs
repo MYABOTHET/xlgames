@@ -16,6 +16,7 @@ namespace XlgamesBackend.Models.GameServers
         public string Link { get; set; } = "...";
         public bool ControlPanel { get; set; }
         public bool FTP { get; set; }
+        public string Execute { get; set; } = "(() => {})()";
         [JsonIgnore]
         public ICollection<GameServerData> GameServerDatas { get; } = new List<GameServerData>();
     }
