@@ -22,7 +22,7 @@
 
 <svelte:window onclick={detect_can_hidden}></svelte:window>
 
-<div {...props} class="{props.class} relative">
+<div {...props} class="{props.class} relative z-50">
   <Button onmouseout={() => {can_hidden = true}} onmouseover={() => {can_hidden = false}}
           onclick={() => {hidden = !hidden}} color="sky"
           class="w-full {hidden ? '' : 'bg-sky-500 text-white stroke-white'} stroke-sky-500 hover:stroke-white">

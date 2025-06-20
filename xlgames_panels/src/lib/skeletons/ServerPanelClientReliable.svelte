@@ -43,10 +43,12 @@
         <Button onclick={open} class="w-full" color="sky">{language.reinstall}</Button>
       </div>
     </Section>
-    <Section title={language.network_statistics_title}>
-      <SelectReliable class="w-40 ml-auto mb-1" {language} {light} method={select_time} value={current_time} items={list_time}/>
-      <NetworkStatisticsReliable {current_time} {light} {network_statistics} {language}/>
-    </Section>
+    {#if network_statistics.item_count}
+      <Section title={language.network_statistics_title}>
+        <SelectReliable class="w-40 ml-auto mb-1" {language} {light} method={select_time} value={current_time} items={list_time}/>
+        <NetworkStatisticsReliable {current_time} {light} {network_statistics} {language}/>
+      </Section>
+    {/if}
   </div>
   {#snippet modal()}
   {#if have_confirm}

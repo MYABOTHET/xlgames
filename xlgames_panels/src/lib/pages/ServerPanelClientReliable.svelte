@@ -72,7 +72,7 @@
       network = JSON.parse(PHP_network);
       let network_elements = [];
       Object.entries(network).forEach(([key, value]) => {
-        if (value.data.bandwidthLogs.length !== 0) {
+        if (value.data.bandwidthLogs && value.data.bandwidthLogs.length !== 0) {
           network_elements.push({
             key,
             value
@@ -80,11 +80,13 @@
           list_time.push(key);
         }
       });
-      current_time = network_elements[0].key;
-      Object.entries(network_elements[0].value.data.bandwidthLogs).forEach(([key, value]) => {
-        network_statistics.item_count += 1;
-        network_statistics.result.push([new Date(key).getTime(), value[2] * 1000 * 1000, value[3] * 1000 * 1000]);
-      });
+      if (network_elements.length > 0) {
+        current_time = network_elements[0].key;
+        Object.entries(network_elements[0].value.data.bandwidthLogs).forEach(([key, value]) => {
+          network_statistics.item_count += 1;
+          network_statistics.result.push([new Date(key).getTime(), value[2] * 1000 * 1000, value[3] * 1000 * 1000]);
+        });
+      }
       list_os = [];
       PHP_list_os = PHP_list_os.replaceAll(/\r?\n|\r/g, '');
       JSON.parse(PHP_list_os).data.forEach(item => {
