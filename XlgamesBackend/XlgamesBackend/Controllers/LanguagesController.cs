@@ -43,6 +43,101 @@ namespace XlgamesBackend.Controllers
                 .FirstOrDefaultAsync();
         }
 
+        [HttpGet("all/{id:int}")]
+        [Authorize]
+        public async Task<ActionResult<LanguageAll>> GetLanguageAll(int id)
+        {
+            // Получаем язык
+            Language? language = await GetLanguageById(id) ?? await GetLanguageById(1);
+            var gameServerDatas = await _postgreSQLContext.GameServerDatas
+                .AsNoTracking()
+                .Where(gameServerData => gameServerData.LanguageId.Equals(language != null ? id : 1))
+                .Select(gameServerData => new GameServerDataDtoUpdate
+                {
+                    Id = gameServerData.Id,
+                    Canada = gameServerData.Canada,
+                    GameServerId = gameServerData.GameServerId,
+                    Description = gameServerData.Description,
+                    Europe = gameServerData.Europe,
+                    Finland = gameServerData.Finland,
+                    France = gameServerData.France,
+                    GameServerDataPoints = gameServerData.GameServerDataPoints,
+                    Germany = gameServerData.Germany,
+                    Head = gameServerData.Head,
+                    LanguageId = gameServerData.LanguageId,
+                    Poland = gameServerData.Poland,
+                    Price = gameServerData.Price,
+                    Russia = gameServerData.Russia,
+                    Singapore = gameServerData.Singapore,
+                    UnitedKingdom = gameServerData.UnitedKingdom,
+                    USA = gameServerData.USA
+                })
+                .ToListAsync();
+            // Возвращаем ответ
+            return new LanguageAll(language!, gameServerDatas);
+        }
+
+        [HttpPut("all/{id:int}")]
+        [Authorize]
+        public async Task<IActionResult> UpdateLanguageAll(int id, LanguageAll languageAllDto)
+        {
+            Language? language = await _postgreSQLContext.Languages.FindAsync(id);
+            // Если язык не найден, то возвращаем ошибку
+            if (language is null)
+            {
+                ModelState.AddModelError("Language", "Язык с таким ID не найден");
+                return ValidationProblem();
+            }
+            // Проверяем существует ли язык с такими данными
+            string? name = await _postgreSQLContext.Languages
+                .Where(language =>
+                (language.Name!.Equals(languageAllDto.Language.Name)
+                || language.WHMCSName!.Equals(languageAllDto.Language.WHMCSName)
+                || language.OriginalName!.Equals(languageAllDto.Language.OriginalName)
+                || language.Locale!.Equals(languageAllDto.Language.Locale)) && !language.Id.Equals(id))
+                .Select(language => language.Name)
+                .FirstOrDefaultAsync();
+            // Если язык существует, то возвращаем ошибку
+            if (name is not null && !name.Equals(language.Name))
+            {
+                ModelState.AddModelError("Language",
+                     $"Некоторые идентификационные данные уже заняты языком '{name}'");
+                return ValidationProblem();
+            }
+            language.Update(languageAllDto.Language);
+            var gameServerDatas = await _postgreSQLContext.GameServerDatas
+                .Where(gameServerData => gameServerData.LanguageId.Equals(id))
+                .ToListAsync();
+            foreach (var gameServerData in gameServerDatas)
+            {
+                foreach (var gameServerDataDto in languageAllDto.GameServerDatas)
+                {
+                    if (gameServerData.GameServerId.Equals(gameServerDataDto.GameServerId))
+                    {
+                        gameServerData.Description = gameServerDataDto.Description;
+                        gameServerData.Head = gameServerDataDto.Head;
+                        gameServerData.Price = gameServerDataDto.Price;
+                        gameServerData.GameServerDataPoints = gameServerDataDto.GameServerDataPoints;
+                        gameServerData.Russia = gameServerDataDto.Russia;
+                        gameServerData.USA = gameServerDataDto.USA;
+                        gameServerData.Singapore = gameServerDataDto.Singapore;
+                        gameServerData.Finland = gameServerDataDto.Finland;
+                        gameServerData.Germany = gameServerDataDto.Germany;
+                        gameServerData.France = gameServerDataDto.France;
+                        gameServerData.Europe = gameServerDataDto.Europe;
+                        gameServerData.UnitedKingdom = gameServerDataDto.UnitedKingdom;
+                        gameServerData.Poland = gameServerDataDto.Poland;
+                        gameServerData.Canada = gameServerDataDto.Canada;
+                        break;
+                    }
+                }   
+            }
+            // Сохраняем изменения в базе данных
+            await _postgreSQLContext.SaveChangesAsync();
+            // Возвращаем ответ
+            return Ok();
+        }
+
         #region Получить все языки
         [HttpGet]
         public async Task<ActionResult<IEnumerable<LanguageDto>>> GetLanguages()
@@ -174,5 +269,7 @@ namespace XlgamesBackend.Controllers
             return Ok();
         }
         #endregion
+
+        public record LanguageAll(Language Language, List<GameServerDataDtoUpdate> GameServerDatas);
     }
 }

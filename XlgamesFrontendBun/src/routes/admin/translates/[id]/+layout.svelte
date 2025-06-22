@@ -46,6 +46,33 @@
       error = null;
     }, 5000);
   }
+
+  async function updateTranslate(newTranslate) {
+    if (invalidLocale) return;
+    clearTimeout(timeout);
+    access = null;
+    error = null;
+    const response = await fetch(`/admin/translates/${page.params.id}`, {
+      method: "PATCH",
+      body: newTranslate,
+      headers: {
+        'Content-Type': 'application/json'
+      }
+    });
+    if (response.status === 200) {
+      access = true;
+      language = newTranslate.Language;
+      links.find(link => link.id === newTranslate.Language.Id).title = newTranslate.Language.Name;
+      links.sort((a, b) => a.title.localeCompare(b.title, "ru-RU"));
+    } else {
+      access = false;
+      error = await response.text();
+    }
+    timeout = setTimeout(() => {
+      access = null;
+      error = null;
+    }, 5000);
+  }
   
   async function deleteLanguage() {
     access = null;
@@ -93,7 +120,8 @@
       // console.log('asd');
     };
   });
-  
+
+  setContext("updateTranslate", updateTranslate);
   setContext("deleteLanguage", deleteLanguage);
   setContext("language", () => language);
   setContext("counter", () => counter);
