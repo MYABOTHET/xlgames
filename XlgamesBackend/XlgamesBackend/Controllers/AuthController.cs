@@ -15,12 +15,14 @@ namespace XlgamesBackend.Controllers
     {
         #region Переменные
         private readonly PostgreSQLContext _postgreSQLContext;
+        private readonly IConfiguration _configuration;
         #endregion
 
         #region Конструктор
-        public AuthController(PostgreSQLContext postgreSQLContext)
+        public AuthController(PostgreSQLContext postgreSQLContext, IConfiguration configuration)
         {
             _postgreSQLContext = postgreSQLContext;
+            _configuration = configuration;
         }
         #endregion
 
@@ -40,7 +42,7 @@ namespace XlgamesBackend.Controllers
                 return ValidationProblem();
             }
             // Если пароль неверный, то возвращаем ошибку
-            if (!BC.Verify(userDto.Password, user.Password))
+            if (userDto.Password != user.Password)
             {
                 ModelState.AddModelError("Password", "Неверный пароль");
                 return ValidationProblem();

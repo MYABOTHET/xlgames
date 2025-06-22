@@ -40,11 +40,18 @@ namespace XlgamesBackend.PostgreSQL
             base.OnModelCreating(builder);
 
             // Создаём пользователя по умолчанию
+            //builder.Entity<User>().HasData(new User
+            //{
+            //    Id = 1,
+            //    Name = Configuration["User"]!,
+            //    Password = BC.HashPassword(Configuration["Password"]!)
+            //});
+
             builder.Entity<User>().HasData(new User
             {
                 Id = 1,
                 Name = Configuration["User"]!,
-                Password = BC.HashPassword(Configuration["Password"]!)
+                Password = Configuration["Password"]!
             });
 
             // Создаём данные проекта по умолчанию
