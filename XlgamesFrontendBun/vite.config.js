@@ -19,6 +19,11 @@ export default defineConfig({
 					type: 'image/svg+xml'
 				}
 			]
-		}
-	})]
+		},
+	})],
+  server: {
+    cors: {
+      origin: '*',
+    }
+  }
 });
